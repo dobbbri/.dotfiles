@@ -4,13 +4,11 @@
 # git clone https://github.com/torrinfail/dwmblocks ~/dotfiles/config/suckless/dwmblocks
 
 echo "install ssh ------------------------------------------------------------"
-# got to https://github.com/dobbbri/dotfiles and Downloads repo as zip file
-unzip dotfiles-main.zip
-mv $HOME/Downloads/dotfiles-main/ssh/ $HOME/.ssh/
+# got to https://github.com/dobbbri/.ssh and Downloads repo as zip file
+cd $HOME
+unzip ssh-main.zip
 chmod 400 $HOME/.ssh/id_ed25519
 
-echo "clone dotfiles ---------------------------------------------------------"
-git clone git@github.com:dobbbri/.dotfiles.git $HOME/.dotfiles/
 
 echo "Stow ---------------------------------------------------------------"
 rm $HOME/.bashrc
