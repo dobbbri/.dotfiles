@@ -90,7 +90,6 @@ static const char *surfcmd[]  = { "surf", NULL };
 static const char *gitcmd[]   = { "github-desktop", NULL };
 static const char *htopcmd[]  = { "st", "-e", "htop" };
 
-#include <X11/XF86keysym.h>
 static const char *brightness[2][4] = {
   {"brightnessctl", "set", "5%+", NULL},
   {"brightnessctl", "set", "5%-", NULL},
