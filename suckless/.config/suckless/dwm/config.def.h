@@ -10,19 +10,19 @@ static const unsigned int gappov    = 6;       /* vert outer gap between windows
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Meslo:size=11" }; /*"Font Awesome 5 Free:size=13"  */ 
-static const char dmenufont[]       = "Meslo:size=11";
+static const char *fonts[]          = { "Meslo:size=10:antialias=true:autohint=true" }; /*"Font Awesome 5 Free:size=13"  */ 
+static const char dmenufont[]       = "Meslo:size=10:antialias=true:autohint=true";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#353535";
-static const char col_gray3[]       = "#dddddd";
+static const char col_gray3[]       = "#83a598";
 static const char col_gray4[]       = "#ffffff";
-static const char col_cyan[]        = "#fe8019"; 
+static const char col_cyan[]        = "#458588"; 
 static const char *colors[][3]      = {
 	/*                    fg         bg         border   */
 	[SchemeNorm]      = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]       = { col_gray4, col_cyan,  col_cyan  },
 	[SchemeStatus]    = { col_gray1, col_cyan,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]   = { col_gray1, col_gray3,  col_cyan  }, // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeTagsSel]   = { col_gray4, col_gray3,  col_cyan  }, // Tagbar left selected {text,background,not used but cannot be empty}
 	[SchemeTagsNorm]  = { col_gray1, col_cyan,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
 	[SchemeInfoSel]   = { col_gray4, col_cyan,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
 	[SchemeInfoNorm]  = { col_gray4, col_cyan,  col_gray4  }, // infobar middle  unselected {text,background,not used but cannot be empty}

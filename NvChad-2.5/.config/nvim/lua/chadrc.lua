@@ -4,7 +4,7 @@
 local M = {
 
   base46 = {
-    theme = "ayu_dark",
+    theme = "catppuccin",
     transparency = false,
     hl_override = {
       Comment = { italic = true },
