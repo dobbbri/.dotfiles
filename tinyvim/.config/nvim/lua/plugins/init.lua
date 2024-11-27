@@ -1,44 +1,19 @@
 return {
   { lazy = true, "nvim-lua/plenary.nvim" },
 
-  -- { "mg979/vim-visual-multi" },
+  { "mg979/vim-visual-multi" },
+
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = function() require("plugins.configs.gruvbox") end,
+  },
 
   -- {
-  --   "EdenEast/nightfox.nvim",
+  --   "maxmx03/fluoromachine.nvim",
   --   priority = 1000,
-  --   config = true,
+  --   config = function() require("plugins.configs.fluoromachine") end,
   -- },
-  {
-    "maxmx03/fluoromachine.nvim",
-    lazy = false,
-    priority = 1000,
-    init = function() vim.opt.background = "dark" end,
-    config = function()
-      -- local c = require('fluoromachine.uti.color')
-      require("fluoromachine").setup({
-        theme = "fluoromachine", -- fluoromachine, retrowave, delta
-        glow = false,
-        colors = function(_, color)
-          return {
-            bg = "#160724",
-            bgdark = color.darken("#160724", 20),
-          }
-        end,
-        overrides = { -- fake glow without bg
-          ["Type"] = { fg = "#ffcc00" },
-          ["Structure"] = { fg = "#ffcc00" },
-          ["@tag.delimiter"] = { fg = "#FC199A" },
-          ["@function"] = { bold = true },
-          ["@keyword"] = { bold = true },
-          ["@constant"] = { bold = true },
-          ["function"] = { bold = true },
-          ["keyword"] = { bold = true },
-          ["constant"] = { bold = true },
-          ["comment"] = { italic = true },
-        },
-      })
-    end,
-  },
 
   {
     "chrisgrieser/nvim-tinygit",

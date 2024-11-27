@@ -13,7 +13,6 @@ wk.add({
   { "<leader>r", group = "Rename", icon = { icon = " ", color = "magenta" } },
   { "<leader>u", icon = { icon = "󰖟 ", color = "red" } },
   { "<leader>l", group = "Toggle Line Number" },
-  { "<leader>x", group = "Close Buffers" },
   { "[", group = "prev" },
   { "]", group = "next" },
   { "g", group = "goto" },
