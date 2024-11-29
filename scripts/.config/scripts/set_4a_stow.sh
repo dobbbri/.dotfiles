@@ -6,20 +6,34 @@
 echo "install ssh ------------------------------------------------------------"
 # got to https://github.com/dobbbri/.ssh and Downloads repo as zip file
 cd $HOME
-unzip ssh-main.zip
+unzip $HOME/Downloads/ssh-main.zip
+mv $HOME/.ssh-main $HOME/.ssh
 chmod 400 $HOME/.ssh/id_ed25519
 
 
 echo "Stow ---------------------------------------------------------------"
 rm $HOME/.bashrc
 rm $HOME/.aliases
-rm -rf $HOME/.ssh/
+rm -rf $HOME/.config/geany/
 rm -rf $HOME/.config/gtk-3.0/
 
 cd $HOME/.dotfiles/
 
-tools=( "astro" "alacritty" "bash" "dunst" "geany" "git" "gtk-3.0" "images" "NvChad-2.5" "neofetch" "scripts" "suckless" "ssh" )
-for tool in ${tools[@]}
+tools=(
+"astro"
+"alacritty"
+"bash"
+"dunst"
+"geany"
+"git"
+"gtk-3.0"
+"images"
+"tinyvim"
+"neofetch"
+"scripts"
+"suckless"
+"ssh"
+) for tool in ${tools[@]}
 do 
 	stow $tool
 done
@@ -34,9 +48,13 @@ do
   sudo make clean install
 done
 
+if [[ ! -d /$HOME/.local/share/dwm ]]; then
+  mkdir /usr/share/xsessions/
+fi
+
 echo "Add lightdm -----------------------------------------------------------------"
 sudo mv /usr/share/xsessions/dwm.desktop /usr/share/xsessions/dwm.desktop.bkp
-sudo mv $HOME/.dotfiles/scripts/.config/scripts/config/dw.desktop /usr/share/xsessions/dwm.desktop
+sudo mv $HOME/.dotfiles/scripts/.config/scripts/config/dwm.desktop /usr/share/xsessions/dwm.desktop
 sudo mv /etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf.bkp
 sudo mv $HOME/.dotfiles/scripts/.config/scripts/config/lightdm.conf /etc/lightdm/lightdm.conf
 sudo mv /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf.bkp

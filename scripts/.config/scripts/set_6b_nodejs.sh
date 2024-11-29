@@ -4,8 +4,8 @@
 # chmod +x install_nodejs.sh 
 
 
-echo "- intall node Version 20 -------------------------------------------------"
-nvm install 20
+echo "- intall node Version 18 -------------------------------------------------"
+nvm install 18
 
 echo "- Install PNPM packages --------------------------------------------------"
 npm i -g pnpm
