@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-slstatus &
+/home/sdobri/.config/suckless/dwmbar/batteryStatus &
+
+/home/sdobri/.config/suckless/dwmbar/dwmbar &
+# slstatus &
 
 # background
 # feh --bg-scale ~/dotfiles/images/macOS-Graphic-Dark.jpg &
