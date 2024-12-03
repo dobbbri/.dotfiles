@@ -3,6 +3,11 @@ return {
 
   { "mg979/vim-visual-multi" },
 
+  -- {
+  --   "stevearc/dressing.nvim",
+  --   opts = {},
+  -- },
+
   {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
@@ -14,12 +19,6 @@ return {
   --   priority = 1000,
   --   config = function() require("plugins.configs.fluoromachine") end,
   -- },
-
-  {
-    "chrisgrieser/nvim-tinygit",
-    dependencies = "stevearc/dressing.nvim",
-    opts = require("plugins.configs.tinygit"),
-  },
 
   {
     "sontungexpt/url-open",
@@ -139,6 +138,11 @@ return {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = require("plugins.configs.gitsigns"),
+  },
+
+  {
+    "chrisgrieser/nvim-tinygit",
+    opts = require("plugins.configs.tinygit"),
   },
 
   {
