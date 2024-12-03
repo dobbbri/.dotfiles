@@ -79,13 +79,13 @@ const int notifiable_levels[] = {
 static const struct arg args[] = {
 	/* function         format        argument */
   {battery_state,     " %s",  "BAT0"},
-  {battery_perc,     "%s   ",  "BAT0"},
+  {battery_perc,     "%s%%   ",  "BAT0"},
   /*{temp,             " %s󰔄   ",   "/sys/class/thermal/thermal_zone0/temp"},*/
 	/*{ram_perc,         " %s   ",   NULL},*/
 	{ram_used,         "%s   ",   NULL},
   /*{backlight_perc,   " %s   ",    "acpi_video0"},*/
-  {vol_perc,         "%s   ",       "Master"},
-	{wifi_essid,       "%s   ",  "wlp2s0"},
-	{datetime,         "%s", 	      "%d/%m %H:%M"},
+  /*{vol_perc,         "%s   ",       "Master"},*/
+	/*{wifi_essid,       "%s   ",  "wlp2s0"},*/
+	{datetime,         "%s ", 	      "%d/%m   %H:%M"},
 	{battery_notify,   "",           "BAT0"}, 
 };

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+alias poweroff="sudo systemctl poweroff"
+alias reboot="sudo systemctl reboot"
+
 alias x="exit"
 alias l='exa -ll --color=always --group-directories-first'
 alias ls='exa -al --header --icons --group-directories-first'
