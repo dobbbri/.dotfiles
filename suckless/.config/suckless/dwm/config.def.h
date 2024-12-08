@@ -90,6 +90,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *filecmd[]  = { "thunar", NULL };
 static const char *webcmd[]   = { "firefox", NULL };
+static const char *mswebcmd[] = { "microsoft-edge", NULL };
 static const char *surfcmd[]  = { "surf", NULL };
 static const char *gitcmd[]   = { "github-desktop", NULL };
 static const char *htopcmd[]  = { "st", "-e", "htop" };
@@ -99,6 +100,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ CMDKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ CMDKEY,                       XK_f,      spawn,          {.v = filecmd } },
+	{ CMDKEY,                       XK_e,      spawn,          {.v = mswebcmd } },
 	{ CMDKEY,                       XK_w,      spawn,          {.v = webcmd } },
 	{ CMDKEY,                       XK_s,      spawn,          {.v = surfcmd } },
 	{ CMDKEY,                       XK_g,      spawn,          {.v = gitcmd } },
@@ -115,7 +117,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -145,7 +146,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 
-	{ CMDKEY,                       XK_q,      exitdwm,       {0} },
+	{ CMDKEY,                       XK_c,      killclient,      {0} },
+	{ CMDKEY,                       XK_q,      exitdwm,         {0} },
 };
 
 /* button definitions */

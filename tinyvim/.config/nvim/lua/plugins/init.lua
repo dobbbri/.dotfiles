@@ -8,12 +8,18 @@ return {
   --   opts = {},
   -- },
 
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function() require("plugins.configs.gruvbox") end,
+  -- },
   {
-    "ellisonleao/gruvbox.nvim",
+    "AlexvZyl/nordic.nvim",
+    lazy = false,
     priority = 1000,
-    config = function() require("plugins.configs.gruvbox") end,
+    config = function() require("nordic").load() end,
   },
-
   -- {
   --   "maxmx03/fluoromachine.nvim",
   --   priority = 1000,
@@ -49,7 +55,6 @@ return {
     build = ":TSUpdate",
     config = function() require("plugins.configs.treesitter") end,
   },
-
   {
     "akinsho/bufferline.nvim",
     event = "BufReadPre",
@@ -57,14 +62,10 @@ return {
   },
 
   {
-    "echasnovski/mini.nvim",
-    version = false,
-    config = function() require("plugins.configs.mini") end,
+    "sschleemilch/slimline.nvim",
+    opts = require("plugins.configs.slimline"),
   },
 
-  -- we use cmp plugin only when in insert mode
-  -- so lets lazyload it at InsertEnter event, to know all the events check h-events
-  -- completion , now all of these plugins are dependent on cmp, we load them after cmp
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -88,8 +89,6 @@ return {
         config = function() require("plugins.configs.autopairs") end,
       },
     },
-    -- made opts a function cuz cmp config calls cmp module
-    -- and we lazyloaded cmp so we dont want that file to be read on startup!
     config = function() require("plugins.configs.cmp") end,
   },
 
@@ -123,10 +122,9 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    config = function() require("plugins.configs.indent") end,
+    config = function() require("plugins.configs.indentline") end,
   },
 
-  -- files finder etc
   {
     "nvim-telescope/telescope.nvim",
     lazy = true,

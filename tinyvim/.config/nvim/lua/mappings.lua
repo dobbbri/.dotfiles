@@ -19,7 +19,8 @@ map("n", "<leader>gt", "<cmd> Telescope git_status <CR>", { desc = "List git sta
 -- bufferline, cycle buffers
 map("n", "<Tab>", "<cmd> BufferLineCycleNext <CR>")
 map("n", "<S-Tab>", "<cmd> BufferLineCyclePrev <CR>")
-map("n", "<leader>x", "<cmd> bd <CR>", { desc = "Close current buffer" })
+map("n", "<leader>xx", "<cmd> bd <CR>", { desc = "Close current buffer" })
+map("n", "<leader>xo", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all but the current buffer" })
 
 -- comment.nvim
 map("n", "<leader>/", "gcc", { remap = true, desc = "Comment line" })
@@ -40,7 +41,13 @@ map("n", "<leader>cf", function() require("conform").format({ lsp_fallback = tru
 map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Diagnostic LSP" })
 
 -- my mappings -----------------------------------------------------------------------------------------
+-- move line
+map("n", "<S-j>", ":m .+1<CR>==") -- move line up(n)
+map("n", "<S-k>", ":m .-2<CR>==") -- move line down(n)
+map("v", "<S-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
+map("v", "<S-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
 
+-- others
 map("n", ";", ":", { desc = "Enter command mode" })
 map("i", "jk", "<ESC>")
 
