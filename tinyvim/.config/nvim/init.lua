@@ -21,9 +21,11 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = require("plugins")
 
 require("lazy").setup(plugins, {
-  install = { colorscheme = { "nordic" } },
+  install = { colorscheme = { "gruvbox" } },
 })
 
-vim.cmd("colorscheme nordic")
+vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme gruvbox")
--- vim.cmd("colorscheme fluoromachine")
+-- vim.cmd("colorscheme nordic")
+
+vim.api.nvim_set_hl(0, "IndentLine", { link = "Comment" })

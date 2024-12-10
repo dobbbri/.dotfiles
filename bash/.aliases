@@ -20,8 +20,6 @@ alias LazyGit='lazygit'
 alias ron="./$HOME/.config/scripts/actions/redshift-on"
 alias roff="./$HOME/.config/scripts/actions/redshift-off"
 
-alias su='cd ~/.dotfiles/suckless/.config/suckless/'
-alias suv='su && v'
 alias vv='cd ~/.dotfiles/tinyvim/.config/nvim/'
 alias vvv='vv && v'
 alias dd='cd ~/.dotfiles/'
@@ -43,7 +41,9 @@ alias ..3='cd ../../../'
 alias ..4='cd ../../../../'
 
 # dwm
-alias smi='sudo make clean install'
+alias su='cd ~/.dotfiles/suckless/.config/suckless/'
+alias suv='su && v'
+alias smi='sudo rm config.h && sudo make clean install'
 
 # apt
 alias sai='sudo apt install'

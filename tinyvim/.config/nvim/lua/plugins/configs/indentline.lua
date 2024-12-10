@@ -1,6 +1,11 @@
-require("ibl").setup({
-  indent = { char = "│" },
-  scope = { char = "│", highlight = "Comment" },
-})
+local char_styles = { "│", "|", "¦", "┆", "┊", "▏", "⎸" }
 
-vim.api.nvim_set_hl(0, "IndentLine", { link = "Comment" })
+require("ibl").overwrite({
+  indent = { char = char_styles[1] },
+  scope = {
+    char = char_styles[1],
+    enabled = true,
+    show_start = false,
+  },
+  whitespace = { remove_blankline_trail = false },
+})

@@ -3,28 +3,21 @@ return {
 
   { "mg979/vim-visual-multi" },
 
-  -- {
-  --   "stevearc/dressing.nvim",
-  --   opts = {},
-  -- },
-
-  -- {
-  --   "ellisonleao/gruvbox.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function() require("plugins.configs.gruvbox") end,
-  -- },
   {
-    "AlexvZyl/nordic.nvim",
+    "stevearc/dressing.nvim",
+    opts = {},
+  },
+
+  {
+    -- "maxmx03/fluoromachine.nvim",
+    -- config = function() require("plugins.colors.fluoromachine") end,
+    "ellisonleao/gruvbox.nvim",
+    config = function() require("plugins.colors.gruvbox") end,
+    -- "alexvzyl/nordic.nvim",
+    -- config = function() require("plugins.colors.nordic") end,
     lazy = false,
     priority = 1000,
-    config = function() require("nordic").load() end,
   },
-  -- {
-  --   "maxmx03/fluoromachine.nvim",
-  --   priority = 1000,
-  --   config = function() require("plugins.configs.fluoromachine") end,
-  -- },
 
   {
     "sontungexpt/url-open",
@@ -55,6 +48,7 @@ return {
     build = ":TSUpdate",
     config = function() require("plugins.configs.treesitter") end,
   },
+
   {
     "akinsho/bufferline.nvim",
     event = "BufReadPre",
@@ -117,6 +111,12 @@ return {
     lazy = true,
     event = "BufWritePre",
     config = function() require("plugins.configs.linters") end,
+  },
+
+  {
+    "NvChad/nvim-colorizer.lua",
+    event = "BufReadPre",
+    opts = require("plugins.configs.colorizer"),
   },
 
   {
