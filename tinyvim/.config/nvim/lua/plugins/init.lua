@@ -9,12 +9,8 @@ return {
   },
 
   {
-    -- "maxmx03/fluoromachine.nvim",
-    -- config = function() require("plugins.colors.fluoromachine") end,
-    "ellisonleao/gruvbox.nvim",
-    config = function() require("plugins.colors.gruvbox") end,
-    -- "alexvzyl/nordic.nvim",
-    -- config = function() require("plugins.colors.nordic") end,
+    vim.g._color.package,
+    config = function() require("plugins.colors." .. vim.g._color.name) end,
     lazy = false,
     priority = 1000,
   },
@@ -106,12 +102,12 @@ return {
     opts = require("plugins.configs.formatters"),
   },
 
-  {
-    "mfussenegger/nvim-lint",
-    lazy = true,
-    event = "BufWritePre",
-    config = function() require("plugins.configs.linters") end,
-  },
+  -- {
+  --   "mfussenegger/nvim-lint",
+  --   lazy = true,
+  --   event = "BufWritePre",
+  --   config = function() require("plugins.configs.linters") end,
+  -- },
 
   {
     "NvChad/nvim-colorizer.lua",

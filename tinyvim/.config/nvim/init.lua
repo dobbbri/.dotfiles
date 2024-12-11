@@ -1,3 +1,10 @@
+local _colors = {
+  { name = "fluoromachine", package = "maxmx03/fluoromachine.nvim" },
+  { name = "gruvbox", package = "ellisonleao/gruvbox.nvim" },
+  { name = "nordic", package = "alexvzyl/nordic.nvim" },
+}
+vim.g._color = _colors[1]
+
 require("options")
 require("mappings")
 require("commands")
@@ -20,12 +27,8 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = require("plugins")
 
-require("lazy").setup(plugins, {
-  install = { colorscheme = { "gruvbox" } },
-})
+require("lazy").setup(plugins, { install = { colorscheme = { vim.g._color.name } } })
 
-vim.cmd("colorscheme gruvbox")
--- vim.cmd("colorscheme gruvbox")
--- vim.cmd("colorscheme nordic")
+vim.cmd("colorscheme " .. vim.g._color.name)
 
 vim.api.nvim_set_hl(0, "IndentLine", { link = "Comment" })

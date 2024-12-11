@@ -35,7 +35,7 @@ map("n", "<leader>ln", "<cmd>set nu!<CR>", { desc = "Toggle Line Number" })
 map("n", "<leader>lr", "<cmd>set rnu!<CR>", { desc = "Toggle Relative Number" })
 
 -- code format
-map("n", "<leader>cf", function() require("conform").format({ lsp_fallback = true }) end, { desc = "Format File" })
+map("n", "<leader>cf", "<cmd>Format<CR>", { desc = "Format File" })
 
 -- global lsp mappings
 map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Diagnostic LSP" })
