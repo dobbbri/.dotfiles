@@ -11,8 +11,8 @@ static const unsigned int gappov    = 4;       /* vert outer gap between windows
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 4;       /* vertical padding of bar */
-static const int sidepad            = 4;       /* horizontal padding of bar */
+static const int vertpad            = 0;       /* vertical padding of bar */
+static const int sidepad            = 0;       /* horizontal padding of bar */
 static const char *fonts[]          = { "jetBrainsMono:size=11:style=bold:antialias=true:autohint=true" }; /*"Font Awesome 5 Free:size=13"  */ 
 static const char dmenufont[]       = "jetBrainsMono:size=11:antialias=true:autohint=true";
 static const char col_gray1[]       = "#222222";
@@ -188,7 +188,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 
-	{ CMDKEY,                       XK_c,      killclient,      {0} },
+	{ ControlMask,                  XK_q,      killclient,      {0} },
 	{ CMDKEY,                       XK_q,      exitdwm,         {0} },
 };
 
