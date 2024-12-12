@@ -1,19 +1,18 @@
 return {
-  { lazy = true, "nvim-lua/plenary.nvim" },
-
-  { "mg979/vim-visual-multi" },
-
-  {
-    "stevearc/dressing.nvim",
-    opts = {},
-  },
-
   {
     vim.g._color.package,
     config = function() require("plugins.colors." .. vim.g._color.name) end,
     lazy = false,
     priority = 1000,
   },
+
+  { "nvim-lua/plenary.nvim", lazy = true },
+
+  { "mg979/vim-visual-multi" },
+
+  { "stevearc/dressing.nvim" },
+
+  { "nvim-tree/nvim-web-devicons" },
 
   {
     "sontungexpt/url-open",
@@ -32,11 +31,6 @@ return {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     opts = require("plugins.configs.nvimtree"),
-  },
-
-  {
-    "nvim-tree/nvim-web-devicons",
-    opts = {},
   },
 
   {
@@ -97,17 +91,13 @@ return {
 
   {
     "stevearc/conform.nvim",
-    lazy = true,
-    event = "BufWritePre",
-    opts = require("plugins.configs.formatters"),
+    config = function() require("plugins.configs.formatters") end,
   },
 
-  -- {
-  --   "mfussenegger/nvim-lint",
-  --   lazy = true,
-  --   event = "BufWritePre",
-  --   config = function() require("plugins.configs.linters") end,
-  -- },
+  {
+    "mfussenegger/nvim-lint",
+    config = function() require("plugins.configs.linters") end,
+  },
 
   {
     "NvChad/nvim-colorizer.lua",
@@ -136,7 +126,12 @@ return {
 
   {
     "chrisgrieser/nvim-tinygit",
-    opts = require("plugins.configs.tinygit"),
+    dependencies = {
+      "stevearc/dressing.nvim",
+      "nvim-telescope/telescope.nvim",
+      "rcarriga/nvim-notify",
+    },
+    ft = { "gitrebase", "gitcommit" }, -- so ftplugins are loaded
   },
 
   {
