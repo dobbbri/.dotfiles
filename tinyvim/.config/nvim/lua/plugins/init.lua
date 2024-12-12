@@ -90,6 +90,12 @@ return {
   },
 
   {
+    "zeioth/garbage-day.nvim",
+    dependencies = "neovim/nvim-lspconfig",
+    event = "VeryLazy",
+  },
+
+  {
     "stevearc/conform.nvim",
     config = function() require("plugins.configs.formatters") end,
   },
