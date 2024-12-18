@@ -87,5 +87,5 @@ static const struct arg args[] = {
   {vol_perc,         " Vol: %s   ",       "Master"},
 	/*{wifi_essid,       " [%s]   ",  "wlp2s0"},*/
 	{datetime,         "%s ", 	      "%d/%m   %H:%M"},
-	{battery_notify,   "",           "BAT0"}, 
+	/*{battery_notify,   "",           "BAT0"}, */
 };

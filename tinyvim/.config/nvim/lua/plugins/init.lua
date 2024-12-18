@@ -10,7 +10,7 @@ return {
 
   { "mg979/vim-visual-multi" },
 
-  { "stevearc/dressing.nvim" },
+  -- { "stevearc/dressing.nvim" },
 
   { "nvim-tree/nvim-web-devicons" },
 
@@ -21,11 +21,11 @@ return {
     opts = {},
   },
 
-  {
-    "rcarriga/nvim-notify",
-    event = "VeryLazy",
-    opts = require("plugins.configs.notify"),
-  },
+  -- {
+  --   "rcarriga/nvim-notify",
+  --   event = "VeryLazy",
+  --   opts = require("plugins.configs.notify"),
+  -- },
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -51,6 +51,11 @@ return {
   },
 
   {
+    "windwp/nvim-autopairs",
+    config = function() require("plugins.configs.autopairs") end,
+  },
+
+  {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
@@ -66,11 +71,6 @@ return {
       {
         "L3MON4D3/LuaSnip",
         config = function() require("luasnip.loaders.from_vscode").lazy_load() end,
-      },
-      -- autopairs , autocompletes ()[] etc
-      {
-        "windwp/nvim-autopairs",
-        config = function() require("plugins.configs.autopairs") end,
       },
     },
     config = function() require("plugins.configs.cmp") end,
@@ -88,34 +88,34 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function() require("plugins.configs.lspconfig") end,
   },
-
-  {
-    "zeioth/garbage-day.nvim",
-    dependencies = "neovim/nvim-lspconfig",
-    event = "VeryLazy",
-  },
+  --
+  -- {
+  --   "zeioth/garbage-day.nvim",
+  --   dependencies = "neovim/nvim-lspconfig",
+  --   event = "VeryLazy",
+  -- },
 
   {
     "stevearc/conform.nvim",
     config = function() require("plugins.configs.formatters") end,
   },
 
-  {
-    "mfussenegger/nvim-lint",
-    config = function() require("plugins.configs.linters") end,
-  },
+  -- {
+  --   "mfussenegger/nvim-lint",
+  --   config = function() require("plugins.configs.linters") end,
+  -- },
 
-  {
-    "NvChad/nvim-colorizer.lua",
-    event = "BufReadPre",
-    opts = require("plugins.configs.colorizer"),
-  },
-
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function() require("plugins.configs.indentline") end,
-  },
+  -- {
+  --   "NvChad/nvim-colorizer.lua",
+  --   event = "BufReadPre",
+  --   opts = require("plugins.configs.colorizer"),
+  -- },
+  --
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   config = function() require("plugins.configs.indentline") end,
+  -- },
 
   {
     "nvim-telescope/telescope.nvim",
@@ -132,11 +132,11 @@ return {
 
   {
     "chrisgrieser/nvim-tinygit",
-    dependencies = {
-      "stevearc/dressing.nvim",
-      "nvim-telescope/telescope.nvim",
-      "rcarriga/nvim-notify",
-    },
+    -- dependencies = {
+    --   "stevearc/dressing.nvim",
+    --   "nvim-telescope/telescope.nvim",
+    --   "rcarriga/nvim-notify",
+    -- },
     ft = { "gitrebase", "gitcommit" }, -- so ftplugins are loaded
   },
 

@@ -7,7 +7,7 @@ font pango:Envy Code R 11
 
 exec --no-startup-id dex --autostart --environment i3
 
-exec_always picom -f 
+# exec_always picom -f 
 
 exec --no-startup-id xsct
 
@@ -26,9 +26,9 @@ floating_modifier $mod
 # bindsym $mod+n exec --no-startup-id ~/.config/rofi/scripts/rofi-network
 # bindsym $mod+x exec --no-startup-id ~/.config/rofi/scripts/rofi-power
 
-# bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run
 # bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#1f222d' -nf '#81a1c1' -sb '#81a1c1' -sf '#1f222d' -fn 'OperatorMonoBook:bold:pixelsize=18'
-bindsym $mod+d exec "rofi -modi drun,run -show drun"
+# bindsym $mod+d exec "rofi -modi drun,run -show drun"
 
 bindsym $mod+Period exec --no-startup-id dunstctl close-all
 bindsym $mod+Return exec i3-sensible-terminal
@@ -45,14 +45,15 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # bindsym $mod+q exec --no-startup-id bl-exit 
 
-bindsym $mod+x mode "$mode_system"
-set $mode_system loc[k] . [l]ogout . s[u]spend . [h]ibernate . [r]eboot . [s]hutdown
+bindsym $mod+q mode "$mode_system"
+# set $mode_system loc[k] . [l]ogout . s[u]spend . [h]ibernate . [r]eboot . [s]hutdown
+set $mode_system  [l]ogout    [r]eboot    [s]hutdown
 mode "$mode_system" {
 
-    bindsym k exec --no-startup-id ~/.config/i3/scripts/i3exit.sh lock, mode "default"
+    # bindsym k exec --no-startup-id ~/.config/i3/scripts/i3exit.sh lock, mode "default"
     bindsym l exec --no-startup-id ~/.config/i3/scripts/i3exit.sh logout, mode "default"
-    bindsym u exec --no-startup-id ~/.config/i3/scripts/i3exit.sh suspend, mode "default"
-    bindsym h exec --no-startup-id ~/.config/i3/scripts/i3exit.sh hibernate, mode "default"
+    # bindsym u exec --no-startup-id ~/.config/i3/scripts/i3exit.sh suspend, mode "default"
+    # bindsym h exec --no-startup-id ~/.config/i3/scripts/i3exit.sh hibernate, mode "default"
     bindsym r exec --no-startup-id ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
     bindsym s exec --no-startup-id ~/.config/i3/scripts/i3exit.sh shutdown, mode "default"
 
@@ -145,7 +146,7 @@ bar {
 
 for_window [class=".*"] border pixel 1
 hide_edge_borders smart
-gaps inner 8
+gaps inner 4
 gaps outer 1
 # smart_gaps on
 
