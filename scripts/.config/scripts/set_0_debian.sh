@@ -24,4 +24,4 @@ exit
 # login
 
 echo "clone dotfiles ---------------------------------------------------------"
-git clone git@github.com:dobbbri/.dotfiles.git $HOME/.dotfiles/
+git clone https://github.com/dobbbri/.dotfiles.git $HOME/.dotfiles/
