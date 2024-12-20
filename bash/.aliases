@@ -86,14 +86,15 @@ alias uppkg="ncu --interactive --format group"
 alias uppkgg="ncu -g --interactive --format group"
 
 # Git
+alias gps="git push && git status --short"
+alias gnah="git reset --hard && git clean -df"
+
 alias gaa="git add ."
 alias gs="git status --short"
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gc="git commit -m"
 alias gp="git push"
 alias gP="git pull"
-alias gps="git push && git status --short"
-alias gnah="git reset --hard && git clean -df"
 alias gaac="git add . && git commit -m"
 alias gsync="git pull && git push"
 alias gup="gaac 'update...' && gps"

@@ -50,30 +50,38 @@ return {
     opts = require("plugins.configs.slimline"),
   },
 
-  {
-    "windwp/nvim-autopairs",
-    config = function() require("plugins.configs.autopairs") end,
-  },
+  -- {
+  --   "windwp/nvim-autopairs",
+  --   -- config = function() require("plugins.configs.autopairs") end,
+  -- },
 
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   event = "InsertEnter",
+  --   dependencies = {
+  --     -- cmp sources
+  --     "hrsh7th/cmp-buffer",
+  --     "hrsh7th/cmp-path",
+  --     "hrsh7th/cmp-nvim-lsp",
+  --     "saadparwaiz1/cmp_luasnip",
+  --     "hrsh7th/cmp-nvim-lua",
+  --     --list of default snippets
+  --     "rafamadriz/friendly-snippets",
+  --     -- snippets engine
+  --     {
+  --       "L3MON4D3/LuaSnip",
+  --       config = function() require("luasnip.loaders.from_vscode").lazy_load() end,
+  --     },
+  --   },
+  --   config = function() require("plugins.configs.cmp") end,
+  -- },
   {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      -- cmp sources
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-nvim-lsp",
-      "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-nvim-lua",
-      --list of default snippets
-      "rafamadriz/friendly-snippets",
-      -- snippets engine
-      {
-        "L3MON4D3/LuaSnip",
-        config = function() require("luasnip.loaders.from_vscode").lazy_load() end,
-      },
-    },
-    config = function() require("plugins.configs.cmp") end,
+    "saghen/blink.cmp",
+    dependencies = "rafamadriz/friendly-snippets",
+    version = "v0.*",
+    opts = require("plugins.configs.blink"),
+    -- without having to redefine it
+    opts_extend = { "sources.default" },
   },
 
   {
@@ -85,6 +93,7 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    dependencies = { "saghen/blink.cmp" },
     event = { "BufReadPre", "BufNewFile" },
     config = function() require("plugins.configs.lspconfig") end,
   },
@@ -117,11 +126,21 @@ return {
   --   config = function() require("plugins.configs.indentline") end,
   -- },
 
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   lazy = true,
+  --   cmd = "Telescope",
+  --   opts = require("plugins.configs.telescope"),
+  -- },
   {
-    "nvim-telescope/telescope.nvim",
-    lazy = true,
-    cmd = "Telescope",
-    opts = require("plugins.configs.telescope"),
+    "ibhagwan/fzf-lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+    opts = {},
   },
 
   {
@@ -130,15 +149,15 @@ return {
     opts = require("plugins.configs.gitsigns"),
   },
 
-  {
-    "chrisgrieser/nvim-tinygit",
-    -- dependencies = {
-    --   "stevearc/dressing.nvim",
-    --   "nvim-telescope/telescope.nvim",
-    --   "rcarriga/nvim-notify",
-    -- },
-    ft = { "gitrebase", "gitcommit" }, -- so ftplugins are loaded
-  },
+  -- {
+  --   "chrisgrieser/nvim-tinygit",
+  --   -- dependencies = {
+  --   --   "stevearc/dressing.nvim",
+  --   --   "nvim-telescope/telescope.nvim",
+  --   --   "rcarriga/nvim-notify",
+  --   -- },
+  --   ft = { "gitrebase", "gitcommit" }, -- so ftplugins are loaded
+  -- },
 
   {
     "folke/which-key.nvim",

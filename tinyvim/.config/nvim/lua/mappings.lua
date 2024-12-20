@@ -7,20 +7,21 @@ map("n", "<C-c>", "<cmd> %y+ <CR>") -- copy whole filecontent
 
 -- nvimtree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle fiel explorer" })
-map("n", "<C-n>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle file explorer" })
-map("n", "<C-h>", "<cmd> NvimTreeFocus <CR>", { desc = "Focus on file explorer" })
+map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+map("n", "<C-h>", "<cmd>NvimTreeFocus<CR>", { desc = "Focus on file explorer" })
 
 -- telescope
-map("n", "<leader>ff", "<cmd> Telescope find_files <CR>", { desc = "Find files" })
-map("n", "<leader>fo", "<cmd> Telescope oldfiles <CR>", { desc = "Lists previously open files" })
-map("n", "<leader>fw", "<cmd> Telescope live_grep <CR>", { desc = "Find by word" })
-map("n", "<leader>gt", "<cmd> Telescope git_status <CR>", { desc = "List git status" })
+map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "Find files" })
+map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { desc = "List by opened files history" })
+map("n", "<leader>fw", "<cmd>FzfLua grep<CR>", { desc = "Find by word" })
+map("n", "<leader>fc", "<cmd>FzfLua grep_cword<CR>", { desc = "Find by word under cursor" })
+map("n", "<leader>gt", "<cmd>FzfLua git_status<CR>", { desc = "List git status" })
 
 -- bufferline, cycle buffers
 map("n", "<Tab>", "<cmd> BufferLineCycleNext <CR>")
 map("n", "<S-Tab>", "<cmd> BufferLineCyclePrev <CR>")
 map("n", "<leader>xx", "<cmd> bd <CR>", { desc = "Close current buffer" })
-map("n", "<leader>xo", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all but the current buffer" })
+map("n", "<leader>xo", "<cmd>%bd|e#|bd#<cr>", { desc = "Close other buffers" })
 
 -- comment.nvim
 map("n", "<leader>/", "gcc", { remap = true, desc = "Comment line" })
