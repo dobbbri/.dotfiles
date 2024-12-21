@@ -10,12 +10,7 @@ static const char unknown_str[] = "";
 #define MAXLEN 2048
 
 /* battery levels to notify - add any levels you want to receive notification for (in percent) */
-const int notifiable_levels[] = {
-    20,
-    15,
-    10,
-    5,
-};
+const int notifiable_levels[] = { 20, 15, 10, 5 };
 
 /*
  * function            description                     argument (example)
@@ -87,5 +82,5 @@ static const struct arg args[] = {
   {vol_perc,         " Vol: %s   ",       "Master"},
 	/*{wifi_essid,       " [%s]   ",  "wlp2s0"},*/
 	{datetime,         "%s ", 	      "%d/%m   %H:%M"},
-	/*{battery_notify,   "",           "BAT0"}, */
+	{battery_notify,   "",           "BAT0"}, 
 };
