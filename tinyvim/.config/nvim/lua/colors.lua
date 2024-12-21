@@ -4,4 +4,4 @@ local _colors = {
   { name = "nordic", package = "alexvzyl/nordic.nvim" },
 }
 
-vim.g._color = _colors[1]
+vim.g._color = _colors[2]

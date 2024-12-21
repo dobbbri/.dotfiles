@@ -81,7 +81,7 @@ return {
     version = "v0.*",
     opts = require("plugins.configs.blink"),
     -- without having to redefine it
-    opts_extend = { "sources.default" },
+    -- opts_extend = { "sources.default" },
   },
 
   {
@@ -151,11 +151,7 @@ return {
 
   -- {
   --   "chrisgrieser/nvim-tinygit",
-  --   -- dependencies = {
-  --   --   "stevearc/dressing.nvim",
-  --   --   "nvim-telescope/telescope.nvim",
-  --   --   "rcarriga/nvim-notify",
-  --   -- },
+  --   -- dependencies = { "stevearc/dressing.nvim", "nvim-telescope/telescope.nvim", "rcarriga/nvim-notify" },
   --   ft = { "gitrebase", "gitcommit" }, -- so ftplugins are loaded
   -- },
 

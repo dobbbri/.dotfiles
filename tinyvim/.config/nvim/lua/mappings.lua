@@ -13,8 +13,8 @@ map("n", "<C-h>", "<cmd>NvimTreeFocus<CR>", { desc = "Focus on file explorer" })
 -- telescope
 map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "Find files" })
 map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { desc = "List by opened files history" })
-map("n", "<leader>fw", "<cmd>FzfLua grep<CR>", { desc = "Find by word" })
-map("n", "<leader>fc", "<cmd>FzfLua grep_cword<CR>", { desc = "Find by word under cursor" })
+map("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>", { desc = "Find by word" })
+map("n", "<leader>fc", "<cmd>lua require('fzf-lua').grep_cword({ rg_opts = vim.g.rg_grep_all })<CR>", { desc = "Find by word under cursor" })
 map("n", "<leader>gt", "<cmd>FzfLua git_status<CR>", { desc = "List git status" })
 
 -- bufferline, cycle buffers
@@ -71,9 +71,9 @@ map("n", "<leader>gH", "<cmd>Gitsigns stage_buffer<CR>", { desc = "Stage buffer"
 map("n", "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Reset buffer" })
 
 -- tinygit
-map("n", "<leader>ga", function() require("tinygit").interactiveStaging() end, { desc = "Interactive Staging" })
-map("n", "<leader>gc", function() require("tinygit").smartCommit() end, { desc = "Smart Commit" })
-map("n", "<leader>gp", function() require("tinygit").push() end, { desc = "Push" })
+-- map("n", "<leader>ga", function() require("tinygit").interactiveStaging() end, { desc = "Interactive Staging" })
+-- map("n", "<leader>gc", function() require("tinygit").smartCommit() end, { desc = "Smart Commit" })
+-- map("n", "<leader>gp", function() require("tinygit").push() end, { desc = "Push" })
 
 -- terminal
 -- map("n", "<leader>t", function() require("nvchad.term").toggle({ pos = "sp" }) end, { desc = "Toggle Terminal" })
