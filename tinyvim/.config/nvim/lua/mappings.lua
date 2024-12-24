@@ -71,9 +71,9 @@ map("n", "<leader>gH", "<cmd>Gitsigns stage_buffer<CR>", { desc = "Stage buffer"
 map("n", "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Reset buffer" })
 
 -- tinygit
--- map("n", "<leader>ga", function() require("tinygit").interactiveStaging() end, { desc = "Interactive Staging" })
--- map("n", "<leader>gc", function() require("tinygit").smartCommit() end, { desc = "Smart Commit" })
--- map("n", "<leader>gp", function() require("tinygit").push() end, { desc = "Push" })
+map("n", "<leader>ga", function() require("tinygit").interactiveStaging() end, { desc = "Interactive Staging" })
+map("n", "<leader>gc", function() require("tinygit").smartCommit() end, { desc = "Smart Commit" })
+map("n", "<leader>gp", function() require("tinygit").push() end, { desc = "Push" })
 
 -- terminal
 -- map("n", "<leader>t", function() require("nvchad.term").toggle({ pos = "sp" }) end, { desc = "Toggle Terminal" })
