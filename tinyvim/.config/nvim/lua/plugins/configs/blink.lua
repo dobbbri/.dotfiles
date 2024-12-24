@@ -4,12 +4,9 @@ return {
     accept = {
       auto_brackets = { enabled = true },
     },
-    menu = {
-      draw = { treesitter = { "lsp" } },
-    },
     documentation = {
       auto_show = true,
-      auto_show_delay_ms = 200,
+      auto_show_delay_ms = 500,
     },
   },
   appearance = {
@@ -18,9 +15,7 @@ return {
   },
   sources = {
     default = { "lsp", "path", "snippets", "buffer" },
-    -- optionally disable cmdline completions
-    -- cmdline = {},
+    cmdline = {}, -- optionally disable cmdline completions
   },
-  -- experimental signature help support
-  -- signature = { enabled = true },
+  signature = { enabled = true }, -- experimental signature help support
 }

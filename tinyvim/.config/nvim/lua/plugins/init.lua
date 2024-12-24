@@ -16,13 +16,12 @@ return {
     "sontungexpt/url-open",
     branch = "mini",
     event = "VeryLazy",
-    opts = {},
+    config = function() require("plugins.configs.urlopen") end,
   },
 
   {
-    "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    opts = require("plugins.configs.nvimtree"),
+    "stevearc/oil.nvim",
+    opts = { delete_to_trash = true },
   },
 
   {
