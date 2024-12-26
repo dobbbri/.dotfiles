@@ -19,6 +19,20 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
+#include <X11/XF86keysym.h>
+/*brightness*/
+static const char *brightness[2][4] = {
+  {"brightnessctl", "set", "5%+", NULL},
+  {"brightnessctl", "set", "5%-", NULL},
+};
+
+/*volume*/
+static const char *volume[3][5] = { 
+  {"amixer", "set", "Master", "5%+", NULL},
+  {"amixer", "set", "Master", "5%-", NULL},
+  {"amixer", "set", "Master", "toggle", NULL},
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -91,6 +105,13 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
+
+  { 0, XF86XK_AudioRaiseVolume,              spawn,          {.v = volume[0]} },
+  { 0, XF86XK_AudioLowerVolume,              spawn,          {.v = volume[1]} },
+  { 0, XF86XK_AudioMute,                     spawn,          {.v = volume[2]} },
+  { 0, XF86XK_MonBrightnessUp,               spawn,          {.v = brightness[0]} },
+  { 0, XF86XK_MonBrightnessDown,             spawn,          {.v = brightness[1]} },
+
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

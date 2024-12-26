@@ -20,8 +20,8 @@ sudo apt install --yes libnotify-bin libgcr-3-dev libwebkit2gtk-4.0-dev build-es
 
 # install packages
 sudo apt install --yes git curl flameshot scrot gparted neofetch eza btop htop yaru-theme-gtk yaru-theme-icon \
-  xarchiver feh dunst unzip fonts-font-awesome fonts-recommended fonts-noto-color-emoji ssh-askpass wget color-picker \
-  mintstick redshift atril dconf-editor stow alsa-tools chafa uget transmission
+  xarchiver feh dunst unzip fonts-noto-color-emoji ssh-askpass wget color-picker mintstick atril dconf-editor \ 
+  stow alsa-utils chafa uget transmission
 
 echo "- remove modemmanager --------------------------------------------------"
 sudo apt --purge --yes autoremove modemmanager

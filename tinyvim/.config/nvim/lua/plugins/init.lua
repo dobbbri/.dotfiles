@@ -20,8 +20,9 @@ return {
   },
 
   {
-    "stevearc/oil.nvim",
-    opts = { delete_to_trash = true },
+    "nvim-tree/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    opts = require("plugins.configs.nvimtree"),
   },
 
   {
