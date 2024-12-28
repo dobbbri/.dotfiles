@@ -12,6 +12,18 @@ return {
 
   { "nvim-tree/nvim-web-devicons" },
 
+  { "stevearc/dressing.nvim" },
+
+  { "rcarriga/nvim-notify" },
+
+  {
+    "brenoprata10/nvim-highlight-colors",
+    opts = {
+      enable_named_colors = false,
+      enable_tailwind = true,
+    },
+  },
+
   {
     "sontungexpt/url-open",
     branch = "mini",
@@ -97,7 +109,6 @@ return {
 
   {
     "chrisgrieser/nvim-tinygit",
-    dependencies = { "stevearc/dressing.nvim", "rcarriga/nvim-notify" },
     ft = { "gitrebase", "gitcommit" }, -- so ftplugins are loaded
   },
 

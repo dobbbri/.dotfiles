@@ -1,7 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
 #include "./XF86keysym.h"
-#include "./colorschemes/catppuccin.h"
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -9,36 +8,23 @@ static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 10};
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Ubuntu:size=11:style=bold:antialias=true:autohint=true" }; /*"Font Awesome 5 Free:size=13"  */ 
+
+static const char *fonts[]          = { 
+  "Ubuntu:size=11:style=bold:antialias=true:autohint=true", 
+  "jetBrainsMonoNL Nerd Font: Mono Regular:size=10:antialias=true:autohint=true" 
+}; /*"Font Awesome 5 Free:size=13"  */ 
+
 static const char dmenufont[]       = "Ubuntu:size=12:antialias=true:autohint=true";
-/*static const char col_gray1[]       = "#222222";*/
-/*static const char col_gray2[]       = "#444444";*/
-/*static const char col_gray3[]       = "#bbbbbb";*/
-/*static const char col_gray4[]       = "#eeeeee";*/
-/*static const char col_cyan[]        = "#005577";*/
+
+static const char col_gray1[]       = "#222222";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-};
-
-/*brightness*/
-static const char *brightness[2][4] = {
-  {"/usr/bin/brightnessctl", "set", "5%+", NULL},
-  {"/usr/bin/brightnessctl", "set", "5%-", NULL},
-};
-
-/*backlight*/
-static const char *backlight[2][4] = {
-  {"/usr/bin/brightnessctl",  "set", "5%+", NULL},
-  {"/usr/bin/brightnessctl",  "set", "5%-", NULL},
-};
-
-/*volume*/
-static const char *volume[3][5] = { 
-  {"/usr/bin/amixer", "set", "Master", "5%+", NULL},
-  {"/usr/bin/amixer", "set", "Master", "5%-", NULL},
-  {"/usr/bin/amixer", "set", "Master", "toggle", NULL},
 };
 
 /* tagging */
@@ -47,7 +33,6 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     iscentered   isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
-	{ "pcmanfm",  NULL,       NULL,       1 << 8,       1,           1,           -1 },
 };
 
 /* layout(s) */
@@ -84,7 +69,6 @@ static const char *webcmd[]     = { "firefox-esr", NULL };
 static const char *mswebcmd[]   = { "microsoft-edge", NULL };
 static const char *gitcmd[]     = { "github-desktop", NULL };
 static const char *htopcmd[]    = { "st", "-e", "htop" };
-static const char *powermenu[]  = { "./scripts/powermenu.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -123,18 +107,12 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
 
-    { 0,                       XF86XK_AudioRaiseVolume,        spawn,  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
-    { 0,                       XF86XK_AudioLowerVolume,        spawn,  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
-    { 0,                       XF86XK_AudioMute,               spawn,  SHCMD("pactl set-sink-volume @DEFAULT_SINK@  0%") },
-    { 0,                      XF86XK_MonBrightnessUp,     spawn, SHCMD("brightnessctl -c backlight set +10%") },
-    { 0,                      XF86XK_MonBrightnessDown,   spawn, SHCMD("brightnessctl -c backlight set 10%-") },
-  /*{ 0, XF86XK_AudioRaiseVolume,              spawn,          {.v = volume[0]} },*/
-  /*{ 0, XF86XK_AudioLowerVolume,              spawn,          {.v = volume[1]} },*/
-  /*{ 0, XF86XK_AudioMute,                     spawn,          {.v = volume[2]} },*/
-  /*{ 0, XF86XK_MonBrightnessUp,               spawn,          {.v = brightness[0]} },*/
-  /*{ 0, XF86XK_MonBrightnessDown,             spawn,          {.v = brightness[1]} },*/
-  /*{ 0, XF86XK_KbdBrightnessUp,               spawn,          {.v = backlight[0]} },*/
-  /*{ 0, XF86XK_KbdBrightnessDown,             spawn,          {.v = backlight[1]} },*/
+  { 0,                            XF86XK_AudioRaiseVolume,    spawn,  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
+  { 0,                            XF86XK_AudioLowerVolume,    spawn,  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
+  { 0,                            XF86XK_AudioMute,           spawn,  SHCMD("pactl set-sink-volume @DEFAULT_SINK@  0%") },
+
+  { 0,                            XF86XK_MonBrightnessUp,     spawn,  SHCMD("brightnessctl -c backlight set +10%") },
+  { 0,                            XF86XK_MonBrightnessDown,   spawn,  SHCMD("brightnessctl -c backlight set 10%-") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
@@ -146,7 +124,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 
-  { ALTKEY, 	            	      XK_q, 		 spawn, 	       {.v = powermenu} },
 	{ MODKEY,                       XK_q,      quit,           {0} },
 };
 

@@ -3,6 +3,9 @@
 alias poweroff="sudo systemctl poweroff"
 alias reboot="sudo systemctl reboot"
 
+# get all errors for running services using journalctl
+alias journalErrors="journalctl -p 3 -xb"
+
 alias x="exit"
 alias l='exa -ll --color=always --group-directories-first'
 alias ls='exa -al --header --icons --group-directories-first'
@@ -40,10 +43,19 @@ alias ..2='cd ../../'
 alias ..3='cd ../../../'
 alias ..4='cd ../../../../'
 
-# dwm
+# suckless
 alias su='cd ~/.dotfiles/suckless/.config/suckless/'
 alias suv='su && v'
-alias smi='sudo rm config.h && sudo make clean install'
+alias sud='cd ~/.dotfiles/suckless/.config/suckless/dwm/'
+alias sudv='sud && v'
+alias sum='cd ~/.dotfiles/suckless/.config/suckless/dmenu/'
+alias sumv='sum && v'
+alias sus='cd ~/.dotfiles/suckless/.config/suckless/slstatus/'
+alias susv='sus && v'
+alias sut='cd ~/.dotfiles/suckless/.config/suckless/st'
+alias sutv='sut && v'
+alias srmi='sudo rm config.h && sudo make clean install'
+alias smi='sudo make clean install'
 
 # apt
 alias sai='sudo apt install'
