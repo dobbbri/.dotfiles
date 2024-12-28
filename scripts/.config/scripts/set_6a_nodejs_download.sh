@@ -1,12 +1,11 @@
 #!/bin/sh
-
 # to make execurable
 # chmod +x install_nodejs.sh 
 
 
 echo "- Dowload NodeJs installer -----------------------------------------------"
-if [[ ! -d /$HOME/.nvm ]]; then
-  mkdir $HOME/.nvm
+if [[ ! -d /$HOME/sergio/.nvm ]]; then
+  mkdir $HOME/sergio/.nvm
 fi
 
 # installs nvm (Node Version Manager)
