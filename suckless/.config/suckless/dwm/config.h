@@ -2,27 +2,27 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 10};
+static const Gap default_gap        = {.isgap = 1, .realgap = 6, .gappx = 6};
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 static const char *fonts[]          = { 
-  "Ubuntu:size=11:style=regular:antialias=true:autohint=true", 
-  "jetBrainsMono Nerd Font Mono:style=regular:size=20:antialias=true:autohint=true" 
+  "Ubuntu:size=11:style=medium:antialias=true:autohint=true", 
+  "jetBrainsMono Nerd Font Mono:style=regular:size=16:antialias=true:autohint=true" 
 }; /*"Font Awesome 5 Free:size=13"  */ 
 
 static const char dmenufont[]       = "Ubuntu:size=12:antialias=true:autohint=true";
 
-static const char col_gray1[]       = "#000000";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#ea580c";
+static const char col_gray1[]       = "#1d2021";
+static const char col_gray2[]       = "#3c3836";
+static const char col_gray3[]       = "#bdae93";
+static const char col_gray4[]       = "#fbf1c7";
+static const char col_cyan[]        = "#076678";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray4, col_gray1,  col_cyan  },
+	[SchemeNorm] = { col_gray3, col_gray2, col_gray2 },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
 /* tagging */
@@ -102,10 +102,12 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_x,      killclient,     {0} },
-	{ ALTKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	
+  { ALTKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ ALTKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ ALTKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ ALTKEY,                       XK_space,  setlayout,      {0} },
+
 	{ ALTKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
