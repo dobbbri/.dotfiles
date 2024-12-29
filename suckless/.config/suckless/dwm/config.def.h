@@ -1,6 +1,4 @@
-/* See LICENSE file for copyright and license details. */
-
-#include "./XF86keysym.h"
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -10,21 +8,21 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 static const char *fonts[]          = { 
-  "Ubuntu:size=11:style=bold:antialias=true:autohint=true", 
-  "jetBrainsMonoNL Nerd Font: Mono Regular:size=10:antialias=true:autohint=true" 
+  "Ubuntu:size=11:style=regular:antialias=true:autohint=true", 
+  "jetBrainsMono Nerd Font Mono:style=regular:size=20:antialias=true:autohint=true" 
 }; /*"Font Awesome 5 Free:size=13"  */ 
 
 static const char dmenufont[]       = "Ubuntu:size=12:antialias=true:autohint=true";
 
-static const char col_gray1[]       = "#222222";
+static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_cyan[]        = "#ea580c";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
+	[SchemeSel]  = { col_gray4, col_gray1,  col_cyan  },
 };
 
 /* tagging */
@@ -70,6 +68,19 @@ static const char *mswebcmd[]   = { "microsoft-edge", NULL };
 static const char *gitcmd[]     = { "github-desktop", NULL };
 static const char *htopcmd[]    = { "st", "-e", "htop" };
 
+static const char *screenshotroot[] = { "bash", "-c", "mkdir -p /home/sergio/screenshot && scrot /home/sergio/screenshot/%Y-%m-%d-%H-%M-%S.png", NULL };
+static const char *screenshotselection[] = { "bash", "-c", "sleep 0.2 && mkdir -p /home/sergio/screenshot && scrot /home/sergio/screenshot/%Y-%m-%d-%H-%M-%S.png --select", NULL };
+
+static const char *upvol[]      = { "amixer", "sset", "Master", "5%+", NULL };
+static const char *downvol[]    = { "amixer", "sset", "Master", "5%-", NULL };
+static const char *mute[]       = { "amixer", "sset", "Master", "toggle", NULL };
+
+static const char *brightup[]   = { "brightnessctl", "-c", "backlight", "set", "+5%", NULL};
+static const char *brightdown[] = { "brightnessctl", "-c", "backlight", "set", "5%-", NULL};
+
+static const char *kbdbrightup[]  = { "brightnessctl", "-d", "smc::kbd_backlight", "s", "+5%", NULL };
+static const char *kbdbrightdown[] = { "brightnessctl", "-d", "smc::kbd_backlight", "s", "5%-", NULL };
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
@@ -104,15 +115,22 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
+
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
 
-  { 0,                            XF86XK_AudioRaiseVolume,    spawn,  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
-  { 0,                            XF86XK_AudioLowerVolume,    spawn,  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
-  { 0,                            XF86XK_AudioMute,           spawn,  SHCMD("pactl set-sink-volume @DEFAULT_SINK@  0%") },
+	{ MODKEY,                       XK_s,      spawn,          {.v = screenshotroot} },
+	{ ALTKEY,                       XK_s,      spawn,          {.v = screenshotselection} },
+	
+  { 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol } },
+	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = downvol } },
+	{ 0,            XF86XK_AudioMute,          spawn,          {.v = mute } },
 
-  { 0,                            XF86XK_MonBrightnessUp,     spawn,  SHCMD("brightnessctl -c backlight set +10%") },
-  { 0,                            XF86XK_MonBrightnessDown,   spawn,  SHCMD("brightnessctl -c backlight set 10%-") },
+  { 0,            XF86XK_MonBrightnessUp,    spawn,          {.v = brightup } },
+  { 0,            XF86XK_MonBrightnessDown,  spawn,          {.v = brightdown } },
+
+  { 0,            XF86XK_KbdBrightnessUp,    spawn,          {.v = kbdbrightup } },
+  { 0,            XF86XK_KbdBrightnessDown,  spawn,          {.v = kbdbrightdown } },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
