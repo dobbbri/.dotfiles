@@ -1512,7 +1512,7 @@ xdrawglyphfontspecs(const XftGlyphFontSpec *specs, Glyph base, int len, int x, i
         XftDrawGlyphFontSpec(xw.draw, fg, specs, len);
 
         /* Render underline and strikethrough. */
-        if (base.mode & ATTR_UNDERLINE) {
+       if (base.mode & ATTR_UNDERLINE) {
             XftDrawRect(xw.draw, fg, winx, winy + dc.font.ascent + 1,
                         width, 1);
         }

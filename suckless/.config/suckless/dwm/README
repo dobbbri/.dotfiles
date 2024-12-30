@@ -46,3 +46,57 @@ Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+## Bindings
+| Key | Function | Argument |
+| :-: | :-: | :- |
+| AudioStop | spawns | feh --no-fehbg --bg-scale --randomize --recursive /home/himynameisgarch/Media/Wallpapers |
+| Super + Shift + b | spawns |  qutebrowser  |
+| Super + Shift + l | spawns |  librewolf  |
+| Pause | spawns | i3lock -i /home/himynameisgarch/Media/Wallpapers/Simple/GruvTown.png |
+| Alt + s | spawns | process |
+| Super + Shift + m | spawns | mdisk |
+| Super + Shift + c | spawns | confs menu |
+| Super + Shift + t | spawns | todo |
+| Super + Shift + p | spawns | passmenu |
+| Super + Print | spawns | screenshot |
+| Print | spawns | screenshot a |
+| Super + w | spawns | mstat |
+| Super + p | spawns | dmenu-recent |
+| Super + e | spawns | lyrics |
+| Super + u | spawns |  sites  |
+| AudioLowerVolume | spawns | cmus-remote -v -5% |
+| AudioRaiseVolume | spawns | cmus-remote -v +5% |
+| AudioPrev | spawns | cmus-remote -r && mstat |
+| AudioPlay | spawns | cmus-pp |
+| AudioNext | spawns | cmus-remote -n && mstat |
+| F2 | spawns | vol down |
+| F3 | spawns | vol up |
+| Super + F1 | spawns | vol toggle |
+| F1 | spawns | audio 1 |
+| Super + F4 | spawns | vol mute |
+| F4 | spawns | audio 0 |
+| Super + Return | spawns |  alacritty  |
+| Super + b | togglebar |   |
+| Super + j | focusstack |  +1 |
+| Super + k | focusstack |  -1 |
+| Super + i | incnmaster |  +1 |
+| Super + d | incnmaster |  -1 |
+| Super + h | setmfact |  -0.05 |
+| Super + l | setmfact |  +0.05 |
+| Super + Shift + Return | zoom |   |
+| Super + Tab | view |   |
+| Super + q | killclient |   |
+| Super + t | setlayout |  tile  |
+| Super + f | setlayout |  float |
+| Super + m | setlayout |  monocle  |
+| Super + space | setlayout |   |
+| Super + Shift + space | togglefloating |   |
+| Super + Shift + f | togglefullscr |   |
+| Super + 0 | view |  ~0 |
+| Super + Shift + 0 | tag |  ~0 |
+| Super + comma | focusmon |  -1 |
+| Super + period | focusmon |  +1 |
+| Super + Shift + comma | tagmon |  -1 |
+| Super + Shift + period | tagmon |  +1 |
+| Super + Shift + q | quit |   |

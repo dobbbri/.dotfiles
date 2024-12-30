@@ -7,7 +7,7 @@
  */
 /*static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";*/
 static char *font = "jetBrainsMonoNL Nerd Font: Mono Regular:size=13:antialias=true:autohint=true";
-static int borderpx = 0;
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -61,12 +61,12 @@ static double maxlatency = 33;
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 0;
+static unsigned int blinktimeout = 800;
 
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 3;
+static unsigned int cursorthickness = 2;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -100,7 +100,7 @@ float alpha = 0.8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	[0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	[0] = "#1d2021", /* hard contrast: #282828 / soft contrast: #32302f */
 	[1] = "#cc241d", /* red     */
 	[2] = "#98971a", /* green   */
 	[3] = "#d79921", /* yellow  */
@@ -118,6 +118,8 @@ static const char *colorname[] = {
 	[13] = "#d3869b", /* magenta */
 	[14] = "#8ec07c", /* cyan    */
 	[15] = "#ebdbb2", /* white   */
+
+	[255] = 0,
 };
 
 
@@ -144,7 +146,7 @@ static unsigned int cursorshape = 2;
  */
 
 static unsigned int cols = 100;
-static unsigned int rows = 24;
+static unsigned int rows = 30;
 
 /*
  * Default colour and shape of the mouse cursor
