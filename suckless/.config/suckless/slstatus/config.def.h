@@ -75,11 +75,11 @@ const int notifiable_levels[] = { 20, 15, 10, 5 };
 
 static const struct arg args[] = {
 	/* function         format          argument */
-  { battery_perc,     "^b#7c6f64^^c#1d2021^ 󰄌 ^d^ %s%% ",         "BAT0"},
-	{ ram_used,         "^b#7c6f64^^c#1d2021^ 󰍛 ^d^ %s ",           "NULL" },
-	{ alsa_master_vol,  "^b#7c6f64^^c#1d2021^ 󰕾 ^d^ %s ",           "NULL" },
-  { backlight_perc,   "^b#7c6f64^^c#1d2021^ 󰃟 ^d^ %s ",           "acpi_video0"},
-	{ datetime,         "^b#7c6f64^^c#1d2021^  ^d^ %s ", 	        "%H:%M"},
+  { battery_perc,     "^c#fe8019^ 󰄌 ^d^ %s%% ",         "BAT0"},
+	{ ram_used,         "^c#fe8019^ 󰍛 ^d^ %s ",           "NULL" },
+	{ alsa_master_vol,  "^c#fe8019^ 󰕾 ^d^ %s ",           "NULL" },
+  { backlight_perc,   "^c#fe8019^ 󰃟 ^d^ %s ",           "acpi_video0"},
+	{ datetime,         "^c#fe8019^  ^d^ %s ", 	        "%H:%M"},
   { battery_notify,   "",             "BAT0"}, /* There is nothing to print its just a notifications*/
   /*{ wifi_essid,       "%s   ", 	      "wlp2s0b1"},*/
 };
