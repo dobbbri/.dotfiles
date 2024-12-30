@@ -16,6 +16,10 @@ return {
 
   { "rcarriga/nvim-notify" },
 
+  { "ibhagwan/fzf-lua" },
+
+  { "MeanderingProgrammer/render-markdown.nvim" },
+
   {
     "brenoprata10/nvim-highlight-colors",
     opts = require("plugins.configs.highlightcolors"),
@@ -30,7 +34,6 @@ return {
 
   {
     "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     opts = require("plugins.configs.tree"),
   },
 
@@ -61,8 +64,6 @@ return {
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
-    cmd = { "Mason", "MasonInstall" },
-    opts = {},
   },
 
   {
@@ -81,15 +82,6 @@ return {
   --   "mfussenegger/nvim-lint",
   --   config = function() require("plugins.configs.linters") end,
   -- },
-  {
-    "ibhagwan/fzf-lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-  },
 
   {
     "lewis6991/gitsigns.nvim",
@@ -99,12 +91,14 @@ return {
 
   {
     "chrisgrieser/nvim-tinygit",
+    tag = "v0.9",
     ft = { "gitrebase", "gitcommit" }, -- so ftplugins are loaded
   },
 
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
+    opts = { preset = "classic" },
     config = function() require("plugins.configs.whichkey") end,
   },
 }
