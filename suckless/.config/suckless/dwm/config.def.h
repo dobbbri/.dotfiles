@@ -67,7 +67,7 @@ static const char *termcmd[]  = { "st",  NULL };
 
 static const char *filecmd[]    = { "pcmanfm", NULL };
 static const char *webcmd[]     = { "firefox-esr", NULL };
-static const char *mswebcmd[]   = { "microsoft-edge", NULL };
+static const char *mswebcmd[]   = { "microsoft-edge-stable", NULL };
 static const char *gitcmd[]     = { "github-desktop", NULL };
 static const char *taskcmd[]    = { "lxtask", NULL };
 static const char *htopcmd[]    = { "st", "-e", "htop" };
@@ -82,8 +82,8 @@ static const char *mute[]       = { "amixer", "sset", "Master", "toggle", NULL }
 static const char *brightup[]   = { "brightnessctl", "-c", "backlight", "set", "+5%", NULL};
 static const char *brightdown[] = { "brightnessctl", "-c", "backlight", "set", "5%-", NULL};
 
-static const char *kbdbrightup[]  = { "sudo", "brightnessctl", "-d", "smc::kbd_backlight", "set", "+5%", NULL };
-static const char *kbdbrightdown[] = { "sudo", "brightnessctl", "-d", "smc::kbd_backlight", "set", "5%-", NULL };
+/*static const char *kbdbrightup[]  = { "sudo", "brightnessctl", "-d", "smc::kbd_backlight", "set", "+5%", NULL };*/
+/*static const char *kbdbrightdown[] = { "sudo", "brightnessctl", "-d", "smc::kbd_backlight", "set", "5%-", NULL };*/
 
 static const Key keys[] = {
 	/* modifier             key        function        argument */
@@ -141,8 +141,8 @@ static const Key keys[] = {
   { 0,    XF86XK_MonBrightnessUp,    spawn,          {.v = brightup } },
   { 0,    XF86XK_MonBrightnessDown,  spawn,          {.v = brightdown } },
 
-  { 0,    XF86XK_KbdBrightnessUp,    spawn,          {.v = kbdbrightup } },
-  { 0,    XF86XK_KbdBrightnessDown,  spawn,          {.v = kbdbrightdown } },
+  /*{ 0,    XF86XK_KbdBrightnessUp,    spawn,          {.v = kbdbrightup } },*/
+  /*{ 0,    XF86XK_KbdBrightnessDown,  spawn,          {.v = kbdbrightdown } },*/
 
 	TAGKEYS(                XK_1,                      0)
 	TAGKEYS(                XK_2,                      1)

@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 5000;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -77,7 +77,7 @@ static const struct arg args[] = {
 	/* function         format          argument */
   { battery_perc,     "^b#458588^^c#ebdbb2^ 󰄌 ^d^ %s%% ",         "BAT0"},
 	{ ram_used,         "^b#458588^^c#ebdbb2^ 󰍛 ^d^ %s ",           "NULL" },
-	{ alsa_master_vol,  "^b#458588^^c#ebdbb2^  ^d^ %s ",           "NULL" },
+	{ alsa_master_vol,  "^b#458588^^c#ebdbb2^ 󰕾 ^d^ %s ",           "NULL" },
   { backlight_perc,   "^b#458588^^c#ebdbb2^ 󰃟 ^d^ %s ",           "acpi_video0"},
 	{ datetime,         "^b#458588^^c#ebdbb2^  ^d^ %s ", 	        "%H:%M"},
   { battery_notify,   "",             "BAT0"}, /* There is nothing to print its just a notifications*/

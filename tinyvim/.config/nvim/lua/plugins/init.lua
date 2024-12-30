@@ -1,9 +1,9 @@
 return {
   {
     vim.g._color.package,
-    config = function() require("plugins.colors." .. vim.g._color.name) end,
     lazy = false,
     priority = 1000,
+    config = function() require("plugins.colorschemes." .. vim.g._color.name) end,
   },
 
   { "nvim-lua/plenary.nvim", lazy = true },
@@ -18,10 +18,7 @@ return {
 
   {
     "brenoprata10/nvim-highlight-colors",
-    opts = {
-      enable_named_colors = false,
-      enable_tailwind = true,
-    },
+    opts = require("plugins.configs.highlightcolors"),
   },
 
   {
@@ -34,7 +31,7 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    opts = require("plugins.configs.nvimtree"),
+    opts = require("plugins.configs.tree"),
   },
 
   {
@@ -84,12 +81,6 @@ return {
   --   "mfussenegger/nvim-lint",
   --   config = function() require("plugins.configs.linters") end,
   -- },
-
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   event = "BufReadPre",
-  --   opts = require("plugins.configs.colorizer"),
-  -- },
   {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -97,8 +88,7 @@ return {
 
   {
     "MeanderingProgrammer/render-markdown.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
-    opts = {},
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
   },
 
   {

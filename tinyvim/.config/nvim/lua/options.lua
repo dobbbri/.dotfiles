@@ -44,6 +44,15 @@ o.cmdheight = 0
 o.encoding = "utf-8"
 o.fileencoding = "utf-8"
 
+-- folding
+-- o.fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldclose:'
+-- o.foldcolumn = '1'
+-- o.foldenable = true
+-- o.foldexpr = 'v:lua.vim.lsp.foldexpr()'
+-- o.foldlevel = 99
+-- o.foldlevelstart = 99
+-- o.foldmethod = 'expr'
+
 -- interval for writing swap file to disk, also used by gitsigns
 o.updatetime = 250
 
