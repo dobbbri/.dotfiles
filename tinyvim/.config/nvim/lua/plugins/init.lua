@@ -12,13 +12,13 @@ return {
 
   { "nvim-tree/nvim-web-devicons" },
 
-  { "stevearc/dressing.nvim" },
+  { "stevearc/dressing.nvim", opts = {} },
 
   { "rcarriga/nvim-notify" },
 
-  { "ibhagwan/fzf-lua" },
+  { "ibhagwan/fzf-lua", opts = {} },
 
-  { "MeanderingProgrammer/render-markdown.nvim" },
+  { "MeanderingProgrammer/render-markdown.nvim", opts = {} },
 
   {
     "brenoprata10/nvim-highlight-colors",
@@ -57,14 +57,11 @@ return {
   {
     "saghen/blink.cmp",
     dependencies = "rafamadriz/friendly-snippets",
-    version = "v0.*",
+    version = "*",
     opts = require("plugins.configs.blink"),
   },
 
-  {
-    "williamboman/mason.nvim",
-    build = ":MasonUpdate",
-  },
+  { "williamboman/mason.nvim", opts = {} },
 
   {
     "neovim/nvim-lspconfig",
@@ -91,8 +88,7 @@ return {
 
   {
     "chrisgrieser/nvim-tinygit",
-    tag = "v0.9",
-    ft = { "gitrebase", "gitcommit" }, -- so ftplugins are loaded
+    ft = { "gitrebase", "gitcommit" },
   },
 
   {

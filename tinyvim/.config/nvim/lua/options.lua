@@ -52,8 +52,8 @@ o.fileencoding = "utf-8"
 -- o.foldlevel = 99
 -- o.foldlevelstart = 99
 -- o.foldmethod = 'expr'
-
 -- interval for writing swap file to disk, also used by gitsigns
+
 o.updatetime = 250
 
 -- go to previous/next line with h,l,left arrow and right arrow

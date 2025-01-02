@@ -21,7 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = require("plugins")
 
-require("lazy").setup(plugins, { install = { colorscheme = { vim.g._color.name } } })
+require("lazy").setup(plugins, { install = { colorscheme = { "habamax" } } })
 
 vim.cmd("colorscheme " .. vim.g._color.name)
 

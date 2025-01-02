@@ -10,7 +10,7 @@ vim.api.nvim_create_user_command(
   {}
 )
 
-vim.api.nvim_create_user_command("Lint", function() require("lint").try_lint() end, {})
+-- vim.api.nvim_create_user_command("Lint", function() require("lint").try_lint() end, {})
 
 vim.api.nvim_create_user_command("Format", function(args)
   local range = nil

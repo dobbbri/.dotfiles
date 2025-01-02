@@ -20,13 +20,13 @@ static const char col_gray1[]       = "#1d2021";
 static const char col_gray2[]       = "#3c3836";
 static const char col_gray3[]       = "#bdae93";
 static const char col_gray4[]       = "#fbf1c7";
-static const char col_cyan[]        = "#076678";
+static const char col_cyan[]        = "#fe8019";
 static const char *colors[][3]      = {
 	/*                    fg         bg         border    */
 	[SchemeNorm]      = { col_gray3, col_gray1, col_gray2  },
 	[SchemeSel]       = { col_gray4, col_cyan,  col_cyan   },
 	[SchemeStatus]    = { col_gray3, col_gray1, col_gray1  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]   = { col_gray4, col_cyan,  col_gray1  }, // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeTagsSel]   = { col_cyan,  col_gray1,  col_gray1  }, // Tagbar left selected {text,background,not used but cannot be empty}
 	[SchemeTagsNorm]  = { col_gray3, col_gray1, col_gray1  }, // Tagbar left unselected {text,background,not used but cannot be empty}
 	[SchemeInfoSel]   = { col_gray4, col_gray1, col_gray1  }, // infobar middle  selected {text,background,not used but cannot be empty}
 	[SchemeInfoNorm]  = { col_gray4, col_gray1, col_gray1  }, // infobar middle  unselected {text,background,not used but cannot be empty}
