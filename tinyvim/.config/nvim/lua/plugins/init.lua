@@ -3,7 +3,7 @@ return {
     vim.g._color.package,
     lazy = false,
     priority = 1000,
-    config = function() require("plugins.colorschemes." .. vim.g._color.name) end,
+    config = function() require("plugins.colors." .. vim.g._color.name) end,
   },
 
   { "nvim-lua/plenary.nvim", lazy = true },

@@ -1,4 +1,3 @@
-require("colors")
 require("options")
 require("mappings")
 require("commands")

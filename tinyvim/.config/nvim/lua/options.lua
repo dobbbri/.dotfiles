@@ -2,6 +2,15 @@ local opt = vim.opt
 local o = vim.o
 local g = vim.g
 
+-- colorscheme
+local _colors = {
+  { name = "fluoromachine", package = "maxmx03/fluoromachine.nvim" },
+  { name = "gruvbox", package = "ellisonleao/gruvbox.nvim" },
+  { name = "nordic", package = "alexvzyl/nordic.nvim" },
+}
+g._color = _colors[2]
+
+-- mapleader
 g.mapleader = " "
 
 -- options
@@ -45,15 +54,8 @@ o.encoding = "utf-8"
 o.fileencoding = "utf-8"
 
 -- folding
--- o.fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldclose:'
--- o.foldcolumn = '1'
--- o.foldenable = true
--- o.foldexpr = 'v:lua.vim.lsp.foldexpr()'
--- o.foldlevel = 99
--- o.foldlevelstart = 99
--- o.foldmethod = 'expr'
--- interval for writing swap file to disk, also used by gitsigns
 
+-- interval for writing swap file to disk, also used by gitsigns
 o.updatetime = 250
 
 -- go to previous/next line with h,l,left arrow and right arrow
