@@ -3,7 +3,7 @@
 # https://dwm.suckless.org/
 
 #install libs
-sudo apt install gcc make libxft-dev libxinerama-dev libxcb1-dev libx11-dev -yy
+sudo apt install gcc make libxft-dev libxinerama-dev libxcb1-dev libx11-dev libnotify-dev -yy
 
 echo "Compile DWM ---------------------------------------------------------------"
 

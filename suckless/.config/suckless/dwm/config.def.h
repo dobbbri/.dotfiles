@@ -1,17 +1,18 @@
 /* See LICENSE file for copyright and license details. */
 
 #include <X11/XF86keysym.h>
+#include "exitdwm.c"
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 10};
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 static const char *fonts[]          = { 
-  "Ubuntu:size=11:style=medium:antialias=true:autohint=true", 
-  "jetBrainsMono Nerd Font Mono:style=regular:size=16:antialias=true:autohint=true" 
+  "Ubuntu:size=11:style=bold:antialias=true:autohint=true", 
+  "jetBrainsMono Nerd Font Mono:style=regular:size=19:antialias=true:autohint=true" 
 }; /*"Font Awesome 5 Free:size=13"  */ 
 
 static const char dmenufont[]       = "Ubuntu:size=12:antialias=true:autohint=true";
@@ -139,6 +140,8 @@ static const Key keys[] = {
 	{ ALTKEY,               XK_s,      spawn,          {.v = screenshotroot} },
 	{ ALTKEY|ShiftMask,     XK_s,      spawn,          {.v = screenshotselection} },
 	
+  { 0,    XF86XK_PowerOff,           exitdwm,        {0} },
+  
   { 0,    XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol } },
 	{ 0,    XF86XK_AudioLowerVolume,   spawn,          {.v = downvol } },
 	{ 0,    XF86XK_AudioMute,          spawn,          {.v = mute } },
@@ -160,7 +163,8 @@ static const Key keys[] = {
 	TAGKEYS(                XK_9,                      8)
 
 	{ ALTKEY,               XK_x,      killclient,     {0} },
-	{ MODKEY,               XK_q,      quit,           {0} },
+	/*{ MODKEY,               XK_q,      quit,           {0} },*/
+	{ MODKEY,               XK_q,      exitdwm,       {0} },
 };
 
 /* button definitions */
