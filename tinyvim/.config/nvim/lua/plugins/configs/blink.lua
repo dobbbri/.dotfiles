@@ -1,10 +1,12 @@
 return {
   keymap = {
     ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-    ["<C-e>"] = { "hide" },
+    ["<C-e>"] = { "hide", "fallback" },
     ["<CR>"] = { "accept", "fallback" },
-    ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
-    ["<Tab>"] = { "snippet_forward", "select_next", "fallback" },
+    ["<Tab>"] = { "snippet_forward", "fallback" },
+    ["<S-Tab>"] = { "snippet_backward", "fallback" },
+    ["<Up>"] = { "select_prev", "fallback" },
+    ["<Down>"] = { "select_next", "fallback" },
     ["<C-b>"] = { "scroll_documentation_up", "fallback" },
     ["<C-f>"] = { "scroll_documentation_down", "fallback" },
   },
@@ -21,18 +23,15 @@ return {
     use_nvim_cmp_as_default = false,
     nerd_font_variant = "mono",
   },
-  -- sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
   sources = {
-    default = function()
-      local success, node = pcall(vim.treesitter.get_node)
-      if vim.bo.filetype == "lua" then
-        return { "lsp", "path" }
-      elseif success and node and vim.tbl_contains({ "comment", "line_comment", "block_comment" }, node:type()) then
-        return { "buffer" }
-      else
-        return { "lsp", "path", "snippets", "buffer" }
-      end
-    end,
+    default = { "lsp", "path", "snippets", "buffer", "markdown" },
+    providers = {
+      markdown = {
+        name = "RenderMarkdown",
+        module = "render-markdown.integ.blink",
+        fallbacks = { "lsp" },
+      },
+    },
   },
   signature = { enabled = true },
 }

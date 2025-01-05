@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/sergio/Pictures/nice-blue-background.png' 

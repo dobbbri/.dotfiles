@@ -18,7 +18,10 @@ return {
 
   { "ibhagwan/fzf-lua", opts = {} },
 
-  { "MeanderingProgrammer/render-markdown.nvim", opts = {} },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    opts = require("plugins.configs.rendermarkdown"),
+  },
 
   {
     "brenoprata10/nvim-highlight-colors",
