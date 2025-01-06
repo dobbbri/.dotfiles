@@ -21,6 +21,10 @@ sudo apt install flameshot scrot gparted neofetch btop htop pulseaudio -yy
 sudo apt install xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow chafa uget -yy
 sudo apt install yaru-theme-gtk yaru-theme-icon fonts-noto-color-emoji -yy
 
+echo "- Optimize Linux Laptop Battery Life and thermal changes ----------------"
+sudo apt install --yes tlp tlp-rdw linux-cpupower acpi-support acpi-call-dkms thermald
+sudo tlp start
+
 echo "- Enable/Fix tap to click -----------------------------------------------"
 sudo apt remove --yes xserver-xorg-input-synaptics
 sudo apt install --yes xserver-xorg-input-libinput
