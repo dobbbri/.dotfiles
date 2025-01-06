@@ -18,6 +18,8 @@ return {
 
   { "ibhagwan/fzf-lua", opts = {} },
 
+  { "nvim-pack/nvim-spectre", opts = {} },
+
   {
     "MeanderingProgrammer/render-markdown.nvim",
     opts = require("plugins.configs.rendermarkdown"),

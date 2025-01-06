@@ -58,10 +58,7 @@ map("n", "<leader>u", "<cmd>URLOpenUnderCursor<CR>", { desc = "Open URL" })
 
 -- search
 map("n", "<leader>sb", ":%s///gcI<Left><Left><Left><Left><Left>", { desc = "Search/Replace in current buffer" })
-map("n", "<leader>so", "<cmd>lua require('spectre').show_options()<CR>", { desc = "Show Spectre options" })
 map("n", "<leader>ss", "<cmd>lua require('spectre').toggle()<CR>", { desc = "Toggle Spectre" })
-map("n", "<leader>sr", "<cmd>lua require('spectre.actions').run_replace()<CR>", { desc = "Replace All results" })
-map("n", "<leader>si", "<cmd>lua require('spectre').toggle_line()<CR>", { desc = "Replace Toggle item" })
 
 -- git
 map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Diff This" })

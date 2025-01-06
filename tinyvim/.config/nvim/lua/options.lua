@@ -45,7 +45,7 @@ o.signcolumn = "yes"
 o.splitbelow = true
 o.splitright = true
 o.timeoutlen = 400
-o.undofile = true
+o.undofile = false
 
 o.wrap = false
 o.linebreak = false
