@@ -1,30 +1,40 @@
 -- Use LspAttach autocommand to only map the following keys
--- vim.api.nvim_create_autocmd("LspAttach", {
---   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
---   callback = function(ev)
---     local opts = { buffer = ev.buf }
---     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
---     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
---     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
---     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
---     vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
---     vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
---     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
---     vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
---     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
---     -- vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
---     -- vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
---     -- vim.keymap.set("n", "<space>wl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
---   end,
--- })
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+  callback = function()
+    local map = vim.keymap.set
+    map(
+      "n",
+      "gd",
+      "<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>",
+      { desc = "Goto Definition" }
+    )
+    map(
+      "n",
+      "gr",
+      "<cmd>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<cr>",
+      { desc = "References" }
+    )
+    map(
+      "n",
+      "gI",
+      "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>",
+      { desc = "Goto Implementation" }
+    )
+    map(
+      "n",
+      "gy",
+      "<cmd>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<cr>",
+      { desc = "Goto T[y]pe Definition" }
+    )
+  end,
+})
 
-local capabilities = require("blink.cmp").get_lsp_capabilities()
-
--- Setup language servers.
 local lspconfig = require("lspconfig")
 
--- setup multiple servers with same default options
 local servers = { "ts_ls", "astro", "tailwindcss", "lua_ls" } -- "jsonls", "volar"
+
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({

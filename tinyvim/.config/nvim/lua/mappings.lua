@@ -14,7 +14,12 @@ map("n", "<C-h>", "<cmd>NvimTreeFocus<CR>", { desc = "Focus on file explorer" })
 map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "Find files" })
 map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { desc = "List by opened files history" })
 map("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>", { desc = "Find by word" })
-map("n", "<leader>fc", "<cmd>lua require('fzf-lua').grep_cword({ rg_opts = vim.g.rg_grep_all })<CR>", { desc = "Find by word under cursor" })
+map(
+  "n",
+  "<leader>fc",
+  "<cmd>lua require('fzf-lua').grep_cword({ rg_opts = vim.g.rg_grep_all })<CR>",
+  { desc = "Find by word under cursor" }
+)
 map("n", "<leader>gt", "<cmd>FzfLua git_status<CR>", { desc = "List git status" })
 
 -- bufferline, cycle buffers
@@ -56,9 +61,18 @@ map("i", "jk", "<ESC>")
 -- open url
 map("n", "<leader>u", "<cmd>URLOpenUnderCursor<CR>", { desc = "Open URL" })
 
--- search
+-- search / replace
 map("n", "<leader>sb", ":%s///gcI<Left><Left><Left><Left><Left>", { desc = "Search/Replace in current buffer" })
-map("n", "<leader>ss", "<cmd>lua require('spectre').toggle()<CR>", { desc = "Toggle Spectre" })
+map({ "n", "v" }, "<leader>sr", function()
+  local grug = require("grug-far")
+  local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
+  grug.open({
+    transient = true,
+    prefills = {
+      filesFilter = ext and ext ~= "" and "*." .. ext or nil,
+    },
+  })
+end, { desc = "Search and Replace" })
 
 -- git
 map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Diff This" })

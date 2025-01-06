@@ -18,7 +18,7 @@ return {
 
   { "ibhagwan/fzf-lua", opts = {} },
 
-  { "nvim-pack/nvim-spectre", opts = {} },
+  { "MagicDuck/grug-far.nvim", opts = { headerMaxWidth = 80 } },
 
   {
     "MeanderingProgrammer/render-markdown.nvim",
@@ -61,6 +61,7 @@ return {
 
   {
     "saghen/blink.cmp",
+    event = "InsertEnter",
     dependencies = "rafamadriz/friendly-snippets",
     version = "*",
     opts = require("plugins.configs.blink"),
@@ -77,11 +78,13 @@ return {
 
   {
     "stevearc/conform.nvim",
+    lazy = true,
     config = function() require("plugins.configs.formatters") end,
   },
 
   -- {
   --   "mfussenegger/nvim-lint",
+  --   events = { "BufWritePost", "BufReadPost", "InsertLeave" },
   --   config = function() require("plugins.configs.linters") end,
   -- },
 
