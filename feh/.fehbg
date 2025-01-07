@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/sergio/Pictures/nice-blue-background.png' 
+feh --no-fehbg --bg-fill '/home/sergio/.dotfiles/images/li-zhang-K-DwbsTXliY-unsplash.jpg' 

@@ -12,6 +12,7 @@ g._color = _colors[2]
 
 -- mapleader
 g.mapleader = " "
+g.maplocalleader = ','
 
 -- options
 o.laststatus = 3
