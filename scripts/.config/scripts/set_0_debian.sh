@@ -36,6 +36,7 @@ vi /etc/sudoers
 
 # exit from root
 exit
+git clone https://github.com/dobbbri/.dotfiles.git 
 # exit from my login
 exit
 # login
