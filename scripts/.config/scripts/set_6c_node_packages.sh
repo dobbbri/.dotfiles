@@ -3,10 +3,6 @@
 # to make execurable
 # chmod +x install_nodejs.sh 
 
-
-echo "- intall node Version 18 -------------------------------------------------"
-nvm install 18
-
 echo "- Install PNPM packages --------------------------------------------------"
 npm i -g pnpm
 npm i -g neovim tree-sitter tree-sitter-cli npm-check-updates

@@ -4,8 +4,8 @@
 
 
 echo "- Dowload NodeJs installer -----------------------------------------------"
-if [[ ! -d /$HOME/sergio/.nvm ]]; then
-  mkdir $HOME/sergio/.nvm
+if [[ ! -d $HOME/.nvm ]]; then
+  mkdir $HOME/.nvm
 fi
 
 # installs nvm (Node Version Manager)

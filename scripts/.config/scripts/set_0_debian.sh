@@ -11,14 +11,15 @@ apt install vim sudo git
 git clone https://github.com/dobbbri/.dotfiles.git 
 
 
-# vi  /etc/apt/sources.list # add "contrib non-free"
+# vi  /etc/apt/sources.list 
+# add "contrib non-free"
 rm /etc/apt/sources.list
 cp $HOME/.dotfiles/scripts/.config/scripts/config/sources.list /etc/apt/sources.list
 
 
 echo "intall xorg ---------------------------------------------------------"
 apt update
-sudo apt install xorg xserver-xorg xwallpaper -yy
+sudo apt install xorg xserver-xorg -yy
 
 
 echo "fix brightness ------------------------------------------------------"
