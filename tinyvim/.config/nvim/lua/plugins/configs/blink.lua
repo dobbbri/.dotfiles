@@ -7,9 +7,11 @@ return {
     -- ["<S-Tab>"] = { "snippet_backward", "fallback" },
     ["<Up>"] = { "select_prev", "fallback" },
     ["<Down>"] = { "select_next", "fallback" },
-    ["<Tab>"] = { "select_prev", "fallback" },
-    ["<S-Tab>"] = { "select_next", "fallback" },
   },
+  enabled = function()
+    local disabled_filetypes = { "DressingInput" }
+    return not vim.tbl_contains(disabled_filetypes, vim.bo.filetype)
+  end,
   completion = {
     accept = { auto_brackets = { enabled = true } },
     list = {

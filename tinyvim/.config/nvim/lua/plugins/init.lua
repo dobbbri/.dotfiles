@@ -8,15 +8,15 @@ return {
 
   { "nvim-lua/plenary.nvim", lazy = true },
 
-  { "mg979/vim-visual-multi" },
-
   { "nvim-tree/nvim-web-devicons" },
 
-  { "stevearc/dressing.nvim", opts = {} },
+  { "mg979/vim-visual-multi" },
 
   { "rcarriga/nvim-notify" },
 
   { "ibhagwan/fzf-lua", opts = {} },
+
+  { "stevearc/dressing.nvim", opts = {} },
 
   { "MagicDuck/grug-far.nvim", opts = { headerMaxWidth = 80 } },
 
