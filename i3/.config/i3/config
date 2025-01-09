@@ -1,7 +1,8 @@
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
+set $cmd Mod4
 
 font pango:Envy Code R 11
 
@@ -13,6 +14,8 @@ exec --no-startup-id xsct
 
 
 set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -c backlight set +5% && $refresh_i3status 
+bindsym XF86MonBrightnessDowm exec --no-startup-id brightnessctl -c backlight set 5%- && $refresh_i3status 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
@@ -26,26 +29,26 @@ floating_modifier $mod
 # bindsym $mod+n exec --no-startup-id ~/.config/rofi/scripts/rofi-network
 # bindsym $mod+x exec --no-startup-id ~/.config/rofi/scripts/rofi-power
 
-bindsym $mod+d exec --no-startup-id dmenu_run
-# bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#1f222d' -nf '#81a1c1' -sb '#81a1c1' -sf '#1f222d' -fn 'OperatorMonoBook:bold:pixelsize=18'
-# bindsym $mod+d exec "rofi -modi drun,run -show drun"
+bindsym $cmd+d exec --no-startup-id dmenu_run
+# bindsym $cmd+d exec --no-startup-id dmenu_run -i -nb '#000000' -nf '#81a1c1' -sb '#81a1c1' -sf '#000000' -fn 'OperatorMonoBook:bold:pixelsize=18'
+# bindsym $cmd+d exec "rofi -modi drun,run -show drun"
 
-bindsym $mod+Period exec --no-startup-id dunstctl close-all
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+t exec i3-sensible-terminal
-bindsym $mod+w exec firefox
-bindsym $mod+f exec thunar
-bindsym $mod+p exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
-bindsym $mod+c kill
-bindsym $mod+h split h
-bindsym $mod+v split v
-bindsym $mod+Shift+f fullscreen toggle
-bindsym $mod+space floating toggle
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-# bindsym $mod+q exec --no-startup-id bl-exit 
+# bindsym $cmd+Period exec --no-startup-id dunstctl close-all
+bindsym $cmd+Return exec i3-sensible-terminal
+bindsym $cmd+t exec i3-sensible-terminal
+bindsym $cmd+w exec firefox
+bindsym $cmd+f exec thunar
+bindsym $cmd+p exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
+bindsym $cmd+c kill
+bindsym $cmd+h split h
+bindsym $cmd+v split v
+bindsym $cmd+Shift+f fullscreen toggle
+bindsym $cmd+space floating toggle
+bindsym $cmd+Shift+c reload
+bindsym $cmd+Shift+r restart
+# bindsym $cmd+q exec --no-startup-id bl-exit 
 
-bindsym $mod+q mode "$mode_system"
+bindsym $cmd+q mode "$mode_system"
 # set $mode_system loc[k] . [l]ogout . s[u]spend . [h]ibernate . [r]eboot . [s]hutdown
 set $mode_system  [l]ogout    [r]eboot    [s]hutdown
 mode "$mode_system" {
@@ -62,7 +65,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
 bindsym $mod+Left focus left
@@ -130,34 +133,33 @@ bar {
   strip_workspace_numbers yes
   # tray_output none
 
-  colors {
-    separator  #1f222d
-    background #1f222d
-    statusline #81a1c1
-
-    #                   border  background text
-    focused_workspace  #1f222d #1f222d    #81a1c1
-    active_workspace   #1f222d #252936    #5e81ac
-    inactive_workspace #1f222d #1f222d    #4c566a
-    urgent_workspace   #1f222d #1f222d    #ee829f
-    binding_mode       #1f222d #81a1c1    #2e3440
-  }
+  # colors {
+  #   separator  000000#
+  #   background 000000#
+  #   # statusline #81a1c1
+  #   #
+  #   # #                   border  background text
+  #   # focused_workspace  #000000 #fd8019    #fbf1c7
+  #   # active_workspace   #000000 #000000    #fd8019
+  #   # inactive_workspace #000000 #000000    #fbf1c7
+  #   # urgent_workspace   #000000 #000000    #ee829f
+  #   # binding_mode       #000000 #81a1c1    #2e3440
+  # }
 }
 
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 hide_edge_borders smart
-gaps inner 4
+gaps inner 6
 gaps outer 1
 # smart_gaps on
 
 
 
 # Window color settings
-# class                 border  backgr. text    indicator
-client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-client.unfocused        #2e3440 #1f222d #888888 #1f222d
-client.focused_inactive #2e3440 #1f222d #888888 #1f222d
-client.placeholder      #2e3440 #1f222d #888888 #1f222d
-client.urgent           #900000 #900000 #ffffff #900000
-client.background       #242424
+# class                         border          background      text            indicator       child_border
+# client.focused                  #ffff33         #000000         #ffff33         $coloratt       #000000
+# client.focused_inactive         #333333         #000000         #ffff33         $coloratt       #000000
+# client.unfocused                #333333         #000000         #888888         $coloratt       #000000
+# client.urgent                   #2f343a         #900000         #ffffff         $coloratt       #900000
+# client.placeholder              #000000         #000000         #ffffff         $coloratt       #0c0c0c
 
