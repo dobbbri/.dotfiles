@@ -36,30 +36,28 @@ draw_bold_text_with_bright_colors: true
 custom_cursor_colors: true
 
 colors:
-  primary:
-    background: "#000000"
-    foreground: "#f8f8f2"
-    bright_foreground: "#ffffff"
+  background: "#282828"
+  foreground: "#ebdbb2"
 
   normal:
-    black: "#6272a4"
-    red: "#ff5555"
-    green: "#50fa7b"
-    yellow: "#f1fa8c"
-    blue: "#bd93f9"
-    magenta: "#ff79c6"
-    cyan: "#8be9fd"
-    white: "#f8f8f2"
+    black: "#282828"
+    red: "#cc241d"
+    green: "#98971a"
+    yellow  : "#d79921"
+    blue: "#458588"
+    magenta : "#b16286"
+    cyan: "#689d6a"
+    white: "#a89984"
 
   bright:
-    black: "#6272a4"
-    red: "#ff6e6e"
-    green: "#69ff94"
-    yellow: "#ffffa5"
-    blue: "#d6acff"
-    magenta: "#ff92df"
-    cyan: "#a4ffff"
-    white: "#ffffff"
+    black: "#928374"
+    red: "#fb4934"
+    green: "#b8bb26"
+    yellow  : "#fabd2f"
+    blue: "#83a598"
+    magenta : "#d3869b"
+    cyan: "#8ec07c"
+    white: "#ebdbb2"
 
 bell:
   animation: EaseOutExpo
@@ -96,12 +94,12 @@ key_bindings:
   - { key: Right, mods: Alt, chars: "\x1b[1;3C" }
   - { key: Right, chars: "\x1b[C", mode: ~AppCursor }
   - { key: Right, chars: "\x1bOC", mode: AppCursor }
-  - { key: Up, mods: Shift, chars: "\x1b[1;2A" }
+  # - { key: Up, mods: Shift, chars: "\x1b[1;2A" }
   - { key: Up, mods: Control, chars: "\x1b[1;5A" }
   - { key: Up, mods: Alt, chars: "\x1b[1;3A" }
   - { key: Up, chars: "\x1b[A", mode: ~AppCursor }
   - { key: Up, chars: "\x1bOA", mode: AppCursor }
-  - { key: Down, mods: Shift, chars: "\x1b[1;2B" }
+  # - { key: Down, mods: Shift, chars: "\x1b[1;2B" }
   - { key: Down, mods: Control, chars: "\x1b[1;5B" }
   - { key: Down, mods: Alt, chars: "\x1b[1;3B" }
   - { key: Down, chars: "\x1b[B", mode: ~AppCursor }
@@ -132,6 +130,9 @@ key_bindings:
   - { key: RBracket, mods: Command, chars: "\x02o" } # select next pane
   - { key: LBracket, mods: Command, chars: "\x02;" } # select last (previously used) pane
   - { key: F, mods: Command, chars: "\x02/" } # search (upwards) (see tmux.conf)
+
+  - { key: Up, mods: Shift,  action: ScrollPageUp }
+  - { key: Down, mods: Shift, action: ScrollPageDown }
 
 mouse:
   double_click: { threshold: 300 }
