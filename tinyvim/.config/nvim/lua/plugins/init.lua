@@ -18,7 +18,7 @@ return {
 
   { "stevearc/dressing.nvim", opts = {} },
 
-  { "MagicDuck/grug-far.nvim", opts = { headerMaxWidth = 80 } },
+  { "MagicDuck/grug-far.nvim", opts = {} },
 
   {
     "MeanderingProgrammer/render-markdown.nvim",

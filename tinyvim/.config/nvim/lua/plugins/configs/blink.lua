@@ -6,8 +6,9 @@ return {
     ["<Down>"] = { "select_next", "fallback" },
   },
   enabled = function()
-    local disabled_filetypes = { "DressingInput" }
-    return not vim.tbl_contains(disabled_filetypes, vim.bo.filetype)
+    return not vim.tbl_contains({ "lua", "markdown", "DressingInput" }, vim.bo.filetype)
+      and vim.bo.buftype ~= "prompt"
+      and vim.b.completion ~= false
   end,
   completion = {
     accept = { auto_brackets = { enabled = true } },
