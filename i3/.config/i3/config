@@ -10,7 +10,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # exec_always picom -f 
 
-exec --no-startup-id xsct
+# exec --no-startup-id xsct
 
 
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -37,7 +37,7 @@ bindsym $cmd+d exec --no-startup-id dmenu_run
 bindsym $cmd+Return exec i3-sensible-terminal
 bindsym $cmd+t exec i3-sensible-terminal
 bindsym $cmd+w exec firefox
-bindsym $cmd+f exec thunar
+bindsym $cmd+f exec pcmanfm
 bindsym $cmd+p exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
 bindsym $cmd+c kill
 bindsym $cmd+h split h
