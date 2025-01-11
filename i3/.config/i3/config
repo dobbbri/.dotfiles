@@ -40,6 +40,7 @@ bindsym $cmd+w exec firefox
 bindsym $cmd+f exec pcmanfm
 bindsym $cmd+p exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
 bindsym $cmd+c kill
+bindsym $cmd+a exec lxtask
 bindsym $cmd+h split h
 bindsym $cmd+v split v
 bindsym $cmd+Shift+f fullscreen toggle
@@ -150,7 +151,7 @@ bar {
 for_window [class=".*"] border pixel 2
 hide_edge_borders smart
 gaps inner 6
-gaps outer 1
+gaps outer 2
 # smart_gaps on
 
 

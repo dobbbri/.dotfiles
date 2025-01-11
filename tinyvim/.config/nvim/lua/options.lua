@@ -59,6 +59,8 @@ o.fileencoding = "utf-8"
 -- interval for writing swap file to disk, also used by gitsigns
 o.updatetime = 250
 
+o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
