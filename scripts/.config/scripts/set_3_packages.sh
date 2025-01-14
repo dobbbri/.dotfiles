@@ -17,7 +17,7 @@ sudo brightnessctl --device='acpi_video0' set 2
 # install packages
 sudo apt install xorg xserver-xorg xwallpaper -yy
 sudo apt install firefox-esr pcmanfm exa stow alacritty color-picker mintstick atril transmission feh -yy
-sudo apt install flameshot scrot gparted neofetch btop htop pulseaudio -yy
+sudo apt install flameshot scrot gparted neofetch btop htop pulseaudio alsa-utils -yy
 sudo apt install xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow chafa uget -yy
 sudo apt install yaru-theme-gtk yaru-theme-icon fonts-noto-color-emoji lxappearance lxtask fzf -yy
 

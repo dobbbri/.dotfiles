@@ -24,14 +24,14 @@ static const char col_gray4[]       = "#fbf1c7";
 static const char col_cyan[]        = "#458588";
 static const char col_orange[]      = "#fd8019";
 static const char *colors[][3]      = {
-	/*                    fg         bg         border    */
-	[SchemeNorm]      = { col_gray3, col_gray1, col_gray2  },
-	[SchemeSel]       = { col_gray4, col_orange,  col_orange   },
-	[SchemeStatus]    = { col_gray3, col_gray1, col_gray1  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]   = { col_orange,  col_gray1,  col_gray1  }, // Tagbar left selected {text,background,not used but cannot be empty}
-	[SchemeTagsNorm]  = { col_gray3, col_gray1, col_gray1  }, // Tagbar left unselected {text,background,not used but cannot be empty}
-	[SchemeInfoSel]   = { col_gray4, col_gray1, col_gray1  }, // infobar middle  selected {text,background,not used but cannot be empty}
-	[SchemeInfoNorm]  = { col_gray4, col_gray1, col_gray1  }, // infobar middle  unselected {text,background,not used but cannot be empty}
+	/*                    fg            bg            border    */
+	[SchemeNorm]      = { col_gray3,    col_gray1,    col_gray2  },
+	[SchemeSel]       = { col_gray4,    col_orange,   col_orange   },
+	[SchemeStatus]    = { col_gray3,    col_gray1,    col_gray1  }, // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]   = { col_orange,   col_gray1,    col_gray1  }, // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeTagsNorm]  = { col_gray3,    col_gray1,    col_gray1  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+	[SchemeInfoSel]   = { col_gray4,    col_gray1,    col_gray1  }, // infobar middle  selected {text,background,not used but cannot be empty}
+	[SchemeInfoNorm]  = { col_gray4,    col_gray1,    col_gray1  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 /* tagging */
@@ -82,15 +82,13 @@ static const char *htopcmd[]    = { "st", "-e", "htop" };
 static const char *screenshotroot[] = { "bash", "-c", "mkdir -p /home/sergio/screenshot && scrot /home/sergio/screenshot/%Y-%m-%d-%H-%M-%S.png", NULL };
 static const char *screenshotselection[] = { "bash", "-c", "sleep 0.2 && mkdir -p /home/sergio/screenshot && scrot /home/sergio/screenshot/%Y-%m-%d-%H-%M-%S.png --select", NULL };
 
-static const char *upvol[]      = { "amixer", "sset", "Master", "5%+", NULL };
-static const char *downvol[]    = { "amixer", "sset", "Master", "5%-", NULL };
-static const char *mute[]       = { "amixer", "sset", "Master", "toggle", NULL };
+static const char *upvol[]      = { "amixer", "set", "Master", "+5%", NULL };
+static const char *downvol[]    = { "amixer", "set", "Master", "5%-", NULL };
+static const char *mute[]       = { "amixer", "set", "Master", "toggle", NULL };
 
 static const char *brightup[]   = { "brightnessctl", "-c", "backlight", "set", "+5%", NULL};
 static const char *brightdown[] = { "brightnessctl", "-c", "backlight", "set", "5%-", NULL};
 
-/*static const char *kbdbrightup[]  = { "sudo", "brightnessctl", "-d", "smc::kbd_backlight", "set", "+5%", NULL };*/
-/*static const char *kbdbrightdown[] = { "sudo", "brightnessctl", "-d", "smc::kbd_backlight", "set", "5%-", NULL };*/
 
 static const Key keys[] = {
 	/* modifier             key        function        argument */
@@ -141,17 +139,12 @@ static const Key keys[] = {
 	{ ALTKEY,               XK_s,      spawn,          {.v = screenshotroot} },
 	{ ALTKEY|ShiftMask,     XK_s,      spawn,          {.v = screenshotselection} },
 	
-  { 0,    XF86XK_PowerOff,           exitdwm,        {0} },
-  
   { 0,    XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol } },
 	{ 0,    XF86XK_AudioLowerVolume,   spawn,          {.v = downvol } },
 	{ 0,    XF86XK_AudioMute,          spawn,          {.v = mute } },
 
   { 0,    XF86XK_MonBrightnessUp,    spawn,          {.v = brightup } },
   { 0,    XF86XK_MonBrightnessDown,  spawn,          {.v = brightdown } },
-
-  /*{ 0,    XF86XK_KbdBrightnessUp,    spawn,          {.v = kbdbrightup } },*/
-  /*{ 0,    XF86XK_KbdBrightnessDown,  spawn,          {.v = kbdbrightdown } },*/
 
 	TAGKEYS(                XK_1,                      0)
 	TAGKEYS(                XK_2,                      1)
@@ -164,8 +157,7 @@ static const Key keys[] = {
 	TAGKEYS(                XK_9,                      8)
 
 	{ ALTKEY,               XK_x,      killclient,     {0} },
-	/*{ MODKEY,               XK_q,      quit,           {0} },*/
-	{ MODKEY,               XK_q,      exitdwm,       {0} },
+	{ MODKEY,               XK_q,      exitdwm,        {0} },
 };
 
 /* button definitions */
