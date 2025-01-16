@@ -15,7 +15,7 @@ sudo brightnessctl --device='acpi_video0' set 2
 # https://github.com/shiftkey/desktop/release
 
 # install packages
-sudo apt install xorg xserver-xorg xwallpaper -yy
+sudo apt install xorg xserver-xorg -yy
 sudo apt install firefox-esr pcmanfm exa stow alacritty color-picker mintstick atril transmission feh -yy
 sudo apt install flameshot scrot gparted neofetch btop htop pulseaudio alsa-utils -yy
 sudo apt install xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow chafa uget -yy

@@ -3,10 +3,10 @@ vim.api.nvim_create_user_command(
     "MasonInstallAll",
   function()
     vim.cmd(
-      "MasonInstall lua-language-server typescript-language-server astro-language-server json-lsp tailwindcss-language-server eslint_d prettierd shfmt stylua "
+      "MasonInstall lua-language-server typescript-language-server astro-language-server json-lsp tailwindcss-language-server prettier shfmt stylua "
     )
+    -- "eslint_d prettierd vue-language-server",
   end,
-  -- "vue-language-server",
   {}
 )
 
