@@ -18,7 +18,7 @@ cp $HOME/.dotfiles/scripts/.config/scripts/config/sources.list /etc/apt/sources.
 
 
 echo "intall xorg ---------------------------------------------------------"
-apt update
+sudo apt update
 sudo apt install xorg xserver-xorg dbus -yy
 
 
