@@ -1,15 +1,22 @@
 #!/bin/shell
 
 echo "Stow ---------------------------------------------------------------"
-rm $HOME/.bashrc
+rm ~/.bashrc
 
-cd $HOME/.dotfiles
+cd ~/.dotfiles
 
 echo "-------" 
-
-tools=("astro" "alacritty" "bash" "dunst" "git" "tinyvim" "neofetch" "suckless") 
-for tool in ${tools[@]}
-do 
-	stow $tool
-done
-
+stow alacritty;  
+stow bash;   
+stow feh;    
+stow git;  
+# stow rofi;     
+stow tinyvim;    
+# stow xinit;
+stow astro;      
+# stow dunst;  
+# stow geany;  
+stow i3;   
+stow neofetch;  
+# stow tint2;     
+stow xarchiver;

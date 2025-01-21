@@ -82,8 +82,8 @@ static const struct arg args[] = {
 	/*{ datetime,         "^c#458588^  ^d^ %s ", 	        "%H:%M"},*/
   { battery_perc,     "^c#458588^  ^d^ %s%% ",         "BAT0"},
 	{ ram_used,         "^c#458588^  ^d^ %s ",           NULL },
-	{ alsa_master_vol,  "^c#458588^ 󰕾 ^d^ %s ",           NULL },
-  { backlight_perc,   "^c#458588^ 󰃟 ^d^ %s ",           "acpi_video0"},
+	/*{ alsa_master_vol,  "^c#458588^ 󰕾 ^d^ %s ",           NULL },*/
+  /*{ backlight_perc,   "^c#458588^ 󰃟 ^d^ %s ",           "acpi_video0"},*/
 	{ datetime,         "^c#458588^ 󱑂 ^d^ %s", 	        "%H:%M"},
   { battery_notify,   "",             "BAT0"}, /* There is nothing to print its just a notifications*/
   /*{ wifi_essid,       "%s   ", 	      "wlp2s0b1"},*/
