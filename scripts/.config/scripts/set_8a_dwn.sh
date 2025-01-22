@@ -13,5 +13,6 @@ do
 	cd ~/.dotfiles/suckless/.config/suckless/$tool
   make
   sudo make clean install
+  echo ">>>-------------------------------------------------------------------->"
 done
 

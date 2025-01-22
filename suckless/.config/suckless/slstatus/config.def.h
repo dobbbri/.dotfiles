@@ -80,8 +80,8 @@ static const struct arg args[] = {
 	/*{ alsa_master_vol,  "^c#458588^ 󰕾 ^d^ %s ",           "NULL" },*/
 	/*{ backlight_perc,   "^c#458588^ 󰃟 ^d^ %s ",           "acpi_video0"},*/
 	/*{ datetime,         "^c#458588^  ^d^ %s ", 	        "%H:%M"},*/
+  { ram_used,         "^c#458588^  ^d^ %s ",           NULL },
   { battery_perc,     "^c#458588^  ^d^ %s%% ",         "BAT0"},
-	{ ram_used,         "^c#458588^  ^d^ %s ",           NULL },
 	/*{ alsa_master_vol,  "^c#458588^ 󰕾 ^d^ %s ",           NULL },*/
   /*{ backlight_perc,   "^c#458588^ 󰃟 ^d^ %s ",           "acpi_video0"},*/
 	{ datetime,         "^c#458588^ 󱑂 ^d^ %s", 	        "%H:%M"},

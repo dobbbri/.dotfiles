@@ -24,7 +24,7 @@ void exitdwm ()
 # define S_LOCK "Lock"
 # define S_RESTART_DWM "restart Dwm"
 # define S_OFFSCREEN "Off-screen"
-# define S_EXIT "Exit"
+# define S_EXIT "Logout"
 # define S_REBOOT "Reboot"
 # define S_SHUTDOWN "Shutdown"
 # define S_LOCK_ICON "\uf023"			// <= FontAwesome icons
@@ -39,9 +39,9 @@ void exitdwm ()
 
 	FILE * exit_menu = popen (
 		"echo \""
-			S_FORMAT (LOCK) "\n"
-			S_FORMAT (RESTART_DWM) "\n"
-			S_FORMAT (OFFSCREEN) "\n"
+			/*S_FORMAT (LOCK) "\n"*/
+			/*S_FORMAT (RESTART_DWM) "\n"*/
+			/*S_FORMAT (OFFSCREEN) "\n"*/
 			S_FORMAT (EXIT) "\n"
 			S_FORMAT (REBOOT) "\n"
 			S_FORMAT (SHUTDOWN)

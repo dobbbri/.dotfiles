@@ -1,3 +1,0 @@
-sudo apt install brightnessctl firefox-esr pcmanfm exa stow -yy
-sudo apt install xorg xserver-xorg xwallpaper -yy
-sudo apt install gcc make libxft-dev libxinerama-dev libxcb1-dev libx11-dev -yy

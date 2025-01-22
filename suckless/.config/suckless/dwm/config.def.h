@@ -35,7 +35,7 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"slstatus", NULL,
+	/*"slstatus", NULL,*/
 	"st", NULL,
 	NULL /* terminate */
 };
@@ -82,12 +82,13 @@ static const char *termcmd[]  = { "st",  NULL };
 static const char *filecmd[]    = { "pcmanfm", NULL };
 static const char *webcmd[]     = { "firefox-esr", NULL };
 static const char *mswebcmd[]   = { "microsoft-edge-stable", NULL };
+static const char *minwebcmd[]   = { "min", NULL };
 static const char *gitcmd[]     = { "github-desktop", NULL };
 static const char *taskcmd[]    = { "lxtask", NULL };
 static const char *htopcmd[]    = { "st", "-e", "htop" };
 
-static const char *screenshotroot[] = { "bash", "-c", "mkdir -p /home/sergio/screenshot && scrot /home/sergio/screenshot/%Y-%m-%d-%H-%M-%S.png", NULL };
-static const char *screenshotselection[] = { "bash", "-c", "sleep 0.2 && mkdir -p /home/sergio/screenshot && scrot /home/sergio/screenshot/%Y-%m-%d-%H-%M-%S.png --select", NULL };
+static const char *screenshotroot[] = { "bash", "-c", "scrot /home/sdobri/Pictures/%Y-%m-%d-%H-%M-%S.png", NULL };
+static const char *screenshotselection[] = { "bash", "-c", "sleep 0.2 && scrot /home/sergio/Pictures/%Y-%m-%d-%H-%M-%S.png --select", NULL };
 
 static const char *upvol[]      = { "amixer", "set", "Master", "+5%", NULL };
 static const char *downvol[]    = { "amixer", "set", "Master", "5%-", NULL };
@@ -99,13 +100,14 @@ static const char *brightdown[] = { "brightnessctl", "-c", "backlight", "set", "
 
 static const Key keys[] = {
 	/* modifier             key        function        argument */
+  { MODKEY,               XK_a,      spawn,          {.v = taskcmd } },
 	{ MODKEY,               XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,               XK_f,      spawn,          {.v = filecmd } },
 	{ MODKEY,               XK_e,      spawn,          {.v = mswebcmd } },
 	{ MODKEY,               XK_w,      spawn,          {.v = webcmd } },
+	{ MODKEY,               XK_m,      spawn,          {.v = minwebcmd } },
 	{ MODKEY,               XK_g,      spawn,          {.v = gitcmd } },
 	{ MODKEY,               XK_h,      spawn,          {.v = htopcmd } },
-	{ MODKEY,               XK_a,      spawn,          {.v = taskcmd } },
 	{ MODKEY,               XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,               XK_Return, spawn,          {.v = termcmd } },
 

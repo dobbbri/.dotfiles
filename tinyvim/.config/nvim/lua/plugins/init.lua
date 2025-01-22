@@ -18,24 +18,24 @@ return {
 
   { "stevearc/dressing.nvim", opts = {} },
 
-  { "MagicDuck/grug-far.nvim", opts = {} },
+  -- { "MagicDuck/grug-far.nvim", opts = {} },
+  --
+  -- {
+  --   "MeanderingProgrammer/render-markdown.nvim",
+  --   opts = require("plugins.configs.rendermarkdown"),
+  -- },
 
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    opts = require("plugins.configs.rendermarkdown"),
-  },
+  -- {
+  --   "brenoprata10/nvim-highlight-colors",
+  --   opts = require("plugins.configs.highlightcolors"),
+  -- },
 
-  {
-    "brenoprata10/nvim-highlight-colors",
-    opts = require("plugins.configs.highlightcolors"),
-  },
-
-  {
-    "sontungexpt/url-open",
-    branch = "mini",
-    event = "VeryLazy",
-    config = function() require("plugins.configs.urlopen") end,
-  },
+  -- {
+  --   "sontungexpt/url-open",
+  --   branch = "mini",
+  --   event = "VeryLazy",
+  --   config = function() require("plugins.configs.urlopen") end,
+  -- },
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -88,11 +88,11 @@ return {
   --   config = function() require("plugins.configs.linters") end,
   -- },
 
-  {
-    "lewis6991/gitsigns.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    opts = require("plugins.configs.gitsigns"),
-  },
+  -- {
+  --   "lewis6991/gitsigns.nvim",
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   opts = require("plugins.configs.gitsigns"),
+  -- },
 
   {
     "chrisgrieser/nvim-tinygit",
