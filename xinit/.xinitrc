@@ -1,6 +1,6 @@
 #!/bin/bash 
 
 slstatus &
-sh ~/.fehbg &
+# sh ~/.fehbg &
 exec dwm
 # exec i3

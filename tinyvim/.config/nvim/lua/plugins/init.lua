@@ -30,12 +30,12 @@ return {
   --   opts = require("plugins.configs.highlightcolors"),
   -- },
 
-  -- {
-  --   "sontungexpt/url-open",
-  --   branch = "mini",
-  --   event = "VeryLazy",
-  --   config = function() require("plugins.configs.urlopen") end,
-  -- },
+  {
+    "sontungexpt/url-open",
+    branch = "mini",
+    event = "VeryLazy",
+    config = function() require("plugins.configs.urlopen") end,
+  },
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -88,11 +88,11 @@ return {
   --   config = function() require("plugins.configs.linters") end,
   -- },
 
-  -- {
-  --   "lewis6991/gitsigns.nvim",
-  --   event = { "BufReadPre", "BufNewFile" },
-  --   opts = require("plugins.configs.gitsigns"),
-  -- },
+  {
+    "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    -- opts = require("plugins.configs.gitsigns"),
+  },
 
   {
     "chrisgrieser/nvim-tinygit",

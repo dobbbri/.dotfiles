@@ -3,8 +3,8 @@ return {
   actions = { open_file = { quit_on_open = true } },
   filters = {
     git_ignored = true,
-    dotfiles = true,
-    custom = { "lazy-lock.json", "package-lock.json", "node_modules", ".DS_Store" },
+    dotfiles = false,
+    custom = { "lazy-lock.json", "package-lock.json", "node_modules", ".DS_Store", ".git" },
   },
   renderer = {
     icons = {
