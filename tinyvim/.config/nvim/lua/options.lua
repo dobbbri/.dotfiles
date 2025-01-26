@@ -5,9 +5,9 @@ local g = vim.g
 local _colors = {
   { name = "fluoromachine", package = "maxmx03/fluoromachine.nvim" },
   { name = "gruvbox", package = "ellisonleao/gruvbox.nvim" },
-  { name = "nordic", package = "alexvzyl/nordic.nvim" },
+  { name = "monokai-nightasty", package = "polirritmico/monokai-nightasty.nvim" },
 }
-g._color = _colors[2]
+g._color = _colors[3]
 
 -- mapleader
 g.mapleader = " "
@@ -61,7 +61,7 @@ opt.shiftround = true
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.showmode = false
 opt.sidescrolloff = 8
-opt.signcolumn = "yes"
+-- opt.signcolumn = "false"
 opt.splitbelow = true
 opt.splitkeep = "screen"
 opt.splitright = true
@@ -80,11 +80,7 @@ opt.swapfile = false
 opt.cmdheight = 0
 opt.softtabstop = 2
 opt.numberwidth = 2
-opt.ruler = false
-opt.shortmess:append("sI")
-opt.signcolumn = "yes"
-opt.splitbelow = true
-opt.splitright = true
+-- opt.shortmess:append("sI")
 opt.timeoutlen = 400
 
 -- add binaries installed by mason.nvim to path

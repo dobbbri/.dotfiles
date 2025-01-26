@@ -16,29 +16,37 @@ alias myip="ip -f inet address | grep inet | grep -v 'lo$' | cut -d ' ' -f 6,13 
 alias free='free -h'
 alias reload='source ~/.bashrc'
 
+# nvim
 alias v='nvim'
 alias vim="nvim"
 
-alias lg='lazygit'
-alias LazyGit='lazygit'
+# alias lg='lazygit'
+# alias LazyGit='lazygit'
+#
+# alias ron="./$HOME/.config/scripts/actions/redshift-on"
+# alias roff="./$HOME/.config/scripts/actions/redshift-off"
 
-alias ron="./$HOME/.config/scripts/actions/redshift-on"
-alias roff="./$HOME/.config/scripts/actions/redshift-off"
-
+# dotfiles
 alias vv='cd ~/.dotfiles/tinyvim/.config/nvim/'
 alias vvv='vv && v'
 alias dd='cd ~/.dotfiles/'
 alias ddv='dd && v'
+
+# projects
 alias pp='cd ~/Projects/'
 alias ppv='pp && v'
-alias ss='cd ~/Sites/'
-alias ssv='ss && v'
-alias sep='cd ~/Sites/epc_in_dev && v'
-alias sep2='cd ~/Sites/elisa_pet_care_v2 && v'
-alias spt='cd ~/Sites/pousada_do_tucunare_2020 && v'
-alias ssv='cd ~/Sites/spaco_videira_2025/ && v'
+
+# home
 alias hh='cd ~'
 alias hhv='hh & v'
+
+# site
+alias ss='cd ~/Sites/'
+alias ssv='ss && v'
+alias sepc='cd ~/Sites/epc_in_dev && v'
+alias sepc2='cd ~/Sites/elisa_pet_care_v2 && v'
+alias spt='cd ~/Sites/pousada_do_tucunare_2020 && v'
+alias setv='cd ~/Sites/spaco_videira_2025/ && v'
 
 alias ..='cd ..'
 alias ..2='cd ../../'
