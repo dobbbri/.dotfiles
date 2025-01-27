@@ -18,8 +18,8 @@ return {
 
   { "stevearc/dressing.nvim", opts = {} },
 
-  -- { "MagicDuck/grug-far.nvim", opts = {} },
-  --
+  { "MagicDuck/grug-far.nvim", opts = {} },
+
   -- {
   --   "MeanderingProgrammer/render-markdown.nvim",
   --   opts = require("plugins.configs.rendermarkdown"),
@@ -91,7 +91,7 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    -- opts = require("plugins.configs.gitsigns"),
+    opts = require("plugins.configs.gitsigns"),
   },
 
   {
