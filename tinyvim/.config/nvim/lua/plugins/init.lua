@@ -26,8 +26,9 @@ return {
   -- },
 
   -- {
-  --   "brenoprata10/nvim-highlight-colors",
-  --   opts = require("plugins.configs.highlightcolors"),
+  --   "eero-lehtinen/oklch-color-picker.nvim",
+  --   event = "VeryLazy",
+  --   opts = {},
   -- },
 
   {
