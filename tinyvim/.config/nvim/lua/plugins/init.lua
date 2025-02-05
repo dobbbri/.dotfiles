@@ -12,11 +12,11 @@ return {
 
   { "mg979/vim-visual-multi" },
 
-  { "rcarriga/nvim-notify" },
+  -- { "rcarriga/nvim-notify" },
 
   { "ibhagwan/fzf-lua", opts = {} },
 
-  { "stevearc/dressing.nvim", opts = {} },
+  -- { "stevearc/dressing.nvim", opts = {} },
 
   { "MagicDuck/grug-far.nvim", opts = {} },
 
@@ -95,10 +95,10 @@ return {
     opts = require("plugins.configs.gitsigns"),
   },
 
-  {
-    "chrisgrieser/nvim-tinygit",
-    ft = { "gitrebase", "gitcommit" },
-  },
+  -- {
+  --   "chrisgrieser/nvim-tinygit",
+  --   ft = { "gitrebase", "gitcommit" },
+  -- },
 
   {
     "folke/which-key.nvim",
