@@ -2,12 +2,11 @@ local o = vim.opt
 local g = vim.g
 
 -- colorscheme
-local _colors = {
+local colors = {
   { name = "fluoromachine", package = "maxmx03/fluoromachine.nvim" },
   { name = "gruvbox", package = "ellisonleao/gruvbox.nvim" },
-  { name = "monokai-nightasty", package = "polirritmico/monokai-nightasty.nvim" },
 }
-g._color = _colors[2]
+g.selected_color = colors[2]
 
 -- mapleader
 g.mapleader = " "

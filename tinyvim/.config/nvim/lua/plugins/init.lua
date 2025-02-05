@@ -1,9 +1,9 @@
 return {
   {
-    vim.g._color.package,
+    vim.g.selected_color.package,
     lazy = false,
     priority = 1000,
-    config = function() require("plugins.colors." .. vim.g._color.name) end,
+    config = function() require("plugins.colors." .. vim.g.selected_color.name) end,
   },
 
   { "nvim-lua/plenary.nvim", lazy = true },

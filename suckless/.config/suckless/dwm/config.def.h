@@ -36,7 +36,7 @@ static const char *colors[][3]      = {
 
 static const char *const autostart[] = {
 	/*"slstatus", NULL,*/
-	"st", NULL,
+	/*"st", NULL,*/
 	NULL /* terminate */
 };
 

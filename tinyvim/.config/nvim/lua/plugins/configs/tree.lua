@@ -4,7 +4,7 @@ return {
   filters = {
     git_ignored = true,
     dotfiles = false,
-    custom = { "lazy-lock.json", "package-lock.json", "node_modules", ".DS_Store" },
+    custom = {"dist", ".astro", "lazy-lock.json", "package-lock.json", "node_modules", ".DS_Store" },
   },
   git ={
     enable = true,

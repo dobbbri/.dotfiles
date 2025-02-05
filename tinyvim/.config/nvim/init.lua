@@ -22,6 +22,6 @@ local plugins = require("plugins")
 
 require("lazy").setup(plugins, { install = { colorscheme = { "habamax" } } })
 
-vim.cmd("colorscheme " .. vim.g._color.name)
+vim.cmd("colorscheme " .. vim.g.selected_color.name)
 
 vim.api.nvim_set_hl(0, "IndentLine", { link = "Comment" })
