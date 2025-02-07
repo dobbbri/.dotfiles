@@ -25,12 +25,6 @@ return {
   --   opts = require("plugins.configs.rendermarkdown"),
   -- },
 
-  -- {
-  --   "eero-lehtinen/oklch-color-picker.nvim",
-  --   event = "VeryLazy",
-  --   opts = {},
-  -- },
-
   {
     "sontungexpt/url-open",
     branch = "mini",
@@ -105,5 +99,11 @@ return {
     event = "VeryLazy",
     opts = { preset = "classic" },
     config = function() require("plugins.configs.whichkey") end,
+  },
+
+  {
+    "brenoprata10/nvim-highlight-colors",
+    event = "VeryLazy",
+    opts = require("plugins.configs.highlightcolors"),
   },
 }
