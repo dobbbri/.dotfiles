@@ -3,7 +3,7 @@ return {
     vim.g.selected_color.package,
     lazy = false,
     priority = 1000,
-    config = function() require("plugins.colors." .. vim.g.selected_color.name) end,
+    config = function() require("plugins.configs.cs." .. vim.g.selected_color.name) end,
   },
 
   { "nvim-lua/plenary.nvim", lazy = true },
@@ -14,11 +14,11 @@ return {
 
   -- { "rcarriga/nvim-notify" },
 
-  { "ibhagwan/fzf-lua", opts = {} },
+  -- { "ibhagwan/fzf-lua", opts = {} },
 
   -- { "stevearc/dressing.nvim", opts = {} },
 
-  { "MagicDuck/grug-far.nvim", opts = {} },
+  -- { "MagicDuck/grug-far.nvim", opts = {} },
 
   -- {
   --   "MeanderingProgrammer/render-markdown.nvim",
@@ -101,9 +101,9 @@ return {
     config = function() require("plugins.configs.whichkey") end,
   },
 
-  {
-    "brenoprata10/nvim-highlight-colors",
-    event = "VeryLazy",
-    opts = require("plugins.configs.highlightcolors"),
-  },
+  -- {
+  --   "brenoprata10/nvim-highlight-colors",
+  --   event = "VeryLazy",
+  --   opts = require("plugins.configs.highlightcolors"),
+  -- },
 }
