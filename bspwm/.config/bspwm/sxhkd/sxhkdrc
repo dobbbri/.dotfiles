@@ -98,7 +98,7 @@ super + shift + {1-9,0,F1,F2}
 
 # Expand window width both sides
 super + ctrl + Left
-	bspc node -z right 40 0; bspc node -z left 40 0
+	bspc node -z left 40 0; bspc node -z right 40 0
 
 # Shrink window width both sides 
 super + ctrl + Right
@@ -122,11 +122,11 @@ XF86AudioLowerVolume
 
 # Increase Screen Brightness
 XF86MonBrightnessUp
-	xbacklight +10
+	brightnessctl -c backlight set +5%
 
 # Decrease Screen Brightness
 XF86MonBrightnessDown
-	xbacklight -10
+	brightnessctl -c backlight set 5%-
 
 # Take a Screenshot (Region Select)
 super + Print
