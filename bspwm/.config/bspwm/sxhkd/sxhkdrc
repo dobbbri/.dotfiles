@@ -133,11 +133,11 @@ XF86MonBrightnessDown
 	brightnessctl -c backlight set 5%-
 
 # Take a Screenshot (Region Select)
-super + Print
+super + shift + s
 	flameshot gui --path ~/Screenshots/
 
 # Take a Fullscreen Screenshot
-Print
+super + s
 	flameshot full --path ~/Screenshots/
 # Resize All Windows Equally
 super + equal
