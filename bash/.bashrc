@@ -1,3 +1,4 @@
+# Make sure this stuff is in the path.
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 
@@ -13,6 +14,10 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+# Use neovim as the default editor.
+export EDITOR=nvim
+export VISUAL=nvim
+
 export LANGUAGE="en_US:UTF-8"
 export LANG="pt_BR.UTF-8"
 export LC_ALL="en_US.UTF-8"
@@ -22,10 +27,11 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 
 export NO_AT_BRIDGE=1
 
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
