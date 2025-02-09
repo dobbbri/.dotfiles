@@ -89,7 +89,6 @@ map(
   function()
     require("utils/float_term").float_term("lazygit", {
       size = { width = 0.85, height = 0.8 },
-      cwd = vim.b.gitsigns_status_dict.root,
     })
   end,
   { desc = "Open Lazygit" }
