@@ -16,14 +16,55 @@ return {
 
   -- { "ibhagwan/fzf-lua", opts = {} },
 
-  -- { "stevearc/dressing.nvim", opts = {} },
-
   -- { "MagicDuck/grug-far.nvim", opts = {} },
 
   -- {
   --   "MeanderingProgrammer/render-markdown.nvim",
   --   opts = require("plugins.configs.rendermarkdown"),
   -- },
+
+  -- {
+  --   "chrisgrieser/nvim-tinygit",
+  --   ft = { "gitrebase", "gitcommit" },
+  --   dependencies = { "stevearc/dressing.nvim", "rcarriga/nvim-notify"},
+  -- },
+
+  -- {
+  --   "brenoprata10/nvim-highlight-colors",
+  --   event = "VeryLazy",
+  --   opts = require("plugins.configs.highlightcolors"),
+  -- },
+
+  -- {
+  --   "akinsho/bufferline.nvim",
+  --   event = "BufReadPre",
+  --   opts = require("plugins.configs.bufferline"),
+  -- },
+
+  -- {
+  --   "mfussenegger/nvim-lint",
+  --   events = { "BufWritePost", "BufReadPost", "InsertLeave" },
+  --   config = function() require("plugins.configs.linters") end,
+  -- },
+
+  {
+    "uga-rosa/ccc.nvim",
+    lazy = true,
+    ft = { "astro", "css", "javascript", "typescript" },
+    opts = require("plugins.configs.ccc"),
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    opts = {},
+  },
+
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true,
+  },
 
   {
     "sontungexpt/url-open",
@@ -44,22 +85,17 @@ return {
   },
 
   {
-    "akinsho/bufferline.nvim",
-    event = "BufReadPre",
-    opts = require("plugins.configs.bufferline"),
-  },
-
-  {
     "sschleemilch/slimline.nvim",
     opts = require("plugins.configs.slimline"),
   },
 
   {
     "saghen/blink.cmp",
+    version = "*",
     event = "InsertEnter",
     dependencies = "rafamadriz/friendly-snippets",
-    version = "*",
     opts = require("plugins.configs.blink"),
+    opts_extend = { "sources.default" },
   },
 
   { "williamboman/mason.nvim", opts = {} },
@@ -77,22 +113,11 @@ return {
     config = function() require("plugins.configs.formatters") end,
   },
 
-  -- {
-  --   "mfussenegger/nvim-lint",
-  --   events = { "BufWritePost", "BufReadPost", "InsertLeave" },
-  --   config = function() require("plugins.configs.linters") end,
-  -- },
-
   {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = require("plugins.configs.gitsigns"),
   },
-
-  -- {
-  --   "chrisgrieser/nvim-tinygit",
-  --   ft = { "gitrebase", "gitcommit" },
-  -- },
 
   {
     "folke/which-key.nvim",
@@ -100,10 +125,4 @@ return {
     opts = { preset = "classic" },
     config = function() require("plugins.configs.whichkey") end,
   },
-
-  -- {
-  --   "brenoprata10/nvim-highlight-colors",
-  --   event = "VeryLazy",
-  --   opts = require("plugins.configs.highlightcolors"),
-  -- },
 }

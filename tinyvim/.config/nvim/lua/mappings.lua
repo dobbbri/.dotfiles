@@ -20,13 +20,15 @@ map(
   "<cmd>lua require('fzf-lua').grep_cword({ rg_opts = vim.g.rg_grep_all })<CR>",
   { desc = "Find by word under cursor" }
 )
-map("n", "<leader>gt", "<cmd>FzfLua git_status<CR>", { desc = "List git status" })
 
 -- bufferline, cycle buffers
-map("n", "<Tab>", "<cmd> BufferLineCycleNext <CR>")
-map("n", "<S-Tab>", "<cmd> BufferLineCyclePrev <CR>")
+-- map("n", "<Tab>", "<cmd> BufferLineCycleNext <CR>")
+-- map("n", "<S-Tab>", "<cmd> BufferLineCyclePrev <CR>")
+map("n", "<Tab>", "<cmd> bnext <CR>")
+map("n", "<S-Tab>", "<cmd> brevious <CR>")
 map("n", "<leader>xx", "<cmd> bd <CR>", { desc = "Close current buffer" })
 map("n", "<leader>xo", "<cmd>%bd|e#|bd#<cr>", { desc = "Close other buffers" })
+map("n", "<leader>xa", "<cmd>%bd<cr>", { desc = "Close all buffers" })
 
 -- comment.nvim
 map("n", "<leader>/", "gcc", { remap = true, desc = "Comment line" })
@@ -81,7 +83,17 @@ map("n", "<leader>gh", "<cmd>Gitsigns stage_hunk<CR>", { desc = "Stage hunk" })
 map("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", { desc = "Reset hunk" })
 map("n", "<leader>gH", "<cmd>Gitsigns stage_buffer<CR>", { desc = "Stage buffer" })
 map("n", "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Reset buffer" })
-
+map(
+  "n",
+  "<leader>gl",
+  function()
+    require("utils/float_term").float_term("lazygit", {
+      size = { width = 0.85, height = 0.8 },
+      cwd = vim.b.gitsigns_status_dict.root,
+    })
+  end,
+  { desc = "Open Lazygit" }
+)
 -- tinygit
 map("n", "<leader>ga", function() require("tinygit").interactiveStaging() end, { desc = "Interactive Staging" })
 map("n", "<leader>gc", function() require("tinygit").smartCommit() end, { desc = "Smart Commit" })
