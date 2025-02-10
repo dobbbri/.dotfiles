@@ -3,7 +3,7 @@
 BATTERYLEVEL=$(cat /sys/class/power_supply/BAT0/capacity)
 
 if [ $BATTERYLEVEL -lt 70 ]; then
-  /usr/bin/notify-send --icon=battery-low "Warning" "Battery level is ${BATTERYLEVEL}%!"
+   --icon=battery-low "Warning" "Battery level is ${BATTERYLEVEL}%!"
 fi
 
 # Access the Cron file

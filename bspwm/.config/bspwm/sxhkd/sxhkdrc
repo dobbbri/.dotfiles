@@ -1,5 +1,8 @@
 #!/bin/bash
 
+super + semicolon
+  dunstctl close-all
+
 # Launch Browser (Firefox)
 super + w
 	min 
@@ -11,6 +14,9 @@ super + shift + w
 # Launch Terminal (Ghostty)
 super + Return
 	alacritty
+
+super + t
+  /usr/bin/notify-send "Wrong Keybinding" "super + Return"
 
 # Launch Rofi Application Menu
 super + space
@@ -140,5 +146,6 @@ super + shift + s
 super + s
 	flameshot full --path ~/Screenshots/
 # Resize All Windows Equally
+#
 super + equal
 	bspc query -N -d | xargs -I % bspc node % -B
