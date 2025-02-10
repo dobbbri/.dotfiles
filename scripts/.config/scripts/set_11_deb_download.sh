@@ -30,3 +30,6 @@ echo "bitwarden -----------------------------------------------------------"
 xdg-open https://bitwarden.com/download/
 
 echo "sudo dpkg -i Bitwarden-202"
+
+# to set Min as your default browser.
+sudo xdg-settings set default-web-browser min.desktop && sudo update-alternatives --config x-www-browser 

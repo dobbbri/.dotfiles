@@ -35,11 +35,12 @@ bspc rule -a color-picker state=floating layer=normal
 # bspc rule -a discord desktop='^8' follow=on
 
 # start up stuff
-xsetroot -cursor_name left_ptr &
+# xsetroot -cursor_name left_ptr &
 # /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 dunst -config ~/.config/bspwm/dunst/dunstrc &
 # picom --config ~/.config/bspwm/picom/picom.conf --animations -b &
-feh --bg-fill ~/.dotfiles/images/nice-blue-background.png &
+feh --bg-fill ~/.dotfiles/images/behance_download_1564785483520.jpg &
+# /usr/bin/xfce4-power-manager &
 
 ## Polybar or tint
 ~/.config/bspwm/scripts/polybar-bspwm &

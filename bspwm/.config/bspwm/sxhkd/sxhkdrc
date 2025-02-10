@@ -2,11 +2,11 @@
 
 # Launch Browser (Firefox)
 super + w
-	firefox 
+	min 
 
 # Launch Browser (MIn)
-super + m
-	min 
+super + shift + w
+  firefox-esr 
 
 # Launch Terminal (Ghostty)
 super + Return
