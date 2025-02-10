@@ -41,7 +41,7 @@ install_packages() {
         network-manager network-manager-gnome pamixer pcmanfm \
         file-roller lxappearance dialog mtools dosfstools avahi-daemon \
         acpi acpid gvfs-backends xfce4-power-manager pavucontrol pamixer pulsemixer \
-        feh fonts-recommended fonts-font-awesome \
+        feh fonts-recommended fonts-font-awesome yaru-theme-gtk yaru-theme-icon \
         papirus-icon-theme exa flameshot qimgv rofi dunst libnotify-bin xdotool unzip \
         libnotify-dev firefox-esr geany \
         xdg-user-dirs-gtk alacritty \
