@@ -17,4 +17,4 @@ for font in ${fonts[@]}; do
   rm $font.zip
 done
 
-fc-cache -f -v
+fc-cache -f
