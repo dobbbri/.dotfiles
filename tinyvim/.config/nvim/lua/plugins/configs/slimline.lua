@@ -10,5 +10,8 @@ return {
       HINT = "H",
       INFO = "I",
     },
+    buffer = {
+      modified = '[󰐕]',
+    },
   },
 }

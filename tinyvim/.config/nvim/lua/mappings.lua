@@ -12,6 +12,7 @@ map("n", "<C-h>", "<cmd>NvimTreeFocus<CR>", { desc = "Focus on file explorer" })
 
 -- telescope
 map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "Find files" })
+map("n", "<leader><space>", "<cmd>FzfLua buffers<CR>", { desc = "List by opened files history" })
 map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { desc = "List by opened files history" })
 map("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>", { desc = "Find by word" })
 map(
