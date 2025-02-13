@@ -3,7 +3,7 @@
 BATTERYLEVEL=$(cat /sys/class/power_supply/BAT0/capacity)
 
 if [ $BATTERYLEVEL -lt 70 ]; then
-   --icon=battery-low "Warning" "Battery level is ${BATTERYLEVEL}%!"
+   /usr/bin/notify-send --icon=battery-low "Warning" "Battery level is ${BATTERYLEVEL}%!"
 fi
 
 # Access the Cron file
@@ -17,3 +17,5 @@ fi
 
 # Verify task execution
 # grep CRON /var/log/syslog
+#
+# sudo service cron reload

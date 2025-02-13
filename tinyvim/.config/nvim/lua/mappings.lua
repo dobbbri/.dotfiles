@@ -7,7 +7,7 @@ map("n", "<C-c>", "<cmd> %y+ <CR>") -- copy whole filecontent
 
 -- nvimtree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle fiel explorer" })
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+-- map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
 map("n", "<C-h>", "<cmd>NvimTreeFocus<CR>", { desc = "Focus on file explorer" })
 
 -- telescope

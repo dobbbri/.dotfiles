@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 local lspconfig = require("lspconfig")
 
-local servers = { "ts_ls", "astro", "tailwindcss", "lua_ls" } -- "jsonls", "volar"
+local servers = { "ts_ls", "astro", "tailwindcss", "jsonls", "lua_ls" } -- "volar"
 
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 

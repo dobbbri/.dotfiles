@@ -70,8 +70,8 @@ alias smi='sudo make clean install'
 # apt
 alias sai='sudo apt install'
 alias sas='sudo apt search'
-alias sar='sudo apt remove'
-alias saa='sudo apt autoclean && sudo apt autoremove -y'
+alias sar='sudo apt remove && sudo apt autoremove -yy'
+alias saa='sudo apt autoclean && sudo apt autoremove -yy'
 alias sauu='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoclean && sudo apt autoremove -y'
 
 # nala

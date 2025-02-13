@@ -1,5 +1,4 @@
 require("options")
-require("mappings")
 require("commands")
 
 -- bootstrap plugins & lazy.nvim
@@ -21,6 +20,8 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = require("plugins")
 
 require("lazy").setup(plugins, { install = { colorscheme = { "habamax" } } })
+
+require("mappings")
 
 vim.cmd("colorscheme " .. vim.g.selected_color.name)
 

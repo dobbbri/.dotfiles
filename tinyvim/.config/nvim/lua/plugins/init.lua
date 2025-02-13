@@ -14,26 +14,9 @@ return {
 
   -- { "rcarriga/nvim-notify" },
 
-  -- { "ibhagwan/fzf-lua", opts = {} },
+  { "ibhagwan/fzf-lua", opts = {} },
 
   -- { "MagicDuck/grug-far.nvim", opts = {} },
-
-  -- {
-  --   "MeanderingProgrammer/render-markdown.nvim",
-  --   opts = require("plugins.configs.rendermarkdown"),
-  -- },
-
-  -- {
-  --   "chrisgrieser/nvim-tinygit",
-  --   ft = { "gitrebase", "gitcommit" },
-  --   dependencies = { "stevearc/dressing.nvim", "rcarriga/nvim-notify"},
-  -- },
-
-  -- {
-  --   "brenoprata10/nvim-highlight-colors",
-  --   event = "VeryLazy",
-  --   opts = require("plugins.configs.highlightcolors"),
-  -- },
 
   -- {
   --   "akinsho/bufferline.nvim",
@@ -57,7 +40,7 @@ return {
   {
     "windwp/nvim-ts-autotag",
     event = "InsertEnter",
-    opts = {},
+    config = function() require("plugins.configs.autotag") end,
   },
 
   {
