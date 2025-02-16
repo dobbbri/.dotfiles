@@ -36,12 +36,10 @@ bspc rule -a color-picker state=floating layer=normal
 
 # start up stuff
 xsetroot -cursor_name left_ptr &
-# /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-/usr/bin/lxpolkit &
+# /usr/bin/lxpolkit &
 dunst -config ~/.config/bspwm/dunst/dunstrc &
 # picom --config ~/.config/bspwm/picom/picom.conf --animations -b &
 # feh --bg-fill ~/.dotfiles/images/k9TDJg6.png &
-# /usr/bin/xfce4-power-manager &
 
 ## Polybar or tint
 ~/.config/bspwm/scripts/polybar-bspwm &

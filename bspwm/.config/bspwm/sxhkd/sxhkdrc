@@ -16,7 +16,7 @@ super + Return
 	alacritty
 
 super + t
-  /usr/bin/notify-send "Wrong Keybinding" "super + Return"
+  st 
 
 # Launch Rofi Application Menu
 super + space

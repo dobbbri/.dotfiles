@@ -184,6 +184,10 @@ EOF
   echo "GTK settings updated."
 }
 
+install_battery_alert(){
+  curl -o- https://raw.githubusercontent.com/asapdotid/battery-alert-linux/refs/heads/main/install.sh | bash
+}
+
 # ========================================
 # Main Script Execution
 # ========================================
@@ -195,5 +199,6 @@ setup_user_dirs
 install_reqs
 install_fonts
 change_theming
+install_battery_alert
 
 echo "All installations completed successfully!"

@@ -22,6 +22,7 @@ export LANGUAGE="en_US:UTF-8"
 export LANG="pt_BR.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export GTK_IM_MODULE=cedilla
+export QT_IM_MODULE=cedilla
 
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
