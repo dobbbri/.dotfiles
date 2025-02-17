@@ -12,9 +12,14 @@ return {
 
   { "mg979/vim-visual-multi" },
 
-  -- { "rcarriga/nvim-notify" },
+  -- { "ibhagwan/fzf-lua", opts = {} },
 
-  { "ibhagwan/fzf-lua", opts = {} },
+  {
+    "echasnovski/mini.indentscope",
+    version = false,
+    event = { "BufReadPre", "BufNewFile" },
+    opts = { symbol = "│", options = { try_as_border = true } },
+  },
 
   -- { "MagicDuck/grug-far.nvim", opts = {} },
 
@@ -30,12 +35,12 @@ return {
   --   config = function() require("plugins.configs.linters") end,
   -- },
 
-  {
-    "uga-rosa/ccc.nvim",
-    lazy = true,
-    ft = { "astro", "css", "javascript", "typescript" },
-    opts = require("plugins.configs.ccc"),
-  },
+  -- {
+  --   "uga-rosa/ccc.nvim",
+  --   lazy = true,
+  --   ft = { "astro", "css", "javascript", "typescript" },
+  --   opts = require("plugins.configs.ccc"),
+  -- },
 
   {
     "windwp/nvim-ts-autotag",
@@ -43,11 +48,7 @@ return {
     config = function() require("plugins.configs.autotag") end,
   },
 
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = true,
-  },
+  { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
   {
     "sontungexpt/url-open",
@@ -56,10 +57,7 @@ return {
     config = function() require("plugins.configs.urlopen") end,
   },
 
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = require("plugins.configs.tree"),
-  },
+  { "nvim-tree/nvim-tree.lua", opts = require("plugins.configs.tree") },
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -67,10 +65,7 @@ return {
     config = function() require("plugins.configs.treesitter") end,
   },
 
-  {
-    "sschleemilch/slimline.nvim",
-    opts = require("plugins.configs.slimline"),
-  },
+  { "sschleemilch/slimline.nvim", opts = require("plugins.configs.slimline") },
 
   {
     "saghen/blink.cmp",
@@ -102,10 +97,10 @@ return {
     opts = require("plugins.configs.gitsigns"),
   },
 
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts = { preset = "classic" },
-    config = function() require("plugins.configs.whichkey") end,
-  },
+  -- {
+  --   "folke/which-key.nvim",
+  --   event = "VeryLazy",
+  --   opts = { preset = "classic" },
+  --   config = function() require("plugins.configs.whichkey") end,
+  -- },
 }

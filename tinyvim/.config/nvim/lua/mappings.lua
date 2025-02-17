@@ -10,17 +10,11 @@ map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle fiel explorer"
 -- map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
 map("n", "<C-h>", "<cmd>NvimTreeFocus<CR>", { desc = "Focus on file explorer" })
 
--- telescope
+-- fzf-lua
 map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "Find files" })
 map("n", "<leader><space>", "<cmd>FzfLua buffers<CR>", { desc = "List by opened files history" })
 map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { desc = "List by opened files history" })
 map("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>", { desc = "Find by word" })
-map(
-  "n",
-  "<leader>fc",
-  "<cmd>lua require('fzf-lua').grep_cword({ rg_opts = vim.g.rg_grep_all })<CR>",
-  { desc = "Find by word under cursor" }
-)
 
 -- bufferline, cycle buffers
 -- map("n", "<Tab>", "<cmd> BufferLineCycleNext <CR>")
@@ -84,16 +78,7 @@ map("n", "<leader>gh", "<cmd>Gitsigns stage_hunk<CR>", { desc = "Stage hunk" })
 map("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", { desc = "Reset hunk" })
 map("n", "<leader>gH", "<cmd>Gitsigns stage_buffer<CR>", { desc = "Stage buffer" })
 map("n", "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Reset buffer" })
-map(
-  "n",
-  "<leader>gl",
-  function()
-    require("utils/float_term").float_term("lazygit", {
-      size = { width = 0.85, height = 0.8 },
-    })
-  end,
-  { desc = "Open Lazygit" }
-)
+
 -- tinygit
 map("n", "<leader>ga", function() require("tinygit").interactiveStaging() end, { desc = "Interactive Staging" })
 map("n", "<leader>gc", function() require("tinygit").smartCommit() end, { desc = "Smart Commit" })
