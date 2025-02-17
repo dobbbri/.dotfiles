@@ -60,7 +60,7 @@ o.shortmess:append({ W = true, I = true, c = true, C = true })
 o.signcolumn = "yes"
 o.splitbelow = true
 o.splitright = true
-o.timeoutlen = 400
+o.timeoutlen = 500
 o.undofile = false
 
 o.wrap = false
@@ -85,3 +85,4 @@ local is_windows = vim.fn.has("win32") ~= 0
 local sep = is_windows and "\\" or "/"
 local delim = is_windows and ";" or ":"
 vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, sep) .. delim .. vim.env.PATH
+

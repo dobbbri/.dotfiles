@@ -50,12 +50,12 @@ return {
 
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
-  {
-    "sontungexpt/url-open",
-    branch = "mini",
-    event = "VeryLazy",
-    config = function() require("plugins.configs.urlopen") end,
-  },
+  -- {
+  --   "sontungexpt/url-open",
+  --   branch = "mini",
+  --   event = "VeryLazy",
+  --   config = function() require("plugins.configs.urlopen") end,
+  -- },
 
   { "nvim-tree/nvim-tree.lua", opts = require("plugins.configs.tree") },
 
