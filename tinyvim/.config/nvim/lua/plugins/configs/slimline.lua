@@ -11,7 +11,7 @@ return {
       INFO = "I",
     },
     buffer = {
-      modified = '[󰐕]',
+      modified = '●',
     },
   },
 }

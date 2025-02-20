@@ -32,7 +32,7 @@
 
 local lspconfig = require("lspconfig")
 
-local servers = { "ts_ls", "astro", "tailwindcss", "lua_ls" } -- "jsonls", "volar"
+local servers = { "astro", "tailwindcss", "lua_ls" } -- "ts_ls", "jsonls", "volar"
 
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 

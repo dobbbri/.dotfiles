@@ -21,14 +21,14 @@ return {
     opts = { symbol = "│", options = { try_as_border = true } },
   },
 
+  {
+    "akinsho/bufferline.nvim",
+    event = "BufReadPre",
+    opts = require("plugins.configs.bufferline"),
+  },
+
   -- { "MagicDuck/grug-far.nvim", opts = {} },
-
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   event = "BufReadPre",
-  --   opts = require("plugins.configs.bufferline"),
-  -- },
-
+  --
   -- {
   --   "mfussenegger/nvim-lint",
   --   events = { "BufWritePost", "BufReadPost", "InsertLeave" },

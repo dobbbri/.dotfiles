@@ -60,7 +60,7 @@ o.shortmess:append({ W = true, I = true, c = true, C = true })
 o.signcolumn = "yes"
 o.splitbelow = true
 o.splitright = true
-o.timeoutlen = 500
+o.timeoutlen = 700
 o.undofile = false
 
 o.wrap = false
