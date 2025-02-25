@@ -3,9 +3,9 @@
 super + semicolon
   dunstctl close-all
 
-# Launch Browser (Firefox)
+# Launch Browser (microsoft-edge)
 super + w
-	min 
+	microsoft-edge 
 
 # Launch Browser (MIn)
 super + shift + w
@@ -13,10 +13,10 @@ super + shift + w
 
 # Launch Terminal (Ghostty)
 super + Return
-	alacritty
+	sakura
 
 super + t
-  st 
+  alacritty 
 
 # Launch Rofi Application Menu
 super + space

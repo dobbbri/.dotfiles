@@ -42,7 +42,7 @@ install_packages() {
     acpi acpid gvfs-backends xfce4-power-manager pavucontrol pamixer pulsemixer \
     feh fonts-recommended fonts-font-awesome yaru-theme-gtk yaru-theme-icon \
     papirus-icon-theme exa flameshot qimgv rofi dunst libnotify-bin xdotool unzip \
-    libnotify-dev firefox-esr geany \
+    libnotify-dev firefox-esr geany sakura \
     xdg-user-dirs-gtk alacritty lightdm \
     --no-install-recommends || echo "Warning: Package installation failed."
   echo "Package installation completed."

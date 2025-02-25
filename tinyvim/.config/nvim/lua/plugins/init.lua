@@ -14,6 +14,28 @@ return {
 
   -- { "ibhagwan/fzf-lua", opts = {} },
 
+  -- { "MagicDuck/grug-far.nvim", opts = {} },
+  --
+  -- {
+  --   "mfussenegger/nvim-lint",
+  --   events = { "BufWritePost", "BufReadPost", "InsertLeave" },
+  --   config = function() require("plugins.configs.linters") end,
+  -- },
+
+  {
+    "uga-rosa/ccc.nvim",
+    lazy = true,
+    ft = { "astro", "css", "javascript", "typescript" },
+    opts = require("plugins.configs.ccc"),
+  },
+
+  -- {
+  --   "sontungexpt/url-open",
+  --   branch = "mini",
+  --   event = "VeryLazy",
+  --   config = function() require("plugins.configs.urlopen") end,
+  -- },
+
   {
     "echasnovski/mini.indentscope",
     version = false,
@@ -27,21 +49,6 @@ return {
     opts = require("plugins.configs.bufferline"),
   },
 
-  -- { "MagicDuck/grug-far.nvim", opts = {} },
-  --
-  -- {
-  --   "mfussenegger/nvim-lint",
-  --   events = { "BufWritePost", "BufReadPost", "InsertLeave" },
-  --   config = function() require("plugins.configs.linters") end,
-  -- },
-
-  -- {
-  --   "uga-rosa/ccc.nvim",
-  --   lazy = true,
-  --   ft = { "astro", "css", "javascript", "typescript" },
-  --   opts = require("plugins.configs.ccc"),
-  -- },
-
   {
     "windwp/nvim-ts-autotag",
     event = "InsertEnter",
@@ -49,13 +56,6 @@ return {
   },
 
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
-
-  -- {
-  --   "sontungexpt/url-open",
-  --   branch = "mini",
-  --   event = "VeryLazy",
-  --   config = function() require("plugins.configs.urlopen") end,
-  -- },
 
   { "nvim-tree/nvim-tree.lua", opts = require("plugins.configs.tree") },
 
@@ -71,12 +71,12 @@ return {
     "saghen/blink.cmp",
     version = "*",
     event = "InsertEnter",
-    dependencies = "rafamadriz/friendly-snippets",
+    -- dependencies = "rafamadriz/friendly-snippets",
     opts = require("plugins.configs.blink"),
     opts_extend = { "sources.default" },
   },
 
-  { "williamboman/mason.nvim", opts = {} },
+  { "williamboman/mason.nvim", lazy = true, opts = {} },
 
   {
     "neovim/nvim-lspconfig",
