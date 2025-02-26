@@ -18,6 +18,7 @@ esac
 export EDITOR=nvim
 export VISUAL=nvim
 
+export TZ='America/Sao_paulo' 
 export LANGUAGE="en_US:UTF-8"
 export LANG="pt_BR.UTF-8"
 export LC_ALL="en_US.UTF-8"
@@ -114,4 +115,4 @@ ENDC="\\[\\e[0m\\]"
 
 # Set a two-line prompt. If accessing via ssh include 'ssh-session' message.
 if [[ -n "$SSH_CLIENT" ]]; then ssh_message="-ssh_session"; fi
-PS1="${CYA}\t ${GREEN}\u ${WHITE}at ${YELLOW}\h${RED}${ssh_message} ${WHITE}in ${BLUE}\w \n${CYAN}\$${ENDC} "
+PS1="${WHITE}\t ${CYAN}\$(date +%d/%m) ${GREEN}\u${WHITE}@${YELLOW}\h${RED}${ssh_message} ${WHITE}in ${BLUE}\w \n${CYAN}\$${ENDC} "
