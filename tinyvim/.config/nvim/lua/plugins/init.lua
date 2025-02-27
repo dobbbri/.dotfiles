@@ -36,12 +36,12 @@ return {
   --   config = function() require("plugins.configs.urlopen") end,
   -- },
 
-  {
-    "echasnovski/mini.indentscope",
-    version = false,
-    event = { "BufReadPre", "BufNewFile" },
-    opts = { symbol = "│", options = { try_as_border = true } },
-  },
+  -- {
+  --   "echasnovski/mini.indentscope",
+  --   version = false,
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   opts = { symbol = "│", options = { try_as_border = true } },
+  -- },
 
   {
     "akinsho/bufferline.nvim",
@@ -76,7 +76,7 @@ return {
     opts_extend = { "sources.default" },
   },
 
-  { "williamboman/mason.nvim", lazy = true, opts = {} },
+  { "williamboman/mason.nvim", opts = {} },
 
   {
     "neovim/nvim-lspconfig",

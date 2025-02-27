@@ -1,3 +1,35 @@
+
+local servers = {
+  astro = {},
+  tailwindcss = {},
+  ts_ls = {
+    default_config = {
+      filetypes = {
+        "javascript",
+        "typescript",
+      },
+    },
+  },
+  lua_ls = {
+    settings = {
+      Lua = {
+        workspace = { checkThirdParty = false },
+        telemetry = { enable = false },
+        completion = { callSnippet = "Replace" },
+        diagnostics = { globals = { "vim" } },
+      },
+    },
+  },
+  -- jsonls = {},
+  -- volar = {},
+}
+
+local lspconfig = require("lspconfig")
+for server, config in pairs(servers) do
+  config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+  lspconfig[server].setup(config)
+end
+
 -- Use LspAttach autocommand to only map the following keys
 -- vim.api.nvim_create_autocmd("LspAttach", {
 --   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -28,41 +60,4 @@
 --       { desc = "Goto T[y]pe Definition" }
 --     )
 --   end,
--- })
-
-local servers = {
-  astro = {},
-  tailwindcss = {},
-  ts_ls = {
-    filetypes = {
-      "javascript",
-      "typescript",
-    },
-  },
-  lua_ls = {},
-  -- jsonls = {},
-  -- volar = {},
-}
-
-local lspconfig = require("lspconfig")
-for server, config in pairs(servers) do
-  config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-  lspconfig[server].setup(config)
-end
-
--- local servers = { "astro", "tailwindcss", "ts_ls", "lua_ls" } -- "jsonls", "volar"
---
--- local capabilities = require("blink.cmp").get_lsp_capabilities()
---
--- for _, lsp in ipairs(servers) do
---   lspconfig[lsp].setup({
---     capabilities = capabilities,
---   })
--- end
---
--- require("lspconfig").ts_ls.setup({
---   filetypes = {
---     "javascript",
---     "typescript",
---   },
 -- })

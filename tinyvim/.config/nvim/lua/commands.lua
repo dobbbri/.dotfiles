@@ -1,14 +1,10 @@
 -- mason, write correct names only
-vim.api.nvim_create_user_command(
-    "MasonInstallAll",
-  function()
-    vim.cmd(
-      "MasonInstall lua-language-server typescript-language-server astro-language-server json-lsp tailwindcss-language-server prettier shfmt stylua "
-    )
-    -- "eslint_d prettierd vue-language-server",
-  end,
-  {}
-)
+vim.api.nvim_create_user_command("MasonInstallAll", function()
+  vim.cmd(
+    "MasonInstall lua-language-server typescript-language-server astro-language-server tailwindcss-language-server prettier shfmt stylua "
+    -- "eslint_d prettierd vue-language-server json-lsp"
+  )
+end, {})
 
 -- vim.api.nvim_create_user_command("Lint", function() require("lint").try_lint() end, {})
 

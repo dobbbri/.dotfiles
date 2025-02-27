@@ -57,7 +57,7 @@ o.ruler = false
 -- disable nvim intro
 o.shortmess:append({ W = true, I = true, c = true, C = true })
 
-o.signcolumn = "yes"
+o.signcolumn = "yes:1"
 o.splitbelow = true
 o.splitright = true
 o.timeoutlen = 700
