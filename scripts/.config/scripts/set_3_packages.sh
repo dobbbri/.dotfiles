@@ -15,9 +15,9 @@ sudo brightnessctl --device='acpi_video0' set 2
 # https://github.com/shiftkey/desktop/release
 
 # install packages
-sudo apt install xorg xserver-xorg -yy
+sudo apt install xorg xserver-xorg sakura -yy
 sudo apt install firefox-esr geany pcmanfm exa stow alacritty color-picker mintstick atril transmission feh -yy
-sudo apt install scrot gparted neofetch btop htop alsa-utils -yy
+sudo apt install scrot gparted neofetch btop htop alsa-utils ristretto -yy
 sudo apt install xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow chafa uget -yy
 sudo apt install arc-theme fonts-noto-color-emoji lxappearance lxtask fzf yaru-theme-gtk yaru-theme-icon -yy
 
