@@ -1,19 +1,10 @@
 
 sudo apt remove gvfs # se necessario reinstalar
-
-ou
-
-systemctl --user stop gvfs* # stop all services with gvfs
-
-sudo kill $(ps -A | grep gvfs | awk '{print $1}') # to be sure GVFS is not running
-
-sudo chmod 0000 /usr/lib/systemd/user/gvfs* # this prevent GVFS from starting
-
-Quando preciso do GVFS novamente, executo o código a seguir e reinicio para ter certeza:
-
-sudo chmod 0644 /usr/lib/systemd/user/gvfs* # this enables GVFS again
-
+sudo apt remove pulseaudio # se necessario reinstalar
 
 #------------------------------------------------------------------
 
 sudo systemctl stop systemd-timesyncd && sudo systemctl disable systemd-timesyncd
+sudo systemctl stop acpi-fakekey.service && sudo systemctl disable acpi-fakekey.service
+sudo systemctl stop cron.service && sudo systemctl disable cron.service
+
