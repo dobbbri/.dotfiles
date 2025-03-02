@@ -15,14 +15,14 @@ sudo brightnessctl --device='acpi_video0' set 2
 # https://github.com/shiftkey/desktop/release
 
 # install packages
-sudo apt install xorg xserver-xorg sakura -yy
-sudo apt install firefox-esr geany pcmanfm exa stow alacritty color-picker mintstick atril transmission feh -yy
-sudo apt install scrot gparted neofetch btop htop alsa-utils ristretto -yy
-sudo apt install xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow chafa uget -yy
-sudo apt install arc-theme fonts-noto-color-emoji lxappearance lxtask fzf yaru-theme-gtk yaru-theme-icon -yy
+# sudo apt install xorg xserver-xorg sakura -yy
+# sudo apt install firefox-esr geany pcmanfm alacritty -yy
+sudo apt install gparted neofetch htop alsa-utils ristretto exa color-picker mintstick atril transmission feh -yy
+sudo apt install xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow -yy
+sudo apt install fonts-noto-color-emoji lxappearance lxtask fzf yaru-theme-gtk yaru-theme-icon -yy
 
 echo "- Optimize Linux Laptop Battery Life and thermal changes ----------------"
-sudo apt install --yes tlp tlp-rdw linux-cpupower acpi-support acpi-call-dkms thermald
+sudo apt install --yes tlp tlp-rdw acpi-support acpi-call-dkms thermald
 sudo tlp start
 
 echo "- Enable/Fix tap to click -----------------------------------------------"

@@ -36,14 +36,14 @@ trap cleanup EXIT
 install_packages() {
   echo "Installing required packages..."
   sudo apt install -y \
-    xorg xbacklight xbindkeys xvkbd xinput build-essential bspwm sxhkd polybar \
-    network-manager network-manager-gnome pamixer pcmanfm \
-    file-roller lxappearance dialog mtools dosfstools avahi-daemon \
-    acpi acpid gvfs-backends xfce4-power-manager pavucontrol pamixer pulsemixer \
+    xorg brightnessctl xbindkeys xvkbd xinput build-essential bspwm sxhkd polybar \
+    network-manager pamixer pcmanfm \
+    file-roller lxappearance dialog \
+    acpi acpid gvfs \
     feh fonts-recommended fonts-font-awesome yaru-theme-gtk yaru-theme-icon \
     papirus-icon-theme exa flameshot qimgv rofi dunst libnotify-bin xdotool unzip \
     libnotify-dev firefox-esr geany sakura \
-    xdg-user-dirs-gtk alacritty lightdm \
+    xdg-user-dirs-gtk \
     --no-install-recommends || echo "Warning: Package installation failed."
   echo "Package installation completed."
 }
@@ -57,7 +57,6 @@ install_packages() {
 # and ACPI (for power management) are enabled on the system for proper operation.
 enable_services() {
   echo "Enabling required services..."
-  sudo systemctl enable avahi-daemon || echo "Warning: Failed to enable avahi-daemon."
   sudo systemctl enable acpid || echo "Warning: Failed to enable acpid."
   echo "Services enabled."
 }
@@ -200,5 +199,10 @@ install_reqs
 install_fonts
 change_theming
 install_battery_alert
+
+
+# brightnessctl --list
+sudo brightnessctl --device='smc::kbd_backlight' set 30
+sudo brightnessctl --device='acpi_video0' set 2
 
 echo "All installations completed successfully!"
