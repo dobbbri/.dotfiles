@@ -36,7 +36,7 @@ trap cleanup EXIT
 install_packages() {
   echo "Installing required packages..."
   sudo apt install -y \
-    xorg brightnessctl xbindkeys xvkbd xinput build-essential bspwm sxhkd polybar \
+    xorg brightnessctl xinput build-essential bspwm sxhkd polybar \
     network-manager pamixer pcmanfm \
     file-roller lxappearance dialog \
     acpi acpid gvfs \
@@ -44,8 +44,35 @@ install_packages() {
     papirus-icon-theme exa flameshot qimgv rofi dunst libnotify-bin xdotool unzip \
     libnotify-dev firefox-esr geany sakura \
     xdg-user-dirs-gtk \
+    gparted neofetch htop alsa-utils ristretto exa color-picker mintstick atril transmission feh\
+    xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow \
+    fonts-noto-color-emoji lxtask fzf yaru-theme-gtk yaru-theme-icon \
     --no-install-recommends || echo "Warning: Package installation failed."
   echo "Package installation completed."
+}
+
+
+
+install_laptop_packages() {
+  echo "Optimize Linux Laptop Battery Life and thermal changes"
+  sudo apt install -y tlp tlp-rdw acpi-support acpi-call-dkms thermald
+  echo "Package installation completed."
+}
+
+fix_and_remove_packages() {
+  echo "-Enable/Fix tap to click"
+  sudo apt remove --yes xserver-xorg-input-synaptics
+  sudo apt install --yes xserver-xorg-input-libinput
+  sudo cp /home/sdobri/.dotfiles/scripts/.config/scripts/config/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf
+
+  echo "remove modemmanager"
+  sudo apt --purge --yes autoremove modemmanager
+
+  echo "Remove printer services"
+  sudo apt --purge --yes autoremove cups system-config-printer simple-scan
+
+  echo "Remove bluetooth services"
+  sudo apt --purge --yes autoremove blueman bluez-utils bluez bluetooth
 }
 
 # ========================================
@@ -58,6 +85,12 @@ install_packages() {
 enable_services() {
   echo "Enabling required services..."
   sudo systemctl enable acpid || echo "Warning: Failed to enable acpid."
+
+  sudo tlp start
+
+  # brightnessctl --list
+  sudo brightnessctl --device='smc::kbd_backlight' set 30
+  sudo brightnessctl --device='acpi_video0' set 2
   echo "Services enabled."
 }
 
@@ -193,16 +226,13 @@ install_battery_alert(){
 echo "Starting installation process..."
 
 install_packages
+install_laptop_packages
 enable_services
 setup_user_dirs
 install_reqs
 install_fonts
+fix_and_remove_packages
 change_theming
 install_battery_alert
-
-
-# brightnessctl --list
-sudo brightnessctl --device='smc::kbd_backlight' set 30
-sudo brightnessctl --device='acpi_video0' set 2
 
 echo "All installations completed successfully!"

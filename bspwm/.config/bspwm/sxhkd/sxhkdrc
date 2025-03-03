@@ -3,15 +3,15 @@
 super + semicolon
   dunstctl close-all
 
-# Launch Browser (microsoft-edge)
-super + w
+# Launch Browser ()
+super + shift  + w
 	microsoft-edge 
 
-# Launch Browser (MIn)
-super + shift + w
+# Launch Browser ()
+super + w
   firefox-esr 
 
-# Launch Terminal (Ghostty)
+# Launch Terminal ()
 super + Return
 	sakura
 

@@ -3,22 +3,26 @@
 echo "Stow ---------------------------------------------------------------"
 ls
 
-rm ~/.bashrc
+rm /home/sdobri/.bashrc
 
-cd ~/.dotfiles
+cd /home/sdobri/.dotfiles
 
 echo "-------" 
-stow alacritty;  
+# stow alacritty;  
+stow astro
 stow bash;   
+stow bspwm
 stow feh;    
 stow git;  
-# stow rofi;     
 stow tinyvim;    
-stow xinit;
-stow astro;      
-# stow dunst;  
 stow geany;  
-# stow i3;   
-stow neofetch;  
-# stow tint2;     
+stow neofetch;
+stow sakura
 stow xarchiver;
+stow xinit;
+# stow rofi;     
+# stow dunst;  
+# stow i3;   
+# stow tint2;     
+#
+cd /home/sdobri
