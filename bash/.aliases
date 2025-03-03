@@ -20,7 +20,7 @@ alias reload='source ~/.bashrc'
 alias v='nvim'
 alias vim="nvim"
 
-# alias lg='lazygit'
+alias lg='lazygit'
 # alias LazyGit='lazygit'
 #
 # alias ron="./$HOME/.config/scripts/actions/redshift-on"
@@ -135,4 +135,9 @@ function nvimClean {
   rm -rf /home/sdobri/.cache/nvim
   rm -rf /home/sdobri/.local/share/nvim
   rm -rf /home/sdobri/.local/state/nvim
+}
+
+function installAi {
+  chmod u+x $1
+  sudo mv $1 /usr/local/bin/$2
 }

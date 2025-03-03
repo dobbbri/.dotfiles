@@ -67,20 +67,36 @@ return {
 
   { "sschleemilch/slimline.nvim", opts = require("plugins.configs.slimline") },
 
+  -- {
+  --   "saghen/blink.cmp",
+  --   version = "*",
+  --   event = "InsertEnter",
+  --   -- dependencies = "rafamadriz/friendly-snippets",
+  --   opts = require("plugins.configs.blink"),
+  --   opts_extend = { "sources.default" },
+  -- },
+
   {
-    "saghen/blink.cmp",
-    version = "*",
+    "hrsh7th/nvim-cmp",
+    version = false, -- last release is way too old
     event = "InsertEnter",
-    -- dependencies = "rafamadriz/friendly-snippets",
-    opts = require("plugins.configs.blink"),
-    opts_extend = { "sources.default" },
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+    },
+    config = function() require("plugins.configs.cmp") end,
   },
 
   { "williamboman/mason.nvim", opts = {} },
 
   {
     "neovim/nvim-lspconfig",
-    dependencies = { "saghen/blink.cmp" },
+    dependencies = { "hrsh7th/cmp-nvim-lsp" },
     event = { "BufReadPre", "BufNewFile" },
     config = function() require("plugins.configs.lspconfig") end,
   },

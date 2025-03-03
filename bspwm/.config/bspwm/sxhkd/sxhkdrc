@@ -5,11 +5,11 @@ super + semicolon
 
 # Launch Browser ()
 super + shift  + w
-	microsoft-edge 
+  firefox-esr 
 
 # Launch Browser ()
 super + w
-  firefox-esr 
+  zen
 
 # Launch Terminal ()
 super + Return
