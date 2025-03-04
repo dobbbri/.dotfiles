@@ -18,7 +18,7 @@ esac
 export EDITOR=nvim
 export VISUAL=nvim
 
-export TZ='America/Sao_paulo' 
+export TZ='America/Sao_Paulo'
 export LANGUAGE="en_US:UTF-8"
 export LANG="pt_BR.UTF-8"
 export LC_ALL="en_US.UTF-8"
