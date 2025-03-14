@@ -42,7 +42,7 @@ dunst -config ~/.config/bspwm/dunst/dunstrc &
 # feh --bg-fill ~/.dotfiles/images/k9TDJg6.png &
 
 ## Polybar or tint
-~/.config/bspwm/scripts/polybar-bspwm &
+# ~/.config/bspwm/scripts/polybar-bspwm &
 
 ## apps for systray if enabled
 # volumeicon &

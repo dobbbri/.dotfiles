@@ -14,20 +14,14 @@ return {
 
   -- { "ibhagwan/fzf-lua", opts = {} },
 
-  -- { "MagicDuck/grug-far.nvim", opts = {} },
+  -- { "MagicDuck/grug-far.nvim", lazy = true, opts = {} },
   --
   -- {
-  --   "mfussenegger/nvim-lint",
-  --   events = { "BufWritePost", "BufReadPost", "InsertLeave" },
-  --   config = function() require("plugins.configs.linters") end,
+  --   "uga-rosa/ccc.nvim",
+  --   lazy = true,
+  --   ft = { "astro", "css", "javascript", "typescript" },
+  --   opts = require("plugins.configs.ccc"),
   -- },
-
-  {
-    "uga-rosa/ccc.nvim",
-    lazy = true,
-    ft = { "astro", "css", "javascript", "typescript" },
-    opts = require("plugins.configs.ccc"),
-  },
 
   -- {
   --   "sontungexpt/url-open",
@@ -37,11 +31,17 @@ return {
   -- },
 
   -- {
-  --   "echasnovski/mini.indentscope",
-  --   version = false,
-  --   event = { "BufReadPre", "BufNewFile" },
-  --   opts = { symbol = "│", options = { try_as_border = true } },
+  --   "mfussenegger/nvim-lint",
+  --   events = { "BufWritePost", "BufReadPost", "InsertLeave" },
+  --   config = function() require("plugins.configs.linters") end,
   -- },
+
+  {
+    "echasnovski/mini.indentscope",
+    version = false,
+    event = { "BufReadPre", "BufNewFile" },
+    opts = { symbol = "│", options = { try_as_border = true } },
+  },
 
   {
     "akinsho/bufferline.nvim",

@@ -18,6 +18,7 @@ alias reload='source ~/.bashrc'
 
 # nvim
 alias v='nvim'
+alias e='nvim'
 
 alias lg='lazygit'
 # alias LazyGit='lazygit'
@@ -45,7 +46,7 @@ alias ssv='ss && v'
 alias sepc='cd ~/Sites/epc_in_dev'
 alias sepc2='cd ~/Sites/elisa_pet_care_v2'
 alias spt='cd ~/Sites/pousada_do_tucunare_2020'
-alias setv='cd ~/Sites/spaco_videira_2025'
+alias setv='cd ~/Sites/espaco_videira_2025'
 
 alias ..='cd ..'
 alias ..2='cd ../../'

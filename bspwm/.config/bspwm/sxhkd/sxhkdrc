@@ -9,7 +9,7 @@ super + shift  + w
 
 # Launch Browser ()
 super + w
-  zen
+  min
 
 # Launch Terminal ()
 super + Return
