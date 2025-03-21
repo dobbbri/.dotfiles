@@ -4,11 +4,11 @@ super + semicolon
   dunstctl close-all
 
 # Launch Browser ()
-super + shift  + w
+super  + w
   firefox-esr 
 
 # Launch Browser ()
-super + w
+super + shift + w
   min
 
 # Launch Terminal ()

@@ -12,7 +12,7 @@ echo "-------"
 stow astro
 stow bash;   
 stow bspwm
-stow feh;    
+# stow feh;    
 stow git;  
 stow tinyvim;    
 stow geany;  
