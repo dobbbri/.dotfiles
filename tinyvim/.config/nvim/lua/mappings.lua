@@ -5,10 +5,15 @@ map("n", "<C-s>", "<cmd> w <CR>")
 map("i", "jk", "<ESC>")
 map("n", "<C-c>", "<cmd> %y+ <CR>") -- copy whole filecontent
 
+
+-- files
+map("n", "-", function() require("mini.files").open() end, {desc = "Open Files" })
+map("n", "<leader>e", function() require("mini.files").open() end, {desc = "Open Files" })
+
 -- nvimtree
-map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle fiel explorer" })
+-- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle fiel explorer" })
 -- map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-map("n", "<C-h>", "<cmd>NvimTreeFocus<CR>", { desc = "Focus on file explorer" })
+-- map("n", "<C-h>", "<cmd>NvimTreeFocus<CR>", { desc = "Focus on file explorer" })
 
 -- fzf-lua
 map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "Find files" })
@@ -46,10 +51,10 @@ map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Diagnostic LSP" })
 
 -- my mappings -----------------------------------------------------------------------------------------
 -- move line
-map("n", "<S-j>", ":m .+1<CR>==") -- move line up(n)
-map("n", "<S-k>", ":m .-2<CR>==") -- move line down(n)
-map("v", "<S-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
-map("v", "<S-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
+-- map("n", "<S-j>", ":m .+1<CR>==") -- move line up(n)
+-- map("n", "<S-k>", ":m .-2<CR>==") -- move line down(n)
+-- map("v", "<S-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
+-- map("v", "<S-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
 
 -- others
 map("n", ";", ":", { desc = "Enter command mode" })

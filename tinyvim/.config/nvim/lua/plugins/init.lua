@@ -12,16 +12,16 @@ return {
 
   { "mg979/vim-visual-multi" },
 
-  -- { "ibhagwan/fzf-lua", opts = {} },
+  { "ibhagwan/fzf-lua", opts = {} },
 
   -- { "MagicDuck/grug-far.nvim", lazy = true, opts = {} },
   --
-  -- {
-  --   "uga-rosa/ccc.nvim",
-  --   lazy = true,
-  --   ft = { "astro", "css", "javascript", "typescript" },
-  --   opts = require("plugins.configs.ccc"),
-  -- },
+  {
+    "uga-rosa/ccc.nvim",
+    lazy = true,
+    ft = { "astro", "css", "javascript", "typescript" },
+    opts = require("plugins.configs.ccc"),
+  },
 
   -- {
   --   "sontungexpt/url-open",
@@ -37,10 +37,9 @@ return {
   -- },
 
   {
-    "echasnovski/mini.indentscope",
+    "echasnovski/mini.nvim",
     version = false,
-    event = { "BufReadPre", "BufNewFile" },
-    opts = { symbol = "│", options = { try_as_border = true } },
+    config = function() require("plugins.configs.mini") end,
   },
 
   {
@@ -55,9 +54,7 @@ return {
     config = function() require("plugins.configs.autotag") end,
   },
 
-  { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
-
-  { "nvim-tree/nvim-tree.lua", opts = require("plugins.configs.tree") },
+  -- { "nvim-tree/nvim-tree.lua", opts = require("plugins.configs.tree") },
 
   {
     "nvim-treesitter/nvim-treesitter",

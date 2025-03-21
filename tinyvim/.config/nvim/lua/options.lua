@@ -6,7 +6,7 @@ local colors = {
   { name = "fluoromachine", package = "maxmx03/fluoromachine.nvim" },
   { name = "gruvbox", package = "ellisonleao/gruvbox.nvim" },
 }
-g.selected_color = colors[1]
+g.selected_color = colors[2]
 
 -- mapleader
 g.mapleader = " "
