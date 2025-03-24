@@ -14,8 +14,8 @@ return {
 
   { "ibhagwan/fzf-lua", opts = {} },
 
-  -- { "MagicDuck/grug-far.nvim", lazy = true, opts = {} },
-  --
+  { "MagicDuck/grug-far.nvim", lazy = true, opts = {} },
+
   {
     "uga-rosa/ccc.nvim",
     lazy = true,
@@ -104,11 +104,11 @@ return {
     config = function() require("plugins.configs.formatters") end,
   },
 
-  {
-    "lewis6991/gitsigns.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    opts = require("plugins.configs.gitsigns"),
-  },
+  -- {
+  --   "lewis6991/gitsigns.nvim",
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   opts = require("plugins.configs.gitsigns"),
+  -- },
 
   -- {
   --   "folke/which-key.nvim",

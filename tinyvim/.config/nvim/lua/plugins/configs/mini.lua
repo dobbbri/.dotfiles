@@ -1,6 +1,6 @@
 local ignore_files = {
   ".DS_Store",
-  -- ".git",
+  ".git",
   ".astro",
   ".vscode",
   ".gitignore",

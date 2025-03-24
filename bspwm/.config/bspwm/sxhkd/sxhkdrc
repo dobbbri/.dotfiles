@@ -5,7 +5,7 @@ super + semicolon
 
 # Launch Browser ()
 super  + w
-  firefox-esr 
+  librewolf 
 
 # Launch Browser ()
 super + shift + w
@@ -36,7 +36,7 @@ super + e
 
 # Launch GIMP (Image Editor)
 super + g
-	github-desktop
+	gimp
 
 # Set Window State: Tile Mode
 super + shift + t
@@ -120,7 +120,7 @@ super + alt + Down
 
 # Resize Window: Shrink Up
 super + alt + Up
-	bspc node -z top 0 -40; bspc node -z bottom -40 0
+	bspc node -z top 0 -40; bspc node -z up -40 0
 
 # Increase Volume (Using pamixer)
 XF86AudioRaiseVolume

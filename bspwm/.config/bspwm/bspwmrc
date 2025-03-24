@@ -29,7 +29,7 @@ bspc rule -a mpv state=floating layer=normal
 bspc rule -a Pavucontrol:pavucontrol state=floating 
 bspc rule -a Lxappearance state=floating layer=normal
 bspc rule -a color-picker state=floating layer=normal
-bspc rule -a gitHub-desktop state=floating layer=normal 
+bspc rule -a gimp state=floating layer=normal 
 # bspc rule -a Gimp desktop='^9' follow=on
 # bspc rule -a obs desktop='^10' follow=on
 # bspc rule -a discord desktop='^8' follow=on
