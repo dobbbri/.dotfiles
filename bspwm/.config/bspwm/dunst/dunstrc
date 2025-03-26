@@ -1,5 +1,3 @@
-#!/bin/bash
-
 [global]
     ### Display ###
 
@@ -191,7 +189,7 @@
     # Define the corner radius of the notification window in pixel size. If the radius is 0, you have no rounded corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 15
 
     ### Legacy
 

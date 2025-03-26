@@ -43,7 +43,7 @@ install_packages() {
     feh fonts-recommended fonts-font-awesome yaru-theme-gtk yaru-theme-icon \
     papirus-icon-theme exa flameshot qimgv rofi dunst libnotify-bin xdotool unzip \
     libnotify-dev firefox-esr geany sakura \
-    xdg-user-dirs-gtk \
+    xdg-user-dirs-gtk redshift \
     gparted neofetch htop alsa-utils ristretto exa color-picker mintstick atril transmission feh\
     xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow \
     fonts-noto-color-emoji lxtask fzf yaru-theme-gtk yaru-theme-icon \
@@ -64,6 +64,9 @@ fix_and_remove_packages() {
   sudo apt remove --yes xserver-xorg-input-synaptics
   sudo apt install --yes xserver-xorg-input-libinput
   sudo cp /home/sdobri/.dotfiles/scripts/.config/scripts/config/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf
+
+  echo "Remove geoclue-2.0(redshift) services"
+  sudo apt --purge --yes autoremove geoclue-2.0
 
   echo "remove modemmanager"
   sudo apt --purge --yes autoremove modemmanager

@@ -1,10 +1,11 @@
 #!/bin/bash
 
+# Close all dusnt alert
 super + semicolon
   dunstctl close-all
 
 # Launch Browser ()
-super  + w
+super + w
   librewolf 
 
 # Launch Browser ()
@@ -15,6 +16,7 @@ super + shift + w
 super + Return
 	sakura
 
+# Launch Terminal ()
 super + t
   sakura 
 
@@ -22,9 +24,13 @@ super + t
 super + space
    	rofi -show drun -modi drun -line-padding 4 -hide-scrollbar -show-icons -theme ~/.config/bspwm/rofi/config.rasi
 
+# Shutdown or Reboot
+super + x
+	~/.dotfiles/bspwm/.config/bspwm/scripts/power
+
 # Show Keybinding Help Script
 super + h
-  ~/.config/bspwm/scripts/help
+ ~/.dotfiles/bspwm/.config/bspwm/scripts/help
 
 # Launch File Manager (Thunar)
 super + f
@@ -122,6 +128,18 @@ super + alt + Down
 super + alt + Up
 	bspc node -z top 0 -40; bspc node -z up -40 0
 
+# Increase Volume (Custom Script)
+super + shift + >
+  ~/.dotfiles/bspwm/.config/bspwm/scripts/changevolume up
+
+# Decrease Volume (Custom Script)
+super + shift + <
+	~/.dotfiles/bspwm/.config/bspwm/scripts/changevolume down
+
+# Mute Volume (Custom Script)
+super + m
+	~/.dotfiles/bspwm/.config/bspwm/scripts/changevolume mute
+
 # Increase Volume (Using pamixer)
 XF86AudioRaiseVolume
 	pamixer -i 2
@@ -132,20 +150,28 @@ XF86AudioLowerVolume
 
 # Increase Screen Brightness
 XF86MonBrightnessUp
-	brightnessctl -c backlight set +5%
+	xbacklight +10
 
 # Decrease Screen Brightness
 XF86MonBrightnessDown
-	brightnessctl -c backlight set 5%-
+	xbacklight -10
 
 # Take a Screenshot (Region Select)
 super + shift + s
 	flameshot gui --path ~/Screenshots/
 
+# Enable Redshift (Night Light)
+super + alt + r
+	~/.dotfiles/bspwm/.config/bspwm/scripts/redshift-on
+
+# Disable Redshift (Night Light)
+super + alt + b
+	~/.dotfiles/bspwm/.config/bspwm/scripts/redshift-off
+
 # Take a Fullscreen Screenshot
 super + s
 	flameshot full --path ~/Screenshots/
+
 # Resize All Windows Equally
-#
 super + equal
 	bspc query -N -d | xargs -I % bspc node % -B
