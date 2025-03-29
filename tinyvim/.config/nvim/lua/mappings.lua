@@ -1,6 +1,8 @@
 local map = vim.keymap.set
 
 -- general mappings
+map("n", "1", "<cmd> w <CR>")
+map("n", "2", "<cmd> q <CR>")
 map("n", "<C-s>", "<cmd> w <CR>")
 map("i", "jk", "<ESC>")
 map("n", "<C-c>", "<cmd> %y+ <CR>") -- copy whole filecontent

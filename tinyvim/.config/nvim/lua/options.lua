@@ -5,8 +5,9 @@ local g = vim.g
 local colors = {
   { name = "fluoromachine", package = "maxmx03/fluoromachine.nvim" },
   { name = "gruvbox", package = "ellisonleao/gruvbox.nvim" },
+  { name = "onedark", package = "navarasu/onedark.nvim" },
 }
-g.selected_color = colors[2]
+g.selected_color = colors[3]
 
 -- mapleader
 g.mapleader = " "
@@ -21,6 +22,7 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
+o.background = "dark"
 -- options
 o.swapfile = false
 o.laststatus = 3

@@ -19,7 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = require("plugins")
 
-require("lazy").setup(plugins, { install = { colorscheme = { "habamax" } } })
+require("lazy").setup(plugins, { install = { colorscheme = { "default" } } })
 
 require("mappings")
 
