@@ -8,7 +8,7 @@ return {
 
   { "nvim-lua/plenary.nvim", lazy = true },
 
-  { "nvim-tree/nvim-web-devicons" },
+  -- { "nvim-tree/nvim-web-devicons" },
 
   { "mg979/vim-visual-multi" },
 

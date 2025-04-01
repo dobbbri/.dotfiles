@@ -29,3 +29,5 @@ require("mini.move").setup({
 require("mini.pairs").setup({
   modes = { insert = true, command = true, terminal = true },
 })
+
+require("mini.icons").setup()

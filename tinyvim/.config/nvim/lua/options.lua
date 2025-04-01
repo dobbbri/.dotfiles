@@ -7,7 +7,7 @@ local colors = {
   { name = "gruvbox", package = "ellisonleao/gruvbox.nvim" },
   { name = "onedark", package = "navarasu/onedark.nvim" },
 }
-g.selected_color = colors[3]
+g.selected_color = colors[2]
 
 -- mapleader
 g.mapleader = " "
@@ -22,7 +22,9 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
-o.background = "dark"
+-- use rounded borders on all floating windows
+o.winborder = 'rounded'
+
 -- options
 o.swapfile = false
 o.laststatus = 3
