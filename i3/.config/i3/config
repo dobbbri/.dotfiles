@@ -48,6 +48,14 @@ set $blue     #91B1D1
 set $darkblue #416181
 set $purple   #B48EAD
 
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -c backlight set +5%  
+bindsym XF86MonBrightnessDowm exec --no-startup-id brightnessctl -c backlight set 5%-  
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 
+
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
 # ----------------------------------------------------------------------------
 # Workspaces
 # ----------------------------------------------------------------------------
@@ -94,9 +102,12 @@ $sup+Shift+9 move container to workspace $ws9;  workspace $ws9
 # ----------------------------------------------------------------------------
 
 # Windowns defaults
-default_border pixel 2
+for_window [class=".*"] border pixel 2
+# default_border pixel 2
 default_floating_border normal
 hide_edge_borders smart
+gaps inner 4
+gaps outer 2
 
 # focus defaults
 focus_follows_mouse no
@@ -178,8 +189,11 @@ $sup+Shift+F11               fullscreen toggle
 # rofi show windows list
 $sup+space                     $exe rofi -show drun -modi drun -line-padding 4 -hide-scrollbar -show-icons -theme ~/.config/i3/rofi/config.rasi
 
+# Librewolf
+$sup+w                       $exe librewolf
+
 # Firefox
-$sup+w                       $exe firefox
+$sup+Shift+w                       $exe firefox
 
 # PCManFM
 $sup+f                 $exe pcmanfm
