@@ -221,6 +221,11 @@ EOF
 
 install_battery_alert(){
   curl -o- https://raw.githubusercontent.com/asapdotid/battery-alert-linux/refs/heads/main/install.sh | bash
+
+ # Set Notification config file: /home/sdobri/.local/share/battery-alert/default.conf
+ # Set executable file: /home/sdobri/.local/share/battery-alert/battery-alert.sh
+ # Set user service: /home/sdobri/.config/systemd/user/battery-alert.service
+ # Set user timer: /home/sdobri/.config/systemd/user/battery-alert.timer
 }
 
 # ========================================

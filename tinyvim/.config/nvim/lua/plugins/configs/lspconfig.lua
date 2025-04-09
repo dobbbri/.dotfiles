@@ -2,12 +2,12 @@ local servers = {
   astro = {},
   tailwindcss = {},
   ts_ls = {
-    default_config = {
-      filetypes = {
-        "javascript",
-        "typescript",
-      },
-    },
+    -- default_config = {
+    --   filetypes = {
+    --     "javascript",
+    --     "typescript",
+    --   },
+    -- },
   },
   lua_ls = {
     settings = {
@@ -22,15 +22,15 @@ local servers = {
   -- jsonls = {},
   -- volar = {},
 }
-
-local capabilities = {
-  textDocument = {
-    foldingRange = {
-      dynamicRegistration = false,
-      lineFoldingOnly = true
-    }
-  }
-}
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- local capabilities = {
+--   textDocument = {
+--     foldingRange = {
+--       dynamicRegistration = false,
+--       lineFoldingOnly = true
+--     }
+--   }
+-- }
 
 local lspconfig = require("lspconfig")
 for server, config in pairs(servers) do
@@ -67,12 +67,11 @@ local function diagnostic_format(diagnostic)
 end
 
 vim.diagnostic.config({
-  virtual_text = false,
-  signs = { text = diagnostic_signs },
-  virtual_lines = {
-    current_line = true,
-    format = diagnostic_format,
-  },
+  virtual_text = true,
+  -- virtual_lines = {
+  --   current_line = true,
+  --   format = diagnostic_format,
+  -- },
   underline = true,
   severity_sort = true,
 })

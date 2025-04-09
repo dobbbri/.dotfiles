@@ -14,7 +14,7 @@ return {
 
   { "ibhagwan/fzf-lua", opts = {} },
 
-  { "MagicDuck/grug-far.nvim", lazy = true, opts = {} },
+  -- { "MagicDuck/grug-far.nvim", lazy = true, opts = {} },
 
   {
     "uga-rosa/ccc.nvim",
@@ -48,11 +48,11 @@ return {
     opts = require("plugins.configs.bufferline"),
   },
 
-  {
-    "windwp/nvim-ts-autotag",
-    event = "InsertEnter",
-    config = function() require("plugins.configs.autotag") end,
-  },
+  -- {
+  --   "windwp/nvim-ts-autotag",
+  --   event = "InsertEnter",
+  --   config = function() require("plugins.configs.autotag") end,
+  -- },
 
   -- { "nvim-tree/nvim-tree.lua", opts = require("plugins.configs.tree") },
 
@@ -66,7 +66,7 @@ return {
 
   {
     "saghen/blink.cmp",
-    version = '1.*',
+    version = "1.*",
     -- event = "InsertEnter",
     dependencies = "rafamadriz/friendly-snippets",
     opts = require("plugins.configs.blink"),
@@ -93,7 +93,7 @@ return {
 
   {
     "neovim/nvim-lspconfig",
-    dependencies = { 'saghen/blink.cmp' },
+    dependencies = { "saghen/blink.cmp" },
     -- dependencies = { "hrsh7th/cmp-nvim-lsp" },
     event = { "BufReadPre", "BufNewFile" },
     config = function() require("plugins.configs.lspconfig") end,
