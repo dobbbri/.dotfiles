@@ -21,10 +21,6 @@ alias v='nvim'
 alias e='nvim'
 
 alias lg='lazygit'
-# alias LazyGit='lazygit'
-#
-# alias ron="./$HOME/.config/scripts/actions/redshift-on"
-# alias roff="./$HOME/.config/scripts/actions/redshift-off"
 
 # dotfiles
 alias vv='cd ~/.dotfiles/tinyvim/.config/nvim/'
@@ -47,6 +43,7 @@ alias sepc='cd ~/Sites/epc_in_dev'
 alias sepc2='cd ~/Sites/elisa_pet_care_v2'
 alias spt='cd ~/Sites/pousada_do_tucunare_2020'
 alias setv='cd ~/Sites/espaco_videira_2025'
+alias sb='cd ~/Sites/blog'
 
 alias ..='cd ..'
 alias ..2='cd ../../'
@@ -120,6 +117,11 @@ alias gP="git pull"
 alias gaac="git add . && git commit -m"
 alias gsync="git pull && git push"
 alias ggg="gaac 'update...' && gps"
+
+function ggi {
+  gaac $1 
+  gps
+}
 
 #Clean cache
 alias cache='rm -rf ~/.cache/*'

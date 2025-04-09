@@ -23,8 +23,20 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 -- use rounded borders on all floating windows
-o.winborder = 'single' ---'rounded'
+-- o.winborder = 'single' ---'rounded'
 
+-- spell
+o.spell = true
+o.spelllang = 'en,pt'
+-- COMANDOS
+-- ]s - próxima palavra para correção
+-- [s - palavra anterior para correção
+-- z= - lista de sugestões
+-- zg - adiciona a palavra do cursor na lista de sugestões
+-- zug - desfaz o comando anterior
+-- zw - remove a palavra do cursor da lista de sugestões
+-- zuw - desfaz o comando anterior
+--
 -- options
 o.swapfile = false
 o.laststatus = 3
@@ -74,6 +86,10 @@ o.encoding = "utf-8"
 o.fileencoding = "utf-8"
 
 -- folding
+-- o.foldcolumn = '1' -- '0' is not bad
+-- o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+-- o.foldlevelstart = 99
+-- o.foldenable = true
 
 -- interval for writing swap file to disk, also used by gitsigns
 o.updatetime = 250

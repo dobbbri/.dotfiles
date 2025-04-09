@@ -1,14 +1,7 @@
 local servers = {
   astro = {},
   tailwindcss = {},
-  ts_ls = {
-    -- default_config = {
-    --   filetypes = {
-    --     "javascript",
-    --     "typescript",
-    --   },
-    -- },
-  },
+  ts_ls = {},
   lua_ls = {
     settings = {
       Lua = {
@@ -18,19 +11,14 @@ local servers = {
         diagnostics = { globals = { "vim" } },
       },
     },
-  },
-  -- jsonls = {},
-  -- volar = {},
+  }, -- jsonls = {},  -- volar = {},
 }
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
--- local capabilities = {
---   textDocument = {
---     foldingRange = {
---       dynamicRegistration = false,
---       lineFoldingOnly = true
---     }
---   }
--- }
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
 
 local lspconfig = require("lspconfig")
 for server, config in pairs(servers) do
