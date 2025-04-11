@@ -14,7 +14,7 @@ return {
 
   { "ibhagwan/fzf-lua", opts = {} },
 
-  -- { "MagicDuck/grug-far.nvim", lazy = true, opts = {} },
+  { "MagicDuck/grug-far.nvim", lazy = true, opts = {} },
 
   {
     "uga-rosa/ccc.nvim",

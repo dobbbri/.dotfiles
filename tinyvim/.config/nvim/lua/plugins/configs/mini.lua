@@ -20,4 +20,5 @@ require("mini.files").setup({
 require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } })
 require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } })
 require("mini.indentscope").setup({ symbol = "┊" })
+require("mini.comment").setup()
 require("mini.icons").setup()

@@ -26,8 +26,8 @@ g.loaded_ruby_provider = 0
 -- o.winborder = 'single' ---'rounded'
 
 -- spell
-o.spell = true
-o.spelllang = 'en,pt'
+-- o.spell = true
+-- o.spelllang = 'en,pt'
 -- COMANDOS
 -- ]s - próxima palavra para correção
 -- [s - palavra anterior para correção

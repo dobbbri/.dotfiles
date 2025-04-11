@@ -44,6 +44,7 @@ alias sepc2='cd ~/Sites/elisa_pet_care_v2'
 alias spt='cd ~/Sites/pousada_do_tucunare_2020'
 alias setv='cd ~/Sites/espaco_videira_2025'
 alias sb='cd ~/Sites/blog'
+alias sbs='cd ~/Sites/blogsmith/'
 
 alias ..='cd ..'
 alias ..2='cd ../../'

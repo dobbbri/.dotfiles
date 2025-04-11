@@ -33,8 +33,8 @@ map("n", "<leader>xo", "<cmd>%bd|e#|bd#<cr>", { desc = "Close other buffers" })
 map("n", "<leader>xa", "<cmd>%bd<cr>", { desc = "Close all buffers" })
 
 -- comment.nvim
-map("n", "<leader>/", "gcc", { remap = true, desc = "Comment line" })
-map("v", "<leader>/", "gc", { remap = true, desc = "Comment multiple lines" })
+-- map("n", "<leader>/", "gcc", { remap = true, desc = "Comment line" })
+-- map("v", "<leader>/", "gc", { remap = true, desc = "Comment multiple lines" })
 
 map("n", "<esc>", "<cmd>noh<CR>", { desc = "Clear Highlights" })
 
@@ -88,8 +88,8 @@ map("n", "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Reset buffer"
 
 -- tinygit
 map("n", "<leader>ga", function() require("tinygit").interactiveStaging() end, { desc = "Interactive Staging" })
-map("n", "<leader>gc", function() require("tinygit").smartCommit() end, { desc = "Smart Commit" })
-map("n", "<leader>gp", function() require("tinygit").push() end, { desc = "Push" })
+map("n", "<leader>gC", function() require("tinygit").smartCommit() end, { desc = "Smart Commit" })
+map("n", "<leader>gP", function() require("tinygit").push() end, { desc = "Push" })
 
 -- terminal
 -- map("n", "<leader>t", function() require("nvchad.term").toggle({ pos = "sp" }) end, { desc = "Toggle Terminal" })
