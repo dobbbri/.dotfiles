@@ -21,4 +21,5 @@ require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", u
 require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } })
 require("mini.indentscope").setup({ symbol = "┊" })
 require("mini.comment").setup()
+-- require("mini.diff").setup()
 require("mini.icons").setup()
