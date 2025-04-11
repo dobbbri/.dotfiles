@@ -8,7 +8,11 @@ return {
 
   { "nvim-lua/plenary.nvim", lazy = true },
 
-  -- { "nvim-tree/nvim-web-devicons" },
+  {
+    "echasnovski/mini.nvim",
+    version = false,
+    config = function() require("plugins.configs.mini") end,
+  },
 
   { "mg979/vim-visual-multi" },
 
@@ -35,12 +39,6 @@ return {
   --   events = { "BufWritePost", "BufReadPost", "InsertLeave" },
   --   config = function() require("plugins.configs.linters") end,
   -- },
-
-  {
-    "echasnovski/mini.nvim",
-    version = false,
-    config = function() require("plugins.configs.mini") end,
-  },
 
   {
     "akinsho/bufferline.nvim",

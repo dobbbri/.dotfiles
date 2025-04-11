@@ -219,6 +219,53 @@ EOF
   echo "GTK settings updated."
 }
 
+
+# ========================================
+# Power Off Key Settings
+# ========================================
+
+change_power_off_key() {
+sudo mv /etc/systemd/logind.conf /etc/systemd/logind.conf.bkp
+cat <<EOF >/etc/systemd/logind.conf
+[Login]
+#NAutoVTs=6
+#ReserveVT=6
+#KillUserProcesses=no
+#KillOnlyUsers=
+#KillExcludeUsers=root
+#InhibitDelayMaxSec=5
+#UserStopDelaySec=10
+HandlePowerKey=suspend
+HandlePowerKeyLongPress=poweroff
+#HandleRebootKey=reboot
+#HandleRebootKeyLongPress=poweroff
+#HandleSuspendKey=suspend
+#HandleSuspendKeyLongPress=hibernate
+#HandleHibernateKey=hibernate
+#HandleHibernateKeyLongPress=ignore
+#HandleLidSwitch=suspend
+#HandleLidSwitchExternalPower=suspend
+#HandleLidSwitchDocked=ignore
+#PowerKeyIgnoreInhibited=no
+#SuspendKeyIgnoreInhibited=no
+#HibernateKeyIgnoreInhibited=no
+#LidSwitchIgnoreInhibited=yes
+#RebootKeyIgnoreInhibited=no
+#HoldoffTimeoutSec=30s
+#IdleAction=ignore
+#IdleActionSec=30min
+#RuntimeDirectorySize=10%
+#RuntimeDirectoryInodesMax=
+#RemoveIPC=yes
+#InhibitorsMax=8192
+#SessionsMax=8192
+#StopIdleSessionSec=infinity
+EOF
+
+  echo "Power Off Key set. Needs Reboot"
+}
+
+
 install_battery_alert(){
   curl -o- https://raw.githubusercontent.com/asapdotid/battery-alert-linux/refs/heads/main/install.sh | bash
 
@@ -241,6 +288,7 @@ install_reqs
 install_fonts
 fix_and_remove_packages
 change_theming
+change_power_off_key
 install_battery_alert
 
 echo "All installations completed successfully!"
