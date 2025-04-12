@@ -1,5 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "- intall node Version 18 -------------------------------------------------"
-echo "nvm install 18 # execute this"
 
+echo "nvm install --lts # execute this"
+
+nvm install --lts 

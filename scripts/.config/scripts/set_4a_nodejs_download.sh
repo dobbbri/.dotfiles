@@ -4,9 +4,7 @@
 
 
 echo "- Dowload NodeJs installer -----------------------------------------------"
-if [[ ! -d /home/sdobri/.nvm ]]; then
-  mkdir /home/sdobri/.nvm
-fi
+mkdir -p /home/sdobri/.nvm
 
 # installs nvm (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash

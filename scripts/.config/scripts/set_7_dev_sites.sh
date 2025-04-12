@@ -6,9 +6,7 @@
 # git clone git@github.com:dobbbri/Projects.git
 
 echo "Add Sites Folder -----------------------------------------------------------"
-if [[ ! -d //home/sdobri/Sites ]]; then
-  mkdir /home/sdobri/Sites
-fi
+mkdir -p /home/sdobri/Sites
 
 cd /home/sdobri/Sites
 

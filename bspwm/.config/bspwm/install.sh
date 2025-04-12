@@ -12,46 +12,28 @@ echo "
  +-+-+-+-+-+-+-+-+-+-+-+-+-+                                                                            
 "
 
-INSTALL_DIR="$HOME/installation"
-
-# ========================================
-# Initialization
-#================================
-mkdir -p "$INSTALL_DIR" || {
-  echo "Failed to create installation directory."
-  exit 1
-}
-
-# Cleanup function
-cleanup() {
-  rm -rf "$INSTALL_DIR"
-  echo "Installation directory removed."
-}
-trap cleanup EXIT
-
 # ========================================
 # Package Installation Section
 # ========================================
-# Install required packages
 install_packages() {
   echo "Installing required packages..."
-  sudo apt install -y \
-    xorg brightnessctl xinput build-essential bspwm sxhkd polybar \
-    network-manager pamixer pcmanfm \
-    file-roller lxappearance dialog \
-    acpi acpid gvfs \
-    feh fonts-recommended fonts-font-awesome yaru-theme-gtk yaru-theme-icon \
-    papirus-icon-theme exa flameshot qimgv rofi dunst libnotify-bin xdotool unzip \
-    libnotify-dev firefox-esr geany sakura \
-    xdg-user-dirs-gtk redshift \
-    gparted neofetch htop alsa-utils ristretto exa color-picker mintstick atril transmission feh\
-    xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow \
-    fonts-noto-color-emoji lxtask fzf yaru-theme-gtk yaru-theme-icon \
-    --no-install-recommends || echo "Warning: Package installation failed."
+  sudo apt install -y xorg xorg-dev \
+    xbacklight xbindkeys xvkbd xinput brightnessctl\
+    bspwm sxhkd polybar network-manager pamixer pcmanfm file-roller lxappearance dialog acpi acpid \
+    gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
+    exa redshift flameshot qimgv rofi dunst sakura \
+    libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
+    gparted neofetch htop alsa-utils ristretto exa color-picker mintstick atril \
+    transmission feh xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow \
+    lxtask fzf yaru-theme-gtk yaru-theme-icon \
+    xdg-user-dirs-gtk || echo "Warning: Package installation failed."
   echo "Package installation completed."
 }
 
-
+install_reqs() {
+    echo "Updating package lists and installing required dependencies..."
+    sudo apt install -y build-essential cmake meson ninja-build git wget curl pkg-config || { echo "Package installation failed."; exit 1; }
+}
 
 install_laptop_packages() {
   echo "Optimize Linux Laptop Battery Life and thermal changes"
@@ -81,7 +63,7 @@ fix_and_remove_packages() {
 # ========================================
 # Enabling Required Services
 # ========================================
-# Enables system services such as Avahi and ACPI
+# Enables system services such asavahi-daemon and ACPI
 # ------------------------------------------------
 # This section ensures that necessary services like Avahi (for network discovery)
 # and ACPI (for power management) are enabled on the system for proper operation.
@@ -112,30 +94,6 @@ setup_user_dirs() {
   mkdir -p ~/Screenshots/ || echo "Warning: Failed to create Screenshots directory."
   echo "User directories updated."
 }
-# ========================================
-# Utility Functions
-# ========================================
-command_exists() {
-  command -v "$1" &>/dev/null
-}
-
-install_reqs() {
-  echo "Updating package lists and installing required dependencies..."
-  sudo apt install -y \
-    build-essential cmake meson ninja-build git wget curl \
-    libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev \
-    libepoxy-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev \
-    libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev \
-    libxcb-dpms0-dev libxcb-glx0-dev libxcb-image0-dev \
-    libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev \
-    libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev \
-    libxcb-xfixes0-dev libxext-dev uthash-dev \
-    libgtk-4-dev libadwaita-1-dev \
-    pkg-config || {
-    echo "Package installation failed."
-    exit 1
-  }
-}
 
 # ========================================
 # Font Installation
@@ -164,12 +122,9 @@ install_fonts() {
     fi
   done
 
-  # Add custom TTF fonts
-  cp ~/.config/bspwm/fonts/* ~/.local/share/fonts || echo "Warning: Error copying custom TTF fonts."
   fc-cache -f || echo "Warning: Error rebuilding font cache."
   echo "Font installation completed."
 }
-
 
 # ========================================
 # GTK Theme Settings
@@ -185,7 +140,7 @@ change_theming() {
 gtk-theme-name=Yaru-Dark
 gtk-icon-theme-name=Yaru-Dark
 gtk-font-name=Sans 10
-gtk-cursor-theme-name=Adwaita
+gtk-cursor-theme-name=Yaru
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
@@ -203,7 +158,7 @@ EOF
 gtk-theme-name=Yaru-Dark
 gtk-icon-theme-name=Yaru-Dark
 gtk-font-name="Sans 10"
-gtk-cursor-theme-name="Adwaita"
+gtk-cursor-theme-name="Yaru"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
@@ -219,14 +174,13 @@ EOF
   echo "GTK settings updated."
 }
 
-
 # ========================================
 # Power Off Key Settings
 # ========================================
 
 change_power_off_key() {
-sudo mv /etc/systemd/logind.conf /etc/systemd/logind.conf.bkp
-cat <<EOF >/etc/systemd/logind.conf
+  sudo mv /etc/systemd/logind.conf /etc/systemd/logind.conf.bkp
+  cat <<EOF >/etc/systemd/logind.conf
 [Login]
 #NAutoVTs=6
 #ReserveVT=6
@@ -265,14 +219,13 @@ EOF
   echo "Power Off Key set. Needs Reboot"
 }
 
-
-install_battery_alert(){
+install_battery_alert() {
   curl -o- https://raw.githubusercontent.com/asapdotid/battery-alert-linux/refs/heads/main/install.sh | bash
 
- # Set Notification config file: /home/sdobri/.local/share/battery-alert/default.conf
- # Set executable file: /home/sdobri/.local/share/battery-alert/battery-alert.sh
- # Set user service: /home/sdobri/.config/systemd/user/battery-alert.service
- # Set user timer: /home/sdobri/.config/systemd/user/battery-alert.timer
+  # Set Notification config file: /home/sdobri/.local/share/battery-alert/default.conf
+  # Set executable file: /home/sdobri/.local/share/battery-alert/battery-alert.sh
+  # Set user service: /home/sdobri/.config/systemd/user/battery-alert.service
+  # Set user timer: /home/sdobri/.config/systemd/user/battery-alert.timer
 }
 
 # ========================================
@@ -281,10 +234,10 @@ install_battery_alert(){
 echo "Starting installation process..."
 
 install_packages
+install_reqs
 install_laptop_packages
 enable_services
 setup_user_dirs
-install_reqs
 install_fonts
 fix_and_remove_packages
 change_theming
