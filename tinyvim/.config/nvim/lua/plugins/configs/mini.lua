@@ -14,7 +14,7 @@ local ignore_files = {
 require("mini.files").setup({
   permanent_delete = false,
   content = { filter = function(entry) return not vim.tbl_contains(ignore_files, entry.name) end },
-  mappings = { go_in_plus = "<CR>", go_out_plus = "<left>" },
+  mappings = { close = "<esc>",go_in_plus = "<CR>", go_out_plus = "<left>" },
 })
 
 require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } })
