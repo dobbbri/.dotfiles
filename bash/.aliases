@@ -119,11 +119,6 @@ alias gaac="git add . && git commit -m"
 alias gsync="git pull && git push"
 alias ggg="gaac 'update...' && gps"
 
-function ggi {
-  gaac $1 
-  gps
-}
-
 #Clean cache
 alias cache='rm -rf ~/.cache/*'
 
