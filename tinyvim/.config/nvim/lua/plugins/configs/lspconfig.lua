@@ -27,19 +27,19 @@ for server, config in pairs(servers) do
   lspconfig[server].setup(config)
 end
 
-vim.diagnostic.config({
-  virtual_text = false,
-  virtual_lines = { current_line = false },
-  underline = true,
-  severity_sort = true,
-})
-
-local diagnostic_signs = {
-  [vim.diagnostic.severity.ERROR] = "",
-  [vim.diagnostic.severity.WARN] = "",
-  [vim.diagnostic.severity.INFO] = "",
-  [vim.diagnostic.severity.HINT] = "",
-}
+-- vim.diagnostic.config({
+--   -- virtual_text = false,
+--   -- virtual_lines = { current_line = false },
+--   underline = true,
+--   severity_sort = true,
+-- })
+--
+-- local diagnostic_signs = {
+--   [vim.diagnostic.severity.ERROR] = "",
+--   [vim.diagnostic.severity.WARN] = "",
+--   [vim.diagnostic.severity.INFO] = "",
+--   [vim.diagnostic.severity.HINT] = "",
+-- }
 
 
 -- Use LspAttach autocommand to only map the following keys

@@ -20,3 +20,11 @@ return {
   },
   preview_config = { border = "rounded" },
 }
+
+
+  -- {
+  --   "lewis6991/gitsigns.nvim",
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   opts = require("plugins.configs.gitsigns"),
+  -- },
+

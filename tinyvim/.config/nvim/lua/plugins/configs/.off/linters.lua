@@ -11,3 +11,12 @@ require("lint").linters_by_ft = {
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function() require("lint").try_lint() end,
 })
+
+
+
+  -- {
+  --   "mfussenegger/nvim-lint",
+  --   events = { "BufWritePost", "BufReadPost", "InsertLeave" },
+  --   config = function() require("plugins.configs.linters") end,
+  -- },
+

@@ -37,3 +37,12 @@ wk.add({
     { "<leader>ww", "<cmd>w<cr>", desc = "Save" },
   },
 })
+
+
+
+  -- {
+  --   "folke/which-key.nvim",
+  --   event = "VeryLazy",
+  --   opts = { preset = "classic" },
+  --   config = function() require("plugins.configs.whichkey") end,
+  -- },

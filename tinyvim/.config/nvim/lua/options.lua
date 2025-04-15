@@ -7,7 +7,7 @@ local colors = {
   { name = "gruvbox", package = "ellisonleao/gruvbox.nvim" },
   { name = "onedark", package = "navarasu/onedark.nvim" },
 }
-g.selected_color = colors[2]
+g.selected_color = colors[3]
 
 -- mapleader
 g.mapleader = " "
@@ -25,18 +25,6 @@ g.loaded_ruby_provider = 0
 -- use rounded borders on all floating windows
 -- o.winborder = 'single' ---'rounded'
 
--- spell
--- o.spell = true
--- o.spelllang = 'en,pt'
--- COMANDOS
--- ]s - próxima palavra para correção
--- [s - palavra anterior para correção
--- z= - lista de sugestões
--- zg - adiciona a palavra do cursor na lista de sugestões
--- zug - desfaz o comando anterior
--- zw - remove a palavra do cursor da lista de sugestões
--- zuw - desfaz o comando anterior
---
 -- options
 o.swapfile = false
 o.laststatus = 3

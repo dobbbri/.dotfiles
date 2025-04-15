@@ -27,3 +27,6 @@ return {
     },
   },
 }
+
+
+  -- { "nvim-tree/nvim-tree.lua", opts = require("plugins.configs.tree") },
