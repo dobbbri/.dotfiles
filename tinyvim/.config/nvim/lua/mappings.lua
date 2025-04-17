@@ -18,10 +18,11 @@ map("n", "<leader>e", function() require("mini.files").open() end, {desc = "Open
 -- map("n", "<C-h>", "<cmd>NvimTreeFocus<CR>", { desc = "Focus on file explorer" })
 
 -- fzf-lua
-map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "Find files" })
+map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "[F]ind [f]iles" })
 map("n", "<leader><space>", "<cmd>FzfLua buffers<CR>", { desc = "List by opened files history" })
 map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { desc = "List by opened files history" })
-map("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>", { desc = "Find by word" })
+map("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>", { desc = "[F]ind by [w]ord" })
+map("n", "<leader>fk", "<cmd>FzfLua keymaps<CR>", { desc = "[F]ind [k]eymaps" })
 
 -- bufferline, cycle buffers
 -- map("n", "<Tab>", "<cmd> BufferLineCycleNext <CR>")
