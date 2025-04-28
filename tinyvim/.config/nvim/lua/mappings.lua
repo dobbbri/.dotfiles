@@ -7,10 +7,9 @@ map("n", "<C-s>", "<cmd> w <CR>")
 map("i", "jk", "<ESC>")
 map("n", "<C-c>", "<cmd> %y+ <CR>") -- copy whole filecontent
 
-
 -- files
-map("n", "-", function() require("mini.files").open() end, {desc = "Open Files" })
-map("n", "<leader>e", function() require("mini.files").open() end, {desc = "Open Files" })
+map("n", "-", function() require("mini.files").open() end, { desc = "Open Files" })
+map("n", "<leader>e", function() require("mini.files").open() end, { desc = "Open Files" })
 
 -- nvimtree
 -- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle fiel explorer" })
@@ -29,6 +28,7 @@ map("n", "<leader>fk", "<cmd>FzfLua keymaps<CR>", { desc = "[F]ind [k]eymaps" })
 -- map("n", "<S-Tab>", "<cmd> BufferLineCyclePrev <CR>")
 map("n", "<Tab>", "<cmd> bnext <CR>")
 map("n", "<S-Tab>", "<cmd> brevious <CR>")
+
 map("n", "<leader>xx", "<cmd> bd <CR>", { desc = "Close current buffer" })
 map("n", "<leader>xo", "<cmd>%bd|e#|bd#<cr>", { desc = "Close other buffers" })
 map("n", "<leader>xa", "<cmd>%bd<cr>", { desc = "Close all buffers" })
@@ -51,8 +51,15 @@ map("n", "f", "<cmd>Format<CR>", { desc = "Format File" })
 
 -- global lsp mappings
 map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Diagnostic LSP" })
+-- map("n", "d<leader>d", function()
+--   if vim.diagnostic.config().virtual_lines then
+--     vim.diagnostic.config({ virtual_lines = false })
+--   else
+--     vim.diagnostic.config({ virtual_lines = { current_line = true } })
+--   end
+-- end, { desc = "diagnostic Lsp" })
 
--- my mappings -----------------------------------------------------------------------------------------
+-- mappings -----------------------------------------------------------------------------------------
 -- move line
 -- map("n", "<S-j>", ":m .+1<CR>==") -- move line up(n)
 -- map("n", "<S-k>", ":m .-2<CR>==") -- move line down(n)

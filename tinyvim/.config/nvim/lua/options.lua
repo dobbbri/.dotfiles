@@ -6,8 +6,11 @@ local colors = {
   { name = "fluoromachine", package = "maxmx03/fluoromachine.nvim" },
   { name = "gruvbox", package = "ellisonleao/gruvbox.nvim" },
   { name = "onedark", package = "navarasu/onedark.nvim" },
+  { name = "dracula", package = "Mofiqul/dracula.nvim" },
+  { name = "kanagawa", package = "rebelot/kanagawa.nvim" },
 }
-g.selected_color = colors[3]
+local random_color = math.random(1, 5)
+g.selected_color = colors[2]
 
 -- mapleader
 g.mapleader = " "
@@ -33,6 +36,7 @@ o.showmode = false
 o.clipboard = "unnamedplus"
 o.cursorline = true
 o.cursorlineopt = "number"
+o.termguicolors = true
 
 -- Indenting
 o.expandtab = true
@@ -93,4 +97,3 @@ local is_windows = vim.fn.has("win32") ~= 0
 local sep = is_windows and "\\" or "/"
 local delim = is_windows and ";" or ":"
 vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, sep) .. delim .. vim.env.PATH
-
