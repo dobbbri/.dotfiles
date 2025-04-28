@@ -30,7 +30,7 @@ end
 vim.diagnostic.config({
   virtual_text = true,
   virtual_lines = false,
-  underline = { severity = vim.diagnostics.severity.ERROR },
+  underline = { severity = vim.diagnostic.severity.ERROR },
   update_in_insert = false,
   severity_sort = true,
   signs = {

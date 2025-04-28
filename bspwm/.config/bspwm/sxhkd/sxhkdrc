@@ -128,33 +128,25 @@ super + alt + Down
 super + alt + Up
 	bspc node -z top 0 -40; bspc node -z up -40 0
 
-# Increase Volume (Custom Script)
-super + shift + >
-  ~/.dotfiles/bspwm/.config/bspwm/scripts/changevolume up
-
-# Decrease Volume (Custom Script)
-super + shift + <
-	~/.dotfiles/bspwm/.config/bspwm/scripts/changevolume down
-
 # Mute Volume (Custom Script)
-super + m
-	~/.dotfiles/bspwm/.config/bspwm/scripts/changevolume mute
+XF86AudioMute	
+  amixer set Master toggle
 
-# Increase Volume (Using pamixer)
+# Increase Volume (Using amixer)
 XF86AudioRaiseVolume
-	pamixer -i 2
+	amixer set Master 5%+
 
-# Decrease Volume (Using pamixer)
+# Decrease Volume (Using amixer)
 XF86AudioLowerVolume
-	pamixer -d 2
+	amixer set Master 5%-
 
 # Increase Screen Brightness
 XF86MonBrightnessUp
-	xbacklight +10
+	brightnessctl -c backlight set +5%
 
 # Decrease Screen Brightness
 XF86MonBrightnessDown
-	xbacklight -10
+	brightnessctl -c backlight set 5%-
 
 # Take a Screenshot (Region Select)
 super + shift + s
