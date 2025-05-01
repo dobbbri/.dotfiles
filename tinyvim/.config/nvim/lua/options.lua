@@ -9,8 +9,8 @@ local colors = {
   { name = "dracula", package = "Mofiqul/dracula.nvim" },
   { name = "kanagawa", package = "rebelot/kanagawa.nvim" },
 }
-local random_color = math.random(1, 5)
-g.selected_color = colors[2]
+-- local random_color = math.random(1, 5)
+g.selected_color = colors[3]
 
 -- mapleader
 g.mapleader = " "
@@ -32,7 +32,7 @@ g.loaded_ruby_provider = 0
 o.swapfile = false
 o.laststatus = 3
 o.showmode = false
-
+o.timeoutlen = 1500
 o.clipboard = "unnamedplus"
 o.cursorline = true
 o.cursorlineopt = "number"
@@ -53,6 +53,7 @@ o.fillchars = {
   diff = "╱",
   eob = " ",
 }
+
 o.ignorecase = true
 o.smartcase = true
 o.mouse = "a"

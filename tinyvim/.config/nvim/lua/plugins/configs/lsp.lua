@@ -28,7 +28,7 @@ for server, config in pairs(servers) do
 end
 
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = { spacing = 4, source = "if_many", prefix = "●" },
   virtual_lines = false,
   underline = { severity = vim.diagnostic.severity.ERROR },
   update_in_insert = false,

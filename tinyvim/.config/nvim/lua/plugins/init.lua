@@ -13,11 +13,12 @@ return {
     version = false,
     config = function() require("plugins.configs.mini") end,
   },
+
   { "mg979/vim-visual-multi" },
 
   { "ibhagwan/fzf-lua", opts = {} },
 
-  { "MagicDuck/grug-far.nvim", lazy = true, opts = {} },
+  { "MagicDuck/grug-far.nvim", lazy = true, opts = { headerMaxWidth = 80 }, },
 
   {
     "eero-lehtinen/oklch-color-picker.nvim",
@@ -40,11 +41,11 @@ return {
   --   opts = require("plugins.configs.ccc"),
   -- },
 
-  {
-    "akinsho/bufferline.nvim",
-    event = "BufReadPre",
-    opts = require("plugins.configs.bufferline"),
-  },
+  -- {
+  --   "akinsho/bufferline.nvim",
+  --   event = "BufReadPre",
+  --   opts = require("plugins.configs.bufferline"),
+  -- },
 
   {
     "nvim-treesitter/nvim-treesitter",
