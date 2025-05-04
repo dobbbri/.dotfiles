@@ -16,36 +16,22 @@ return {
 
   { "mg979/vim-visual-multi" },
 
-  { "ibhagwan/fzf-lua", opts = {} },
+  { "ibhagwan/fzf-lua", opts = { "border-fused" } },
 
-  { "MagicDuck/grug-far.nvim", lazy = true, opts = { headerMaxWidth = 80 }, },
+  { "MagicDuck/grug-far.nvim", lazy = true, opts = { headerMaxWidth = 80 } },
 
   {
     "eero-lehtinen/oklch-color-picker.nvim",
     event = "VeryLazy",
     version = "*",
-    keys = {
-      {
-        "<leader>v",
-        function() require("oklch-color-picker").pick_under_cursor() end,
-        desc = "Color pick under cursor",
-      },
-    },
     opts = {},
   },
 
-  -- {
-  --   "uga-rosa/ccc.nvim",
-  --   lazy = true,
-  --   ft = { "astro", "css", "lua", "javascript", "typescript" },
-  --   opts = require("plugins.configs.ccc"),
-  -- },
-
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   event = "BufReadPre",
-  --   opts = require("plugins.configs.bufferline"),
-  -- },
+  {
+    "akinsho/bufferline.nvim",
+    event = "BufReadPre",
+    opts = require("plugins.configs.bufferline"),
+  },
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -79,4 +65,6 @@ return {
     event = { "BufWritePre" },
     config = function() require("plugins.configs.formatters") end,
   },
+
+  { "folke/which-key.nvim", event = "VeryLazy", opts = { icons = { mappings = false } } },
 }

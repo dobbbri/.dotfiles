@@ -39,7 +39,7 @@ xsetroot -cursor_name left_ptr &
 # /usr/bin/lxpolkit &
 dunst -config ~/.config/bspwm/dunst/dunstrc &
 # picom --config ~/.config/bspwm/picom/picom.conf --animations -b &
-xwallpaper --zoom ~/.dotfiles/images/nice-blue-debian.png &
+xwallpaper --zoom ~/.dotfiles/images/pacman.jpg &
 
 ## Polybar or tint
 # ~/.config/bspwm/scripts/polybar-bspwm &
