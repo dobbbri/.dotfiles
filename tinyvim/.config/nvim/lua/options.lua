@@ -10,7 +10,7 @@ local colors = {
   { name = "kanagawa", package = "rebelot/kanagawa.nvim" },
 }
 -- local random_color = math.random(1, 5)
-g.selected_color = colors[3]
+g.selected_color = colors[5]
 
 -- mapleader
 g.mapleader = " "

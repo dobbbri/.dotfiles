@@ -33,8 +33,8 @@ map(
 )
 
 -- move buffer
-map("n", "<Tab>", "<cmd> bnext <CR>")
-map("n", "<S-Tab>", "<cmd> brevious <CR>")
+map("n", "<Tab>", "<cmd>bnext<CR>")
+map("n", "<S-Tab>", "<cmd>bprevious<CR>")
 
 -- remove buffer
 map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close current buffer" })

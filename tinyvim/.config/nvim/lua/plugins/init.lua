@@ -28,9 +28,10 @@ return {
   },
 
   {
-    "akinsho/bufferline.nvim",
-    event = "BufReadPre",
-    opts = require("plugins.configs.bufferline"),
+    "fzdwx/bufline.nvim",
+    event = "BufEnter",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = require("plugins.configs.bufline"),
   },
 
   {
