@@ -3,7 +3,10 @@ return {
     vim.g.selected_color.package,
     lazy = false,
     priority = 1000,
-    config = function() require("plugins.configs.cs." .. vim.g.selected_color.name) end,
+    config = function()
+      require("plugins.configs.cs." .. vim.g.selected_color.name)
+      vim.cmd("colorscheme " .. vim.g.selected_color.name)
+    end,
   },
 
   { "nvim-lua/plenary.nvim", lazy = true },

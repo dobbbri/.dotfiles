@@ -1,16 +1,17 @@
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
-    vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#8ebd6b" })
-    vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#e2b86b" })
-    vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#e55561" })
-
+    -- vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#50fa7b" })
+    -- vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#F1FA8C" })
+    -- vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#FF5555" })
+    --
     vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { link = "GitSignsAdd" })
     vim.api.nvim_set_hl(0, "MiniDiffSignChange", { link = "GitSignsChange" })
     vim.api.nvim_set_hl(0, "MiniDiffSignDelete", { link = "GitSignsDelete" })
 
     vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
 
+    vim.api.nvim_set_hl(0, "IndentLine", { link = "Comment" })
     vim.api.nvim_set_hl(0, "BufLineTitleNoSel", { link = "Comment" })
   end,
 })

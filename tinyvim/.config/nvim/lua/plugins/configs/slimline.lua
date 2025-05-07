@@ -44,10 +44,10 @@ return {
     diagnostics = {
       workspace = false, -- Whether diagnostics should show workspace diagnostics instead of current buffer
       icons = {
-        ERROR = " ",
-        WARN = " ",
-        INFO = " ",
-        HINT = " ",
+        ERROR = "E",
+        WARN = "W",
+        INFO = "I",
+        HINT = "H",
       },
     },
     filetype_lsp = {},
