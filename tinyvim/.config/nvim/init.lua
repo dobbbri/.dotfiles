@@ -22,4 +22,5 @@ local plugins = require("plugins")
 require("lazy").setup(plugins)
 
 require("mappings")
+require("diagnostics")
 require("terminalpop")

@@ -17,6 +17,8 @@ require("mini.pairs").setup({ modes = { insert = true, command = true, terminal 
 require("mini.indentscope").setup({ symbol = "┊" }) --│┊
 require("mini.comment").setup()
 require("mini.diff").setup()
+-- require("mini.tabline").setup()
+-- require("mini.statusline").setup()
 
 local MiniFiles = require("mini.files")
 MiniFiles.setup({

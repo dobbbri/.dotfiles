@@ -23,12 +23,7 @@ return {
 
   { "MagicDuck/grug-far.nvim", lazy = true, opts = { headerMaxWidth = 80 } },
 
-  {
-    "eero-lehtinen/oklch-color-picker.nvim",
-    event = "VeryLazy",
-    version = "*",
-    opts = {},
-  },
+  { "eero-lehtinen/oklch-color-picker.nvim", event = "VeryLazy", version = "*", opts = {} },
 
   {
     "fzdwx/bufline.nvim",
@@ -37,13 +32,13 @@ return {
     opts = require("plugins.configs.bufline"),
   },
 
+  { "sschleemilch/slimline.nvim", opts = require("plugins.configs.slimline") },
+
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function() require("plugins.configs.treesitter") end,
   },
-
-  { "sschleemilch/slimline.nvim", opts = require("plugins.configs.slimline") },
 
   {
     "saghen/blink.cmp",

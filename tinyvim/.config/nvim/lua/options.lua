@@ -10,7 +10,7 @@ local colors = {
   { name = "kanagawa", package = "rebelot/kanagawa.nvim" },
 }
 -- local random_color = math.random(1, 5)
-g.selected_color = colors[5]
+g.selected_color = colors[2]
 
 -- mapleader
 g.mapleader = " "
@@ -18,6 +18,7 @@ g.maplocalleader = ","
 
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 2
+g.markdown_fenced_languages = {"ts=typescript"}
 
 -- disable some default providers
 g.loaded_node_provider = 0
@@ -26,13 +27,18 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 -- use rounded borders on all floating windows
--- o.winborder = 'single' ---'rounded'
+-- o.winborder = 'solid' ---'rounded'
+
+-- nice confirmation dialog
+o.confirm = true
 
 -- options
 o.swapfile = false
 o.laststatus = 3
 o.showmode = false
-o.timeoutlen = 1500
+o.timeoutlen = 400
+o.ruler = false
+o.updatetime = 250
 o.clipboard = "unnamedplus"
 o.cursorline = true
 o.cursorlineopt = "number"

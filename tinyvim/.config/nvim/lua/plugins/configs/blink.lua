@@ -2,7 +2,9 @@ return {
   keymap = {
     ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
     ["<CR>"] = { "accept", "fallback" },
+    ["<tab>"] = { "select_prev", "fallback" },
     ["<Up>"] = { "select_prev", "fallback" },
+    ["<s-tab>"] = { "select_next", "fallback" },
     ["<Down>"] = { "select_next", "fallback" },
   },
   completion = {
@@ -42,5 +44,4 @@ return {
   -- cmdline = { enabled = false },
   sources = { default = { "lsp", "path", "snippets", "buffer", "omni", "omni" } },
   signature = { enabled = true },
-
 }
