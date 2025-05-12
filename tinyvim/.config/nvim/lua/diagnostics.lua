@@ -1,26 +1,21 @@
+local signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
+
 vim.diagnostic.config({
   virtual_lines = {
-    spacing = 4,
+    spacing = 2,
     source = "if_many",
     prefix = "󰐊",
   },
-  virtual_text = false,
+  severity_sort = true,
   underline = {
     severity = vim.diagnostic.severity.ERROR,
   },
-  update_in_insert = false,
-  severity_sort = true,
   signs = {
     text = {
-      [vim.diagnostic.severity.ERROR] = "󰐊",
-      [vim.diagnostic.severity.WARN] = "󰐊",
-      [vim.diagnostic.severity.INFO] = "󰐊",
-      [vim.diagnostic.severity.HINT] = "󰐊",
+      [vim.diagnostic.severity.ERROR] = signs.Error,
+      [vim.diagnostic.severity.WARN] = signs.Warn,
+      [vim.diagnostic.severity.HINT] = signs.Hint,
+      [vim.diagnostic.severity.INFO] = signs.Info,
     },
-  },
-  float = {
-    border = "rounded",
-    source = "if_many",
-    style = "minimal",
   },
 })

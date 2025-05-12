@@ -1,11 +1,11 @@
 return {
   {
-    vim.g.selected_color.package,
+    vim.g.selected_colorscheme.package,
     lazy = false,
     priority = 1000,
     config = function()
-      require("plugins.configs.cs." .. vim.g.selected_color.name)
-      vim.cmd("colorscheme " .. vim.g.selected_color.name)
+      require("plugins.configs.cs." .. vim.g.selected_colorscheme.name)
+      vim.cmd("colorscheme " .. vim.g.selected_colorscheme.name)
     end,
   },
 
@@ -34,6 +34,11 @@ return {
 
   { "sschleemilch/slimline.nvim", opts = require("plugins.configs.slimline") },
 
+
+  { "williamboman/mason.nvim", opts = {} },
+  { "mason-org/mason-lspconfig.nvim", opts = {} },
+  { "neovim/nvim-lspconfig" },
+
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -47,16 +52,6 @@ return {
     dependencies = "rafamadriz/friendly-snippets",
     opts = require("plugins.configs.blink"),
     opts_extend = { "sources.default" },
-  },
-
-  { "williamboman/mason.nvim", opts = {} },
-
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = { "saghen/blink.cmp" },
-    -- dependencies = { "hrsh7th/cmp-nvim-lsp" },
-    event = { "BufReadPre", "BufNewFile" },
-    config = function() require("plugins.configs.lsp") end,
   },
 
   {

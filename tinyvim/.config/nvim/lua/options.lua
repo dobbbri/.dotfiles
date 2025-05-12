@@ -1,16 +1,15 @@
-local o = vim.opt
-local g = vim.g
-
--- colorscheme
-local colors = {
+local colorscheme = {
   { name = "fluoromachine", package = "maxmx03/fluoromachine.nvim" },
   { name = "gruvbox", package = "ellisonleao/gruvbox.nvim" },
   { name = "onedark", package = "navarasu/onedark.nvim" },
   { name = "dracula", package = "Mofiqul/dracula.nvim" },
   { name = "kanagawa", package = "rebelot/kanagawa.nvim" },
 }
--- local random_color = math.random(1, 5)
-g.selected_color = colors[2]
+local opt = vim.opt
+local g = vim.g
+
+-- local random_colorscheme = math.random(1, 5)
+g.selected_colorscheme = colorscheme[4]
 
 -- mapleader
 g.mapleader = " "
@@ -27,31 +26,31 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 -- use rounded borders on all floating windows
--- o.winborder = 'solid' ---'rounded'
+-- opt.winborder = 'solid' ---'rounded'
 
 -- nice confirmation dialog
-o.confirm = true
+opt.confirm = true
 
 -- options
-o.swapfile = false
-o.laststatus = 3
-o.showmode = false
-o.timeoutlen = 400
-o.ruler = false
-o.updatetime = 250
-o.clipboard = "unnamedplus"
-o.cursorline = true
-o.cursorlineopt = "number"
-o.termguicolors = true
+opt.swapfile = false
+opt.laststatus = 3
+opt.showmode = false
+opt.timeoutlen = 400
+opt.ruler = false
+opt.updatetime = 250
+opt.clipboard = "unnamedplus"
+opt.cursorline = true
+opt.cursorlineopt = "number"
+opt.termguicolors = true
 
 -- Indenting
-o.expandtab = true
-o.shiftwidth = 2
-o.smartindent = true
-o.tabstop = 2
-o.softtabstop = 2
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.smartindent = true
+opt.tabstop = 2
+opt.softtabstop = 2
 
-o.fillchars = {
+opt.fillchars = {
   foldopen = "",
   foldclose = "",
   fold = " ",
@@ -60,44 +59,44 @@ o.fillchars = {
   eob = " ",
 }
 
-o.ignorecase = true
-o.smartcase = true
-o.mouse = "a"
+opt.ignorecase = true
+opt.smartcase = true
+opt.mouse = "a"
 
 -- Numbers
-o.number = true
-o.numberwidth = 2
-o.ruler = false
+opt.number = true
+opt.numberwidth = 2
+opt.ruler = false
 
 -- disable nvim intro
-o.shortmess:append({ W = true, I = true, c = true, C = true })
+opt.shortmess:append({ W = true, I = true, c = true, C = true })
 
--- o.signcolumn = "yes"
-o.splitbelow = true
-o.splitright = true
-o.timeoutlen = 700
-o.undofile = false
+-- opt.signcolumn = "yes"
+opt.splitbelow = true
+opt.splitright = true
+opt.timeoutlen = 700
+opt.undofile = false
 
-o.wrap = false
-o.linebreak = false
-o.cmdheight = 0
-o.encoding = "utf-8"
-o.fileencoding = "utf-8"
+opt.wrap = false
+opt.linebreak = false
+opt.cmdheight = 0
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
 
 -- folding
--- o.foldcolumn = '1' -- '0' is not bad
--- o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
--- o.foldlevelstart = 99
--- o.foldenable = true
+-- opt.foldcolumn = '1' -- '0' is not bad
+-- opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+-- opt.foldlevelstart = 99
+-- opt.foldenable = true
 
 -- interval for writing swap file to disk, also used by gitsigns
-o.updatetime = 250
+opt.updatetime = 250
 
-o.formatexpr = "v:lua.require'conform'.formatexpr()"
+opt.formatexpr = "v:lua.require'conform'.formatexpr()"
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
-o.whichwrap:append("<>[]hl")
+opt.whichwrap:append("<>[]hl")
 
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.fn.has("win32") ~= 0
