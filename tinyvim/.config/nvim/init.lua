@@ -17,10 +17,11 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = require("plugins")
-
-require("lazy").setup(plugins)
+require("lazy").setup(
+  require("plugins")
+)
 
 require("mappings")
 require("diagnostics")
 require("terminalpop")
+require("statusline")

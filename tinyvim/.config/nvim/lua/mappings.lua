@@ -22,7 +22,7 @@ map("n", "<leader>m", "<cmd>FzfLua resume<CR>", { desc = "List resu[m]e" })
 map("n", "<leader>w", "<cmd>FzfLua live_grep<CR>", { desc = "Search by [w]ord" })
 map("n", "<leader>S", "<cmd>FzfLua spell_suggest<cr>", { desc = "List [S]pelling Suggestions" })
 map("n", "<leader>d", "<cmd>FzfLua diagnostics_document<cr>", { desc = "List [d]iagnostics" })
--- map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Diagnostic LSP" })
+map("n", "<leader>D", vim.diagnostic.open_float, { desc = "Diagnostic LSP" })
 
 -- oklch-color-picker
 map(
@@ -42,8 +42,8 @@ map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close current buffer" })
 map("n", "<leader>X", "<cmd>%bd<cr>", { desc = "Close all buffers" })
 
 -- Toggle line number
--- map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "Toggle Line Number" })
--- map("n", "<leader>N", "<cmd>set rnu!<CR>", { desc = "Toggle Relative Number" })
+map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "Toggle Line Number" })
+map("n", "<leader>N", "<cmd>set rnu!<CR>", { desc = "Toggle Relative Number" })
 
 -- code format
 map("n", "f", "<cmd>Format<CR>", { desc = "[f]ormat File" })

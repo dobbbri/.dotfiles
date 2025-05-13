@@ -1,34 +1,38 @@
 return {
   keymap = {
+    preset = "none",
     ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+    ["<C-e>"] = { "hide", "fallback" },
     ["<CR>"] = { "accept", "fallback" },
-    ["<tab>"] = { "select_prev", "fallback" },
+
+    ["<Tab>"] = { "select_next", "fallback" },
+    ["<S-Tab>"] = { "select_prev", "fallback" },
+
     ["<Up>"] = { "select_prev", "fallback" },
-    ["<s-tab>"] = { "select_next", "fallback" },
     ["<Down>"] = { "select_next", "fallback" },
+    ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
+    ["<C-n>"] = { "select_next", "fallback_to_mappings" },
+
+    ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+    ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+
+    ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
   },
   completion = {
     keyword = { range = "full" },
     accept = { auto_brackets = { enabled = false } },
-    list = { selection = { preselect = false, auto_insert = true } },
+    list = {
+      selection = {
+        preselect = false,
+        auto_insert = true,
+      },
+    },
     menu = {
       auto_show = true,
       border = "none",
       draw = {
         components = {
-          kind_icon = {
-            text = function(ctx)
-              local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
-              return kind_icon
-            end,
-            -- (optional) use highlights from mini.icons
-            highlight = function(ctx)
-              local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
-              return hl
-            end,
-          },
           kind = {
-            -- (optional) use highlights from mini.icons
             highlight = function(ctx)
               local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
               return hl
@@ -44,4 +48,5 @@ return {
   -- cmdline = { enabled = false },
   sources = { default = { "lsp", "path", "snippets", "buffer", "omni", "omni" } },
   signature = { enabled = true },
+  fuzzy = { implementation = "prefer_rust_with_warning" },
 }

@@ -1,11 +1,7 @@
 local signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
 
 vim.diagnostic.config({
-  virtual_lines = {
-    spacing = 2,
-    source = "if_many",
-    prefix = "󰐊",
-  },
+  virtual_lines = true,
   severity_sort = true,
   underline = {
     severity = vim.diagnostic.severity.ERROR,

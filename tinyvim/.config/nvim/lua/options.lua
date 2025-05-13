@@ -8,8 +8,8 @@ local colorscheme = {
 local opt = vim.opt
 local g = vim.g
 
--- local random_colorscheme = math.random(1, 5)
-g.selected_colorscheme = colorscheme[4]
+-- local random_colorscheme = math.random(1, 6)
+g.selected_colorscheme = colorscheme[2]
 
 -- mapleader
 g.mapleader = " "
@@ -36,7 +36,7 @@ opt.swapfile = false
 opt.laststatus = 3
 opt.showmode = false
 opt.timeoutlen = 400
-opt.ruler = false
+opt.ruler = true
 opt.updatetime = 250
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
@@ -97,6 +97,8 @@ opt.formatexpr = "v:lua.require'conform'.formatexpr()"
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
+
+-- opt.commentstring = '// %s'
 
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.fn.has("win32") ~= 0

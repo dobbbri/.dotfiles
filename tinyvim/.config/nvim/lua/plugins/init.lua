@@ -19,21 +19,20 @@ return {
 
   { "mg979/vim-visual-multi" },
 
-  { "ibhagwan/fzf-lua", opts = { "border-fused" } },
+  { "ibhagwan/fzf-lua", opts = { "ivy", winopts = { height = 0.60, width = 1.00 } } },
 
   { "MagicDuck/grug-far.nvim", lazy = true, opts = { headerMaxWidth = 80 } },
 
   { "eero-lehtinen/oklch-color-picker.nvim", event = "VeryLazy", version = "*", opts = {} },
 
-  {
-    "fzdwx/bufline.nvim",
-    event = "BufEnter",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = require("plugins.configs.bufline"),
-  },
+  -- {
+  --   "fzdwx/bufline.nvim",
+  --   event = "BufEnter",
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   opts = require("plugins.configs.bufline"),
+  -- },
 
-  { "sschleemilch/slimline.nvim", opts = require("plugins.configs.slimline") },
-
+  -- { "sschleemilch/slimline.nvim", opts = require("plugins.configs.slimline") },
 
   { "williamboman/mason.nvim", opts = {} },
   { "mason-org/mason-lspconfig.nvim", opts = {} },
@@ -58,6 +57,12 @@ return {
     "stevearc/conform.nvim",
     event = { "BufWritePre" },
     config = function() require("plugins.configs.formatters") end,
+  },
+
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = require("plugins.configs.noice"),
   },
 
   { "folke/which-key.nvim", event = "VeryLazy", opts = { icons = { mappings = false } } },
