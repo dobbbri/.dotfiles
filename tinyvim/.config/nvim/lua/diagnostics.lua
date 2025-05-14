@@ -1,11 +1,10 @@
 local signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
 
 vim.diagnostic.config({
+  update_in_insert = false,
   virtual_lines = true,
   severity_sort = true,
-  underline = {
-    severity = vim.diagnostic.severity.ERROR,
-  },
+  underline = { severity = vim.diagnostic.severity.ERROR },
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = signs.Error,

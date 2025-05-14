@@ -1,3 +1,6 @@
+
+  -- { "folke/noice.nvim", event = "VeryLazy", opts = require("plugins.configs.noice") },
+
 return {
   presets = {
     -- This is the search bar or popup that shows up when you press /

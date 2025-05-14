@@ -1,8 +1,7 @@
 require("options")
 require("commands")
 
--- bootstrap plugins & lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim" -- path where its going to be installed
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -17,11 +16,9 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(
-  require("plugins")
-)
+require("lazy").setup(require("plugins"))
 
 require("mappings")
 require("diagnostics")
+require("capabilities")
 require("terminalpop")
-require("statusline")

@@ -14,15 +14,15 @@ super + shift + w
 
 # Launch Terminal ()
 super + Return
-	sakura
+  alacritty	#sakura
 
 # Launch Terminal ()
 super + t
-  sakura 
+  alacritty #sakura 
 
 # Launch Rofi Application Menu
 super + space
-   	rofi -show drun -modi drun -line-padding 4 -hide-scrollbar -show-icons -theme ~/.config/bspwm/rofi/config.rasi
+  rofi -show drun -modi drun -line-padding 4 -hide-scrollbar -show-icons -theme ~/.config/bspwm/rofi/config.rasi
 
 # Shutdown or Reboot
 super + x

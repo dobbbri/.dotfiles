@@ -9,7 +9,7 @@ local opt = vim.opt
 local g = vim.g
 
 -- local random_colorscheme = math.random(1, 6)
-g.selected_colorscheme = colorscheme[2]
+g.selected_colorscheme = colorscheme[3]
 
 -- mapleader
 g.mapleader = " "
