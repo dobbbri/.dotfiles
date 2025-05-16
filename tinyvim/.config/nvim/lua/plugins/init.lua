@@ -11,12 +11,6 @@ return {
 
   { "nvim-lua/plenary.nvim", lazy = true },
 
-  {
-    "echasnovski/mini.nvim",
-    version = false,
-    config = function() require("plugins.configs.mini") end,
-  },
-
   { "mg979/vim-visual-multi" },
 
   { "ibhagwan/fzf-lua", opts = { "ivy", winopts = { height = 0.60, width = 1 } } },
@@ -49,9 +43,15 @@ return {
   },
 
   {
-    "stevearc/conform.nvim",
-    event = { "BufWritePre" },
-    config = function() require("plugins.configs.formatters") end,
+    "echasnovski/mini.nvim",
+    version = false,
+    config = function() require("plugins.configs.mini") end,
+  },
+
+  {
+    "nvimdev/guard.nvim",
+    dependencies = { "nvimdev/guard-collection" },
+    config = function() require("plugins.configs.guard") end,
   },
 
   { "folke/which-key.nvim", event = "VeryLazy", opts = { icons = { mappings = false } } },

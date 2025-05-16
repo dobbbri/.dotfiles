@@ -44,10 +44,10 @@ return {
     diagnostics = {
       workspace = false, -- Whether diagnostics should show workspace diagnostics instead of current buffer
       icons = {
-        ERROR = "E",
-        WARN = "W",
-        INFO = "I",
-        HINT = "H",
+        ERROR = vim.g.diagnostic_signs.error,
+        WARN = vim.g.diagnostic_signs.warn,
+        INFO = vim.g.diagnostic_signs.info,
+        HINT = vim.g.diagnostic_signs.hint,
       },
     },
     filetype_lsp = {},

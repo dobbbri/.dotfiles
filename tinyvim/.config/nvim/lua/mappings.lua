@@ -21,7 +21,7 @@ map("n", "<leader>b", "<cmd>FzfLua buffers<CR>", { desc = "List open [b]uffers" 
 map("n", "<leader>m", "<cmd>FzfLua resume<CR>", { desc = "List resu[m]e" })
 map("n", "<leader>w", "<cmd>FzfLua live_grep<CR>", { desc = "Search by [w]ord" })
 map("n", "<leader>S", "<cmd>FzfLua spell_suggest<cr>", { desc = "List [S]pelling Suggestions" })
-map("n", "<leader>d", "<cmd>FzfLua diagnostics_document<cr>", { desc = "List [d]iagnostics" })
+map("n", "<leader>d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to [d]iagnostics" })
 map("n", "<leader>D", vim.diagnostic.open_float, { desc = "Diagnostic LSP" })
 
 -- oklch-color-picker

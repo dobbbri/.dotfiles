@@ -1,5 +1,4 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
-
 window:
   dimensions:
     columns: 120
@@ -18,15 +17,19 @@ scrolling:
 
 font:
   normal:
-    family: "JetBrainsMono Nerd Font Mono"
+    family: "UbuntuSansMono Nerd Font"
+    # family: "JetBrainsMono Nerd Font Mono"
   bold:
-    family: "JetBrainsMono Nerd Font Mono"
+    family: "UbuntuSansMono Nerd Font"
+    # family: "JetBrainsMono Nerd Font Mono"
   italic:
-    family: "JetBrainsMono Nerd Font Mono"
-  size: 9.0
+    family: "UbuntuSansMono Nerd Font"
+    # family: "JetBrainsMono Nerd Font Mono"
+  size: 11.0
+  # size: 9.0
   offset:
-    x: 0
-    y: 0
+    x: 0 
+    y: 1
   glyph_offset:
     x: 0
     y: 0

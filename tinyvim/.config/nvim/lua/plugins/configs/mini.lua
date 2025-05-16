@@ -17,7 +17,26 @@ require("mini.pairs").setup({ modes = { insert = true, command = true, terminal 
 require("mini.indentscope").setup({ symbol = "┊" }) --│┊
 require("mini.comment").setup()
 require("mini.diff").setup()
-require("mini.notify").setup()
+require("mini.notify").setup({
+  content = {
+    format = function(notify)
+      local icons = {
+        ["ERROR"] = "  ",
+        ["WARN"] = "  ",
+        ["INFO"] = "  ",
+        ["DEBUG"] = "  ",
+        ["TRACE"] = "»  ",
+      }
+      local icon = icons[notify.level] or ""
+      return icon .. notify.msg
+    end,
+  },
+  -- window = {
+  --   config = {
+  --     style = "minimal",
+  --   },
+  -- },
+})
 -- require("mini.statusline").setup()
 
 local MiniFiles = require("mini.files")
@@ -56,4 +75,3 @@ vim.api.nvim_create_autocmd("User", {
     vim.keymap.set("n", "<leader>/", files_set_cwd, { buffer = args.data.buf_id, desc = "Set cwd" })
   end,
 })
-

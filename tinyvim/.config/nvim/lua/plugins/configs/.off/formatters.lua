@@ -1,3 +1,9 @@
+-- {
+--   "stevearc/conform.nvim",
+--   event = { "BufWritePre" },
+--   config = function() require("plugins.configs.formatters") end,
+-- },
+
 require("conform").setup({
   default_format_opts = {
     timeout_ms = 3000,
