@@ -34,7 +34,6 @@ require("mini.notify").setup({
   },
   window = { config = { style = "minimal" } },
 })
--- require("mini.statusline").setup()
 
 local MiniFiles = require("mini.files")
 MiniFiles.setup({

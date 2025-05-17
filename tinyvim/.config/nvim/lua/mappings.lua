@@ -24,6 +24,9 @@ map("n", "<leader>S", "<cmd>FzfLua spell_suggest<cr>", { desc = "List [S]pelling
 map("n", "<leader>d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to [d]iagnostics" })
 map("n", "<leader>D", vim.diagnostic.open_float, { desc = "Diagnostic LSP" })
 
+-- notify
+map("n", "<leader>n", function() require("mini.notify").show_history() end, { desc = "Show notification history" })
+
 -- oklch-color-picker
 map(
   "n",
@@ -42,8 +45,8 @@ map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close current buffer" })
 map("n", "<leader>X", "<cmd>%bd<cr>", { desc = "Close all buffers" })
 
 -- Toggle line number
-map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "Toggle Line Number" })
-map("n", "<leader>N", "<cmd>set rnu!<CR>", { desc = "Toggle Relative Number" })
+-- map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "Toggle Line Number" })
+-- map("n", "<leader>N", "<cmd>set rnu!<CR>", { desc = "Toggle Relative Number" })
 
 -- code format
 map("n", "f", "<cmd>Format<CR>", { desc = "[f]ormat File" })
