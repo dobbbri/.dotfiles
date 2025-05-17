@@ -11,31 +11,28 @@ local ignore_files = {
   "pnpm-lock.yaml",
 }
 
+local icons = {
+  ["ERROR"] = "  ",
+  ["WARN"] = "  ",
+  ["INFO"] = "  ",
+  ["DEBUG"] = "  ",
+  ["TRACE"] = "»  ",
+}
+
 require("mini.icons").setup()
 require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } })
 require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } })
 require("mini.indentscope").setup({ symbol = "┊" }) --│┊
 require("mini.comment").setup()
-require("mini.diff").setup()
+require("mini.diff").setup({ view = { style = "number" } }) --'sign'
 require("mini.notify").setup({
   content = {
     format = function(notify)
-      local icons = {
-        ["ERROR"] = "  ",
-        ["WARN"] = "  ",
-        ["INFO"] = "  ",
-        ["DEBUG"] = "  ",
-        ["TRACE"] = "»  ",
-      }
       local icon = icons[notify.level] or ""
       return icon .. notify.msg
     end,
   },
-  -- window = {
-  --   config = {
-  --     style = "minimal",
-  --   },
-  -- },
+  window = { config = { style = "minimal" } },
 })
 -- require("mini.statusline").setup()
 

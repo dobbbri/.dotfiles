@@ -1,6 +1,7 @@
 local ft = require("guard.filetype")
 
 ft("astro,typescript,javascript,javascriptreact,typescriptreact"):fmt("prettier")
+ft("css,scss,html,yaml,json,jsonc,markdown"):fmt("prettier")
 ft("lua"):fmt("stylua")
 ft("sh"):fmt("shfmt")
 

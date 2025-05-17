@@ -60,9 +60,30 @@ vim.api.nvim_create_autocmd("FileType", {
     "notify",
     "qf",
     "query",
-    "checkhealth",},
+    "checkhealth",
+  },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+  end,
+})
+
+local explicit_number_toggle_group = vim.api.nvim_create_augroup("UserExplicitNumberToggle", { clear = true })
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+  pattern = "*",
+  group = explicit_number_toggle_group,
+  callback = function()
+    vim.opt.number = true -- Show absolute line numbers
+    vim.opt.relativenumber = false -- Turn off relative line numbers
+  end,
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+  pattern = "*",
+  group = explicit_number_toggle_group,
+  callback = function()
+    vim.opt.number = false -- Turn off absolute line numbers
+    vim.opt.relativenumber = true -- Show relative line numbers
   end,
 })

@@ -21,7 +21,7 @@ g.diagnostic_signs = diagnostic_signs
 
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 2
-g.markdown_fenced_languages = {"ts=typescript"}
+g.markdown_fenced_languages = { "ts=typescript" }
 
 -- disable some default providers
 g.loaded_node_provider = 0
@@ -68,7 +68,7 @@ opt.smartcase = true
 opt.mouse = "a"
 
 -- Numbers
-opt.number = true
+opt.relativenumber = true
 opt.numberwidth = 2
 opt.ruler = false
 
