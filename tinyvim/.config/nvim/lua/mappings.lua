@@ -12,17 +12,17 @@ map("n", "<c-a>", "<cmd>wa<CR>", { desc = "Save all file" })
 map("n", "<c-t>", "<cmd>%y+<CR>", { desc = "Copy Whole File" })
 
 -- files
-map("n", "-", function() require("mini.files").open() end, { desc = "Show Fil[e] Manager" })
-map("n", "<leader>e", function() require("mini.files").open() end, { desc = "Show Fil[e] Manager" })
+map("n", "-", function() require("mini.files").open() end, { desc = "Show File Manager" })
+map("n", "<leader>e", function() require("mini.files").open() end, { desc = "Show File Manager" })
 
 -- fzf-lua
-map("n", "<leader>f", "<cmd>FzfLua files<CR>", { desc = "List [f]iles" })
-map("n", "<leader>b", "<cmd>FzfLua buffers<CR>", { desc = "List open [b]uffers" })
-map("n", "<leader>m", "<cmd>FzfLua resume<CR>", { desc = "List resu[m]e" })
-map("n", "<leader>w", "<cmd>FzfLua live_grep<CR>", { desc = "Search by [w]ord" })
-map("n", "<leader>S", "<cmd>FzfLua spell_suggest<cr>", { desc = "List [S]pelling Suggestions" })
-map("n", "<leader>d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to [d]iagnostics" })
-map("n", "<leader>D", vim.diagnostic.open_float, { desc = "Diagnostic LSP" })
+map("n", "<leader>f", "<cmd>FzfLua files<CR>", { desc = "List files" })
+map("n", "<leader>b", "<cmd>FzfLua buffers<CR>", { desc = "List open buffers" })
+map("n", "<leader>m", "<cmd>FzfLua resume<CR>", { desc = "List FzfLua resume" })
+map("n", "<leader>w", "<cmd>FzfLua live_grep<CR>", { desc = "Search by word" })
+map("n", "<leader>S", "<cmd>FzfLua spell_suggest<cr>", { desc = "List spelling Suggestions" })
+map("n", "<leader>d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to diagnostics" })
+map("n", "<leader>D", vim.diagnostic.open_float, { desc = "show diagnostic Info" })
 
 -- notify
 map("n", "<leader>n", function() require("mini.notify").show_history() end, { desc = "Show notification history" })
@@ -32,7 +32,7 @@ map(
   "n",
   "<leader>p",
   function() require("oklch-color-picker").pick_under_cursor() end,
-  { desc = "Color [p]ick under cursor" }
+  { desc = "Color pick under cursor" }
 )
 
 -- move buffer
@@ -44,15 +44,11 @@ map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close current buffer" })
 -- map("n", "<leader>", "<cmd>%bd|e#|bd#<cr>", { desc = "Close other buffers" })
 map("n", "<leader>X", "<cmd>%bd<cr>", { desc = "Close all buffers" })
 
--- Toggle line number
--- map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "Toggle Line Number" })
--- map("n", "<leader>N", "<cmd>set rnu!<CR>", { desc = "Toggle Relative Number" })
-
 -- code format
-map("n", "f", "<cmd>Format<CR>", { desc = "[f]ormat File" })
+map({ "n", "v" }, "f", "<cmd>Guard fmt<CR>", { desc = "Format File" })
 
 -- search / replace
-map("n", "<leader>s", ":%s///gcI<Left><Left><Left><Left><Left>", { desc = "[s]earch/Replace in current buffer" })
+map("n", "<leader>s", ":%s///gcI<Left><Left><Left><Left><Left>", { desc = "Search and replace in current buffer" })
 map({ "n", "v" }, "<leader>r", function()
   local grug = require("grug-far")
   local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
@@ -62,7 +58,7 @@ map({ "n", "v" }, "<leader>r", function()
       filesFilter = ext and ext ~= "" and "*." .. ext or nil,
     },
   })
-end, { desc = "Search and [r]eplace in project" })
+end, { desc = "Search and replace in project" })
 
 --
 
@@ -75,6 +71,10 @@ end, { desc = "Search and [r]eplace in project" })
 --     vim.diagnostic.config({ virtual_lines = { current_line = true } })
 --   end
 -- end, { desc = "diagnostic Lsp" })
+
+-- Toggle line number
+-- map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "Toggle Line Number" })
+-- map("n", "<leader>N", "<cmd>set rnu!<CR>", { desc = "Toggle Relative Number" })
 
 -- mappings -----------------------------------------------------------------------------------------
 -- move line
