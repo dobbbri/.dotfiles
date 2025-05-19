@@ -1,6 +1,6 @@
 require("dracula").setup({
   colors = {
-    bg = "#0e1013", -- "#282A36",
+    bg = "#242632", --"#282A36",
     fg = "#F8F8F2",
     selection = "#44475A",
     comment = "#6272A4",

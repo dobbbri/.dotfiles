@@ -21,7 +21,7 @@ return {
 
   { "sschleemilch/slimline.nvim", opts = require("plugins.configs.slimline") },
 
-  { "nvimdev/indentmini.nvim", event = "BufEnter", opts = { char = "", exclude = { "markdown" } } }, --│┊
+  { "nvimdev/indentmini.nvim", event = "BufEnter", opts = { char = "│", exclude = { "markdown" } } }, --│┊⁚ 
 
   {
     "mason-org/mason-lspconfig.nvim",
