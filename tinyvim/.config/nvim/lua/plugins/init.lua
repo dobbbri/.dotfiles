@@ -48,6 +48,12 @@ return {
   },
 
   {
+    "gaelph/logsitter.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = { path_format = "fileonly", prefix = "[LS]", separator = ">" },
+  },
+
+  {
     "echasnovski/mini.nvim",
     version = false,
     config = function() require("plugins.configs.mini") end,
@@ -59,5 +65,5 @@ return {
     config = function() require("plugins.configs.guard") end,
   },
 
-  { "folke/which-key.nvim", event = "VeryLazy", opts = { icons = { mappings = false } } },
+  { "folke/which-key.nvim", event = "VeryLazy", opts = { preset = "modern", icons = { mappings = false } } },
 }

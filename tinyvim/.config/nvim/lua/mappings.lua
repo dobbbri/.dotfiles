@@ -24,6 +24,9 @@ map("n", "<leader>S", "<cmd>FzfLua spell_suggest<cr>", { desc = "List spelling S
 map("n", "<leader>d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to diagnostics" })
 map("n", "<leader>D", vim.diagnostic.open_float, { desc = "show diagnostic Info" })
 
+-- log
+map("n", "<leader>l", function() require("logsitter").log() end, { desc = "Logsitter: log current" })
+
 -- oklch-color-picker
 map(
   "n",
