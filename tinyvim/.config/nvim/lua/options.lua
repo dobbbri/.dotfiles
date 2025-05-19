@@ -14,7 +14,7 @@ g.mapleader = " "
 g.maplocalleader = ","
 
 -- local random_colorscheme = math.random(1, 6)
-g.selected_colorscheme = colorscheme[2]
+g.selected_colorscheme = colorscheme[4]
 
 -- diagnostic signs
 g.diagnostic_signs = diagnostic_signs
@@ -68,7 +68,7 @@ opt.smartcase = true
 opt.mouse = "a"
 
 -- Numbers
-opt.relativenumber = true
+opt.number = true
 opt.numberwidth = 2
 opt.ruler = false
 

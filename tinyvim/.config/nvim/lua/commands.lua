@@ -1,3 +1,5 @@
+local function augroup(name) return vim.api.nvim_create_augroup(name, { clear = true }) end
+
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
@@ -5,14 +7,28 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     -- vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#F1FA8C" })
     -- vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#FF5555" })
     --
+    vim.api.nvim_set_hl(0, "StatusLine", { link = "LineNr" })
+
+    vim.api.nvim_set_hl(0, "MiniStatuslineModeNormal", { link = "Label" })
+    vim.api.nvim_set_hl(0, "MiniStatuslineModeInsert", { link = "Keyword" })
+    vim.api.nvim_set_hl(0, "MiniStatuslineModeVisual", { link = "Function" })
+    vim.api.nvim_set_hl(0, "MiniStatuslineModeReplace", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "MiniStatuslineModeCommand", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "MiniStatuslineModeOther", { link = "Normal" })
+
+    vim.api.nvim_set_hl(0, "MiniStatuslineDevinfo", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "MiniStatuslineFilename", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { link = "LineNr" })
+    vim.api.nvim_set_hl(0, "MiniStatuslineInactive", { link = "LineNr" })
+
     vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { link = "GitSignsAdd" })
     vim.api.nvim_set_hl(0, "MiniDiffSignChange", { link = "GitSignsChange" })
     vim.api.nvim_set_hl(0, "MiniDiffSignDelete", { link = "GitSignsDelete" })
 
     vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
 
-    vim.api.nvim_set_hl(0, "IndentLine", { link = "Comment" })
-    vim.api.nvim_set_hl(0, "BufLineTitleNoSel", { link = "Comment" })
+    vim.api.nvim_set_hl(0, "IndentLine", { link = "LineNr" })
+    vim.api.nvim_set_hl(0, "IndentLineCurrent", { link = "Keyword" })
   end,
 })
 
@@ -23,22 +39,6 @@ vim.api.nvim_create_user_command("MasonInstallAll", function()
     -- "eslint_d prettierd vue-language-server json-lsp"
   )
 end, {})
-
--- vim.api.nvim_create_user_command("Lint", function() require("lint").try_lint() end, {})
-
-vim.api.nvim_create_user_command("Format", function(args)
-  local range = nil
-  if args.count ~= -1 then
-    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
-    range = {
-      start = { args.line1, 0 },
-      ["end"] = { args.line2, end_line:len() },
-    }
-  end
-  require("conform").format({ async = true, lsp_format = "fallback", range = range })
-end, { range = true })
-
-local function augroup(name) return vim.api.nvim_create_augroup(name, { clear = true }) end
 
 --  jump to the last place you’ve visited in a file before exiting
 vim.api.nvim_create_autocmd("BufReadPost", {
@@ -52,38 +52,9 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("close_with_q"),
-  pattern = {
-    "grug-far",
-    "help",
-    "lspinfo",
-    "man",
-    "notify",
-    "qf",
-    "query",
-    "checkhealth",
-  },
+  pattern = { "grug-far", "help", "lspinfo", "man", "notify", "qf", "query", "checkhealth" },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
-  end,
-})
-
-local explicit_number_toggle_group = vim.api.nvim_create_augroup("UserExplicitNumberToggle", { clear = true })
-
-vim.api.nvim_create_autocmd("InsertEnter", {
-  pattern = "*",
-  group = explicit_number_toggle_group,
-  callback = function()
-    vim.opt.number = true -- Show absolute line numbers
-    vim.opt.relativenumber = false -- Turn off relative line numbers
-  end,
-})
-
-vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = "*",
-  group = explicit_number_toggle_group,
-  callback = function()
-    vim.opt.number = false -- Turn off absolute line numbers
-    vim.opt.relativenumber = true -- Show relative line numbers
   end,
 })

@@ -21,11 +21,16 @@ return {
 
   { "sschleemilch/slimline.nvim", opts = require("plugins.configs.slimline") },
 
-  { "williamboman/mason.nvim", opts = {} },
+  { "nvimdev/indentmini.nvim", event = "BufEnter", opts = { char = "", exclude = { "markdown" } } }, --│┊
 
-  { "mason-org/mason-lspconfig.nvim", opts = {} },
-
-  { "neovim/nvim-lspconfig" },
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+  },
 
   {
     "nvim-treesitter/nvim-treesitter",

@@ -10,19 +10,19 @@ return {
     center = {},
     right = {
       "filetype_lsp",
-      "progress",
       "git",
+      function() return "  %l / %c " end,
     },
   },
   configs = {
     mode = {
       verbose = false, -- Mode as single letter or as a word
       hl = {
-        normal = "Type",
-        insert = "Function",
-        pending = "Boolean",
-        visual = "Keyword",
-        command = "String",
+        normal = "Comment",
+        insert = "Normal",
+        pending = "Normal",
+        visual = "Normal",
+        command = "Normal",
       },
     },
     path = {
@@ -32,6 +32,7 @@ return {
         modified = "●",
         read_only = "",
       },
+      hl = { primary = "Label" },
     },
     git = {
       icons = {
@@ -40,6 +41,7 @@ return {
         modified = "~",
         removed = "-",
       },
+      hl = { primary = "Label" },
     },
     diagnostics = {
       workspace = false, -- Whether diagnostics should show workspace diagnostics instead of current buffer
@@ -49,10 +51,12 @@ return {
         INFO = vim.g.diagnostic_signs.info,
         HINT = vim.g.diagnostic_signs.hint,
       },
+      hl = { primary = "Label" },
     },
-    filetype_lsp = {},
+    filetype_lsp = {
+      hl = { primary = "String" },
+    },
     progress = {
-      follow = "mode",
       column = true, -- Enables a secondary section with the cursor column
       icon = " ",
     },
