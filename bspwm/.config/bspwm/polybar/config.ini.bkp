@@ -44,7 +44,7 @@ font-0 = JetBrainsMono Nerd Font:size=11:weight=bold
 
 modules-left = xworkspaces
 modules-center = xwindow
-modules-right = hour 
+modules-right = memory battery 
 
 cursor-click = pointer
 ; cursor-scroll = ns-resize
@@ -82,14 +82,44 @@ label-empty-padding = 1
 type = internal/xwindow
 label = %title:0:75:...%
 
-[module/hour]
-type = custom/script
-interval = 5
-label-foreground = ${colors.disabled}
-format = <label>
-exec = "LC_TIME="pt_br_utf8" date +"%H:%M""
-label-padding = 0
-label-font = 1
+[module/battery]
+type = internal/battery
+full-at = 99
+low-at = 10
+battery = BAT0
+adapter = ADP1
+poll-interval = 5
+
+format-charging-prefix = ""
+format-charging-prefix-foreground = ${colors.disabled}
+format-charging = <label-charging>
+format-charging-foreground = ${colors.foreground}
+
+format-full-prefix = "󰁹"
+format-full-prefix-foreground = ${colors.disabled}
+format-full = <label-full>
+format-full-foreground = ${colors.success}
+
+format-discharging-prefix = "󰁹"
+format-discharging-prefix-foreground = ${colors.disabled}
+format-discharging = <label-discharging>
+format-discharging-foreground = ${colors.foreground}
+
+label-charging = " %percentage%% "
+label-discharging =" %percentage%% "
+label-full = " %percentage%% "  
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "󰒋 "
+format-prefix-foreground = ${colors.disabled}
+label = %free%
+
+warn-percentage = 86
+format-warn = <label-warn>
+format-warn-foreground = ${colors.urgent}
+label-warn = %free%
 
 [settings]
 screenchange-reload = false

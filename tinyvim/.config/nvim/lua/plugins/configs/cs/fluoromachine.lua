@@ -3,10 +3,10 @@ require("fluoromachine").setup({
   glow = false,
   colors = function(_, color)
     return {
-      bg = "#0e1013",
-      bgdark = color.darken("#0e1013", 20),
-      -- bg = "#160724",
-      -- bgdark = color.darken("#160724", 20),
+      -- bg = "#0e1013",
+      -- bgdark = color.darken("#0e1013", 20),
+      bg = "#160724",
+      bgdark = color.darken("#160724", 20),
     }
   end,
   overrides = { -- fake glow without bg

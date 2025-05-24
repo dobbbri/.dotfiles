@@ -6,7 +6,7 @@ map("n", "2", "<cmd> q <CR>")
 map("i", "jk", "<ESC>")
 
 map("n", ";", ":", { desc = "Enter command mode" })
-map("n", "<esc><esc>", "<cmd>noh<CR>", { desc = "Clear Highlights" })
+map("n", "<esc>", "<cmd>noh<CR>", { desc = "Clear Highlights" })
 map("n", "<c-s>", "<cmd>w<CR>", { desc = "Save file" })
 map("n", "<c-a>", "<cmd>wa<CR>", { desc = "Save all file" })
 map("n", "<c-t>", "<cmd>%y+<CR>", { desc = "Copy Whole File" })

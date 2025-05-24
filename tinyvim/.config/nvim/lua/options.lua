@@ -13,8 +13,8 @@ local diagnostic_signs = { error = " ", warn = " ", hint = "󰌵 ", info =
 g.mapleader = " "
 g.maplocalleader = ","
 
--- local random_colorscheme = math.random(1, 6)
-g.selected_colorscheme = colorscheme[4]
+-- local random_colorscheme = math.random(1, 5)
+g.selected_colorscheme = colorscheme[5]
 
 -- diagnostic signs
 g.diagnostic_signs = diagnostic_signs

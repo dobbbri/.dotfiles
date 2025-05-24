@@ -7,19 +7,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     -- vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#F1FA8C" })
     -- vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#FF5555" })
     --
-    vim.api.nvim_set_hl(0, "StatusLine", { link = "LineNr" })
-
-    vim.api.nvim_set_hl(0, "MiniStatuslineModeNormal", { link = "Label" })
-    vim.api.nvim_set_hl(0, "MiniStatuslineModeInsert", { link = "Keyword" })
-    vim.api.nvim_set_hl(0, "MiniStatuslineModeVisual", { link = "Function" })
-    vim.api.nvim_set_hl(0, "MiniStatuslineModeReplace", { link = "Normal" })
-    vim.api.nvim_set_hl(0, "MiniStatuslineModeCommand", { link = "Normal" })
-    vim.api.nvim_set_hl(0, "MiniStatuslineModeOther", { link = "Normal" })
-
-    vim.api.nvim_set_hl(0, "MiniStatuslineDevinfo", { link = "Normal" })
-    vim.api.nvim_set_hl(0, "MiniStatuslineFilename", { link = "Normal" })
-    vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { link = "LineNr" })
-    vim.api.nvim_set_hl(0, "MiniStatuslineInactive", { link = "LineNr" })
+    vim.api.nvim_set_hl(0, "StatusLine", { link = "Menu" })
 
     vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { link = "GitSignsAdd" })
     vim.api.nvim_set_hl(0, "MiniDiffSignChange", { link = "GitSignsChange" })

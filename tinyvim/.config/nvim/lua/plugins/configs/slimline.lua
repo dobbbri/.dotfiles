@@ -11,7 +11,10 @@ return {
     right = {
       "filetype_lsp",
       "git",
-      function() return "  %l / %c " end,
+      function()
+        local h = require("slimline.highlights")
+        return h.hl_component({ primary = "  %l / %c " }, h.hls.components["path"], "")
+      end,
     },
   },
   configs = {
@@ -27,20 +30,11 @@ return {
     },
     path = {
       directory = true, -- Whether to show the directory
-      icons = {
-        folder = "󰲂 ",
-        modified = "●",
-        read_only = "",
-      },
+      icons = { folder = "󰲂 ", modified = "●", read_only = "" },
       hl = { primary = "Label" },
     },
     git = {
-      icons = {
-        branch = "󰊢",
-        added = "+",
-        modified = "~",
-        removed = "-",
-      },
+      icons = { branch = "󰊢", added = "+", modified = "~", removed = "-" },
       hl = { primary = "Label" },
     },
     diagnostics = {
@@ -56,30 +50,21 @@ return {
     filetype_lsp = {
       hl = { primary = "String" },
     },
-    progress = {
-      column = true, -- Enables a secondary section with the cursor column
-      icon = " ",
-    },
-    recording = {
-      icon = " ",
-    },
+    -- progress = {
+    --   column = true, -- Enables a secondary section with the cursor column
+    --   icon = " ",
+    -- },
+    recording = { icon = " " },
   },
-  spaces = {
-    components = " ", -- string between components
-    left = " ", -- string at the start of the line
-    right = " ", -- string at the end of the line
-  },
+  spaces = { components = " ", left = " ", right = " " },
   sep = {
-    hide = {
-      first = false, -- hides the first separator of the line
-      last = false, -- hides the last separator of the line
-    },
-    left = "", -- left separator of components
-    right = "", -- right separator of components
+    hide = { first = false, last = false },
+    left = "",
+    right = "",
   },
   hl = {
-    base = "Comment", -- highlight of the background
-    primary = "Normal", -- highlight of primary parts (e.g. filename)
-    secondary = "Comment", -- highlight of secondary parts (e.g. filepath)
+    base = "Selection",
+    primary = "Normal",
+    secondary = "Comment",
   },
 }

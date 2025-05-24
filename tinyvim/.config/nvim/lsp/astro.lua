@@ -1,33 +1,17 @@
----@brief
----
---- https://ast-grep.github.io/
----
---- ast-grep(sg) is a fast and polyglot tool for code structural search, lint, rewriting at large scale.
---- ast-grep LSP only works in projects that have `sgconfig.y[a]ml` in their root directories.
---- ```sh
---- npm install [-g] @ast-grep/cli
---- ```
+--- npm install -g @astrojs/language-server
+
+local util = require("lspconfig.util")
+
 return {
-  cmd = { 'ast-grep', 'lsp' },
-  workspace_required = true,
-  filetypes = { -- https://ast-grep.github.io/reference/languages.html
-    'c',
-    'cpp',
-    'rust',
-    'go',
-    'java',
-    'python',
-    'javascript',
-    'javascriptreact',
-    'javascript.jsx',
-    'typescript',
-    'typescriptreact',
-    'typescript.tsx',
-    'html',
-    'css',
-    'kotlin',
-    'dart',
-    'lua',
+  cmd = { "astro-ls", "--stdio" },
+  filetypes = { "astro" },
+  root_markers = { "package.json", "tsconfig.json", "jsconfig.json", ".git" },
+  init_options = {
+    typescript = {},
   },
-  root_markers = { 'sgconfig.yaml', 'sgconfig.yml' },
+  before_init = function(_, config)
+    if config.init_options and config.init_options.typescript and not config.init_options.typescript.tsdk then
+      config.init_options.typescript.tsdk = util.get_typescript_server_path(config.root_dir)
+    end
+  end,
 }
