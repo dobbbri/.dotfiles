@@ -14,7 +14,7 @@ g.mapleader = " "
 g.maplocalleader = ","
 
 -- local random_colorscheme = math.random(1, 5)
-g.selected_colorscheme = colorscheme[5]
+g.selected_colorscheme = colorscheme[2]
 
 -- diagnostic signs
 g.diagnostic_signs = diagnostic_signs
