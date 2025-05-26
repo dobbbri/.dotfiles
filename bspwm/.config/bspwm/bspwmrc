@@ -39,7 +39,9 @@ xsetroot -cursor_name left_ptr &
 # /usr/bin/lxpolkit &
 dunst -config ~/.config/bspwm/dunst/dunstrc &
 # picom --config ~/.config/bspwm/picom/picom.conf --animations -b &
-# xwallpaper --zoom ~/.dotfiles/pictures/WWDC-2016-wallpaper.png &
+xwallpaper --zoom ~/.dotfiles/pictures/cyberman-1920-7945.jpg &
+# terminal
+/usr/bin/alacritty &
 
 ## Polybar or tint
 ~/.config/bspwm/scripts/polybar-bspwm &
