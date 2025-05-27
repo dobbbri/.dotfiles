@@ -1,137 +1,150 @@
-local modes = {
-  ["n"] = "NORMAL",
-  ["no"] = "NORMAL",
-  ["v"] = "VISUAL",
-  ["V"] = "VISUAL LINE",
-  [""] = "VISUAL BLOCK",
-  ["s"] = "SELECT",
-  ["S"] = "SELECT LINE",
-  [""] = "SELECT BLOCK",
-  ["i"] = "INSERT",
-  ["ic"] = "INSERT",
-  ["R"] = "REPLACE",
-  ["Rv"] = "VISUAL REPLACE",
-  ["c"] = "COMMAND",
-  ["cv"] = "VIM EX",
-  ["ce"] = "EX",
-  ["r"] = "PROMPT",
-  ["rm"] = "MOAR",
-  ["r?"] = "CONFIRM",
-  ["!"] = "SHELL",
-  ["t"] = "TERMINAL",
-}
+local function git_branch()
+  local branch = vim.b.gitsigns_head
 
-local function mode()
-  local current_mode = vim.api.nvim_get_mode().mode
-  return string.format(" %s ", modes[current_mode]):upper()
+  if branch == nil then return " -- " end
+
+  local added = vim.b.gitsigns_status_dict.added or 0
+  local changed = vim.b.gitsigns_status_dict.changed or 0
+  local removed = vim.b.gitsigns_status_dict.removed or 0
+
+  return "%#statusline_branch# " .. branch .. " +" .. added .. " -" .. removed .. " ~" .. changed .. " "
 end
 
-local function filepath()
-  if vim.bo.filetype == "minifiles" then return "" end
-  local fpath = vim.fn.fnamemodify(vim.fn.expand("%"), ":~:.:h")
-  if fpath == "" or fpath == "." then return " " end
+local function file_name()
+  local filename = vim.fn.expand("%:t")
+  if filename == "" then filename = "[no name]" end
 
-  return string.format("  %%<%s/", fpath) .. "%#StatusLine#"
+  if string.match(filename, "NvimTree") then filename = "NvimTree" end
+
+  if vim.bo.buftype == "terminal" then filename = "terminal" end
+
+  local highlight_group = vim.bo.modified and filename ~= "[no name]" and "statusline_modifiedfile" or "statusline_file"
+
+  return "%#" .. highlight_group .. "# " .. filename .. " "
 end
 
-local function filename()
-  local fname = vim.fn.expand("%:t")
-  if fname == "" then return "" end
-  return fname .. " "
-end
+local function current_mode()
+  local mode = vim.fn.mode()
 
-local function lsp()
-  local count = {}
-  local levels = {
-    errors = "Error",
-    warnings = "Warn",
-    info = "Info",
-    hints = "Hint",
+  local mode_aliases = {
+    n = "n",
+    i = "i",
+    v = "v",
+    V = "v",
+    t = "t",
+    c = "c",
+    s = "s",
+    [""] = "v",
   }
 
-  for k, level in pairs(levels) do
-    count[k] = vim.tbl_count(vim.diagnostic.get(0, { severity = level }))
-  end
+  mode = mode and mode_aliases[mode] and mode_aliases[mode]:upper() or "?"
 
-  local errors = ""
-  local warnings = ""
-  local hints = ""
-  local info = ""
-
-  if count["errors"] ~= 0 then
-    errors = " %#LspDiagnosticsSignError#" .. vim.g.diagnostic_signs.error .. count["errors"]
-  end
-  if count["warnings"] ~= 0 then
-    warnings = " %#LspDiagnosticsSignWarning#" .. vim.g.diagnostic_signs.warn .. count["warnings"]
-  end
-  if count["info"] ~= 0 then
-    info = " %#LspDiagnosticsSignInformation#" .. vim.g.diagnostic_signs.info .. count["info"]
-  end
-  if count["hints"] ~= 0 then hints = " %#LspDiagnosticsSignHint#" .. vim.g.diagnostic_signs.hint .. count["hints"] end
-
-  return errors .. warnings .. info .. hints .. "%#StatusLine#"
+  return "%#statusline_mode# " .. mode .. " "
 end
 
-local function filetype() return string.format(" %s ", vim.bo.filetype) .. "%#StatusLine#" end
+local function diagnostics()
+  local num_warning = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
+  local num_error = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
+  local num_hint = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
 
-local function lineinfo()
+  return "%#statusline_diagnostics# " .. "E" .. num_error .. " W" .. num_warning .. " H" .. num_hint .. " "
+end
+
+local function contexts()
+  if vim.bo.filetype ~= "python" then return "" end
+
+  local success, treesitter = pcall(require, "nvim-treesitter")
+  if not success then return "" end
+
+  local context = treesitter.statusline({
+
+    type_patterns = { "class", "function", "method" },
+
+    transform_fn = function(line)
+      line = line:gsub("class%s*", "")
+      line = line:gsub("def%s*", "")
+      line = line:gsub(":", "")
+
+      return line:gsub("%s*[%(%{%[].*[%]%}%)]*%s*$", "")
+    end,
+
+    separator = " -> ",
+
+    allow_duplicates = false,
+  })
+
+  if context == nil then return "" end
+
+  return "%#statusline_contexts# " .. context .. " "
+end
+
+local function separator()
+  local highlight_group = "statusline_separator"
+  return "%#" .. highlight_group .. "#%="
+end
+
+local function file_type() return "%#statusline_type#" .. string.format(" %s ", vim.bo.filetype) end
+
+local function line_info()
   if vim.bo.filetype == "alpha" then return "" end
-  return " %P   %l:%c "
+  return "%#statusline_info# %P   %l:%c "
 end
+-- a function to call and place the statusline components
 
-local vcs = function(data)
-  local git_info = vim.b[data.buf].minidiff_summary
-  if not git_info or git_info.head == "" then return "" end
-  local added = git_info.add and ("%#GitSignsAdd#+" .. git_info.add .. " ") or ""
-  local changed = git_info.change and ("%#GitSignsChange#~" .. git_info.change .. " ") or ""
-  local removed = git_info.delete and ("%#GitSignsDelete#-" .. git_info.delete .. " ") or ""
-  if git_info.add == 0 then added = "" end
-  if git_info.change == 0 then changed = "" end
-  if git_info.delete == 0 then removed = "" end
+function Status_line()
   return table.concat({
-    " ",
-    added,
-    changed,
-    removed,
-    " ",
-    "%#GitSignsAdd# ",
-    git_info.head,
-    " % ",
+    current_mode(),
+
+    file_name(),
+    diagnostics(),
+    contexts(),
+
+    separator(),
+
+    file_type(),
+    git_branch(),
+    line_info,
   })
 end
 
-Statusline = {}
+-- default with statusline but can be toggled with <leader>s
 
-Statusline.active = function()
-  return table.concat({
-    mode(),
-    " % ",
-    vcs(),
-    " % ",
-    filename(),
-    " %#Comment# ",
-    filepath(),
-    " %=% ",
-    lsp(),
-    " %#Comment# ",
-    filetype(),
-    " % ",
-    lineinfo(),
-  })
-end
+vim.opt["laststatus"] = 3
 
-function Statusline.inactive() return " %F" end
+vim.keymap.set("n", "<leader>s", function()
+  if vim.o.laststatus == 0 then
+    vim.cmd("set laststatus=3")
+  else
+    vim.cmd("set laststatus=0")
+  end
+end)
 
-local au_opts = { pattern = "MiniDiffUpdated", callback = vcs }
-vim.api.nvim_create_autocmd("User", au_opts)
+vim.cmd("set statusline=%!v:lua.Status_line()")
 
-vim.api.nvim_exec(
-  [[
+vim.cmd([[
   augroup Statusline
-  au!
-  au WinEnter,BufEnter * setlocal statusline=%!v:lua.Statusline.active()
-  au WinLeave,BufLeave * setlocal statusline=%!v:lua.Statusline.inactive()
-  augroup END
-]],
-  false
-)
+    au!
+    au WinEnter,BufEnter * setlocal cursorline
+    au WinLeave,BufLeave * setlocal nocursorline
+]])
+
+-- set colors for each statusline components
+
+local group_styles = {
+  ["statusline_mode"] = { fg = "#EEEEEE", bg = "None", bold = true },
+
+  ["statusline_file"] = { fg = "#EEEEEE", bg = "None", bold = true },
+  ["statusline_modifiedfile"] = { fg = "#000000", bg = "None", bold = true },
+  ["statusline_diagnostics"] = { fg = "#EEEEEE", bg = "None" },
+  ["statusline_contexts"] = { fg = "#CCCCCC", bg = "None" },
+
+  ["statusline_separator"] = { fg = "#333333", bg = "None" },
+
+  ["statusline_branch"] = { fg = "#EEEEEE", bg = "None" },
+  ["statusline_type"] = { fg = "#CCCCCC", bg = "None" },
+  ["statusline_info"] = { fg = "#CCCCCC", bg = "None", bold = true },
+}
+
+for group, style in pairs(group_styles) do
+  vim.api.nvim_set_hl(0, group, style)
+end

@@ -22,7 +22,7 @@ local function create_floating_window(opts)
   end
   local win_config = {
     relative = "editor",
-    border = "rounded",
+    border = "single",
     style = "minimal",
     width = width,
     height = height,

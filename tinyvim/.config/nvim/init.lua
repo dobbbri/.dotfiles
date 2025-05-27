@@ -20,5 +20,4 @@ require("lazy").setup(require("plugins"))
 
 require("mappings")
 require("diagnostics")
-require("capabilities")
 require("terminalpop")

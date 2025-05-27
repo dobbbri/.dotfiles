@@ -21,7 +21,7 @@ return {
 
   { "sschleemilch/slimline.nvim", opts = require("plugins.configs.slimline") },
 
-  { "nvimdev/indentmini.nvim", event = "BufEnter", opts = { char = "│", exclude = { "markdown" } } }, --│┊⁚ 
+  { "nvimdev/indentmini.nvim", event = "BufEnter", opts = { char = "│", exclude = { "markdown" } } }, --│┊⁚
 
   {
     "mason-org/mason-lspconfig.nvim",
@@ -45,12 +45,10 @@ return {
     dependencies = "rafamadriz/friendly-snippets",
     opts = require("plugins.configs.blink"),
     opts_extend = { "sources.default" },
-  },
-
-  {
-    "gaelph/logsitter.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    opts = { path_format = "fileonly", prefix = "[LS]", separator = ">" },
+    config = function(_, opts)
+      require("blink.cmp").setup(opts)
+      vim.lsp.config("*", { capabilities = require("blink.cmp").get_lsp_capabilities() })
+    end,
   },
 
   {
@@ -63,6 +61,12 @@ return {
     "nvimdev/guard.nvim",
     dependencies = { "nvimdev/guard-collection" },
     config = function() require("plugins.configs.guard") end,
+  },
+
+  {
+    "gaelph/logsitter.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = { path_format = "fileonly", prefix = "[LS]", separator = ">" },
   },
 
   { "folke/which-key.nvim", event = "VeryLazy", opts = { preset = "modern", icons = { mappings = false } } },

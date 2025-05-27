@@ -30,7 +30,7 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 -- use rounded borders on all floating windows
--- opt.winborder = 'solid' ---'rounded'
+opt.winborder = 'single' ---'rounded'
 
 -- nice confirmation dialog
 opt.confirm = true
