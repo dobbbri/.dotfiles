@@ -30,16 +30,14 @@ alias ddv='dd && v'
 
 # projects
 alias pp='cd ~/Projects/'
-alias ppv='pp && v'
 
 # home
 alias hh='cd ~'
-alias hhv='hh & v'
 
 # site
 alias ss='cd ~/Sites/'
 alias ssv='ss && v'
-alias sepc='cd ~/Sites/epc_in_dev'
+alias sp='cd ~/Sites/epc_in_dev'
 alias sepc2='cd ~/Sites/elisa_pet_care_v2'
 alias spt='cd ~/Sites/pousada_do_tucunare_2020'
 alias setv='cd ~/Sites/espaco_videira_2025'

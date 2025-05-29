@@ -15,8 +15,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
     vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
 
-    vim.api.nvim_set_hl(0, "IndentLine", { link = "LineNr" })
-    vim.api.nvim_set_hl(0, "IndentLineCurrent", { link = "Keyword" })
+    -- vim.api.nvim_set_hl(0, "IndentLine", { fg = '#101010' })
+    -- vim.api.nvim_set_hl(0, "IndentLineCurrent", { link = "Keyword" })
   end,
 })
 

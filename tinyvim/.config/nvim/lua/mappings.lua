@@ -35,6 +35,11 @@ map(
   { desc = "Color pick under cursor" }
 )
 
+-- Gitsigns
+map("n", "<leader>p", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git preview hunk" })
+map("n", "<leader>g", "<cmd>Gitsigns stage_buffer<CR>", { desc = "Git stage buffer" })
+map("n", "<leader>G", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Git reset buffer" })
+
 -- move buffer
 map("n", "<Tab>", "<cmd>bnext<CR>")
 map("n", "<S-Tab>", "<cmd>bprevious<CR>")

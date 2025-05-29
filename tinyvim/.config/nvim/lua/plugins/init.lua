@@ -1,35 +1,54 @@
 return {
-  {
-    vim.g.selected_colorscheme.package,
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("plugins.configs.cs." .. vim.g.selected_colorscheme.name)
-      vim.cmd("colorscheme " .. vim.g.selected_colorscheme.name)
-    end,
-  },
 
-  { "nvim-lua/plenary.nvim", lazy = true },
+  {
+    "nvim-lua/plenary.nvim",
+    lazy = true,
+  },
 
   { "mg979/vim-visual-multi" },
 
-  { "ibhagwan/fzf-lua", opts = { "ivy", winopts = { height = 0.60, width = 1 } } },
+  {
+    "ibhagwan/fzf-lua",
+    opts = { "ivy", winopts = { height = 0.60, width = 1 } },
+  },
 
-  { "MagicDuck/grug-far.nvim", lazy = true, opts = { headerMaxWidth = 80 } },
+  {
+    "MagicDuck/grug-far.nvim",
+    lazy = true,
+    opts = { headerMaxWidth = 80 },
+  },
 
-  { "eero-lehtinen/oklch-color-picker.nvim", event = "VeryLazy", version = "*", opts = {} },
+  {
+    "eero-lehtinen/oklch-color-picker.nvim",
+    event = "VeryLazy",
+    version = "*",
+    opts = {},
+  },
 
-  { "sschleemilch/slimline.nvim", opts = require("plugins.configs.slimline") },
+  {
+    "sschleemilch/slimline.nvim",
+    opts = require("plugins.configs.slimline"),
+  },
 
-  { "nvimdev/indentmini.nvim", event = "BufEnter", opts = { char = "│", exclude = { "markdown" } } }, --│┊⁚
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = require("plugins.configs.indentblankline"),
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = { signcolumn = false, numhl = true },
+  },
 
   {
     "mason-org/mason-lspconfig.nvim",
-    opts = {},
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },
       "neovim/nvim-lspconfig",
     },
+    opts = {},
   },
 
   {
@@ -40,15 +59,11 @@ return {
 
   {
     "saghen/blink.cmp",
+    dependencies = "rafamadriz/friendly-snippets",
     version = "1.*",
     lazy = false,
-    dependencies = "rafamadriz/friendly-snippets",
     opts = require("plugins.configs.blink"),
     opts_extend = { "sources.default" },
-    config = function(_, opts)
-      require("blink.cmp").setup(opts)
-      vim.lsp.config("*", { capabilities = require("blink.cmp").get_lsp_capabilities() })
-    end,
   },
 
   {
@@ -66,8 +81,12 @@ return {
   {
     "gaelph/logsitter.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    opts = { path_format = "fileonly", prefix = "[LS]", separator = ">" },
+    opts = { path_format = "fileonly", prefix = "[Log]", separator = ">" },
   },
 
-  { "folke/which-key.nvim", event = "VeryLazy", opts = { preset = "modern", icons = { mappings = false } } },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = { preset = "modern", icons = { mappings = false } },
+  },
 }

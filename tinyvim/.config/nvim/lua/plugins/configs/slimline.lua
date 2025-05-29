@@ -10,11 +10,11 @@ return {
     center = {},
     right = {
       "filetype_lsp",
-      "git",
       function()
         local h = require("slimline.highlights")
         return h.hl_component({ primary = "  %l / %c " }, h.hls.components["path"], "")
       end,
+      "git",
     },
   },
   configs = {

@@ -1,20 +1,10 @@
 local g = vim.g
 local opt = vim.opt
-local colorscheme = {
-  { name = "fluoromachine", package = "maxmx03/fluoromachine.nvim" },
-  { name = "gruvbox", package = "ellisonleao/gruvbox.nvim" },
-  { name = "onedark", package = "navarasu/onedark.nvim" },
-  { name = "dracula", package = "Mofiqul/dracula.nvim" },
-  { name = "kanagawa", package = "rebelot/kanagawa.nvim" },
-}
 local diagnostic_signs = { error = " ", warn = " ", hint = "󰌵 ", info = " " }
 
 -- mapleader
 g.mapleader = " "
 g.maplocalleader = ","
-
--- local random_colorscheme = math.random(1, 5)
-g.selected_colorscheme = colorscheme[2]
 
 -- diagnostic signs
 g.diagnostic_signs = diagnostic_signs
@@ -30,7 +20,7 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 -- use rounded borders on all floating windows
-opt.winborder = 'single' ---'rounded'
+opt.winborder = "single" ---'rounded'
 
 -- nice confirmation dialog
 opt.confirm = true

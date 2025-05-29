@@ -15,7 +15,8 @@ require("mini.icons").setup()
 require("mini.comment").setup()
 require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } })
 require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } })
-require("mini.diff").setup({ view = { style = "number" } }) --'sign'
+-- require("mini.indentscope").setup({ symbol = "│" })
+-- require("mini.diff").setup({ view = { style = "number" } }) --'sign'
 
 local MiniFiles = require("mini.files")
 MiniFiles.setup({

@@ -44,6 +44,10 @@ super + e
 super + g
 	gimp
 
+# Launch Obsidian (Editor)
+super + o
+	obsidian
+
 # Set Window State: Tile Mode
 super + shift + t
 	bspc node -t tiled

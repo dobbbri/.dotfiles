@@ -16,7 +16,10 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(require("plugins"))
+require("lazy").setup({
+  require("colorscheme"),
+  require("plugins"),
+})
 
 require("mappings")
 require("diagnostics")
