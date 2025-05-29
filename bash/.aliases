@@ -36,11 +36,8 @@ alias hh='cd ~'
 
 # site
 alias ss='cd ~/Sites/'
-alias ssv='ss && v'
-alias sp='cd ~/Sites/epc_in_dev'
-alias sepc2='cd ~/Sites/elisa_pet_care_v2'
-alias spt='cd ~/Sites/pousada_do_tucunare_2020'
-alias setv='cd ~/Sites/espaco_videira_2025'
+alias se='cd ~/Sites/epc_in_dev'
+alias sp='cd ~/Sites/pousada_do_tucunare_2020'
 alias sb='cd ~/Sites/blog'
 alias sv='cd ~/Sites/videira-blog-2025/'
 
@@ -130,60 +127,60 @@ alias jctl="journalctl -p 3 -xb"
 #alias os="onedrive --synchronize"
 
 function installNeovim {
-  rm -rf /home/sdobri/.cache/nvim
-  rm -rf /home/sdobri/.local/share/nvim
-  rm -rf /home/sdobri/.local/state/nvim
-  sudo rm /usr/local/bin/nvim
-  wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.appimage
-  chmod u+x nvim-linux-x86_64.appimage
-  sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
+	rm -rf /home/sdobri/.cache/nvim
+	rm -rf /home/sdobri/.local/share/nvim
+	rm -rf /home/sdobri/.local/state/nvim
+	sudo rm /usr/local/bin/nvim
+	wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.appimage
+	chmod u+x nvim-linux-x86_64.appimage
+	sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 }
 
 function installAppImage {
-  sudo rm /usr/local/bin/$2
-  chmod u+x $1
-  sudo mv $1 /usr/local/bin/$2
+	sudo rm /usr/local/bin/$2
+	chmod u+x $1
+	sudo mv $1 /usr/local/bin/$2
 }
 
 ### battery
 battery_status() {
-  BATTERY=/sys/class/power_supply/BAT0
+	BATTERY=/sys/class/power_supply/BAT0
 
-  BATSTATE=$(cat ${BATTERY}/status)
-  CHARGE=$(cat ${BATTERY}/capacity)
+	BATSTATE=$(cat ${BATTERY}/status)
+	CHARGE=$(cat ${BATTERY}/capacity)
 
-  NON='\033[00m'
-  BLD='\033[01m'
-  RED='\033[01;31m'
-  GRN='\033[01;32m'
-  YEL='\033[01;33m'
+	NON='\033[00m'
+	BLD='\033[01m'
+	RED='\033[01;31m'
+	GRN='\033[01;32m'
+	YEL='\033[01;33m'
 
-  COLOUR="$RED"
+	COLOUR="$RED"
 
-  case "${BATSTATE}" in
-  'Charged')
-    BATSTT="$BLD=$NON"
-    ;;
-  'Charging')
-    BATSTT="$BLD+$NON"
-    ;;
-  'Discharging')
-    BATSTT="$BLD-$NON"
-    ;;
-  esac
+	case "${BATSTATE}" in
+	'Charged')
+		BATSTT="$BLD=$NON"
+		;;
+	'Charging')
+		BATSTT="$BLD+$NON"
+		;;
+	'Discharging')
+		BATSTT="$BLD-$NON"
+		;;
+	esac
 
-  # prevent a charge of more than 100% displaying
-  if [ "$CHARGE" -gt "99" ]; then
-    CHARGE=100
-  fi
+	# prevent a charge of more than 100% displaying
+	if [ "$CHARGE" -gt "99" ]; then
+		CHARGE=100
+	fi
 
-  if [ "$CHARGE" -gt "15" ]; then
-    COLOUR="$YEL"
-  fi
+	if [ "$CHARGE" -gt "15" ]; then
+		COLOUR="$YEL"
+	fi
 
-  if [ "$CHARGE" -gt "30" ]; then
-    COLOUR="$GRN"
-  fi
+	if [ "$CHARGE" -gt "30" ]; then
+		COLOUR="$GRN"
+	fi
 
-  echo -e "${BATSTT}${COLOUR}${CHARGE}%${NON}"
+	echo -e "${BATSTT}${COLOUR}${CHARGE}%${NON}"
 }
