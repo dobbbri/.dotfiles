@@ -23,10 +23,9 @@ alias e='nvim'
 alias lg='lazygit'
 
 # dotfiles
-alias vv='cd ~/.dotfiles/tinyvim/.config/nvim/'
-alias vvv='vv && v'
-alias dd='cd ~/.dotfiles/'
-alias ddv='dd && v'
+alias bsp='cd ~/.dotfiles/bspwm/.config/bspwm/ && v'
+alias vvv='cd ~/.dotfiles/tinyvim/.config/nvim/ && v'
+alias ddd='cd ~/.dotfiles/ && v'
 
 # projects
 alias pp='cd ~/Projects/'
@@ -114,6 +113,10 @@ alias gaac="git add . && git commit -m"
 alias gsync="git pull && git push"
 alias ggg="gaac 'update...' && gps"
 
+gg() { 
+  git add . && git commit -m "$1" && git push && git status --short; 
+}
+
 #Clean cache
 alias clearCache='rm -rf ~/.cache/*'
 alias clearNeovimLog="rm /home/sdobri/.local/state/nvim/lsp.log"
@@ -126,7 +129,11 @@ alias jctl="journalctl -p 3 -xb"
 
 #alias os="onedrive --synchronize"
 
-function installNeovim {
+mkcd() { 
+  mkdir -p "$1" && cd "$1"; 
+}
+
+installNeovim() {
 	rm -rf /home/sdobri/.cache/nvim
 	rm -rf /home/sdobri/.local/share/nvim
 	rm -rf /home/sdobri/.local/state/nvim
@@ -136,7 +143,7 @@ function installNeovim {
 	sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 }
 
-function installAppImage {
+installAppImage() {
 	sudo rm /usr/local/bin/$2
 	chmod u+x $1
 	sudo mv $1 /usr/local/bin/$2
