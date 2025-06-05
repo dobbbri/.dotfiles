@@ -39,13 +39,13 @@ dunst -config ~/.config/bspwm/dunst/dunstrc &
 # picom --config ~/.config/bspwm/picom/picom.conf --animations -b &
 # compton --config ~/.config/bspwm/compton/compton.conf --backend glx --vsync opengl-swc &
 
-# xwallpaper --zoom ~/.dotfiles/pictures/cyberman-1920-7945.jpg &
+xwallpaper --zoom ~/.dotfiles/pictures/mar.png &
 
 ## Polybar or tint
 ~/.config/bspwm/scripts/polybar-bspwm &
 
 # terminal
-/usr/bin/alacritty &
+# /usr/bin/alacritty &
 
 ## apps for systray if enabled
 # volumeicon &

@@ -1,5 +1,6 @@
 require("options")
 require("commands")
+require("diagnostics")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -22,5 +23,4 @@ require("lazy").setup({
 })
 
 require("mappings")
-require("diagnostics")
 require("terminalpop")

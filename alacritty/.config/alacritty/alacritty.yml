@@ -28,8 +28,8 @@ font:
   size: 11.0
   # size: 9.0
   offset:
-    x: 0 
-    y: 1
+    x: 0
+    y: 6
   glyph_offset:
     x: 0
     y: 0
@@ -46,9 +46,9 @@ colors:
     black: "#1d2021"
     red: "#cc241d"
     green: "#98971a"
-    yellow  : "#d79921"
+    yellow: "#d79921"
     blue: "#458588"
-    magenta : "#b16286"
+    magenta: "#b16286"
     cyan: "#689d6a"
     white: "#a89984"
 
@@ -56,9 +56,9 @@ colors:
     black: "#928374"
     red: "#fb4934"
     green: "#b8bb26"
-    yellow  : "#fabd2f"
+    yellow: "#fabd2f"
     blue: "#83a598"
-    magenta : "#d3869b"
+    magenta: "#d3869b"
     cyan: "#8ec07c"
     white: "#ebdbb2"
 
@@ -134,7 +134,7 @@ key_bindings:
   - { key: LBracket, mods: Command, chars: "\x02;" } # select last (previously used) pane
   - { key: F, mods: Command, chars: "\x02/" } # search (upwards) (see tmux.conf)
 
-  - { key: Up, mods: Shift,  action: ScrollPageUp }
+  - { key: Up, mods: Shift, action: ScrollPageUp }
   - { key: Down, mods: Shift, action: ScrollPageDown }
 
 mouse:
@@ -156,7 +156,6 @@ cursor:
   unfocused_hollow: true
 
 live_config_reload: true
-
 # debug:
 #   render_timer: false
 #   persistent_logging: false

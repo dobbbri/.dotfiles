@@ -1,13 +1,9 @@
 local g = vim.g
 local opt = vim.opt
-local diagnostic_signs = { error = " ", warn = " ", hint = "󰌵 ", info = " " }
 
 -- mapleader
 g.mapleader = " "
 g.maplocalleader = ","
-
--- diagnostic signs
-g.diagnostic_signs = diagnostic_signs
 
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 2

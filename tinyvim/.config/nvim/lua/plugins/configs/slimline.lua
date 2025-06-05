@@ -29,7 +29,7 @@ return {
       },
     },
     path = {
-      directory = true, -- Whether to show the directory
+      directory = false, -- Whether to show the directory
       icons = { folder = "󰲂 ", modified = "●", read_only = "" },
       hl = { primary = "Label" },
     },
@@ -39,12 +39,12 @@ return {
     },
     diagnostics = {
       workspace = false, -- Whether diagnostics should show workspace diagnostics instead of current buffer
-      icons = {
-        ERROR = vim.g.diagnostic_signs.error,
-        WARN = vim.g.diagnostic_signs.warn,
-        INFO = vim.g.diagnostic_signs.info,
-        HINT = vim.g.diagnostic_signs.hint,
-      },
+      -- icons = {
+      --   ERROR = vim.g.diagnostic_signs.error,
+      --   WARN = vim.g.diagnostic_signs.warn,
+      --   INFO = vim.g.diagnostic_signs.info,
+      --   HINT = vim.g.diagnostic_signs.hint,
+      -- },
       hl = { primary = "Label" },
     },
     filetype_lsp = {
