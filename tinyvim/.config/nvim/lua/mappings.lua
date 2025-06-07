@@ -16,11 +16,13 @@ map("n", "-", function() require("mini.files").open() end, { desc = "Show File M
 map("n", "<leader>e", function() require("mini.files").open() end, { desc = "Show File Manager" })
 
 -- fzf-lua
-map("n", "<leader>f", "<cmd>FzfLua files<CR>", { desc = "List files" })
-map("n", "<leader>b", "<cmd>FzfLua buffers<CR>", { desc = "List open buffers" })
-map("n", "<leader>m", "<cmd>FzfLua resume<CR>", { desc = "List FzfLua resume" })
-map("n", "<leader>w", "<cmd>FzfLua live_grep<CR>", { desc = "Search by word" })
-map("n", "<leader>S", "<cmd>FzfLua spell_suggest<cr>", { desc = "List spelling Suggestions" })
+map("n", "<leader>f", "<cmd>Pick files<CR>", { desc = "List files" })
+map("n", "<leader>b", "<cmd>Pick buffers<CR>", { desc = "List open buffers" })
+map("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick resume" })
+map("n", "<leader>w", "<cmd>Pick grep_live<CR>", { desc = "Search by word" })
+-- map("n", "<leader>S", "<cmd>Pick spell_suggest<cr>", { desc = "List spelling Suggestions" })
+
+-- diagnostics
 map("n", "<leader>d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to diagnostics" })
 map("n", "<leader>D", vim.diagnostic.open_float, { desc = "show diagnostic Info" })
 
@@ -54,7 +56,7 @@ map({ "n", "v" }, "f", "<cmd>Guard fmt<CR>", { desc = "Format File" })
 
 -- search / replace
 map("n", "<leader>s", ":%s///gcI<Left><Left><Left><Left><Left>", { desc = "Search and replace in current buffer" })
-map({ "n", "v" }, "<leader>r", function()
+map({ "n", "v" }, "<leader>S", function()
   local grug = require("grug-far")
   local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
   grug.open({

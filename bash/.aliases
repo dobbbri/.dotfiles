@@ -113,8 +113,8 @@ alias gaac="git add . && git commit -m"
 alias gsync="git pull && git push"
 alias ggg="gaac 'update...' && gps"
 
-gg() { 
-  git add . && git commit -m "$1" && git push && git status --short; 
+gg() {
+	git add . && git commit -m "$1" && git push && git status --short
 }
 
 #Clean cache
@@ -129,8 +129,8 @@ alias jctl="journalctl -p 3 -xb"
 
 #alias os="onedrive --synchronize"
 
-mkcd() { 
-  mkdir -p "$1" && cd "$1"; 
+mkcd() {
+	mkdir -p "$1" && cd "$1"
 }
 
 installNeovim() {
@@ -138,7 +138,7 @@ installNeovim() {
 	rm -rf /home/sdobri/.local/share/nvim
 	rm -rf /home/sdobri/.local/state/nvim
 	sudo rm /usr/local/bin/nvim
-	wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.appimage
+	wget https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.appimage
 	chmod u+x nvim-linux-x86_64.appimage
 	sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 }

@@ -11,12 +11,24 @@ local ignore_files = {
   "pnpm-lock.yaml",
 }
 
+local win_config = function()
+  local height = math.floor(0.618 * vim.o.lines)
+  local width = math.floor(0.618 * vim.o.columns)
+  return {
+    anchor = "NW",
+    height = height,
+    width = width,
+    row = math.floor(0.5 * (vim.o.lines - height)),
+    col = math.floor(0.5 * (vim.o.columns - width)),
+  }
+end
+
 require("mini.icons").setup()
 require("mini.comment").setup()
+require("mini.notify").setup()
 require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } })
 require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } })
--- require("mini.indentscope").setup({ symbol = "│" })
--- require("mini.diff").setup({ view = { style = "number" } }) --'sign'
+require("mini.pick").setup({ window = { config = win_config } })
 
 local MiniFiles = require("mini.files")
 MiniFiles.setup({

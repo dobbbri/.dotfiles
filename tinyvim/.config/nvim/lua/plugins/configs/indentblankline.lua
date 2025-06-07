@@ -7,5 +7,6 @@ return {
     enabled = true,
     show_start = false,
     show_end = false,
+    priority = 500,
   },
 }

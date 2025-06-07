@@ -8,11 +8,6 @@ return {
   { "mg979/vim-visual-multi" },
 
   {
-    "ibhagwan/fzf-lua",
-    opts = { "ivy", winopts = { height = 0.60, width = 1 } },
-  },
-
-  {
     "MagicDuck/grug-far.nvim",
     lazy = true,
     opts = { headerMaxWidth = 80 },

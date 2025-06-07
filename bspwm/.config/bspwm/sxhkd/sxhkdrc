@@ -6,11 +6,11 @@ super + semicolon
 
 # Launch Browser ()
 super + w
-  librewolf 
+  microsoft-edge-stable 
 
 # Launch Browser ()
 super + shift + w
-  min
+  librewolf
 
 # Launch Terminal ()
 super + Return
