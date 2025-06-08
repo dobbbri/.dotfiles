@@ -35,7 +35,7 @@ alias hh='cd ~'
 
 # site
 alias ss='cd ~/Sites/'
-alias se='cd ~/Sites/epc_in_dev'
+alias se='cd ~/Sites/elisa_pet_care_2025/'
 alias sp='cd ~/Sites/pousada_do_tucunare_2020'
 alias sb='cd ~/Sites/blog'
 alias sv='cd ~/Sites/videira-blog-2025/'
