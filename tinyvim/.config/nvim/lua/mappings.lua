@@ -20,11 +20,10 @@ map("n", "<leader>f", "<cmd>Pick files<CR>", { desc = "List files" })
 map("n", "<leader>b", "<cmd>Pick buffers<CR>", { desc = "List open buffers" })
 map("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick resume" })
 map("n", "<leader>w", "<cmd>Pick grep_live<CR>", { desc = "Search by word" })
--- map("n", "<leader>S", "<cmd>Pick spell_suggest<cr>", { desc = "List spelling Suggestions" })
 
 -- diagnostics
-map("n", "<leader>d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to diagnostics" })
-map("n", "<leader>D", vim.diagnostic.open_float, { desc = "show diagnostic Info" })
+map("n", "<leader>D", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to diagnostics" })
+map("n", "<leader>d", vim.diagnostic.open_float, { desc = "show diagnostic Info" })
 
 -- log
 map("n", "<leader>l", function() require("logsitter").log() end, { desc = "Logsitter: log current" })
@@ -48,8 +47,8 @@ map("n", "<S-Tab>", "<cmd>bprevious<CR>")
 
 -- remove buffer
 map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close current buffer" })
--- map("n", "<leader>", "<cmd>%bd|e#|bd#<cr>", { desc = "Close other buffers" })
 map("n", "<leader>X", "<cmd>%bd<cr>", { desc = "Close all buffers" })
+-- map("n", "<leader>", "<cmd>%bd|e#|bd#<cr>", { desc = "Close other buffers" })
 
 -- code format
 map({ "n", "v" }, "f", "<cmd>Guard fmt<CR>", { desc = "Format File" })

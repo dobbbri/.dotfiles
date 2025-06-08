@@ -6,14 +6,14 @@ local colorscheme = {
   { 5, name = "kanagawa", package = "rebelot/kanagawa.nvim" },
 }
 
-local selected_colorscheme = colorscheme[4]
+local selected = 3
 
 return {
-  selected_colorscheme.package,
+  colorscheme[selected].package,
   lazy = false,
   priority = 1000,
   config = function()
-    require("plugins.configs.cs." .. selected_colorscheme.name)
-    vim.cmd("colorscheme " .. selected_colorscheme.name)
+    require("plugins.configs.cs." .. colorscheme[selected].name)
+    vim.cmd("colorscheme " .. colorscheme[selected].name)
   end,
 }
