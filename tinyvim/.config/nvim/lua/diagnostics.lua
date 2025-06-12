@@ -1,4 +1,6 @@
 vim.diagnostic.config({
+  virtual_text = false,
+  virtual_lines = { current_line = true },
   underline = true,
   signs = {
     active = true,
@@ -9,8 +11,6 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.HINT] = "󰟃",
     },
   },
-  virtual_text = false,
-  virtual_lines = { current_line = true },
   float = {
     border = "single",
     format = function(diagnostic)

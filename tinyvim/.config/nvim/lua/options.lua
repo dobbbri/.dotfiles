@@ -26,7 +26,6 @@ opt.swapfile = false
 opt.laststatus = 3
 opt.showmode = false
 opt.timeoutlen = 400
-opt.ruler = true
 opt.updatetime = 250
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
@@ -49,6 +48,19 @@ opt.fillchars = {
   eob = " ",
 }
 
+-- Char rendering
+opt.list = true
+opt.listchars = {
+  tab = "⇥ ",
+  trail = "␣",
+  nbsp = "⍽",
+  extends = "»",
+  precedes = "«",
+  leadmultispace = "┊ ",
+}
+opt.showbreak = "↪"
+opt.breakindent = true
+
 opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = "a"
@@ -67,17 +79,20 @@ opt.splitright = true
 opt.timeoutlen = 700
 opt.undofile = false
 
-opt.wrap = false
-opt.linebreak = false
+-- opt.wrap = false
+-- opt.linebreak = false
 opt.cmdheight = 0
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
 
--- folding
--- opt.foldcolumn = '1' -- '0' is not bad
--- opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
--- opt.foldlevelstart = 99
--- opt.foldenable = true
+-- Nice and simple folding:
+-- zC Close
+-- zO Open
+opt.foldenable = true
+opt.foldlevel = 99
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldcolumn = "0"
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250

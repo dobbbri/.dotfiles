@@ -10,7 +10,12 @@ return {
   {
     "MagicDuck/grug-far.nvim",
     lazy = true,
-    opts = { headerMaxWidth = 80 },
+    opts = {
+      headerMaxWidth = 80,
+      showCompactInputs = true,
+      showInputsTopPadding = false,
+      showInputsBottomPadding = false,
+    },
   },
 
   {
@@ -26,15 +31,12 @@ return {
   },
 
   {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = require("plugins.configs.indentblankline"),
-  },
-
-  {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    opts = { signcolumn = false, numhl = true },
+    opts = {
+      signcolumn = false,
+      numhl = true,
+    },
   },
 
   {
@@ -76,12 +78,19 @@ return {
   {
     "gaelph/logsitter.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    opts = { path_format = "fileonly", prefix = "[Log]", separator = ">" },
+    opts = {
+      path_format = "fileonly",
+      prefix = "[Log]",
+      separator = ">",
+    },
   },
 
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    opts = { preset = "modern", icons = { mappings = false } },
+    opts = {
+      preset = "modern",
+      icons = { mappings = false },
+    },
   },
 }
