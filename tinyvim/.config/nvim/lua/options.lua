@@ -51,12 +51,12 @@ opt.fillchars = {
 -- Char rendering
 opt.list = true
 opt.listchars = {
-  tab = "┊ ", -- "⇥ ",
+  -- tab = "┊ ", -- "⇥ ",
   trail = "␣",
   nbsp = "⍽",
   extends = "»",
   precedes = "«",
-  leadmultispace = "┊ ",
+  -- leadmultispace = "┊ ",
 }
 opt.showbreak = "↪ "
 opt.breakindent = true
