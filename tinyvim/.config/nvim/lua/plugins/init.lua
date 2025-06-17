@@ -26,9 +26,17 @@ return {
   },
 
   {
-    "akinsho/bufferline.nvim",
-    event = "BufReadPre",
-    opts = require("plugins.configs.bufferline"),
+    "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      signcolumn = false,
+      numhl = true,
+    },
+  },
+
+  {
+    "sschleemilch/slimline.nvim",
+    opts = require("plugins.configs.slimline"),
   },
 
   {

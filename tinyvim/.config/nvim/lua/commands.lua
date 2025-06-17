@@ -8,22 +8,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       vim.api.nvim_set_hl(0, name, data)
     end
 
-    -- set_default_hl("StatusLine", { link = "Comment" })
-    -- set_default_hl("MiniTablineFill", { link = "StatusLine" })
-    -- set_default_hl("MiniTablineCurrent", { link = "Normal" })
-
     set_default_hl("MiniDiffSignAdd", { link = "GitSignsAdd" })
     set_default_hl("MiniDiffSignChange", { link = "GitSignsChange" })
     set_default_hl("MiniDiffSignDelete", { link = "GitSignsDelete" })
 
     set_default_hl("MiniFilesTitle", { link = "MiniFilesBorder" })
-
-    -- set_default_hl("MiniStatuslineModeNormal", { link = "Comment" })
-    -- set_default_hl("MiniStatuslineModeInsert", { link = "Normal" })
-    -- set_default_hl("MiniStatuslineModeVisual", { link = "Normal" })
-    -- set_default_hl("MiniStatuslineModeReplace", { link = "Normal" })
-    -- set_default_hl("MiniStatuslineModeCommand", { link = "Normal" })
-    -- set_default_hl("MiniStatuslineModeOther", { link = "Normal" })
   end,
 })
 

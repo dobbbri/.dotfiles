@@ -9,12 +9,12 @@ return {
   components = {
     left = {
       "mode",
+      "git",
       "path",
       "diagnostics",
     },
-    center = {},
+    -- center = {},
     right = {
-      "git",
       "filetype_lsp",
       function()
         local h = require("slimline.highlights")
@@ -33,13 +33,13 @@ return {
         command = "Normal",
       },
     },
-    path = {
-      directory = true, -- Whether to show the directory
-      icons = { folder = "󰲂 ", modified = "●", read_only = "" },
-      hl = { primary = "Label" },
-    },
     git = {
       icons = { branch = "󰊢", added = "+", modified = "~", removed = "-" },
+      hl = { primary = "String" },
+    },
+    path = {
+      directory = false, -- Whether to show the directory
+      icons = { folder = "󰲂 ", modified = "●", read_only = "" },
       hl = { primary = "Label" },
     },
     diagnostics = {
