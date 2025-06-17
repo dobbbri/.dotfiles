@@ -49,7 +49,7 @@ opt.fillchars = {
 }
 
 -- Char rendering
-opt.list = true
+-- opt.list = true
 opt.listchars = {
   -- tab = "┊ ", -- "⇥ ",
   trail = "␣",
@@ -96,8 +96,6 @@ opt.foldcolumn = "0"
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
-
-opt.formatexpr = "v:lua.require'conform'.formatexpr()"
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line

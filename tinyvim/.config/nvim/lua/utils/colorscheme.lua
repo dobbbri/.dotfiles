@@ -13,7 +13,7 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    require("plugins.configs.cs." .. colorscheme[selected].name)
+    require("plugins.configs.colorschemes." .. colorscheme[selected].name)
     vim.cmd("colorscheme " .. colorscheme[selected].name)
   end,
 }

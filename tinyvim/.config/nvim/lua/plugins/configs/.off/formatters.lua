@@ -1,3 +1,5 @@
+-- opt.formatexpr = "v:lua.require'conform'.formatexpr()"
+
 -- {
 --   "stevearc/conform.nvim",
 --   event = { "BufWritePre" },

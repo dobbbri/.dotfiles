@@ -3,20 +3,27 @@ local function augroup(name) return vim.api.nvim_create_augroup(name, { clear = 
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
-    -- vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#50fa7b" })
-    -- vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#F1FA8C" })
-    -- vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#FF5555" })
-    --
-    vim.api.nvim_set_hl(0, "StatusLine", { link = "Menu" })
+    local set_default_hl = function(name, data)
+      data.default = true
+      vim.api.nvim_set_hl(0, name, data)
+    end
 
-    vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { link = "GitSignsAdd" })
-    vim.api.nvim_set_hl(0, "MiniDiffSignChange", { link = "GitSignsChange" })
-    vim.api.nvim_set_hl(0, "MiniDiffSignDelete", { link = "GitSignsDelete" })
+    -- set_default_hl("StatusLine", { link = "Comment" })
+    -- set_default_hl("MiniTablineFill", { link = "StatusLine" })
+    -- set_default_hl("MiniTablineCurrent", { link = "Normal" })
 
-    vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
+    set_default_hl("MiniDiffSignAdd", { link = "GitSignsAdd" })
+    set_default_hl("MiniDiffSignChange", { link = "GitSignsChange" })
+    set_default_hl("MiniDiffSignDelete", { link = "GitSignsDelete" })
 
-    -- vim.api.nvim_set_hl(0, "IndentLine", { fg = '#101010' })
-    -- vim.api.nvim_set_hl(0, "IndentLineCurrent", { link = "Keyword" })
+    set_default_hl("MiniFilesTitle", { link = "MiniFilesBorder" })
+
+    -- set_default_hl("MiniStatuslineModeNormal", { link = "Comment" })
+    -- set_default_hl("MiniStatuslineModeInsert", { link = "Normal" })
+    -- set_default_hl("MiniStatuslineModeVisual", { link = "Normal" })
+    -- set_default_hl("MiniStatuslineModeReplace", { link = "Normal" })
+    -- set_default_hl("MiniStatuslineModeCommand", { link = "Normal" })
+    -- set_default_hl("MiniStatuslineModeOther", { link = "Normal" })
   end,
 })
 

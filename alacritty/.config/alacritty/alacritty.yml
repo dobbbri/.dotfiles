@@ -9,7 +9,7 @@ window:
   dynamic_padding: true
   decorations: none
   startup_mode: Windowed
-  opacity: 0.65
+  opacity: 0.50
 
 scrolling:
   history: 10

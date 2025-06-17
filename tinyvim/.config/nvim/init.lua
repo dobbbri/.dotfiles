@@ -1,6 +1,6 @@
 require("options")
 require("commands")
-require("diagnostics")
+require("utils.diagnostics")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -18,9 +18,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  require("colorscheme"),
+  require("utils.colorscheme"),
   require("plugins"),
 })
 
 require("mappings")
-require("terminalpop")
+require("utils.terminalpop")

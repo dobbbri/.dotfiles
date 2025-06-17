@@ -1,3 +1,8 @@
+-- {
+--   "sschleemilch/slimline.nvim",
+--   opts = require("plugins.configs.slimline"),
+-- },
+
 return {
   bold = true, -- makes primary parts bold
   style = "fg", -- or "bg"
@@ -9,12 +14,12 @@ return {
     },
     center = {},
     right = {
+      "git",
       "filetype_lsp",
       function()
         local h = require("slimline.highlights")
         return h.hl_component({ primary = "  %l / %c " }, h.hls.components["path"], "")
       end,
-      "git",
     },
   },
   configs = {
@@ -29,7 +34,7 @@ return {
       },
     },
     path = {
-      directory = false, -- Whether to show the directory
+      directory = true, -- Whether to show the directory
       icons = { folder = "󰲂 ", modified = "●", read_only = "" },
       hl = { primary = "Label" },
     },
@@ -39,12 +44,7 @@ return {
     },
     diagnostics = {
       workspace = false, -- Whether diagnostics should show workspace diagnostics instead of current buffer
-      -- icons = {
-      --   ERROR = vim.g.diagnostic_signs.error,
-      --   WARN = vim.g.diagnostic_signs.warn,
-      --   INFO = vim.g.diagnostic_signs.info,
-      --   HINT = vim.g.diagnostic_signs.hint,
-      -- },
+      icons = { ERROR = " ", WARN = " ", INFO = " ", HINT = "󰟃 " },
       hl = { primary = "Label" },
     },
     filetype_lsp = {

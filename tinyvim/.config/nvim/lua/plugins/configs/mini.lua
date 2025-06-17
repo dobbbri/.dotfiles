@@ -25,10 +25,11 @@ end
 
 require("mini.icons").setup()
 require("mini.comment").setup()
--- require("mini.notify").setup()
+require("mini.diff").setup()
 require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } })
 require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } })
 require("mini.pick").setup({ window = { config = win_config } })
+require("mini.git").setup()
 
 local MiniFiles = require("mini.files")
 MiniFiles.setup({
