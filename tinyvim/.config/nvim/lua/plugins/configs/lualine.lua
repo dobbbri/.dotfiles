@@ -1,29 +1,28 @@
 -- {
 --   "nvim-lualine/lualine.nvim",
 --   dependencies = "meuter/lualine-so-fancy.nvim",
---   config = function() end
--- }
+--   config = function() require("plugins.configs.lualine") end,
+-- },
 
 return {
   require("lualine").setup({
     options = {
       icons_enabled = true,
       globalstatus = true,
-      theme = vim.g.lualine_theme,
-      section_separators = require("config").icons.separators.none,
-      component_separators = require("config").icons.separators.none,
-      refresh = { statusline = 100 },
+      always_show_tabline = true,
+      theme = require("plugins.configs.colorschemes.lualine.fgcolors"),
+      section_separators = "",
+      component_separators = "",
     },
     sections = {
       lualine_a = { { "fancy_mode" } },
       lualine_b = { { "fancy_branch" }, { "fancy_diff" } },
       lualine_c = { { "fancy_cwd", substitute_home = true } },
       lualine_x = { { "fancy_diagnostics" } },
-      lualine_y = { { "fancy_searchcount" }, { "fancy_location" } },
+      lualine_y = { { "fancy_searchcount" }, { "fancy_lsp_servers" } },
       lualine_z = {
-        { "fancy_filetype", ts_icon = "󰛦" },
-        { "fancy_lsp_servers" },
         { require("lazy.status").updates, cond = require("lazy.status").has_updates },
+        { "fancy_location" },
       },
     },
     tabline = {

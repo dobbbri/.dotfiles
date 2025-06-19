@@ -6,7 +6,8 @@ local colorscheme = {
   { 5, name = "kanagawa", package = "rebelot/kanagawa.nvim" },
 }
 
-local selected = 3
+local selected = 1
+vim.g.lualine_theme = colorscheme[selected].name
 
 return {
   colorscheme[selected].package,

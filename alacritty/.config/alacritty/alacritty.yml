@@ -2,14 +2,14 @@
 window:
   dimensions:
     columns: 120
-    lines: 30
+    lines: 31
   padding:
     x: 0
     y: 0
   dynamic_padding: true
   decorations: none
   startup_mode: Windowed
-  opacity: 0.50
+  opacity: 0.20
 
 scrolling:
   history: 10

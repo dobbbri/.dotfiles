@@ -26,7 +26,7 @@ require("dracula").setup({
     -- bright_cyan = "#A4FFFF",
     -- bright_white = "#FFFFFF",
     menu = "#21222C",
-    visual = "#3E4452",
+    visual = "#3e4452",
     gutter_fg = "#4B5263",
     nontext = "#3B4048",
     white = "#ABB2BF",

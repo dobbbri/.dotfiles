@@ -23,7 +23,7 @@ local win_config = function()
   }
 end
 
-require("mini.icons").setup()
+-- require("mini.icons").setup()
 require("mini.comment").setup()
 require("mini.diff").setup()
 -- require("mini.tabline").setup()

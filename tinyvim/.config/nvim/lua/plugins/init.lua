@@ -5,6 +5,8 @@ return {
     lazy = true,
   },
 
+  { "nvim-tree/nvim-web-devicons" },
+
   { "mg979/vim-visual-multi" },
 
   {
@@ -35,8 +37,9 @@ return {
   },
 
   {
-    "sschleemilch/slimline.nvim",
-    opts = require("plugins.configs.slimline"),
+    "nvim-lualine/lualine.nvim",
+    dependencies = "meuter/lualine-so-fancy.nvim",
+    config = function() require("plugins.configs.lualine") end,
   },
 
   {
