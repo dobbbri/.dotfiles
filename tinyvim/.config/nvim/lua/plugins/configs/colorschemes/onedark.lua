@@ -5,8 +5,8 @@ require("onedark").setup({
   code_style = {
     comments = "italic",
   },
-  -- colors = {
-  -- black = "#0e1013",
-  -- bg0 = "#0e1013",
-  -- },
+  colors = {
+  black = "#0e1013",
+  bg0 = "#0e1013",
+  },
 })
