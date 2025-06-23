@@ -6,6 +6,6 @@ ft("lua"):fmt("stylua")
 ft("sh"):fmt("shfmt")
 
 vim.g.guard_config = {
-  fmt_on_save = true,
+  fmt_on_save = false,
   lsp_as_default_formatter = true,
 }

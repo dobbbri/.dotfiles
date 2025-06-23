@@ -25,10 +25,10 @@ return {
         { "fancy_location" },
       },
     },
-    tabline = {
-      lualine_a = { { "buffers", use_mode_colors = true, symbols = { alternate_file = "" } } },
-      lualine_z = { "fileformat" },
-    },
+    -- tabline = {
+    --   lualine_a = { { "buffers", use_mode_colors = true, symbols = { alternate_file = "" } } },
+    --   lualine_z = { "fileformat" },
+    -- },
     extensions = { "toggleterm", "lazy", "mason", "man" },
   }),
 }

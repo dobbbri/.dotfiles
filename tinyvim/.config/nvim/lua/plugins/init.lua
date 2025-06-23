@@ -10,6 +10,12 @@ return {
   { "mg979/vim-visual-multi" },
 
   {
+    "folke/ts-comments.nvim",
+    opts = {},
+    event = "VeryLazy",
+  },
+
+  {
     "MagicDuck/grug-far.nvim",
     lazy = true,
     opts = {
@@ -37,9 +43,8 @@ return {
   },
 
   {
-    "nvim-lualine/lualine.nvim",
-    dependencies = "meuter/lualine-so-fancy.nvim",
-    config = function() require("plugins.configs.lualine") end,
+    "sschleemilch/slimline.nvim",
+    opts = require("plugins.configs.slimline"),
   },
 
   {

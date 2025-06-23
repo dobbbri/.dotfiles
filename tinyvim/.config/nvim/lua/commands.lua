@@ -8,9 +8,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       vim.api.nvim_set_hl(0, name, data)
     end
 
-    set_default_hl("MiniDiffSignAdd", { link = "GitSignsAdd" })
-    set_default_hl("MiniDiffSignChange", { link = "GitSignsChange" })
-    set_default_hl("MiniDiffSignDelete", { link = "GitSignsDelete" })
+    -- set_default_hl("MiniDiffSignAdd", { link = "GitSignsAdd" })
+    -- set_default_hl("MiniDiffSignChange", { link = "GitSignsChange" })
+    -- set_default_hl("MiniDiffSignDelete", { link = "GitSignsDelete" })
 
     set_default_hl("MiniFilesTitle", { link = "MiniFilesBorder" })
   end,

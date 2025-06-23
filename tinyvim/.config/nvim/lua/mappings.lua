@@ -18,6 +18,7 @@ map("n", "<leader>e", function() require("mini.files").open() end, { desc = "Sho
 -- fzf-lua
 map("n", "<leader>f", "<cmd>Pick files<CR>", { desc = "List files" })
 map("n", "<leader>b", "<cmd>Pick buffers<CR>", { desc = "List open buffers" })
+map("n", "<leader><space>", "<cmd>Pick buffers<CR>", { desc = "List open buffers" })
 map("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick resume" })
 map("n", "<leader>w", "<cmd>Pick grep_live<CR>", { desc = "Search by word" })
 
