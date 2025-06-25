@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 5000;
+const unsigned int interval = 2000;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -10,20 +10,21 @@ static const char unknown_str[] = "n/a";
 #define MAXLEN 2048
 
 /* battery levels to notify - add any levels you want to receive notification for (in percent) */
-const int notifiable_levels[] = { 20, 15, 10, 5 };
+const int notifiable_levels[] = {
+    20,
+    10,
+    5,
+};
 
 /*
  * function            description                     argument (example)
  *
- * backlight_perc      backlight percentage            device name
- *                                                     (intel_backlight, numbered on FreeBSD)
- *                                                     NULL on OpenBSD
  * battery_perc        battery percentage              battery name (BAT0)
- *                                                     NULL on OpenBSD/FreeBSD
- * battery_remaining   battery remaining HH:MM         battery name (BAT0)
  *                                                     NULL on OpenBSD/FreeBSD
  * battery_notify      linux battery notifications     battery name (BAT0)
  *                                                     OpenBSD/FreeBSD not supported
+ * battery_remaining   battery remaining HH:MM         battery name (BAT0)
+ *                                                     NULL on OpenBSD/FreeBSD
  * battery_state       battery charging state          battery name (BAT0)
  *                                                     NULL on OpenBSD/FreeBSD
  * cat                 read arbitrary file             path
@@ -66,25 +67,25 @@ const int notifiable_levels[] = { 20, 15, 10, 5 };
  * uid                 UID of current user             NULL
  * uptime              system uptime                   NULL
  * username            username of current user        NULL
- * alsa_master_vol     ALSA Master device volume       NULL
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
  *                                                     NULL on OpenBSD/FreeBSD
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
-
 static const struct arg args[] = {
-	/* function         format          argument */
-	/*{ battery_perc,     "^c#458588^ 󰄌 ^d^ %s%% ",         "BAT0"},*/
-	/*{ ram_used,         "^c#458588^ 󰍛 ^d^ %s ",           "NULL" },*/
-	/*{ alsa_master_vol,  "^c#458588^ 󰕾 ^d^ %s ",           "NULL" },*/
-	/*{ backlight_perc,   "^c#458588^ 󰃟 ^d^ %s ",           "acpi_video0"},*/
-	/*{ datetime,         "^c#458588^  ^d^ %s ", 	        "%H:%M"},*/
-  { ram_used,         "^c#458588^  ^d^ %s ",           NULL },
-  { battery_perc,     "^c#458588^  ^d^ %s%% ",         "BAT0"},
-	/*{ alsa_master_vol,  "^c#458588^ 󰕾 ^d^ %s ",           NULL },*/
-  /*{ backlight_perc,   "^c#458588^ 󰃟 ^d^ %s ",           "acpi_video0"},*/
-	{ datetime,         "^c#458588^ 󱑂 ^d^ %s", 	        "%H:%M"},
-  { battery_notify,   "",             "BAT0"}, /* There is nothing to print its just a notifications*/
-  /*{ wifi_essid,       "%s   ", 	      "wlp2s0b1"},*/
-};
+/* function format          argument */
+/* { kernel_release, "^c#d791a8^  Debian %s ", NULL }, */
+/* { disk_perc, "^c#d791a8^  Disk: ^c#FFFFFF^%s%%", "/", NULL }, */
+/* { keyboard_indicators, "^c#d791a8^ Caps: ^c#FFFFFF^%s", "caps", NULL }, */
+/* { keyboard_indicators, "^c#d791a8^ Num: ^c#FFFFFF^%s", "num", NULL }, */
+/* { run_command, "^c#d791a8^  %s", "~/scripts/check_updates.sh" }, */
+/* { run_command, "^c#d791a8^  Updates: ^c#FFFFFF^%s",  "aptitude search '~U' | wc -l" }, */
+/* { cpu_perc, "^c#d791a8^  CPU: ^c#FFFFFF^%s%%", 	NULL }, */
+/* { datetime, "^c#FFFFFF^ %s", 		"%l:%M %p  " },	*/
+
+  { battery_perc, "^c#d791a8^  BAT: ^c#FFFFFF^%s%%", "BAT0"},
+	{ ram_perc,     "^c#d791a8^  RAM: ^c#FFFFFF^%s%%", NULL},
+	{ datetime,     "^c#d791a8^  %s", 		"%d.%m.%y" },
+	{ datetime,     "^c#FFFFFF^ %s", 		  "%H:%M " }, 
+  { battery_notify, "",       "BAT0"}, /* There is nothing to print its just a notifications*/
+	};

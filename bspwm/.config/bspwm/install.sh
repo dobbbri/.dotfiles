@@ -19,7 +19,7 @@ install_packages() {
   echo "Installing required packages..."
   sudo apt install -y xorg xorg-dev \
     xbacklight xbindkeys xvkbd xinput xwallpaper brightnessctl \
-    bspwm sxhkd polybar network-manager pamixer pcmanfm file-roller lxappearance dialog acpi acpid \
+    bspwm sxhkd polybar network-manager pamixer pcmanfm lxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
     exa redshift flameshot qimgv rofi dunst sakura \
     libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
