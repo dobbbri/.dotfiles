@@ -6,7 +6,7 @@ require("onedark").setup({
     comments = "italic",
   },
   colors = {
-  black = "#0e1013",
-  bg0 = "#0e1013",
+    black = "#000000",
+    bg0 = "#000000",
   },
 })

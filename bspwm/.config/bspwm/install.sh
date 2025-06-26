@@ -37,7 +37,7 @@ install_reqs() {
 
 install_laptop_packages() {
   echo "Optimize Linux Laptop Battery Life and thermal changes"
-  sudo apt install -y tlp tlp-rdw acpi-support acpi-call-dkms thermald
+  sudo apt install -y tlp tlp-rdw smartmontools acpi-support acpi-call-dkms thermald
   echo "Package installation completed."
 }
 
@@ -242,6 +242,9 @@ install_fonts
 fix_and_remove_packages
 change_theming
 change_power_off_key
-install_battery_alert
+# install_battery_alert
+
+# FT-Labs picom and nerdfonts are installed
+bash ~/.dotfiles/bspwm/.config/bspwm/scripts/install_picom.sh
 
 echo "All installations completed successfully!"

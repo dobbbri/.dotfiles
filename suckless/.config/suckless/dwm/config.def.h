@@ -3,10 +3,10 @@
 /* appearance */
 static const unsigned int borderpx        = 4;  /* border pixel of windows */
 static const unsigned int snap            = 8;  /* snap pixel */
-static const unsigned int gappih          = 4;  /* horiz inner gap between windows */
-static const unsigned int gappiv          = 4;  /* vert inner gap between windows */
-static const unsigned int gappoh          = 4;  /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov          = 4;  /* vert outer gap between windows and screen edge */
+static const unsigned int gappih          = 6;  /* horiz inner gap between windows */
+static const unsigned int gappiv          = 6;  /* vert inner gap between windows */
+static const unsigned int gappoh          = 6;  /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov          = 6;  /* vert outer gap between windows and screen edge */
 static int smartgaps                      = 0;  /* 1 */
 static const unsigned int systraypinning  = 0;  /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft   = 0;  /* 0: systray in the right corner, >0: systray on left of status text */
@@ -17,7 +17,7 @@ static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
 static const int focusedontoptiled       = 1;   /* 1 means focused tile client is shown on top of floating windows */
 static const char *fonts[]               = { "JetBrainsMono Nerd Font:size=12" };
-static const char dmenufont[]            = "monospace:size=10";
+static const char dmenufont[]            = "monospace:size=12";
 static const char col_gray1[]            = "#00141d";
 static const char col_gray2[]            = "#80bfff";
 static const char col_gray3[]            = "#FFFFFF";
@@ -63,7 +63,6 @@ static const Rule rules[] = {
 	{ "Gimp",     			  NULL,       NULL,       1 << 8,       0,          0,			      -1 },
 	{ "GitHub Desktop",   NULL,       NULL,       1 << 1,       0,          1,			      -1 },
 	{ "obs",				      NULL,       NULL,       1 << 9,       0,          0,			      -1 },
-	{ "discord",  			  NULL,       NULL,       1 << 7,       0,          0,			      -1 },
 	{ "mpv",  				    NULL,       NULL,       0,       		  1,          1,			      -1 },
 	{ "qimgv",    			  NULL,       NULL,       0,       		  1,          1,			      -1 },
 	{ "Galculator",   		NULL,       NULL,       0,       		  1,          1,			      -1 },
@@ -71,7 +70,7 @@ static const Rule rules[] = {
 	{ "Lxappearance",   	NULL,       NULL,       0,       		  1,          1,			      -1 },
 	{ "Pavucontrol",  		NULL,       NULL,       0,       		  1,          1,			      -1 },
 	{ "Tilix", 				    "tilix", 	  NULL, 		  0, 				    1, 				  1, 			      -1 },
-	{ "Thunar",  			    NULL,       NULL,       0,       		  0,          1,			      -1 },
+	{ "PCManFM", 			    NULL,       NULL,       0,       		  0,          1,			      -1 },
   { "st",               NULL,       NULL,       0,            1,          1,            -1 },
 	{ NULL,		            "spterm1",	NULL,		    SPTAG(0),  		1,          1,    	      -1 },
 	{ NULL,		            "spterm2",	NULL,		    SPTAG(1),  		1,		      1,            -1 },
@@ -199,7 +198,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask,			        XK_Tab,     incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_q,       quit,           {0} },
 	{ MODKEY|ShiftMask,				      XK_r,       quit,           {1} }, 
-    { MODKEY|ShiftMask,           XK_f,       fullscreen,     {0} },
+  { MODKEY|ShiftMask,             XK_f,       fullscreen,     {0} },
 	{ MODKEY,            			      XK_v,  	    togglescratch,  {.ui = 0 } },
 	{ MODKEY,            			      XK_r,  	    togglescratch,  {.ui = 1 } },
   { MODKEY|ShiftMask,             XK_Return,  togglescratch,  {.ui = 2 } },
