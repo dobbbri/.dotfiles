@@ -34,7 +34,7 @@ bspc rule -a gimp state=floating layer=normal
 
 # start up stuff
 xsetroot -cursor_name left_ptr &
-/usr/bin/lxpolkit &
+# /usr/bin/lxpolkit &
 dunst -config ~/.config/bspwm/dunst/dunstrc &
 picom --config ~/.config/bspwm/picom/picom.conf --animations -b &
 

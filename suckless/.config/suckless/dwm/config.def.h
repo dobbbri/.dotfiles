@@ -16,18 +16,31 @@ static const int showsystray             = 0;   /* 0 means no systray */
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
 static const int focusedontoptiled       = 1;   /* 1 means focused tile client is shown on top of floating windows */
-static const char *fonts[]               = { "JetBrainsMono Nerd Font:size=12" };
-static const char dmenufont[]            = "monospace:size=12";
+// static const char *fonts[]               = { "JetBrainsMono Nerd Font:size=12" };
+// static const char dmenufont[]            = "monospace:size=12";
+
+static const char *fonts[]          = { 
+  "Ubuntu:size=11:antialias=true:autohint=true", 
+  "jetBrainsMono Nerd Font Mono:style=regular:size=18:antialias=true:autohint=true" 
+}; /*"Font Awesome 5 Free:size=13"  */ 
+// #ff5733
+// #ffbd33
+// #dbff33
+// #75ff33
+// #33ff57
+// #33ffbd
+static const char dmenufont[]       = "Ubuntu:size=12:antialias=true:autohint=true";
+
 static const char col_gray1[]            = "#00141d";
-static const char col_gray2[]            = "#80bfff";
-static const char col_gray3[]            = "#FFFFFF";
+static const char col_gray2[]            = "#ffbd33";
+static const char col_gray3[]            = "#bdae93";
 static const char col_gray4[]            = "#1a1a1a";
-static const char col_cyan[]             = "#b3e5fc"; /* was #6CF982  */
-static const char col_barbie[]           = "#4fc3f7";
+static const char col_cyan[]             = "#ffbd33"; /* was #fd8019  */
+static const char col_barbie[]           = "#fd8019";
 static const char *colors[][3]           = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray4 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_barbie  },
+	[SchemeSel]  = { col_cyan, col_gray4, col_barbie  },
 };
 
 typedef struct {
@@ -52,7 +65,7 @@ static const char *const autostart[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "󰲠", "󰲢", "󰲤", "󰲦", "󰲨", "󰲪", "󰲬", "󰲮", "󰲰" };
 
 static const Rule rules[] = {
 	/* xprop(1):

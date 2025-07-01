@@ -2,13 +2,13 @@
 # Application keybindings #
 #####################
 
-# Launch Browser (Firefox-esr)
-super + b
-    firefox-esr
+# Launch terminal
+super + t
+    alacritty
     
-# Launch Private Browser (Firefox Incognito Mode)
+# Launch Web Browser 
 super + w
-	librewolf
+	microsoft-edge
 
 # Launch Rofi Application Menu
 super + space
@@ -40,55 +40,35 @@ super + g
 	
 # super + c
 # 	google-chrome
+		
+# Mute Volume (Custom Script)
+XF86AudioMute	
+  amixer set Master toggle
 
-# Launch Discord	
-# super + d
-# 	Discord
-
-# Launch OBS (Screen Recording/Streaming)
-# super + o
-# 	obs
-	
-# Increase Volume (Custom Script)
-super + Insert
-    ~/.config/suckless/scripts/changevolume up
-
-# Decrease Volume (Custom Script)   
-super + Delete
-	~/.config/suckless/scripts/changevolume down
-	
-# Toggle Mute (Custom Script)
-super + m
-	~/.config/suckless/scripts/changevolume mute
-	
-# Dedicated Key for Volume Up
+# Increase Volume (Using amixer)
 XF86AudioRaiseVolume
-	~/.config/suckless/scripts/changevolume up
-	
-# Dedicated Key for Volume Down
+	amixer set Master 5%+
+
+# Decrease Volume (Using amixer)
 XF86AudioLowerVolume
-	~/.config/suckless/scripts/changevolume down
-	
-# Dedicated Key for Mute
-XF86AudioMute
-	~/.config/suckless/scripts/changevolume mute
+	amixer set Master 5%-
 
 # Increase Screen Brightness
 XF86MonBrightnessUp
-	xbacklight +10
+	brightnessctl -c backlight set +5%
 
 # Decrease Screen Brightness
 XF86MonBrightnessDown
-	xbacklight -10
-	
+	brightnessctl -c backlight set 5%-
+
 # Take a Screenshot (Region Select)
-super + Print
+super + shift + s
 	flameshot gui --path ~/Screenshots/
 
 # Take a Fullscreen Screenshot
-Print
+super + s
 	flameshot full --path ~/Screenshots/
-	
+
 # Enable Redshift (Night Light)
 super + alt + r
 	~/.config/suckless/scripts/redshift-on

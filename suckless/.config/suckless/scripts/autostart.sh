@@ -1,16 +1,16 @@
 #!/bin/sh
 
-slstatus &
+# slstatus &
 
 # nextcloud
 # ~/Applications/Nextcloud-3.16.4-x86_64.AppImage &
 
 # polkit
-/usr/lib/lxpolkit &
+# /usr/lib/lxpolkit &
 # /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 # background
-feh --bg-scale ~/.dotfiles/pictures/wallhaven-d61z1m_3440x1440.png &
+xwallpaper --zoom ~/.dotfiles/pictures/kbtinuv4i94f1.png &
 
 # sxhkd
 # (re)load sxhkd for keybinds

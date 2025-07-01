@@ -1,5 +1,10 @@
 # #!/bin/bash 
-# slstatus &
-# exec dwm
+
+/usr/bin/lxpolkit &
+
+slstatus &
+exec dwm
+
 # exec i3
-exec bspwm
+
+# exec bspwm

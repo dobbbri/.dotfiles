@@ -74,18 +74,17 @@ const int notifiable_levels[] = {
  */
 static const struct arg args[] = {
 /* function format          argument */
-/* { kernel_release, "^c#d791a8^  Debian %s ", NULL }, */
-/* { disk_perc, "^c#d791a8^  Disk: ^c#FFFFFF^%s%%", "/", NULL }, */
-/* { keyboard_indicators, "^c#d791a8^ Caps: ^c#FFFFFF^%s", "caps", NULL }, */
-/* { keyboard_indicators, "^c#d791a8^ Num: ^c#FFFFFF^%s", "num", NULL }, */
-/* { run_command, "^c#d791a8^  %s", "~/scripts/check_updates.sh" }, */
-/* { run_command, "^c#d791a8^  Updates: ^c#FFFFFF^%s",  "aptitude search '~U' | wc -l" }, */
-/* { cpu_perc, "^c#d791a8^  CPU: ^c#FFFFFF^%s%%", 	NULL }, */
-/* { datetime, "^c#FFFFFF^ %s", 		"%l:%M %p  " },	*/
+/* { kernel_release, "^c#ffbd33^  Debian %s ", NULL }, */
+/* { disk_perc, "^c#ffbd33^  Disk: ^c#ededed^%s%%", "/", NULL }, */
+/* { keyboard_indicators, "^c#ffbd33^ Caps: ^c#ededed^%s", "caps", NULL }, */
+/* { keyboard_indicators, "^c#ffbd33^ Num: ^c#ededed^%s", "num", NULL }, */
+/* { run_command, "^c#ffbd33^  %s", "~/scripts/check_updates.sh" }, */
+/* { run_command, "^c#ffbd33^  Updates: ^c#ededed^%s",  "aptitude search '~U' | wc -l" }, */
+/* { cpu_perc, "^c#ffbd33^  CPU: ^c#ededed^%s%%", 	NULL }, */
+/* { datetime, "^c#ededed^ %s", 		"%l:%M %p  " },	*/
 
-  { battery_perc, "^c#d791a8^  BAT: ^c#FFFFFF^%s%%", "BAT0"},
-	{ ram_perc,     "^c#d791a8^  RAM: ^c#FFFFFF^%s%%", NULL},
-	{ datetime,     "^c#d791a8^  %s", 		"%d.%m.%y" },
-	{ datetime,     "^c#FFFFFF^ %s", 		  "%H:%M " }, 
+  { battery_perc, "^c#ffbd33^    ^c#ededed^%s%%", "BAT0"},
+	{ ram_perc,     "^c#ffbd33^    ^c#ededed^%s%%", NULL},
+	{ datetime,     "^c#ffbd33^    ^c#ededed^%s", "%d/%m %H:%M "},
   { battery_notify, "",       "BAT0"}, /* There is nothing to print its just a notifications*/
 	};
