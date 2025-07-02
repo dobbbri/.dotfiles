@@ -1,11 +1,18 @@
+---@brief
+---
+--- https://github.com/withastro/language-tools/tree/main/packages/language-server
+---
+--- `astro-ls` can be installed via `npm`:
+--- ```sh
 --- npm install -g @astrojs/language-server
+--- ```
 
-local util = require("lspconfig.util")
+local util = require 'lspconfig.util'
 
 return {
-  cmd = { "astro-ls", "--stdio" },
-  filetypes = { "astro" },
-  root_markers = { "package.json", "tsconfig.json", "jsconfig.json", ".git" },
+  cmd = { 'astro-ls', '--stdio' },
+  filetypes = { 'astro' },
+  root_markers = { 'package.json', 'tsconfig.json', 'jsconfig.json', '.git' },
   init_options = {
     typescript = {},
   },
