@@ -48,15 +48,9 @@ alias ..4='cd ../../../../'
 
 # suckless
 alias su='cd ~/.dotfiles/suckless/.config/suckless/'
-alias suv='su && v'
 alias sud='cd ~/.dotfiles/suckless/.config/suckless/dwm/'
-alias sudv='sud && v'
-alias sum='cd ~/.dotfiles/suckless/.config/suckless/dmenu/'
-alias sumv='sum && v'
 alias sus='cd ~/.dotfiles/suckless/.config/suckless/slstatus/'
-alias susv='sus && v'
 alias sut='cd ~/.dotfiles/suckless/.config/suckless/st'
-alias sutv='sut && v'
 alias srmi='sudo rm config.h && sudo make clean install'
 alias smi='sudo make clean install'
 
