@@ -16,15 +16,12 @@ static const char *fonts[]          = {
   "jetBrainsMono Nerd Font Mono:style=regular:size=12:antialias=true:autohint=true" 
 }; /*"Font Awesome 5 Free:size=13"  */ 
 static const char dmenufont[]       = "jetBrainsMono Nerd Font Mono:style=regular:size=12:antialias=true:autohint=true";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+
+#include "./themes/onedark.h"
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_cyan,  col_gray4, col_cyan  },
 };
 
 static const char *const autostart[] = {
@@ -110,7 +107,7 @@ static const Key keys[] = {
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 
-	{ MODKEY,                       XK_f,      fullscreen,     {0} },
+	{ MODKEY|Mod1Mask,              XK_f,      fullscreen,     {0} },
 
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
