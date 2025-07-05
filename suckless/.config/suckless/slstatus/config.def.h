@@ -10,11 +10,7 @@ static const char unknown_str[] = "n/a";
 #define MAXLEN 2048
 
 /* battery levels to notify - add any levels you want to receive notification for (in percent) */
-const int notifiable_levels[] = {
-    20,
-    10,
-    5,
-};
+const int notifiable_levels[] = { 25, 15, 5 };
 
 /*
  * function            description                     argument (example)
@@ -74,18 +70,18 @@ const int notifiable_levels[] = {
  */
 static const struct arg args[] = {
 /* function format          argument */
-/* { kernel_release, "^c#ffbd33^  Debian %s ", NULL }, */
-/* { disk_perc, "^c#ffbd33^  Disk: ^c#ededed^%s%%", "/", NULL }, */
-/* { keyboard_indicators, "^c#ffbd33^ Caps: ^c#ededed^%s", "caps", NULL }, */
-/* { keyboard_indicators, "^c#ffbd33^ Num: ^c#ededed^%s", "num", NULL }, */
-/* { run_command, "^c#ffbd33^  %s", "~/scripts/check_updates.sh" }, */
-/* { run_command, "^c#ffbd33^  Updates: ^c#ededed^%s",  "aptitude search '~U' | wc -l" }, */
-/* { cpu_perc, "^c#ffbd33^  CPU: ^c#ededed^%s%%", 	NULL }, */
-/* { datetime, "^c#ededed^ %s", 		"%l:%M %p  " },	*/
+/* { kernel_release, "  Debian %s ", NULL }, */
+/* { disk_perc, "  Disk: s%%", "/", NULL }, */
+/* { keyboard_indicators, " Caps: s", "caps", NULL }, */
+/* { keyboard_indicators, " Num: s", "num", NULL }, */
+/* { run_command, "  %s", "~/scripts/check_updates.sh" }, */
+/* { run_command, "  Updates: s",  "aptitude search '~U' | wc -l" }, */
+/* { cpu_perc, "  CPU: s%%", 	NULL }, */
+/* { datetime, "%s", 		"%l:%M %p  " },	*/
 
-  { battery_perc, "^c#222222^^b#33ff57^ BAT ^c#33ff57^^b#222222^ %s%% ", "BAT0"},
-	{ ram_perc,     "^c#222222^^b#dbff33^ MEM ^c#dbff33^^b#222222^ %s%% ", NULL},
-	{ datetime,     "^c#222222^^b#ffbd33^ %s ", "%d/%m"},
-	{ datetime,     "^c#ffbd33^^b#222222^ %s ", "%H:%M"},
-  { battery_notify, "",       "BAT0"}, /* There is nothing to print its just a notifications*/
-	};
+  { battery_perc,   " BAT %s%% ", "BAT0"},
+	{ ram_perc,       " MEM %s%% ", NULL},
+	{ datetime,       " %s ",       "%d/%m"},
+	{ datetime,       " %s ",       "%H:%M"},
+  { battery_notify, "",           "BAT0"}, /* There is nothing to print its just a notifications*/
+};
