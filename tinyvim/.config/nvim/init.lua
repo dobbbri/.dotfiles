@@ -18,8 +18,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  require("plugins.configs.colorschemes"),
-  require("plugins"),
+  { import = "plugins.colorschemes.dracula" },
+  { import = "plugins" },
 })
 
 require("mappings")

@@ -24,9 +24,9 @@ static const char dmenufont[]       = "jetBrainsMono Nerd Font Mono:style=regula
 static const char fg_color[]        = "#ffffff";
 static const char bg_color[]        = "#2D2A2E";
 static const char border_color[]    = "#2D2A2E";
-static const char sel_fg_color[]    = "#78DCE8";
+static const char sel_fg_color[]    = "#73b8f1";
 static const char sel_bg_color[]    = "#2D2A2E";
-static const char sel_border_color[] = "#78DCE8";
+static const char sel_border_color[] = "#73b8f1";
 static const char *colors[][3]      = {
 	/*               fg            bg            border   */
 	[SchemeNorm] = { fg_color,     bg_color,     border_color },
