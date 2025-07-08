@@ -70,10 +70,10 @@ config.font_size = 14
 config.line_height = 1.6
 config.cell_width = 1.0
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+  left = 3,
+  right = 3,
+  top = 3,
+  bottom = 3,
 }
 config.hide_tab_bar_if_only_one_tab = true
 -- config.window_frame = {

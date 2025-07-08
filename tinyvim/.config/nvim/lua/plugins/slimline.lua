@@ -2,7 +2,7 @@ return {
   "sschleemilch/slimline.nvim",
   opts = {
     bold = true, -- makes primary parts bold
-    style = "fg", -- or "bg"
+    style = "bg", -- or "bg"
     components = {
       left = {
         "mode",
@@ -31,12 +31,9 @@ return {
         },
       },
       git = {
-        icons = { branch = "󰊢", added = "+", modified = "~", removed = "-" },
         hl = { primary = "String" },
       },
       path = {
-        directory = false, -- Whether to show the directory
-        icons = { folder = "󰲂 ", modified = "●", read_only = "" },
         hl = { primary = "Label" },
       },
       diagnostics = {

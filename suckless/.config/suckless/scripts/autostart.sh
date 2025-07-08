@@ -18,4 +18,4 @@ if hash sxhkd >/dev/null 2>&1; then
 fi
 
 dunst -config ~/.config/suckless/dunst/dunstrc &
-picom --config ~/.config/suckless/picom/picom.conf --animations -b &
+# picom --config ~/.config/suckless/picom/picom.conf --animations -b &
