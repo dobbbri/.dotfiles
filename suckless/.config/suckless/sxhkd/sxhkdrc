@@ -8,7 +8,11 @@ super + t
     
 # Launch Web Browser 
 super + w
-	microsoft-edge
+	firefox
+
+# Launch Web Browser 
+super + shift + w
+  brave-browser
 
 # Launch Rofi Application Menu
 super + space

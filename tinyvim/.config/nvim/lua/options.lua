@@ -48,18 +48,12 @@ opt.fillchars = {
   eob = " ",
 }
 
--- Char rendering
--- opt.list = true
-opt.listchars = {
-  -- tab = "┊ ", -- "⇥ ",
-  trail = "␣",
-  nbsp = "⍽",
-  extends = "»",
-  precedes = "«",
-  -- leadmultispace = "┊ ",
-}
-opt.showbreak = "↪ "
+opt.list = false
+opt.listchars = 'nbsp:⍽,trail:·,extends:→,precedes:←'
 opt.breakindent = true
+opt.linebreak = true
+opt.whichwrap = 'h,l,<,>,[,],~'
+opt.showbreak = '↳ '
 
 opt.ignorecase = true
 opt.smartcase = true
@@ -71,7 +65,7 @@ opt.numberwidth = 2
 opt.ruler = false
 
 -- disable nvim intro
-opt.shortmess:append({ W = true, I = true, c = true, C = true })
+opt.shortmess = 'aoOTIcF'
 
 -- opt.signcolumn = "yes"
 opt.splitbelow = true
@@ -80,7 +74,6 @@ opt.timeoutlen = 700
 opt.undofile = false
 
 -- opt.wrap = false
--- opt.linebreak = false
 opt.cmdheight = 0
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
@@ -96,12 +89,6 @@ opt.foldcolumn = "0"
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
-
--- go to previous/next line with h,l,left arrow and right arrow
--- when cursor reaches end/beginning of line
-opt.whichwrap:append("<>[]hl")
-
--- opt.commentstring = '// %s'
 
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.fn.has("win32") ~= 0

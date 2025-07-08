@@ -51,16 +51,13 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",             NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",          NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "GitHub Desktop",   NULL,       NULL,       1 << 1,       0,           -1 },
+	/* class              instance    title       tags mask     isfloating   monitor */
+  { "Gimp",             NULL,       NULL,       0,            1,           -1 },
 	{ "mpv",  				    NULL,       NULL,       0,       		  1,           -1 },
 	{ "qimgv",    			  NULL,       NULL,       0,       		  1,           -1 },
 	{ "Transmission-gtk", NULL,       NULL,       0,       		  1,           -1 },
 	{ "Lxappearance",   	NULL,       NULL,       0,       		  1,           -1 },
 	{ "Pavucontrol",  		NULL,       NULL,       0,       		  1,           -1 },
-	{ "PCManFM", 			    NULL,       NULL,       0,       		  0,           -1 },
   { "st",               NULL,       NULL,       0,            1,           -1 },
 };
 
@@ -129,7 +126,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_z,      zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },

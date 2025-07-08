@@ -48,7 +48,7 @@ return {
     },
     appearance = { nerd_font_variant = "mono" },
     -- cmdline = { enabled = false },
-    sources = { default = { "lsp", "path", "snippets", "buffer", "omni", "omni" } },
+    sources = { default = { "lsp", "path", "snippets", "buffer", "omni" } },
     signature = { enabled = true },
     fuzzy = { implementation = "prefer_rust_with_warning" },
   },

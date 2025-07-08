@@ -7,7 +7,7 @@
 # /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 # background
-xwallpaper --zoom ~/.dotfiles/pictures/kbtinuv4i94f1.png &
+xwallpaper --zoom ~/.dotfiles/pictures/nice-blue.png &
 
 # sxhkd
 # (re)load sxhkd for keybinds

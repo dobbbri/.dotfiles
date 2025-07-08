@@ -1,6 +1,5 @@
 require("options")
 require("commands")
-require("utils.diagnostics")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -18,9 +17,25 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { import = "plugins.colorschemes.dracula" },
+  { import = "plugins.colorschemes.onedark" },
   { import = "plugins" },
+}, {
+  defaults = { lazy = false },
+  -- install = { colorscheme = { "onedark" } },
+  -- checker = { enabled = false },
+  -- concurrency = 10,
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "netrwPlugin",
+        "tarPlugin",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
+  debug = false,
 })
 
 require("mappings")
-require("utils.terminalpop")

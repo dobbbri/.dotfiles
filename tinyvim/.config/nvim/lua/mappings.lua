@@ -15,7 +15,7 @@ map("n", "<c-t>", "<cmd>%y+<CR>", { desc = "Copy Whole File" })
 map("n", "-", function() require("mini.files").open() end, { desc = "Show File Manager" })
 map("n", "<leader>e", function() require("mini.files").open() end, { desc = "Show File Manager" })
 
--- fzf-lua
+-- Pick
 map("n", "<leader>f", "<cmd>Pick files<CR>", { desc = "List files" })
 map("n", "<leader><space>", "<cmd>Pick buffers<CR>", { desc = "List opened buffers" })
 map("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick resume" })
@@ -36,6 +36,10 @@ map(
   { desc = "Color pick under cursor" }
 )
 
+-- Fterm
+map("n", "<leader>t", "<cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
+map("t", "<leader>t", "<C-\\><C-n><cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
+
 -- Gitsigns
 map("n", "<leader>P", "<cmd>Gitsigns diffthis<CR>", { desc = "Diff This" })
 map("n", "<leader>p", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git preview hunk" })
@@ -52,7 +56,7 @@ map("n", "<leader>X", "<cmd>%bd<cr>", { desc = "Close all buffers" })
 -- map("n", "<leader>", "<cmd>%bd|e#|bd#<cr>", { desc = "Close other buffers" })
 
 -- code format
-map({ "n", "v" }, "f", "<cmd>Guard fmt<CR>", { desc = "Format File" })
+map({ "n", "v" }, "f", "<cmd>Format<CR>", { desc = "Format File" })
 
 -- search / replace
 map("n", "<leader>s", ":%s///gcI<Left><Left><Left><Left><Left>", { desc = "Search and replace in current buffer" })

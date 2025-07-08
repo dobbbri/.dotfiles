@@ -1,5 +1,3 @@
-local function augroup(name) return vim.api.nvim_create_augroup(name, { clear = true }) end
-
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
@@ -7,22 +5,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       data.default = true
       vim.api.nvim_set_hl(0, name, data)
     end
-
-    -- set_default_hl("MiniDiffSignAdd", { link = "GitSignsAdd" })
-    -- set_default_hl("MiniDiffSignChange", { link = "GitSignsChange" })
-    -- set_default_hl("MiniDiffSignDelete", { link = "GitSignsDelete" })
-
     set_default_hl("MiniFilesTitle", { link = "MiniFilesBorder" })
+    set_default_hl("NavicText", { link = "Winbar" })
+    set_default_hl("NavicSeparator", { link = "Winbar" })
   end,
 })
-
--- mason, write correct names only
-vim.api.nvim_create_user_command("MasonInstallAll", function()
-  vim.cmd(
-    "MasonInstall lua-language-server typescript-language-server astro-language-server tailwindcss-language-server prettier shfmt stylua "
-    -- "eslint_d prettierd vue-language-server json-lsp"
-  )
-end, {})
 
 --  jump to the last place you’ve visited in a file before exiting
 vim.api.nvim_create_autocmd("BufReadPost", {
@@ -35,7 +22,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
-  group = augroup("close_with_q"),
   pattern = { "grug-far", "help", "lspinfo", "man", "notify", "qf", "query", "checkhealth" },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
