@@ -21,7 +21,7 @@ install_packages() {
     xbacklight xbindkeys xvkbd xinput xwallpaper brightnessctl \
     bspwm sxhkd polybar network-manager pamixer pcmanfm lxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
-    exa redshift flameshot qimgv rofi dunst sakura \
+    exa redshift flameshot qimgv rofi dunst sakura policykit-1-gnome\
     libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
     gparted neofetch htop alsa-utils ristretto exa color-picker mintstick atril \
     transmission feh xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow \

@@ -31,6 +31,7 @@ return {
         markdown = { "prettier" },
         scss = { "prettier" },
         xml = { "xmlformatter" },
+        cpp = { "clang-format" },
         -- vue = { "prettier" },
       },
     })

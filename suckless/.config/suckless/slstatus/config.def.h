@@ -79,9 +79,9 @@ static const struct arg args[] = {
 /* { cpu_perc, "  CPU: s%%", 	NULL }, */
 /* { datetime, "%s", 		"%l:%M %p  " },	*/
 
-  { battery_perc,   "^c#FFFFFF^ BAT ^c#73b8f1^%s%% ", "BAT0"},
-	{ ram_perc,       "^c#FFFFFF^ MEM ^c#73b8f1^%s%% ", NULL},
-	{ datetime,       "^c#FFFFFF^ %s ",       "%d/%m"},
-	{ datetime,       "^c#73b8f1^%s ",       "%H:%M"},
+  { battery_perc,   "^c#ebdbb2^ BAT ^c#e78a4e^%s%% ", "BAT0"},
+	{ ram_perc,       "^c#ebdbb2^ MEM ^c#e78a4e^%s%% ", NULL},
+	{ datetime,       "^c#ebdbb2^ %s ",       "%d/%m"},
+	{ datetime,       "^c#e78a4e^%s ",       "%H:%M"},
   { battery_notify, "",           "BAT0"}, /* There is nothing to print its just a notifications*/
 };

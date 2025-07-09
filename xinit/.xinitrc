@@ -1,6 +1,5 @@
 # #!/bin/bash 
 
-/usr/bin/lxpolkit &
 
 slstatus &
 exec dwm

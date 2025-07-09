@@ -1,5 +1,9 @@
 /* See LICENSE file for copyright and license details. */
-
+#define XF86AudioMute         0x1008ff12
+#define XF86AudioLowerVolume  0x1008ff11
+#define XF86AudioRaiseVolume  0x1008ff13
+#define XF86MonBrightnessDown 0x1008ff03
+#define XF86MonBrightnessUp   0x1008ff02
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 8;       /* snap pixel */
@@ -21,12 +25,12 @@ static const char *fonts[]    = {
 };
 static const char dmenufont[] = "jetBrainsMono Nerd Font Mono:style=regular:size=12:antialias=true:autohint=true";
 /* colors */
-static const char fg_color[]          = "#ffffff";
-static const char bg_color[]          = "#2D2A2E";
-static const char border_color[]      = "#2D2A2E";
-static const char sel_fg_color[]      = "#73b8f1";
-static const char sel_bg_color[]      = "#2D2A2E";
-static const char sel_border_color[]  = "#73b8f1";
+static const char fg_color[]          = "#ebdbb2"; // "#ffffff";
+static const char bg_color[]          = "#1d2021"; // "#2D2A2E";
+static const char border_color[]      = "#1d2021"; // "#2D2A2E";
+static const char sel_fg_color[]      = "#e78a4e"; // "#73b8f1";
+static const char sel_bg_color[]      = "#1d2021"; // "#2D2A2E";
+static const char sel_border_color[]  = "#e78a4e"; // "#73b8f1";
 static const char *colors[][3]        = {
 	/*               fg            bg            border   */
 	[SchemeNorm] = { fg_color,     bg_color,     border_color },
@@ -58,7 +62,7 @@ static const Rule rules[] = {
 	{ "Transmission-gtk", NULL,       NULL,       0,       		  1,           -1 },
 	{ "Lxappearance",   	NULL,       NULL,       0,       		  1,           -1 },
 	{ "Pavucontrol",  		NULL,       NULL,       0,       		  1,           -1 },
-  { "st",               NULL,       NULL,       0,            1,           -1 },
+  { "obsidian",         NULL,       NULL,       0,            1,           -1 },
 };
 /* layout(s) */
 static const float mfact        = 0.55; /* factor of master area size [0.05..0.95] */
@@ -99,31 +103,67 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bg_color, "-nf", fg_color, "-sb", sel_bg_color, "-sf", sel_fg_color, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *dmenucmd[]         = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bg_color, "-nf", fg_color, "-sb", sel_bg_color, "-sf", sel_fg_color, NULL };
+
+static const char *termcmd[]          = { "st", NULL };
+static const char *alacrittycmd[]     = { "alacritty", NULL };
+static const char *firefoxcmd[]       = { "firefox-esr", NULL };
+static const char *pcmanfmcmd[]       = { "pcmanfm", NULL };
+static const char *geanycmd[]         = { "geany", NULL };
+static const char *gimpcmd[]          = { "gimp", NULL };
+static const char *flameshotfullcmd[] = { "flameshot", "full", "--path", "~/Screenshots/", NULL };
+static const char *flameshotguicmd[]  = { "flameshot", "gui", "--path", "~/Screenshots/", NULL };
+
+static const char *appsmenucmd[]      = { "rofi", "-show", "drun", "-hide-scrollbar", "-show-icons", "-theme", "~/.config/suckless/rofi/config.rasi", NULL };
+static const char *powermenucmd[]     = { "/bin/sh", "-c", "~/.config/suckless/scripts/power", NULL };
+static const char *redshiftoncmd[]    = { "/bin/sh", "-c", "~/.config/suckless/scripts/redshift-on", NULL };
+static const char *redshiftoffcmd[]   = { "/bin/sh", "-c", "~/.config/suckless/scripts/redshift-off", NULL };
+
+static const char *audiomutecmd[]         = { "amixer", "set", "Master", "toggle", NULL };
+static const char *audioraisevolumecmd[]  = { "amixer", "set", "Master", "5%+", NULL };
+static const char *audiolowervolumecmd[]  = { "amixer", "set", "Master", "5%-", NULL };
+static const char *monbrightnessupcmd[]   = { "brightnessctl", "-c", "backlight", "set", "5%+", NULL };
+static const char *monbrightnessdowncmd[] = { "brightnessctl", "-c", "backlight", "set", "5%-", NULL };
 
 #include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = alacrittycmd } },
+	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd  } },
+	{ MODKEY,                       XK_w,      spawn,          {.v = firefoxcmd } },
+	{ MODKEY,                       XK_f,      spawn,          {.v = pcmanfmcmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = geanycmd } },
+	{ MODKEY,                       XK_g,      spawn,          {.v = gimpcmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = flameshotfullcmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = flameshotguicmd } },
+	{ MODKEY,                       XK_space,  spawn,          {.v = appsmenucmd } },
+	{ MODKEY,                       XK_x,      spawn,          {.v = powermenucmd } },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = redshiftoffcmd } },
+	{ MODKEY,                       XK_r,      spawn,          {.v = redshiftoncmd } },
+
+	{ 0,                       XF86AudioMute,      spawn,          {.v = audiomutecmd } },
+	{ 0,                       XF86AudioRaiseVolume,      spawn,          {.v = audioraisevolumecmd } },
+	{ 0,                       XF86AudioLowerVolume,      spawn,          {.v = audiolowervolumecmd } },
+	{ 0,                       XF86MonBrightnessUp,      spawn,          {.v = monbrightnessupcmd } },
+	{ 0,                       XF86MonBrightnessDown,      spawn,          {.v = monbrightnessdowncmd } },
+
   /* togglebar */
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|Mod1Mask,               XK_b,      togglebar,      {0} },
   /* fullscreen */
 	{ MODKEY|Mod1Mask,              XK_f,      fullscreen,     {0} },
   /* stacks */
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY|Mod1Mask,              XK_j,      movestack,      {.i = +1 } },
-	{ MODKEY|Mod1Mask,              XK_k,      movestack,      {.i = -1 } },
-
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-  /* factor */
-  { MODKEY,                       XK_a,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_a,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_Right,  movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_Left,   movestack,      {.i = -1 } },
+  { MODKEY|Mod1Mask,              XK_Right,  setmfact,       {.f = +0.05} },
+	{ MODKEY|Mod1Mask,              XK_Left,   setmfact,       {.f = -0.05} },
+  /*  */
+	{ MODKEY|Mod1Mask,              XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY|Mod1Mask,              XK_d,      incnmaster,     {.i = -1 } },
+  { MODKEY|Mod1Mask,              XK_z,      zoom,           {0} },
   /* gaps */
-	{ MODKEY,                       XK_z,      zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
@@ -162,7 +202,7 @@ static const Key keys[] = {
 	{ ShiftMask|ControlMask,        XK_0,       setlayout,      {.v = &layouts[9] } },
 	{ ShiftMask|ControlMask,        XK_minus,   setlayout,      {.v = &layouts[10] } },
 	{ ShiftMask|ControlMask,        XK_equal,   setlayout,      {.v = &layouts[11] } },
-
+  /* tagkeys */
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -172,7 +212,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-
+  /* close */
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
