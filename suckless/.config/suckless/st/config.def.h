@@ -98,14 +98,14 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 const char *colorname[] = {
 	/* 8 normal colors */
-	[0] = "#2f363d", /* black (invisibles) */
-	[1] = "#ff7b72", /* red */
-	[2] = "#3fb950", /* green */
-	[3] = "#d29922", /* yellow */
-	[4] = "#539bf5", /* blue */
-	[5] = "#bc8cff", /* magenta */
-	[6] = "#39c5cf", /* cyan */
-	[7] = "#d0d7de", /* white (foreground) */
+	[0] = "#1d2021", /* black (invisibles) */
+	[1] = "#ea6962", /* red */
+	[2] = "#a9b665", /* green */
+	[3] = "#d8a657", /* yellow */
+	[4] = "#7daea3", /* blue */
+	[5] = "#d3869b", /* magenta */
+	[6] = "#89b482", /* cyan */
+	[7] = "#ebdbb2", /* white (foreground) */
 
 	/* 8 bright colors */
 	[8] = "#8b949e",  /* black (comment) */
@@ -130,14 +130,14 @@ unsigned int defaultcs = 258;
 unsigned int defaultrcs = 258;
 
 /* Terminal opacity */
-float alpha = 0.95; /* For st 0.9.2, use decimal alpha value */
+float alpha = 0.85; /* For st 0.9.2, use decimal alpha value */
 
 /* Font configuration */
 /* Note: newer st versions may handle font differently. Adjust as needed. */
-char *font = "SFMono Nerd Font:size=16:antialias=true:autohint=true";
+char *font = "SFMono Nerd Font:size=15:antialias=true:autohint=true";
 
 static char *font2[] = {
-    "SFMono Nerd Font:pixelsize=16:antialias=true:autohint=true",
+    "SFMono Nerd Font:pixelsize=15:antialias=true:autohint=true",
     "Symbols Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
 };
 
@@ -146,7 +146,7 @@ float cwscale = 1.0;
 float chscale = 1.1; /* Line height similar to your WezTerm */
 
 /* Border and spacing */
-int borderpx = 2;
+int borderpx = 0;
 
 
 /*
