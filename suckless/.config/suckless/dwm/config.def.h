@@ -107,15 +107,15 @@ static const char *dmenucmd[]         = { "dmenu_run", "-m", dmenumon, "-fn", dm
 
 static const char *termcmd[]          = { "st", NULL };
 static const char *alacrittycmd[]     = { "alacritty", NULL };
-static const char *firefoxcmd[]       = { "firefox-esr", NULL };
+static const char *webbrowsercmd[]    = { "librewolf", NULL };
 static const char *pcmanfmcmd[]       = { "pcmanfm", NULL };
 static const char *geanycmd[]         = { "geany", NULL };
 static const char *gimpcmd[]          = { "gimp", NULL };
 static const char *flameshotfullcmd[] = { "flameshot", "full", "--path", "~/Screenshots/", NULL };
 static const char *flameshotguicmd[]  = { "flameshot", "gui", "--path", "~/Screenshots/", NULL };
 
-static const char *appsmenucmd[]      = { "rofi", "-show", "drun", "-hide-scrollbar", "-show-icons", "-theme", "~/.config/suckless/rofi/config.rasi", NULL };
-static const char *powermenucmd[]     = { "/bin/sh", "-c", "~/.config/suckless/scripts/power", NULL };
+static const char *appsmenucmd[]      = { "/bin/sh", "-c", "~/.config/rofi/launchers/type-2/launcher.sh", NULL };
+static const char *powermenucmd[]     = { "/bin/sh", "-c", "~/.config/rofi/powermenu/type-1/powermenu.sh", NULL };
 static const char *redshiftoncmd[]    = { "/bin/sh", "-c", "~/.config/suckless/scripts/redshift-on", NULL };
 static const char *redshiftoffcmd[]   = { "/bin/sh", "-c", "~/.config/suckless/scripts/redshift-off", NULL };
 
@@ -131,7 +131,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = alacrittycmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd  } },
-	{ MODKEY,                       XK_w,      spawn,          {.v = firefoxcmd } },
+	{ MODKEY,                       XK_w,      spawn,          {.v = webbrowsercmd } },
 	{ MODKEY,                       XK_f,      spawn,          {.v = pcmanfmcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = geanycmd } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = gimpcmd } },
