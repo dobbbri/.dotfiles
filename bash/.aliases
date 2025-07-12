@@ -24,9 +24,9 @@ alias e='nvim'
 alias lg='lazygit'
 
 # dotfiles
-alias bsp='cd ~/.dotfiles/bspwm/.config/bspwm/ && v'
-alias vvv='cd ~/.dotfiles/tinyvim/.config/nvim/ && v'
-alias ddd='cd ~/.dotfiles/ && v'
+alias bsp='cd ~/.dotfiles/bspwm/.config/bspwm/'
+alias vv='cd ~/.dotfiles/tinyvim/.config/nvim/'
+alias dd='cd ~/.dotfiles/ '
 
 # projects
 alias pp='cd ~/Projects/'
