@@ -122,13 +122,8 @@ static const char *webbrowsercmd[]    = { "librewolf", NULL };
 static const char *pcmanfmcmd[]       = { "pcmanfm", NULL };
 static const char *geanycmd[]         = { "geany", NULL };
 static const char *gimpcmd[]          = { "gimp", NULL };
-static const char *flameshotfullcmd[] = { "flameshot", "full", "--path", "~/Screenshots/", NULL };
+static const char *flameshotfullcmd[] = { "flameshot", "full", "-path", "~/Screenshots/", NULL };
 static const char *flameshotguicmd[]  = { "flameshot", "gui", "--path", "~/Screenshots/", NULL };
-
-static const char *appsmenucmd[]      = { "/bin/sh", "-c", "~/.config/rofi/launchers/type-2/launcher.sh", NULL };
-static const char *powermenucmd[]     = { "/bin/sh", "-c", "~/.config/rofi/powermenu/type-1/powermenu.sh", NULL };
-static const char *redshiftoncmd[]    = { "/bin/sh", "-c", "~/.config/suckless/scripts/redshift-on", NULL };
-static const char *redshiftoffcmd[]   = { "/bin/sh", "-c", "~/.config/suckless/scripts/redshift-off", NULL };
 
 static const char *audiomutecmd[]         = { "amixer", "set", "Master", "toggle", NULL };
 static const char *audioraisevolumecmd[]  = { "amixer", "set", "Master", "5%+", NULL };
@@ -139,20 +134,20 @@ static const char *monbrightnessdowncmd[] = { "brightnessctl", "-c", "backlight"
 #include "movestack.c"
 
 static const Key keys[] = {
-	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = alacrittycmd } },
-	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd  } },
-	{ MODKEY,                       XK_w,      spawn,          {.v = webbrowsercmd } },
-	{ MODKEY,                       XK_f,      spawn,          {.v = pcmanfmcmd } },
-	{ MODKEY,                       XK_e,      spawn,          {.v = geanycmd } },
-	{ MODKEY,                       XK_g,      spawn,          {.v = gimpcmd } },
-	{ MODKEY,                       XK_s,      spawn,          {.v = flameshotfullcmd } },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = flameshotguicmd } },
-	{ MODKEY,                       XK_space,  spawn,          {.v = appsmenucmd } },
-	{ MODKEY,                       XK_x,      spawn,          {.v = powermenucmd } },
-	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = redshiftoffcmd } },
-	{ MODKEY,                       XK_r,      spawn,          {.v = redshiftoncmd } },
+	/* modifier           key        function   argument */
+	{ MODKEY,             XK_p,      spawn,     {.v = dmenucmd } },
+	{ MODKEY,             XK_Return, spawn,     {.v = alacrittycmd } },
+	{ MODKEY,             XK_t,      spawn,     {.v = termcmd  } },
+	{ MODKEY,             XK_w,      spawn,     {.v = webbrowsercmd } },
+	{ MODKEY,             XK_f,      spawn,     {.v = pcmanfmcmd } },
+	{ MODKEY,             XK_e,      spawn,     {.v = geanycmd } },
+	{ MODKEY,             XK_g,      spawn,     {.v = gimpcmd } },
+	{ MODKEY,             XK_s,      spawn,     {.v = flameshotfullcmd } },
+	{ MODKEY|ShiftMask,   XK_s,      spawn,     {.v = flameshotguicmd } },
+	{ MODKEY,             XK_space,  spawn,     SHCMD( "~/.config/rofi/launchers/type-2/launcher.sh" ) },
+	{ MODKEY,             XK_x,      spawn,     SHCMD( "~/.config/rofi/powermenu/type-1/powermenu.sh" ) },
+	{ MODKEY|ShiftMask,   XK_r,      spawn,     SHCMD( "~/.config/suckless/scripts/redshift-on" ) },
+	{ MODKEY,             XK_r,      spawn,     SHCMD( "~/.config/suckless/scripts/redshift-off" ) },
 
 	{ 0,                       XF86XK_AudioMute,      spawn,          {.v = audiomutecmd } },
 	{ 0,                       XF86XK_AudioRaiseVolume,      spawn,          {.v = audioraisevolumecmd } },

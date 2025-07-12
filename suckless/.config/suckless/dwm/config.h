@@ -3,23 +3,23 @@
 #include <X11/XF86keysym.h>
 
 /* appearance -------------------------------------------------------------- */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int snap      = 8;       /* snap pixel */
+static const unsigned int borderpx  = 2;  /* border pixel of windows */
+static const unsigned int snap      = 8;  /* snap pixel */
 
 /* gap -------------------------------------------------------------- */
-static const unsigned int gappih  = 6;       /* horiz inner gap between windows */
-static const unsigned int gappiv  = 6;       /* vert inner gap between windows */
-static const unsigned int gappoh  = 6;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov  = 6;       /* vert outer gap between windows and screen edge */
-static       int smartgaps        = 0;        /* 1 means no outer gap when there is only one window */
+static const unsigned int gappih    = 6;  /* horiz inner gap between windows */
+static const unsigned int gappiv    = 6;  /* vert inner gap between windows */
+static const unsigned int gappoh    = 6;  /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 6;  /* vert outer gap between windows and screen edge */
+static                int smartgaps = 0;  /* 1 means no outer gap when there is only one window */
 
 /* bar -------------------------------------------------------------- */
-static const int showbar  = 1;        /* 0 means no bar */
-static const int topbar   = 1;        /* 0 means bottom bar */
+static const int showbar = 1; /* 0 means no bar */
+static const int topbar  = 1; /* 0 means bottom bar */
 
 /* padding -------------------------------------------------------------- */
-static const int vertpad  = 0;       /* vertical padding of bar */
-static const int sidepad  = 0;       /* horizontal padding of bar */
+static const int vertpad = 0; /* vertical padding of bar */
+static const int sidepad = 0; /* horizontal padding of bar */
 
 /* font -------------------------------------------------------------- */
 static const char *fonts[]    = { 
@@ -28,16 +28,16 @@ static const char *fonts[]    = {
 static const char dmenufont[] = "jetBrainsMono Nerd Font Mono:style=regular:size=12:antialias=true:autohint=true";
 
 /* colors -------------------------------------------------------------- */
-static const char fg_color[]          = "#ebdbb2"; // "#ffffff";
-static const char bg_color[]          = "#1d2021"; // "#2D2A2E";
-static const char border_color[]      = "#1d2021"; // "#2D2A2E";
-static const char sel_fg_color[]      = "#e78a4e"; // "#73b8f1";
-static const char sel_bg_color[]      = "#1d2021"; // "#2D2A2E";
-static const char sel_border_color[]  = "#e78a4e"; // "#73b8f1";
-static const char *colors[][3]        = {
-	/*               fg            bg            border   */
-	[SchemeNorm] = { fg_color,     bg_color,     border_color },
-	[SchemeSel]  = { sel_fg_color, sel_bg_color, sel_border_color  },
+static const char fgcolor[]         = "#ebdbb2"; // "#ffffff";
+static const char bgcolor[]         = "#1d2021"; // "#2D2A2E";
+static const char bordercolor[]     = "#1d2021"; // "#2D2A2E";
+static const char selfgcolor[]      = "#e78a4e"; // "#73b8f1";
+static const char selbgcolor[]      = "#1d2021"; // "#2D2A2E";
+static const char selbordercolor[]  = "#e78a4e"; // "#73b8f1";
+static const char *colors[][3]      = {
+	/*               fg           bg          border   */
+	[SchemeNorm] = { fgcolor,     bgcolor,    bordercolor },
+	[SchemeSel]  = { selfgcolor,  selbgcolor, selbordercolor  },
 };
 
 /* autostart -------------------------------------------------------------- */
@@ -114,7 +114,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2]       = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bg_color, "-nf", fg_color, "-sb", sel_bg_color, "-sf", sel_fg_color, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bgcolor, "-nf", fgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 
 static const char *termcmd[]          = { "st", NULL };
 static const char *alacrittycmd[]     = { "alacritty", NULL };
@@ -122,13 +122,8 @@ static const char *webbrowsercmd[]    = { "librewolf", NULL };
 static const char *pcmanfmcmd[]       = { "pcmanfm", NULL };
 static const char *geanycmd[]         = { "geany", NULL };
 static const char *gimpcmd[]          = { "gimp", NULL };
-static const char *flameshotfullcmd[] = { "flameshot", "full", "--path", "~/Screenshots/", NULL };
+static const char *flameshotfullcmd[] = { "flameshot", "full", "-path", "~/Screenshots/", NULL };
 static const char *flameshotguicmd[]  = { "flameshot", "gui", "--path", "~/Screenshots/", NULL };
-
-static const char *appsmenucmd[]      = { "/bin/sh", "-c", "~/.config/rofi/launchers/type-2/launcher.sh", NULL };
-static const char *powermenucmd[]     = { "/bin/sh", "-c", "~/.config/rofi/powermenu/type-1/powermenu.sh", NULL };
-static const char *redshiftoncmd[]    = { "/bin/sh", "-c", "~/.config/suckless/scripts/redshift-on", NULL };
-static const char *redshiftoffcmd[]   = { "/bin/sh", "-c", "~/.config/suckless/scripts/redshift-off", NULL };
 
 static const char *audiomutecmd[]         = { "amixer", "set", "Master", "toggle", NULL };
 static const char *audioraisevolumecmd[]  = { "amixer", "set", "Master", "5%+", NULL };
@@ -139,20 +134,20 @@ static const char *monbrightnessdowncmd[] = { "brightnessctl", "-c", "backlight"
 #include "movestack.c"
 
 static const Key keys[] = {
-	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = alacrittycmd } },
-	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd  } },
-	{ MODKEY,                       XK_w,      spawn,          {.v = webbrowsercmd } },
-	{ MODKEY,                       XK_f,      spawn,          {.v = pcmanfmcmd } },
-	{ MODKEY,                       XK_e,      spawn,          {.v = geanycmd } },
-	{ MODKEY,                       XK_g,      spawn,          {.v = gimpcmd } },
-	{ MODKEY,                       XK_s,      spawn,          {.v = flameshotfullcmd } },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = flameshotguicmd } },
-	{ MODKEY,                       XK_space,  spawn,          {.v = appsmenucmd } },
-	{ MODKEY,                       XK_x,      spawn,          {.v = powermenucmd } },
-	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = redshiftoffcmd } },
-	{ MODKEY,                       XK_r,      spawn,          {.v = redshiftoncmd } },
+	/* modifier           key        function   argument */
+	{ MODKEY,             XK_p,      spawn,     {.v = dmenucmd } },
+	{ MODKEY,             XK_Return, spawn,     {.v = alacrittycmd } },
+	{ MODKEY,             XK_t,      spawn,     {.v = termcmd  } },
+	{ MODKEY,             XK_w,      spawn,     {.v = webbrowsercmd } },
+	{ MODKEY,             XK_f,      spawn,     {.v = pcmanfmcmd } },
+	{ MODKEY,             XK_e,      spawn,     {.v = geanycmd } },
+	{ MODKEY,             XK_g,      spawn,     {.v = gimpcmd } },
+	{ MODKEY,             XK_s,      spawn,     {.v = flameshotfullcmd } },
+	{ MODKEY|ShiftMask,   XK_s,      spawn,     {.v = flameshotguicmd } },
+	{ MODKEY,             XK_space,  spawn,     SHCMD( "~/.config/rofi/launchers/type-2/launcher.sh" ) },
+	{ MODKEY,             XK_x,      spawn,     SHCMD( "~/.config/rofi/powermenu/type-1/powermenu.sh" ) },
+	{ MODKEY|ShiftMask,   XK_r,      spawn,     SHCMD( "~/.config/suckless/scripts/redshift-on" ) },
+	{ MODKEY,             XK_r,      spawn,     SHCMD( "~/.config/suckless/scripts/redshift-off" ) },
 
 	{ 0,                       XF86XK_AudioMute,      spawn,          {.v = audiomutecmd } },
 	{ 0,                       XF86XK_AudioRaiseVolume,      spawn,          {.v = audioraisevolumecmd } },
