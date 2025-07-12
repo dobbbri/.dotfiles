@@ -5,7 +5,7 @@ vim.api.nvim_create_user_command("MasonAllLSPinstall", function()
   )
 end, {})
 
-vim.diagnostic.config({ virtual_text = false })
+vim.diagnostic.config({ virtual_text = false, severity_sort = true })
 
 vim.lsp.config("*", { capabilities = require("blink.cmp").get_lsp_capabilities() })
 
