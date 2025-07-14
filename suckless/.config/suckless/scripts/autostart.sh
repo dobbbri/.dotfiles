@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export DESKTOP_SESSION=dwm
+
 # slstatus &
 
 # polkit

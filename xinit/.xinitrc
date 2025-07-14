@@ -1,8 +1,9 @@
 # #!/bin/bash 
 
+exec dk
 
-slstatus &
-exec dwm
+# slstatus &
+# exec dwm
 
 # exec i3
 
