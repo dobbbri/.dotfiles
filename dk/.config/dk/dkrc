@@ -22,9 +22,6 @@ xsetroot -cursor_name left_ptr
 # /usr/lib/xfce-polkit/xfce-polkit &
 # /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
-# Enable power management
-xfce4-power-manager &
-
 dunst -config ~/.config/dk/dunst/dunstrc &
 
 # picom --config ~/.config/dk/picom/picom.conf --animations -b &

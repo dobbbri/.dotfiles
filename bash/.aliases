@@ -2,7 +2,6 @@
 
 alias poweroff="sudo systemctl poweroff"
 alias reboot="sudo systemctl reboot"
-alias logout="sudo pkill dwm"
 alias fixx="sudo brightnessctl --device='smc::kbd_backlight' set 30 &&sudo brightnessctl --device='acpi_video0' set 2"
 
 # get all errors for running services using journalctl
@@ -24,6 +23,7 @@ alias e='nvim'
 alias lg='lazygit'
 
 # dotfiles
+alias dk='cd ~/.dotfiles/dk/.config/dk/'
 alias bsp='cd ~/.dotfiles/bspwm/.config/bspwm/'
 alias vv='cd ~/.dotfiles/tinyvim/.config/nvim/'
 alias dd='cd ~/.dotfiles/ '
