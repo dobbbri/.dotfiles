@@ -7,7 +7,7 @@ vim.api.nvim_create_user_command("Format", function(args)
       ["end"] = { args.line2, end_line:len() },
     }
   end
-  require("conform").format({ async = false, lsp_format = "fallback", range = range })
+  require("conform").format({ async = false, timeout_ms = 3000, lsp_format = "fallback", range = range })
 end, { range = true })
 
 return {

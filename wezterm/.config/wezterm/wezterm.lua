@@ -3,22 +3,6 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
 
--- GitHub Dark color palette
-local colors = {
-	fg = "#d0d7de",
-	bg = "#0d1117",
-	comment = "#8b949e",
-	red = "#ff7b72",
-	green = "#3fb950",
-	yellow = "#d29922",
-	blue = "#539bf5",
-	magenta = "#bc8cff",
-	cyan = "#39c5cf",
-	selection = "#415555",
-	caret = "#58a6ff",
-	invisibles = "#2f363d",
-}
-
 -- Keybindings
 config.keys = {}
 -- Pane management
@@ -63,24 +47,18 @@ end
 
 -- Font configuration
 config.font = wezterm.font_with_fallback({
-  { family = "SFMono Nerd Font", weight = "Regular"},
+	{ family = "SFMono Nerd Font", weight = "Regular" },
 	{ family = "Symbols Nerd Font Mono", weight = "Regular" },
 })
 config.font_size = 14
-config.line_height = 1.6
+config.line_height = 1.4
 config.cell_width = 1.0
 config.window_padding = {
-  left = 3,
-  right = 3,
-  top = 3,
-  bottom = 3,
+	left = 3,
+	right = 3,
+	top = 3,
+	bottom = 0,
 }
-config.hide_tab_bar_if_only_one_tab = true
--- config.window_frame = {
--- 	font = wezterm.font({ family = "SFMono Nerd Font", weight = "Regular" }),
--- 	font_size = 12.0,
--- 	active_titlebar_bg = colors.bg,
--- }
 
 -- Performance settings
 config.max_fps = 120
@@ -98,56 +76,27 @@ config.freetype_load_target = "Light"
 config.freetype_render_target = "HorizontalLcd"
 
 -- Color scheme
-config.colors = {
-	foreground = colors.fg,
-	background = colors.bg,
-	cursor_bg = colors.caret,
-	cursor_fg = colors.bg,
-	cursor_border = colors.caret,
-	selection_fg = colors.fg,
-	selection_bg = colors.selection,
-	scrollbar_thumb = colors.invisibles,
-	split = colors.invisibles,
-	ansi = {
-		colors.invisibles,
-		colors.red,
-		colors.green,
-		colors.yellow,
-		colors.blue,
-		colors.magenta,
-		colors.cyan,
-		colors.fg,
-	},
-	brights = {
-		colors.comment,
-		"#ff9790",
-		"#6af28c",
-		"#e3b341",
-		"#79c0ff",
-		"#d2a8ff",
-		"#56d4dd",
-		"#ffffff",
-	},
-	tab_bar = {
-		background = colors.bg,
-		inactive_tab_edge = colors.invisibles,
-		active_tab = { bg_color = colors.blue, fg_color = colors.bg, intensity = "Bold" },
-		inactive_tab = { bg_color = colors.bg, fg_color = colors.comment },
-		inactive_tab_hover = { bg_color = "#21262d", fg_color = colors.caret },
-		new_tab = { bg_color = colors.bg, fg_color = colors.caret, intensity = "Bold" },
-		new_tab_hover = { bg_color = "#21262d", fg_color = colors.red },
-	},
-}
+config.color_scheme = "gruvboxdarkhard"
 
 -- Mouse bindings
 config.mouse_bindings = {
 	{ event = { Down = { streak = 1, button = "Right" } }, mods = "NONE", action = act.CopyTo("Clipboard") },
-	{ event = { Down = { streak = 1, button = "Middle" } }, mods = "NONE", action = act.SplitHorizontal({
-		domain = "CurrentPaneDomain",
-	}) },
-	{ event = { Down = { streak = 1, button = "Middle" } }, mods = "SHIFT", action = act.CloseCurrentPane({
-		confirm = false,
-	}) },
+	{
+		event = { Down = { streak = 1, button = "Middle" } },
+		mods = "NONE",
+		action = act.SplitHorizontal({
+			domain = "CurrentPaneDomain",
+		}),
+	},
+	{
+		event = { Down = { streak = 1, button = "Middle" } },
+		mods = "SHIFT",
+		action = act.CloseCurrentPane({
+			confirm = false,
+		}),
+	},
 }
+
+config.hide_tab_bar_if_only_one_tab = true
 
 return config

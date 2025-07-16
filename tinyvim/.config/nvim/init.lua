@@ -21,9 +21,6 @@ require("lazy").setup({
   { import = "plugins" },
 }, {
   defaults = { lazy = false },
-  -- install = { colorscheme = { "onedark" } },
-  -- checker = { enabled = false },
-  -- concurrency = 10,
   performance = {
     rtp = {
       disabled_plugins = {

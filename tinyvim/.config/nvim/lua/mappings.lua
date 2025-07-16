@@ -40,6 +40,9 @@ map(
 map("n", "<leader>t", "<cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
 map("t", "<leader>t", "<C-\\><C-n><cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
 
+-- URL-Open
+vim.keymap.set("n", "<leader>o", "<esc>:URLOpenUnderCursor<cr>", { desc = "Open Url under cursor" })
+ 
 -- Gitsigns
 map("n", "<leader>P", "<cmd>Gitsigns diffthis<CR>", { desc = "Diff This" })
 map("n", "<leader>p", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git preview hunk" })

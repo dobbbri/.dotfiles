@@ -6,8 +6,8 @@ window:
   padding:
     x: 0
     y: 0
-  dynamic_padding: true
-  decorations: none
+  # dynamic_padding: true
+  # decorations: none
   startup_mode: Windowed
   opacity: 0.85
 
@@ -167,5 +167,8 @@ live_config_reload: true
 #   log_level: OFF
 #   print_events: false
 #   ref_test: false
-# shell:
-#   program: /usr/bin/bash
+shell:
+  program: /usr/bin/bash
+  args:
+     - -c
+     - "~/.pfetch && bash"

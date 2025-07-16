@@ -8,11 +8,11 @@ super + shift + w
 
 # Launch Terminal (st)
 super + t
-	st
+	alacritty
 
 # Launch Terminal (alacritty)
 super + Return
-	alacritty
+  st	
 
 # Launch Rofi Application Menu
 super + space

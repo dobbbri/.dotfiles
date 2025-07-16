@@ -61,7 +61,7 @@ border_outer_width=0
 		outer_urgent='#ee5555'
 
 	# window rules
-	dkcmd rule class="^st$" ws=1 focus=true
+	dkcmd rule class="^wezterm$" ws=1 focus=true
 	dkcmd rule class="^librewolf$" ws=2 focus=true
 	dkcmd rule class="^pcmanfm$" ws=3 focus=true
 	# dkcmd rule class="^github desktop$" ws=2 focus=true
