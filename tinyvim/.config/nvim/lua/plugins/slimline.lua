@@ -15,7 +15,7 @@ return {
         "filetype_lsp",
         function()
           local h = require("slimline.highlights")
-          return h.hl_component({ primary = "  %l/%c " }, h.hls.components["path"], "")
+          return h.hl_component({ primary = " %l/%c" }, h.hls.components["path"], "")
         end,
       },
     },

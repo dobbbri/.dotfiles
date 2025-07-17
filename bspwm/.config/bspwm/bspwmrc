@@ -36,10 +36,10 @@ bspc rule -a gimp state=floating layer=normal
 xsetroot -cursor_name left_ptr &
 # /usr/bin/lxpolkit &
 
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 dunst -config ~/.config/bspwm/dunst/dunstrc &
-picom --config ~/.config/bspwm/picom/picom.conf --animations -b &
+# picom --config ~/.config/bspwm/picom/picom.conf --animations -b &
 
 xwallpaper --zoom ~/.dotfiles/pictures/mar.png &
 
