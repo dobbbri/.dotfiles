@@ -75,10 +75,10 @@ return {
           return {
             CmpItemMenu = { fg = colors.surface2 },
             CursorLineNr = { fg = colors.text },
-            FloatBorder = { bg = colors.mantle, fg = colors.subtext1 },
+            -- FloatBorder = { bg = colors.mantle, fg = colors.subtext1 },
             GitSignsChange = { fg = colors.peach },
             LineNr = { fg = colors.overlay0 },
-            NormalFloat = { bg = colors.mantle },
+            -- NormalFloat = { bg = colors.mantle },
             Pmenu = { bg = colors.mantle, fg = "" },
             PmenuSel = { bg = colors.surface0, fg = "" },
             VertSplit = { bg = colors.base, fg = colors.surface0 },
