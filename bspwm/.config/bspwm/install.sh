@@ -19,12 +19,12 @@ install_packages() {
   echo "Installing required packages..."
   sudo apt install -y xorg xorg-dev \
     xbacklight xbindkeys xvkbd xinput xwallpaper brightnessctl \
-    bspwm sxhkd polybar network-manager pamixer pcmanfm lxappearance dialog acpi acpid \
+    bspwm sxhkd polybar network-manager alsa-utils pcmanfm lxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
-    exa redshift flameshot qimgv rofi dunst sakura policykit-1-gnome\
+    exa flameshot qimgv rofi dunst policykit-1-gnome\
     libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
     gparted neofetch htop alsa-utils ristretto exa color-picker mintstick atril \
-    transmission feh xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow \
+    transmission feh xarchiver curl unzip ssh-askpass wget dconf-editor stow \
     lxtask fzf yaru-theme-gtk yaru-theme-icon heif-gdk-pixbuf webp-pixbuf-loader \
     xdg-user-dirs-gtk || echo "Warning: Package installation failed."
   echo "Package installation completed."

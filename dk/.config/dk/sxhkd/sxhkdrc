@@ -43,15 +43,15 @@ super + v
     ~/.config/dk/scripts/scratchpad pulsemixer pulsemixer
 
 # Increase Volume (Custom Script)
-super + Insert
+alt + equal
     ~/.config/dk/scripts/changevolume up
 
 # Decrease Volume (Custom Script)
-super + Delete
+alt + minus 
 	~/.config/dk/scripts/changevolume down
 
 # Mute Volume (Custom Script)
-super + m
+alt + m
 	~/.config/dk/scripts/changevolume mute
 
 # Mute Volume (Custom Script)
@@ -127,19 +127,19 @@ super + shift + Left
 	dkcmd win mvstack down
 
 # Resize Window: Shrink Width
-super + ctrl + Left
+super + alt + Left
 	dkcmd win resize w=-20
 
 # Resize Window: Grow Height
-super + ctrl + Up
+super + alt + Up
 	dkcmd win resize h=+20
 
 # Resize Window: Shrink Height
-super + ctrl + Down
+super + alt + Down
 	dkcmd win resize h=-20
 
 # Resize Window: Grow Width
-super + ctrl + Right
+super + alt + Right
 	dkcmd win resize w=+20
 
 # Switch to Workspace 1-10
