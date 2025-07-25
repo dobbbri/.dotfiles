@@ -25,7 +25,7 @@ install_packages() {
     libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
     gparted neofetch htop alsa-utils ristretto exa color-picker mintstick atril \
     transmission feh xarchiver curl dunst unzip ssh-askpass wget dconf-editor stow \
-    lxtask fzf yaru-theme-gtk yaru-theme-icon \
+    lxtask fzf yaru-theme-gtk yaru-theme-icon heif-gdk-pixbuf webp-pixbuf-loader \
     xdg-user-dirs-gtk || echo "Warning: Package installation failed."
   echo "Package installation completed."
 }

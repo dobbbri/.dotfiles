@@ -53,7 +53,7 @@ opt.listchars = 'nbsp:⍽,trail:·,extends:→,precedes:←'
 opt.breakindent = true
 opt.linebreak = true
 opt.whichwrap = 'h,l,<,>,[,],~'
-opt.showbreak = '↳ '
+opt.showbreak = '󱞪 '
 
 opt.ignorecase = true
 opt.smartcase = true

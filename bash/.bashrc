@@ -115,4 +115,4 @@ ENDC="\\[\\e[0m\\]"
 
 # Set a two-line prompt. If accessing via ssh include 'ssh-session' message.
 if [[ -n "$SSH_CLIENT" ]]; then ssh_message="-ssh_session"; fi
-PS1=" $(battery_status) ${WHITE}\t ${CYAN}\$(date +%d/%m) ${GREEN}\u${WHITE}@${YELLOW}\h${RED}${ssh_message} ${WHITE}in ${BLUE}\w \n${CYAN} >${ENDC} "
+PS1="$(battery_status) ${WHITE}\t ${CYAN}\$(date +%d/%m) ${GREEN}\u${WHITE}@${YELLOW}\h${RED}${ssh_message} ${WHITE}in ${BLUE}\w \n${CYAN} >${ENDC} "

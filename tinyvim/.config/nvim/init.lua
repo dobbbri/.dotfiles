@@ -17,7 +17,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { import = "plugins.colorschemes.tokyonight" },
+  { import = "plugins.colorschemes.catppuccin" },
   { import = "plugins" },
 }, {
   defaults = { lazy = false },

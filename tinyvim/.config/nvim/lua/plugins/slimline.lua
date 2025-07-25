@@ -2,7 +2,7 @@ return {
   "sschleemilch/slimline.nvim",
   opts = {
     bold = true, -- makes primary parts bold
-    style = "bg", -- or "bg"
+    style = "fg", -- or "bg"
     components = {
       left = {
         "mode",
@@ -10,7 +10,6 @@ return {
         "path",
         "diagnostics",
       },
-      -- center = {},
       right = {
         "filetype_lsp",
         function()
@@ -44,17 +43,7 @@ return {
       filetype_lsp = {
         hl = { primary = "String" },
       },
-      -- progress = {
-      --   column = true, -- Enables a secondary section with the cursor column
-      --   icon = " ",
-      -- },
       recording = { icon = " " },
-    },
-    spaces = { components = " ", left = " ", right = " " },
-    sep = {
-      hide = { first = false, last = false },
-      left = "",
-      right = "",
     },
     hl = {
       base = "Selection",

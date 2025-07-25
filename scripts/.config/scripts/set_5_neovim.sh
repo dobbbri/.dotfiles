@@ -2,7 +2,7 @@
 
 echo "- Install Neovim from image ---------------------------------------------"
 sudo rm /usr/local/bin/nvim
-wget https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.appimage
+wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.appimage
 chmod u+x nvim-linux-x86_64.appimage
 sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 

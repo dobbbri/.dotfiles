@@ -75,7 +75,7 @@ XF86MonBrightnessDown
 	brightnessctl -c backlight set 5%-
 
 # Take a Screenshot (Region Select)
-super + shit + s
+super + shift + s
 	flameshot gui --path ~/Screenshots/
 
 # Take a Fullscreen Screenshot
