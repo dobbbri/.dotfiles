@@ -1,5 +1,8 @@
 #! /bin/sh
 
+# autostart
+export DESKTOP_SESSION=bspwm
+
 bspc monitor -d 1 2 3 4 5 6 7 8 9
 
 bspc config border_width 4
@@ -42,7 +45,8 @@ dunst -config ~/.config/bspwm/dunst/dunstrc &
 
 # picom --config ~/.config/bspwm/picom/picom.conf --animations -b &
 
-xwallpaper --zoom ~/.dotfiles/pictures/mar.png &
+# xwallpaper --zoom ~/.dotfiles/pictures/mar.png &
+hsetroot -cover ~/.dotfiles/pictures/wallhaven-lyq2rq_3440x1440.png &
 
 ## Polybar or tint
 ~/.config/bspwm/scripts/polybar-bspwm &

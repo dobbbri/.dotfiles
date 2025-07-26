@@ -36,23 +36,23 @@ super + p
 
 # Toggle Scratchpad Terminal
 super + shift + Return
-    ~/.config/dk/scripts/scratchpad
+  ~/.config/dk/scripts/scratchpad
 
 # Launch Pulsemixer in Scratchpad
 super + v
-    ~/.config/dk/scripts/scratchpad pulsemixer pulsemixer
+  ~/.config/dk/scripts/scratchpad pulsemixer pulsemixer
 
 # Increase Volume (Custom Script)
-alt + equal
-    ~/.config/dk/scripts/changevolume up
+alt + {equal,minus,m}
+  ~/.config/dk/scripts/changevolume {up,down,mute}
 
 # Decrease Volume (Custom Script)
-alt + minus 
-	~/.config/dk/scripts/changevolume down
-
-# Mute Volume (Custom Script)
-alt + m
-	~/.config/dk/scripts/changevolume mute
+# alt + minus 
+# 	~/.config/dk/scripts/changevolume down
+#
+# # Mute Volume (Custom Script)
+# alt + m
+# 	~/.config/dk/scripts/changevolume mute
 
 # Mute Volume (Custom Script)
 XF86AudioMute	

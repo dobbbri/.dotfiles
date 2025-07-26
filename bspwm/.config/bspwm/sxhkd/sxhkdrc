@@ -22,11 +22,11 @@ super + t
 
 # Launch Rofi Application Menu
 super + space
-  rofi -show drun -modi drun -line-padding 4 -hide-scrollbar -show-icons -theme ~/.config/bspwm/rofi/config.rasi
+   	~/.config/rofi/launchers/type-2/launcher.sh
 
 # Shutdown or Reboot
 super + x
-	~/.dotfiles/bspwm/.config/bspwm/scripts/power
+	~/.config/rofi/powermenu/type-1/powermenu.sh
 
 # Show Keybinding Help Script
 super + h

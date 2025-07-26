@@ -36,12 +36,6 @@ fi
 
 ~/.config/dk/polybar/polybar-dk &
 
-# thunar --daemon &
-
-# fixed border sizing (matching bspwm config)
-border_width=2
-border_outer_width=1
-
 {
   dkcmd set numws=10
   dkcmd set ws=_ apply layout=spiral master=1 stack=3 gap=10 msplit=0.5 ssplit=0.5
@@ -52,15 +46,7 @@ border_outer_width=1
   dkcmd set win_minwh=50 win_minxy=10
   dkcmd set smart_gap=false smart_border=false
   dkcmd set mouse mod=super move=button1 resize=button3
-
-  dkcmd set border width=$border_width outer_width=$border_outer_width \
-    colour \
-    focus='#e78a4e' \
-    unfocus='#1d2021' \
-    urgent='#ee5555' \
-    outer_focus='#e78a4e' \
-    outer_unfocus='#1d2021' \
-    outer_urgent='#ee5555'
+  dkcmd set border width=2 outer_width=1 colour focus='#e78a4e' unfocus='#1d2021' urgent='#ee5555' outer_focus='#e78a4e' outer_unfocus='#1d2021' outer_urgent='#ee5555'
 
   # window rules
   dkcmd rule class="^alacritty$" ws=1 focus=true

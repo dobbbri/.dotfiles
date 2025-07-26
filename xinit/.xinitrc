@@ -1,10 +1,10 @@
 # #!/bin/bash 
 
-exec dk
+# exec dk
 
 # slstatus &
 # exec dwm
 
 # exec i3
 
-# exec bspwm
+exec bspwm
