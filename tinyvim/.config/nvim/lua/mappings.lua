@@ -16,10 +16,11 @@ map("n", "-", function() require("mini.files").open() end, { desc = "Show File M
 map("n", "<leader>e", function() require("mini.files").open() end, { desc = "Show File Manager" })
 
 -- Pick
-map("n", "<leader>f", "<cmd>Pick files<CR>", { desc = "List files" })
-map("n", "<leader><space>", "<cmd>Pick buffers<CR>", { desc = "List opened buffers" })
-map("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick resume" })
-map("n", "<leader>w", "<cmd>Pick grep_live<CR>", { desc = "Search by word" })
+map("n", "=", "<cmd>FzfLua<CR>", { desc = "List FzfLua commands" })
+map("n", "<leader>f", "<cmd>FzfLua files<CR>", { desc = "List files" })
+map("n", "<leader>m", "<cmd>FzfLua resume<CR>", { desc = "List FzfLua resume" })
+map("n", "<leader>w", "<cmd>FzfLua grep_live<CR>", { desc = "Search by word" })
+map("n", "<leader><space>", "<cmd>FzfLua buffers<CR>", { desc = "List opened buffers" })
 
 -- diagnostics
 map("n", "<leader>D", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to diagnostics" })
@@ -37,6 +38,8 @@ map(
 )
 
 -- Fterm
+map("n", ".", "<cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
+map("t", ".", "<C-\\><C-n><cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
 map("n", "<leader>t", "<cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
 map("t", "<leader>t", "<C-\\><C-n><cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
 
