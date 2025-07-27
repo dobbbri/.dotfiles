@@ -13,4 +13,4 @@ sudo apt-get update
 sudo apt-get install syncthing
 
 # install service
-https://gist.github.com/zentralwerkstatt/b94ab44938fbdc8b957c674bf9261954
+# https://gist.github.com/zentralwerkstatt/b94ab44938fbdc8b957c674bf9261954

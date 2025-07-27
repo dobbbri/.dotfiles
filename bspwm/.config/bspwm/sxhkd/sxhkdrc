@@ -5,11 +5,11 @@ super + semicolon
   dunstctl close-all
 
 # Launch Browser ()
-super + w
+super + shift + w
   microsoft-edge-stable 
 
 # Launch Browser ()
-super + shift + w
+super + w
   librewolf
 
 # Launch Terminal ()

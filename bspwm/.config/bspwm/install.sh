@@ -17,13 +17,13 @@ echo "
 # ========================================
 install_packages() {
   echo "Installing required packages..."
-  sudo apt install -y xorg xorg-dev \
+  sudo apt install -y xorg \
     xbacklight xbindkeys xvkbd xinput xwallpaper brightnessctl \
-    bspwm sxhkd polybar network-manager alsa-utils pcmanfm lxappearance dialog acpi acpid \
+    bspwm sxhkd polybar network-manager pcmanfm lxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
     exa flameshot qimgv rofi dunst policykit-1-gnome\
     libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
-    gparted neofetch htop alsa-utils ristretto exa color-picker mintstick atril \
+    gparted neofetch htop alsa-utils exa color-picker mintstick atril \
     transmission feh xarchiver curl unzip ssh-askpass wget dconf-editor stow \
     lxtask fzf yaru-theme-gtk yaru-theme-icon heif-gdk-pixbuf webp-pixbuf-loader \
     xdg-user-dirs-gtk || echo "Warning: Package installation failed."
@@ -92,6 +92,8 @@ setup_user_dirs() {
   echo "Updating user directories..."
   xdg-user-dirs-update || echo "Warning: Failed to update user directories."
   mkdir -p ~/Screenshots/ || echo "Warning: Failed to create Screenshots directory."
+  mkdir -p ~/Sites/ || echo "Warning: Failed to create Sites directory."
+  mkdir -p ~/.nvm/ || echo "Warning: Failed to create .nvm directory."
   echo "User directories updated."
 }
 
@@ -106,14 +108,14 @@ setup_user_dirs() {
 install_fonts() {
   echo "Installing fonts..."
   mkdir -p ~/.local/share/fonts
-  fonts=("JetBrainsMono" "RobotoMono" "SourceCodePro" "UbuntuSans" "Meslo")
+  fonts=("JetBrainsMono" "UbuntuSans" "AtkinsonHyperlegibleMono" "IntelOneMono" "NerdFontsSymbolsOnly")
 
   for font in "${fonts[@]}"; do
     if [ -d ~/.local/share/fonts/$font ]; then
       echo "Font $font is already installed. Skipping."
     else
       echo "Installing font: $font"
-      wget -q "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/$font.zip" -P /tmp || {
+      wget -q "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/$font.zip" -P /tmp || {
         echo "Warning: Error downloading font $font."
         continue
       }
@@ -219,15 +221,6 @@ EOF
   echo "Power Off Key set. Needs Reboot"
 }
 
-install_battery_alert() {
-  curl -o- https://raw.githubusercontent.com/asapdotid/battery-alert-linux/refs/heads/main/install.sh | bash
-
-  # Set Notification config file: /home/sdobri/.local/share/battery-alert/default.conf
-  # Set executable file: /home/sdobri/.local/share/battery-alert/battery-alert.sh
-  # Set user service: /home/sdobri/.config/systemd/user/battery-alert.service
-  # Set user timer: /home/sdobri/.config/systemd/user/battery-alert.timer
-}
-
 # ========================================
 # Main Script Execution
 # ========================================
@@ -242,7 +235,6 @@ install_fonts
 fix_and_remove_packages
 change_theming
 change_power_off_key
-# install_battery_alert
 
 # FT-Labs picom and nerdfonts are installed
 bash ~/.dotfiles/bspwm/.config/bspwm/scripts/install_picom.sh

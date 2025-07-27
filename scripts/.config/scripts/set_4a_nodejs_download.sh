@@ -4,10 +4,10 @@
 
 
 echo "- Dowload NodeJs installer -----------------------------------------------"
-mkdir -p /home/sdobri/.nvm
+mkdir -p ~/.nvm/ || echo "Warning: Failed to create .nvm directory."
 
 # installs nvm (Node Version Manager)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
-# download and install Node.js (you may need to restart the terminal)
+echo "You need to restart the terminal"
 exit

@@ -17,15 +17,21 @@ scrolling:
 
 font:
   normal:
-    family: "SFMono Nerd Font"
+    family: "AtkynsonMono Nerd Font"
+    # family: "Intone Mono Nerd Font"
+    # family: "SFMono Nerd Font"
     # family: "UbuntuSansMono Nerd Font"
     # family: "JetBrainsMono Nerd Font Mono"
   bold:
-    family: "SFMono Nerd Font"
+    family: "AtkynsonMono Nerd Font"
+    # family: "Intone Mono Nerd Font"
+    # family: "SFMono Nerd Font"
     # family: "UbuntuSansMono Nerd Font"
     # family: "JetBrainsMono Nerd Font Mono"
   italic:
-    family: "SFMono Nerd Font"
+    family: "AtkynsonMono Nerd Font"
+    # family: "Intone Mono Nerd Font"
+    # family: "SFMono Nerd Font"
     # family: "UbuntuSansMono Nerd Font"
     # family: "JetBrainsMono Nerd Font Mono"
   size: 10.0
@@ -33,8 +39,9 @@ font:
   # size: 9.0
   offset:
     x: 0
-    y: 5
-    # y: 6
+    # y: 4
+    # y: 5
+    y: 7
   glyph_offset:
     x: 0
     y: 0

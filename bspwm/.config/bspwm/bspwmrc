@@ -22,18 +22,13 @@ bspc config normal_border_color "#282828"
 # bspc rule -a "*" split_dir=east
 bspc rule -a \* rectangle 600x500+0+0 center=true
 bspc rule -a qimgv state=floating
-# bspc rule -a sxiv state=floating
 bspc rule -a Xarchiver state=floating layer=normal
-bspc rule -a Tilix state=floating layer=normal
 bspc rule -a Galculator state=floating layer=normal rectangle=800x600+0+0
 bspc rule -a mpv state=floating layer=normal
 bspc rule -a Pavucontrol:pavucontrol state=floating
 bspc rule -a Lxappearance state=floating layer=normal
 bspc rule -a color-picker state=floating layer=normal
 bspc rule -a gimp state=floating layer=normal
-# bspc rule -a Gimp desktop='^9' follow=on
-# bspc rule -a obs desktop='^10' follow=on
-# bspc rule -a librewolf desktop='^2' follow=on
 
 # start up stuff
 xsetroot -cursor_name left_ptr &
@@ -43,15 +38,10 @@ xsetroot -cursor_name left_ptr &
 
 dunst -config ~/.config/bspwm/dunst/dunstrc &
 
-# picom --config ~/.config/bspwm/picom/picom.conf --animations -b &
-
-# xwallpaper --zoom ~/.dotfiles/pictures/mar.png &
 hsetroot -cover ~/.dotfiles/pictures/wallhaven-lyq2rq_3440x1440.png &
 
-## Polybar or tint
 ~/.config/bspwm/scripts/polybar-bspwm &
 
-# terminal
 # /usr/bin/alacritty &
 
 ## apps for systray if enabled
