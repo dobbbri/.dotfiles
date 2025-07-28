@@ -1,13 +1,15 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
+
+import:
+  - ~/.config/alacritty/fonts/JetBrainsMono.yml
+  - ~/.config/alacritty/themes/catppuccin_mocha.yaml
+
 window:
   dimensions:
     columns: 120
     lines: 31
-  padding:
-    x: 1
-    y: 0
+
   dynamic_padding: true
-  # decorations: none
   startup_mode: Windowed
   opacity: 0.85
 
@@ -15,69 +17,9 @@ scrolling:
   history: 10
   multiplier: 3
 
-font:
-  normal:
-    family: "AtkynsonMono Nerd Font"
-    # family: "Intone Mono Nerd Font"
-    # family: "SFMono Nerd Font"
-    # family: "UbuntuSansMono Nerd Font"
-    # family: "JetBrainsMono Nerd Font Mono"
-  bold:
-    family: "AtkynsonMono Nerd Font"
-    # family: "Intone Mono Nerd Font"
-    # family: "SFMono Nerd Font"
-    # family: "UbuntuSansMono Nerd Font"
-    # family: "JetBrainsMono Nerd Font Mono"
-  italic:
-    family: "AtkynsonMono Nerd Font"
-    # family: "Intone Mono Nerd Font"
-    # family: "SFMono Nerd Font"
-    # family: "UbuntuSansMono Nerd Font"
-    # family: "JetBrainsMono Nerd Font Mono"
-  size: 10.0
-  # size: 11.0
-  # size: 9.0
-  offset:
-    x: 0
-    # y: 4
-    # y: 5
-    y: 7
-  glyph_offset:
-    x: 0
-    y: 0
-
 draw_bold_text_with_bright_colors: true
 
 custom_cursor_colors: true
-
-colors:
-  background: "#000000"
-  foreground: "#ebdbb2"
-
-  normal:
-    black: "#1d2021"
-    red: "#cc241d"
-    green: "#98971a"
-    yellow: "#d79921"
-    blue: "#458588"
-    magenta: "#b16286"
-    cyan: "#689d6a"
-    white: "#a89984"
-
-  bright:
-    black: "#928374"
-    red: "#fb4934"
-    green: "#b8bb26"
-    yellow: "#fabd2f"
-    blue: "#83a598"
-    magenta: "#d3869b"
-    cyan: "#8ec07c"
-    white: "#ebdbb2"
-
-bell:
-  animation: EaseOutExpo
-  color: "0xffffff"
-  duration: 0
 
 key_bindings:
   - { key: V, mods: Command, action: Paste }
@@ -168,14 +110,9 @@ cursor:
   unfocused_hollow: true
 
 live_config_reload: true
-# debug:
-#   render_timer: false
-#   persistent_logging: false
-#   log_level: OFF
-#   print_events: false
-#   ref_test: false
+
 shell:
   program: /usr/bin/bash
   args:
-     - -c
-     - "~/.pfetch && bash"
+    - -c
+    - "~/.pfetch && bash"
