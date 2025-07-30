@@ -17,12 +17,11 @@ echo "
 # ========================================
 install_packages() {
   echo "Installing required packages..."
-  sudo apt install -y xorg \
-    xbacklight xbindkeys xvkbd xinput xwallpaper brightnessctl \
+  sudo apt install -y xorg xorg-dev \
+    xbacklight xbindkeys xvkbd xinput hsetroot xsetroot brightnessctl \
     bspwm sxhkd polybar network-manager pcmanfm lxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
-    exa flameshot qimgv rofi dunst policykit-1-gnome\
-    libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
+    exa flameshot qimgv rofi dunst policykit-1-gnome libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
     gparted neofetch htop alsa-utils exa color-picker mintstick atril \
     transmission feh xarchiver curl unzip ssh-askpass wget dconf-editor stow \
     lxtask fzf yaru-theme-gtk yaru-theme-icon heif-gdk-pixbuf webp-pixbuf-loader \
@@ -31,8 +30,11 @@ install_packages() {
 }
 
 install_reqs() {
-    echo "Updating package lists and installing required dependencies..."
-    sudo apt install -y build-essential cmake meson ninja-build git wget curl pkg-config || { echo "Package installation failed."; exit 1; }
+  echo "Updating package lists and installing required dependencies..."
+  sudo apt install -y build-essential cmake meson ninja-build git wget curl pkg-config || {
+    echo "Package installation failed."
+    exit 1
+  }
 }
 
 install_laptop_packages() {
@@ -155,8 +157,11 @@ gtk-xft-hinting=1
 gtk-xft-hintstyle=hintfull
 EOF
 
+  # Ensure the directories exist
+  mkdir -p ~/.config/gtk-2.0
+
   # Write to ~/.gtkrc-2.0
-  cat <<EOF >~/.gtkrc-2.0
+  cat <<EOF >~/.config/gtk-2.0/.gtkrc-2.0
 gtk-theme-name=Yaru-Dark
 gtk-icon-theme-name=Yaru-Dark
 gtk-font-name="Sans 10"
@@ -171,6 +176,21 @@ gtk-enable-input-feedback-sounds=1
 gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
+EOF
+
+  # Write to ~/.config/gtk-2.0/gtkfilechooser.ini
+  cat <<EOF >~/.config/gtk-2.0/gtkfilechooser.ini
+[Filechooser Settings]
+LocationMode=path-bar
+ShowHidden=false
+ShowSizeColumn=true
+GeometryX=0
+GeometryY=28
+GeometryWidth=960
+GeometryHeight=1051
+SortColumn=name
+SortOrder=ascending
+StartupMode=recent
 EOF
 
   echo "GTK settings updated."
@@ -235,8 +255,5 @@ install_fonts
 fix_and_remove_packages
 change_theming
 change_power_off_key
-
-# FT-Labs picom and nerdfonts are installed
-bash ~/.dotfiles/bspwm/.config/bspwm/scripts/install_picom.sh
 
 echo "All installations completed successfully!"

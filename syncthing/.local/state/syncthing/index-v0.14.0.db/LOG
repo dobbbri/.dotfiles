@@ -206,3 +206,6 @@
 16:40:18.564361 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
 16:40:18.567872 table@compaction committed F-1 S-8KiB Ke·0 D·137 T·11.722359ms
 16:40:18.568213 table@remove removed @42
+=============== Jul 29, 2025 (-03) ===============
+06:52:14.636274 db@close closing
+06:52:14.640526 db@close done T·3.921044ms
