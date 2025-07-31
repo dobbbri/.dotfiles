@@ -1,4 +1,4 @@
-#!/bin/shell
+#!/bin/bash
 
 # vi  /etc/apt/sources.list 
 # add "contrib non-free"

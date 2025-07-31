@@ -1,4 +1,4 @@
-#!/bin/shell
+#!/bin/bash
 
 echo "install sudo ---------------------------------------------------------"
 #login with my user as password

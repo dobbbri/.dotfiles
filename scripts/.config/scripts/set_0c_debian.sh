@@ -1,4 +1,4 @@
-#!/bin/shell
+#!/bin/bash
 echo "fix brightness ------------------------------------------------------"
 sudo apt install brightnessctl -yy
 

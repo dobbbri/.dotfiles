@@ -38,8 +38,6 @@ map(
 )
 
 -- Fterm
-map("n", ".", "<cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
-map("t", ".", "<C-\\><C-n><cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
 map("n", "<leader>t", "<cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
 map("t", "<leader>t", "<C-\\><C-n><cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "install ssh ------------------------------------------------------------"
 # got to https://github.com/dobbbri/.ssh and Downloads repo as zip file

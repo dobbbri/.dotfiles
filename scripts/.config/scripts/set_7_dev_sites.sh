@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # git clone git@github.com:dobbbri/dotfiles.git
 # git clone git@github.com:elisapetcare/epc_in_dev.git

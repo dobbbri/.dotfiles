@@ -2,37 +2,47 @@
 
 # Close all dusnt alert
 super + semicolon
-  dunstctl close-all
+  	dunstctl close-all
 
-# Launch Browser ()
+# Launch Firefox (Web Browser)
+super + alt + w
+    firefox 
+
+# Launch MS Edge (Web Browser)
 super + shift + w
-  microsoft-edge-stable 
+  	microsoft-edge-stable 
 
-# Launch Browser ()
+# Launch Librewolf (Web Browser)
 super + w
-  librewolf
+  	librewolf
 
-# Launch Terminal ()
+# Launch Alacritty (Terminal)
 super + Return
-  alacritty	#sakura
+  	alacritty	
 
-# Launch Terminal ()
+# Launch Alacritty (Terminal)
 super + t
-  alacritty #sakura 
+  	alacritty  
 
-# Launch Rofi Application Menu
+# Launch Application Menu (Rofi) 
 super + space
-   	~/.config/rofi/launchers/type-2/launcher.sh
+   	~/.config/bspwm/rofi/launchers/type-3/launcher.sh
 
-# Shutdown or Reboot
+super + shift + space
+   	~/.config/bspwm/rofi/launchers/type-3/launcher.sh
+
+# Launch Exit Menu (Rofi) 
 super + x
-	~/.config/rofi/powermenu/type-1/powermenu.sh
+	~/.config/bspwm/rofi/powermenu/type-1/powermenu.sh
+
+super + shift + x
+  bspc quit
 
 # Show Keybinding Help Script
 super + h
- ~/.dotfiles/bspwm/.config/bspwm/scripts/help
+ 	~/.config/bspwm/scripts/help
 
-# Launch File Manager (Thunar)
+# Launch File Manager (Pcmanfm)
 super + f
 	pcmanfm
 
@@ -118,11 +128,11 @@ super + shift + {1-9,0,F1,F2}
 
 # Expand window width both sides
 super + alt + Left
-  bspc node -z right -40 0; bspc node -z left -40 0
+  	bspc node -z right -40 0; bspc node -z left -40 0
 
 # Shrink window width both sides 
 super + alt + Right
-  bspc node -z left 40 0; bspc node -z right 40 0
+  	bspc node -z left 40 0; bspc node -z right 40 0
 
 # Resize Window: Shrink Down
 super + alt + Down
@@ -134,7 +144,7 @@ super + alt + Up
 
 # Mute Volume (Custom Script)
 XF86AudioMute	
-  amixer set Master toggle
+  	amixer set Master toggle
 
 # Increase Volume (Using amixer)
 XF86AudioRaiseVolume

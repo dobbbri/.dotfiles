@@ -17,8 +17,8 @@ echo "
 # ========================================
 install_packages() {
   echo "Installing required packages..."
-  sudo apt install -y xorg xorg-dev \
-    xbacklight xbindkeys xvkbd xinput hsetroot xsetroot brightnessctl \
+  sudo apt install -y xorg xorg-dev alacritty \
+    xbacklight xbindkeys xvkbd xinput hsetroot brightnessctl \
     bspwm sxhkd polybar network-manager pcmanfm lxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
     exa flameshot qimgv rofi dunst policykit-1-gnome libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \

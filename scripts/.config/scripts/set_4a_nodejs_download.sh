@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # to make execurable
 # chmod +x install_nodejs.sh 
 

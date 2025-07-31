@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # sudo dpkg -i <pakage_name>
 # https://bitwarden.com/download/

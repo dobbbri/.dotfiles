@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 xdg-user-dirs-update
 
