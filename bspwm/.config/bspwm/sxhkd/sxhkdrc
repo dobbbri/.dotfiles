@@ -5,7 +5,7 @@ super + semicolon
   	dunstctl close-all
 
 # Launch Firefox (Web Browser)
-super + alt + w
+super + w
     firefox 
 
 # Launch MS Edge (Web Browser)
@@ -13,7 +13,7 @@ super + shift + w
   	microsoft-edge-stable 
 
 # Launch Librewolf (Web Browser)
-super + w
+super + alt + w
   	librewolf
 
 # Launch Alacritty (Terminal)

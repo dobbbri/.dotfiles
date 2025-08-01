@@ -50,7 +50,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 15
+    corner_radius = 0
     force_xinerama = false
 
     # Progress bar
@@ -79,21 +79,21 @@
 
 [urgency_low]
     background = "#00141d"
-    foreground = "#80bfff"
-    frame_color = "#539bf5"
+    foreground = "#ffffff"
+    frame_color = "#a8a9eb"
     timeout = 10
-    highlight = "#539bf5"
+    highlight = "#a8a9eb"
 
 [urgency_normal]
     background = "#00141d"
     foreground = "#ffffff"
-    frame_color = "#b3e5fc"
-    timeout = 10
-    highlight = "#66d9ff"
+    frame_color = "#f9cc6c"
+    timeout = 1    
+    highlight = "#f9cc6c"
 
 [urgency_critical]
-    background = "#1a0000"
+    background = "#00141d"
     foreground = "#ffffff"
-    frame_color = "#d29922"
-    timeout = 30
-    highlight = "#d29922"
+    frame_color = "#fd6883"
+    timeout = 30 
+    highlight = "#fd6883"

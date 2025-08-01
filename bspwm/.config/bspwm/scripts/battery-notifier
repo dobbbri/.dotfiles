@@ -4,7 +4,7 @@ LOW_LEVEL=25
 CRITICAL_LEVEL=5
 HIBERNATE_LEVEL=3
 
-LEVEL=$(cat /sys/class/power_supply/BAT0/capacity)
+LEVEL=$(acpi -b | grep "Battery 0" | grep -P -o '[0-9]+(?=%)')
 STATUS=$(cat /sys/class/power_supply/BAT0/status)
 
 hibernate() {
