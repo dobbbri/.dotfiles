@@ -1,13 +1,13 @@
--- vim.api.nvim_create_autocmd("ColorScheme", {
---   pattern = "*",
---   callback = function()
---     local set_default_hl = function(name, data)
---       data.default = true
---       vim.api.nvim_set_hl(0, name, data)
---     end
---     set_default_hl("MiniFilesTitle", { bg = "None" })
---   end,
--- })
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    local set_default_hl = function(name, data)
+      data.default = true
+      vim.api.nvim_set_hl(0, name, data)
+    end
+    set_default_hl("MiniFilesTitle", { link = "FloatBorder" })
+  end,
+})
 
 --  jump to the last place you’ve visited in a file before exiting
 vim.api.nvim_create_autocmd("BufReadPost", {

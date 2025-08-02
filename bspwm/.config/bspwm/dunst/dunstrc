@@ -12,7 +12,7 @@
     separator_height = 2
     padding = 15
     horizontal_padding = 15
-    frame_width = 3
+    frame_width = 2
     frame_color = "#b3e5fc"
     separator_color = auto
     sort = yes
