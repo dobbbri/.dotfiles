@@ -36,6 +36,7 @@ xsetroot -cursor_name left_ptr &
 # /usr/bin/lxpolkit &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
+
 dunst -config ~/.config/bspwm/dunst/dunstrc &
 
 hsetroot -cover ~/.dotfiles/pictures/wallhaven-lyq2rq_3440x1440.png &
@@ -47,6 +48,8 @@ hsetroot -cover ~/.dotfiles/pictures/wallhaven-lyq2rq_3440x1440.png &
 ## apps for systray if enabled
 # volumeicon &
 # nm-applet &
+
+gammastep &
 
 # (re)load sxhkd for keybinds
 if hash sxhkd >/dev/null 2>&1; then
