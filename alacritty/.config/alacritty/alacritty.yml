@@ -115,4 +115,4 @@ shell:
   program: /usr/bin/bash
   args:
     - -c
-    - "~/.pfetch && bash"
+    - "fastfetch && bash"
