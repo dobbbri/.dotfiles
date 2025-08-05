@@ -21,17 +21,7 @@ require("lazy").setup({
   { import = "plugins" },
 }, {
   defaults = { lazy = false },
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        "gzip",
-        "netrwPlugin",
-        "tarPlugin",
-        "tutor",
-        "zipPlugin",
-      },
-    },
-  },
+  performance = { rtp = { disabled_plugins = { "gzip", "netrwPlugin", "tarPlugin", "tutor", "zipPlugin" } } },
   debug = false,
 })
 
