@@ -2,7 +2,7 @@
 
 # dotfiles
 alias bsp='cd ~/.dotfiles/bspwm/.config/bspwm/'
-alias vv='cd ~/.dotfiles/newvim/.config/nvim/'
+alias vv='cd ~/.dotfiles/tinyvim/.config/nvim/'
 alias dd='cd ~/.dotfiles/ '
 
 # site
@@ -125,7 +125,7 @@ mkcd() {
 	mkdir -p "$1" && cd "$1"
 }
 
-INN() {
+installNeovimNightly() {
 rm -rf /home/sdobri/.cache/nvim
 rm -rf /home/sdobri/.local/share/nvim
 rm -rf /home/sdobri/.local/state/nvim
@@ -141,7 +141,6 @@ installNeovim() {
 	rm -rf /home/sdobri/.local/share/nvim
 	rm -rf /home/sdobri/.local/state/nvim
 	sudo rm /usr/local/bin/nvim
-	# wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage
 	wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.appimage
 	chmod u+x nvim-linux-x86_64.appimage
 	sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim

@@ -30,7 +30,7 @@ opt.updatetime = 250
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
 opt.cursorlineopt = "number"
-opt.termguicolors = true
+-- opt.termguicolors = true
 
 -- Indenting
 opt.expandtab = true

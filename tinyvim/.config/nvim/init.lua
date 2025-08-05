@@ -17,7 +17,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { import = "colorschemes.dracula" },
+  { import = "colors.solarizedosaka" },
   { import = "plugins" },
 }, {
   defaults = { lazy = false },

@@ -59,7 +59,8 @@ map("n", "<leader>X", "<cmd>%bd<cr>", { desc = "Close all buffers" })
 -- map("n", "<leader>", "<cmd>%bd|e#|bd#<cr>", { desc = "Close other buffers" })
 
 -- code format
-map({ "n", "v" }, "f", "<cmd>Format<CR>", { desc = "Format File" })
+-- map({ "n", "v" }, "f", "<cmd>Format<CR>", { desc = "Format File" })
+map({ "n", "v" }, "f", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 3000 })<cr>", { desc = "Format File" })
 
 -- search / replace
 map("n", "<leader>s", ":%s///gcI<Left><Left><Left><Left><Left>", { desc = "Search and replace in current buffer" })
