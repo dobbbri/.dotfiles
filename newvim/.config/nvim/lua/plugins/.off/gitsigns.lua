@@ -1,0 +1,16 @@
+-- {
+--   "lewis6991/gitsigns.nvim",
+--   event = { "BufReadPre", "BufNewFile" },
+--   opts = {
+--     signcolumn = false,
+--     numhl = true,
+--   },
+-- },
+--
+--
+--
+-- {
+--   "lewis6991/gitsigns.nvim",
+--   event = { "BufReadPre", "BufNewFile" },
+--   opts = require("plugins.configs.gitsigns"),
+-- },

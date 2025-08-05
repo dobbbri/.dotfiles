@@ -49,7 +49,7 @@ hsetroot -cover ~/.dotfiles/pictures/wallhaven-lyq2rq_3440x1440.png &
 # volumeicon &
 # nm-applet &
 
-gammastep &
+# gammastep &
 
 # (re)load sxhkd for keybinds
 if hash sxhkd >/dev/null 2>&1; then
