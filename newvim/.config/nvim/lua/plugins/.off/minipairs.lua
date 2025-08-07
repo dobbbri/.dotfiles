@@ -1,13 +1,3 @@
-return {
-  "echasnovski/mini.pairs",
-  version = false,
-  config = function()
-    require("mini.pairs").setup({
-      modes = {
-        insert = true,
-        command = true,
-        terminal = true,
-      },
-    })
-  end,
-}
+vim.pack.add({ "https://github.com/echasnovski/mini.pairs" })
+
+require("mini.pairs").setup()

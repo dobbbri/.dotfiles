@@ -59,4 +59,29 @@ M.parser_names = function()
   }
 end
 
+M.load_plugins = function(plugins_path)
+  package.path = package.path .. ";?.lua;" .. plugins_path .. "/?.lua"
+
+  local function is_lua_file(name)
+    return name:sub(-4) == ".lua"
+  end
+
+  local handle = vim.loop.fs_scandir(plugins_path)
+  if not handle then
+    print("Pasta de plugins não encontrada: " .. plugins_path)
+    return
+  end
+
+  while true do
+    local name = vim.loop.fs_scandir_next(handle)
+    if not name then break end
+    if is_lua_file(name) then
+      local plugin_name = name:gsub("%.lua$", "")
+      -- print("Carregando plugin:", plugin_name)
+      local require_path = plugins_path:gsub("/", ".") .. "." .. plugin_name
+      require(require_path)
+    end
+  end
+end
+
 return M

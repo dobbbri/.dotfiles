@@ -2,7 +2,8 @@
 
 # dotfiles
 alias bsp='cd ~/.dotfiles/bspwm/.config/bspwm/'
-alias vv='cd ~/.dotfiles/tinyvim/.config/nvim/'
+# alias vv='cd ~/.dotfiles/tinyvim/.config/nvim/'
+alias vv='cd ~/.dotfiles/newvim/.config/nvim/'
 alias dd='cd ~/.dotfiles/ '
 
 # site

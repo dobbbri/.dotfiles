@@ -7,6 +7,7 @@ echo "- Install PNPM packages --------------------------------------------------
 npm i -g pnpm
 npm i -g neovim tree-sitter tree-sitter-cli npm-check-updates
 npm i -g typescript typescript-language-server
+npm i -g @ast-grep/cli
 
 echo "- pnpm enable and activate ----------------------------------------------"
 corepack enable
