@@ -1,11 +1,11 @@
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
-    local set_default_hl = function(name, data)
-      data.default = true
-      vim.api.nvim_set_hl(0, name, data)
-    end
-    set_default_hl("MiniFilesTitle", { link = "FloatBorder" })
+-- vim.cmd(":hi MiniFilesTitle guibg=NONE")
+    vim.api.nvim_set_hl(0, "MiniFilesTitle", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "MiniPickBorderText", { bg = "NONE" })
+    -- vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
+    -- vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
   end,
 })
 

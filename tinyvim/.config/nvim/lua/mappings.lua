@@ -19,11 +19,15 @@ map("n", "<leader>e", function() require("mini.files").open() end, { desc = "Sho
 map("n", "<leader>f", "<cmd>Pick files<CR>", { desc = "List files" })
 map("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick resume" })
 map("n", "<leader>w", "<cmd>Pick grep_live<CR>", { desc = "Search by word" })
-map("n", "<leader><space>", "<cmd>Pick buffers<CR>", { desc = "List opened buffers" })
+ map("n", "<leader><space>", "<cmd>Pick buffers<CR>", { desc = "List opened buffers" })
 
 -- diagnostics
 map("n", "<leader>D", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to diagnostics" })
 map("n", "<leader>d", vim.diagnostic.open_float, { desc = "show diagnostic Info" })
+map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic Quickfix list' })
+
+-- reload source
+map('n', '<leader>o', ':update<CR> :source<CR>', {desc = "Reload source code"})
 
 -- log
 map("n", "<leader>l", function() require("logsitter").log() end, { desc = "Logsitter: log current" })
@@ -40,14 +44,11 @@ map(
 map("n", "<leader>t", "<cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
 map("t", "<leader>t", "<C-\\><C-n><cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
 
--- URL-Open
-vim.keymap.set("n", "<leader>o", "<esc>:URLOpenUnderCursor<cr>", { desc = "Open Url under cursor" })
-
 -- Gitsigns
-map("n", "<leader>P", "<cmd>Gitsigns diffthis<CR>", { desc = "Diff This" })
-map("n", "<leader>p", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git preview hunk" })
-map("n", "<leader>g", "<cmd>Gitsigns stage_buffer<CR>", { desc = "Git stage buffer" })
-map("n", "<leader>G", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Git reset buffer" })
+-- map("n", "<leader>P", "<cmd>Gitsigns diffthis<CR>", { desc = "Diff This" })
+-- map("n", "<leader>p", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git preview hunk" })
+-- map("n", "<leader>g", "<cmd>Gitsigns stage_buffer<CR>", { desc = "Git stage buffer" })
+-- map("n", "<leader>G", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Git reset buffer" })
 
 -- move buffer
 map("n", "<Tab>", "<cmd>bnext<CR>")
@@ -76,6 +77,9 @@ map({ "n", "v" }, "<leader>S", function()
 end, { desc = "Search and replace in project" })
 
 --
+
+-- URL-Open
+-- vim.keymap.set("n", "<leader>o", "<esc>:URLOpenUnderCursor<cr>", { desc = "Open Url under cursor" })
 
 -- global lsp mappings
 -- map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Diagnostic LSP" })

@@ -1,27 +1,25 @@
 vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
 
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client:supports_method("textDocument/completion") then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
-  end,
-})
-
-vim.cmd("set completeopt+=noselect")
-
-vim.lsp.enable({ "astro", "ts_ls", "tailwindcss", "lua_ls" })
-vim.lsp.config('lua_ls', {
-  settings = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-      completion = { callSnippet = "Replace" },
-      diagnostics = { globals = { "vim" } },
+local servers = {
+  astro = {},
+  ts_ls = {},
+  tailwindcs = {},
+  lua_ls = {
+    settings = {
+      Lua = {
+        workspace = { checkThirdParty = false },
+        telemetry = { enable = false },
+        completion = { callSnippet = "Replace" },
+        diagnostics = { globals = { "vim" } },
+      },
     },
-  },
-})
+  }
+}
+
+for srv, opts in pairs(servers) do
+  if opts then vim.lsp.config(srv, opts) end
+  vim.lsp.enable(srv)
+end
 
 vim.diagnostic.config({ virtual_text = true, severity_sort = true })
 
