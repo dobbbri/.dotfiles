@@ -2,7 +2,7 @@ require("options")
 require("commands")
 require("mappings")
 
-require("colors.tokyonight")
+require("colors.gruvbox")
 
 require("plugins._treesitter")
 require("plugins.blink")
