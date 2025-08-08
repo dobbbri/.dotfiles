@@ -6,6 +6,9 @@ alias bsp='cd ~/.dotfiles/bspwm/.config/bspwm/'
 alias vv='cd ~/.dotfiles/newvim/.config/nvim/'
 alias dd='cd ~/.dotfiles/ '
 
+# burn iso
+alias burniso="sudo mintstick -m iso"
+
 # site
 alias ss='cd ~/Sites/'
 alias sepc='cd ~/Sites/epc_in_dev/'

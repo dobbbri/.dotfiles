@@ -4,6 +4,7 @@ local servers = {
   astro = {},
   ts_ls = {},
   tailwindcs = {},
+  json_ls = {},
   lua_ls = {
     settings = {
       Lua = {
