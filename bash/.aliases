@@ -110,7 +110,10 @@ alias gsync="git pull && git push"
 alias ggg="gaac 'update...' && gps"
 
 gg() {
-	git add . && git commit -m "$1" && git push && git status --short
+	git add .  
+  git commit -m "$1" 
+  git push 
+  git status --short
 }
 
 #Clean cache

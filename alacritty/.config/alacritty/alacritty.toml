@@ -1,0 +1,19 @@
+# https://alacritty.org/config-alacritty.html
+
+[general]
+import = [
+  "~/.config/alacritty/fonts/JetBrainsMono.toml",
+]
+
+[window]
+dynamic_padding = true
+opacity = 1.0
+
+[window.padding] 
+x = 0 
+y = 0 
+
+[cursor] 
+# shape = "Beam"
+# blinking = "Never"
+

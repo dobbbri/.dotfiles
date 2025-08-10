@@ -10,8 +10,9 @@ ssh-keygen -t ed25519 -C "sergiodobri@gmail.com"
 ssh-add ~/.ssh/id_ed25519
 
 # Adding a new SSH key to your github account
-cat ~/.ssh/id_ed25519.pub
+cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
 
-echo "Then select and copy the contents of the id_ed25519.pub file displayed in the terminal to your clipboard, add to to your github account"
+echo "the contents of the id_ed25519.pub file copied to your clipboard, add to to your github account"
+
 
 # chmod 400 $HOME/.ssh/id_ed25519

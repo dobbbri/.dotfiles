@@ -21,9 +21,9 @@ install_packages() {
     xbacklight xbindkeys xvkbd xinput hsetroot brightnessctl \
     bspwm sxhkd polybar network-manager pcmanfm lxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
-    exa flameshot qimgv rofi dunst policykit-1-gnome libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
-    gparted neofetch htop alsa-utils exa color-picker mintstick atril \
-    transmission feh xarchiver curl unzip ssh-askpass wget dconf-editor stow \
+    eza flameshot qimgv rofi dunst libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
+    gparted htop pipewire color-picker mintstick atril \
+    transmission feh xarchiver curl unzip ssh-askpass wget stow \
     lxtask fzf papirus-icon-theme yaru-theme-gtk yaru-theme-icon heif-gdk-pixbuf webp-pixbuf-loader \
     xdg-user-dirs-gtk || echo "Warning: Package installation failed."
   echo "Package installation completed."

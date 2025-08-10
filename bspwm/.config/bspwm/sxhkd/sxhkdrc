@@ -12,13 +12,9 @@ super + w
 super + shift + w
   	microsoft-edge-stable 
 
-# Launch Librewolf (Web Browser)
-super + alt + w
-  	librewolf
-
 # Launch Alacritty (Terminal)
 super + Return
-  	alacritty	
+  	lxterminal	
 
 # Launch Alacritty (Terminal)
 super + t
@@ -26,14 +22,14 @@ super + t
 
 # Launch Application Menu (Rofi) 
 super + space
-   	~/.config/bspwm/rofi/launchers/type-3/launcher.sh
+   	~/.config/bspwm/rofi/launchers/launcher.sh
 
 super + shift + space
-   	~/.config/bspwm/rofi/launchers/type-3/launcher.sh
+   	~/.config/bspwm/rofi/launchers/launcher.sh
 
 # Launch Exit Menu (Rofi) 
 super + x
-	~/.config/bspwm/rofi/powermenu/type-1/powermenu.sh
+	~/.config/bspwm/rofi/powermenu/powermenu.sh
 
 super + shift + x
   bspc quit
