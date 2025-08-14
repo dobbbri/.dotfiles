@@ -36,7 +36,7 @@ super + shift + x
 
 # Show Keybinding Help Script
 super + h
- 	~/.config/bspwm/scripts/help
+ 	~/.config/bspwm/rofi/shortcutshelp/shortcutshelp.sh
 
 # Launch File Manager (Pcmanfm)
 super + f

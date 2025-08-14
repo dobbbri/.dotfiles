@@ -1,30 +1,21 @@
 #!/usr/bin/env bash
 
-## Author : Aditya Shakya (adi1090x)
-## Github : @adi1090x
-#
-## Rofi   : Power Menu
-#
-## Available Styles
-#
-## style-1   style-2   style-3   style-4   style-5
-
 # Current Theme
 dir="$HOME/.config/bspwm/rofi/powermenu"
-theme='style-3'
+theme='style'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 
 # Options
-shutdown=' Shutdown'
-reboot=' Reboot'
-lock=' Lock'
-suspend=' Suspend'
-logout=' Logout'
-yes=' Yes'
-no=' No'
+shutdown='  Shutdown'
+reboot='󰑐  Reboot'
+lock='  Lock'
+suspend='  Suspend'
+logout='󰍃  Logout'
+yes='  Yes'
+no='  No'
 
 # Rofi CMD
 rofi_cmd() {

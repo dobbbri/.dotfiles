@@ -22,7 +22,7 @@ install_packages() {
     bspwm sxhkd polybar network-manager pcmanfm lxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
     eza flameshot qimgv rofi dunst libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
-    gparted htop pipewire color-picker mintstick atril \
+    gparted htop alsa-utils color-picker mintstick atril \
     transmission feh xarchiver curl unzip ssh-askpass wget stow \
     lxtask fzf papirus-icon-theme yaru-theme-gtk yaru-theme-icon heif-gdk-pixbuf webp-pixbuf-loader \
     xdg-user-dirs-gtk || echo "Warning: Package installation failed."
@@ -177,22 +177,6 @@ gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
 EOF
-
-  # Write to ~/.config/gtk-2.0/gtkfilechooser.ini
-  cat <<EOF >~/.config/gtk-2.0/gtkfilechooser.ini
-[Filechooser Settings]
-LocationMode=path-bar
-ShowHidden=false
-ShowSizeColumn=true
-GeometryX=0
-GeometryY=28
-GeometryWidth=960
-GeometryHeight=1051
-SortColumn=name
-SortOrder=ascending
-StartupMode=recent
-EOF
-
   echo "GTK settings updated."
 }
 
@@ -241,6 +225,16 @@ EOF
   echo "Power Off Key set. Needs Reboot"
 }
 
+
+fix_alsa_restore_std_boot_error() {
+echo '
+to fix in 90-alsa-restore.rules.in not found LABEL="alsa_restore_std":
+sudo vim /usr/lib/udev/rules.d/90-alsa-restore.rules
+in line 26: 
+replace a label alsa_restore_go to alsa_restore_std 
+save and reboot'
+}
+
 # ========================================
 # Main Script Execution
 # ========================================
@@ -255,5 +249,6 @@ install_fonts
 fix_and_remove_packages
 change_theming
 change_power_off_key
+fix_alsa_restore_std_boot_error
 
 echo "All installations completed successfully!"

@@ -1,30 +1,31 @@
-vim.pack.add({ "https://github.com/chrisgrieser/nvim-origami" })
+vim.pack.add({
+  { src = "https://github.com/kevinhwang91/nvim-ufo" },
+  { src = 'https://github.com/kevinhwang91/promise-async' },
+  { src = 'https://github.com/luukvbaal/statuscol.nvim' }
+})
 
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
+local builtin = require("statuscol.builtin")
+require("statuscol").setup({
+  relculright = true,
+  segments = {
+    { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+    { text = { "%s" },                  click = "v:lua.ScSa" },
+    { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
+  }
+})
 
-require("origami").setup {
-  useLspFoldsWithTreesitterFallback = true,
-  pauseFoldsOnSearch = true,
-  foldtext = {
-    enabled = true,
-    padding = 3,
-    lineCount = {
-      template = "%d lines", -- `%d` is replaced with the number of folded lines
-      hlgroup = "Comment",
-    },
-    diagnosticsCount = true, -- uses hlgroups and icons from `vim.diagnostic.config().signs`
-    gitsignsCount = true,   -- requires `gitsigns.nvim`
-  },
-  autoFold = {
-    enabled = true,
-    kinds = { "comment", "imports" },
-  },
-  foldKeymaps = {
-    setup = true, -- modifies `h` and `l`
-    hOnlyOpensOnFirstColumn = false,
-  },
-}
+vim.o.foldcolumn = '1' -- is not bad
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
-vim.keymap.set("n", "<c-h>", function() require("origami").h() end)
-vim.keymap.set("n", "<c-l>", function() require("origami").l() end)
+-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+
+require('ufo').setup({
+  provider_selector = function()
+    return { 'treesitter', 'indent' }
+  end
+})
