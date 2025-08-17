@@ -5,7 +5,7 @@ require("mini.diff").setup({
 })
 
 require("mini.files").setup({
-  content = { filter = function(entry) return not vim.tbl_contains(require("util").ignore_files(), entry.name) end },
+  content = { filter = function(entry) return not vim.tbl_contains(ignore_files(), entry.name) end },
   mappings = { close = "q", go_in_plus = "<CR>", go_out_plus = "<left>" },
 })
 vim.keymap.set("n", "-", function() require("mini.files").open() end, { desc = "Show File Manager" })
@@ -18,7 +18,7 @@ require("mini.move").setup({
 require("mini.pairs").setup()
 
 require("mini.pick").setup({
-  window = { config = require("util").win_config() }
+  window = { config = win_config() }
 })
 vim.keymap.set("n", "<leader>f", "<cmd>Pick files<CR>", { desc = "List files" })
 vim.keymap.set("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick resume" })

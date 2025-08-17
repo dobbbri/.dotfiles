@@ -1,6 +1,4 @@
-local M = {}
-
-M.ignore_files = function()
+_G.ignore_files = function()
   return {
     ".DS_Store",
     ".git",
@@ -15,7 +13,7 @@ M.ignore_files = function()
   }
 end
 
-M.win_config = function()
+_G.win_config = function()
   local height = math.floor(0.618 * vim.o.lines)
   local width = math.floor(0.618 * vim.o.columns)
   return {
@@ -27,7 +25,7 @@ M.win_config = function()
   }
 end
 
-M.parser_names = function()
+_G.parser_names = function()
   return {
     "vim",
     "lua",
@@ -59,15 +57,3 @@ M.parser_names = function()
   }
 end
 
-M.load_plugins = function(path)
-  local config_path = vim.fn.stdpath("config") .. path .. "/"
-  print(config_path)
-
-  for _, file in ipairs(vim.fn.readdir(config_path, [[v:val =~ '\.lua$']])) do
-    local plugin = "." .. config_path .. file:gsub("%.lua$", "")
-    print(plugin)
-    require(plugin)
-  end
-end
-
-return M

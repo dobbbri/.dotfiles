@@ -17,8 +17,10 @@ cd $HOME/Downloads/
 # sudo dpkg -i min-1.33.1-amd64.deb
 
 # echo "gitHub desktop -----------------------------------------------------------"
-# wget https://github.com/shiftkey/desktop/releases/download/release-3.4.8-linux1/GitHubDesktop-linux-amd64-3.4.8-linux1.deb
-# sudo dpkg -i GitHubDesktop-linux-amd64-3.4.8-linux1.deb
+wget -qO - https://mirror.mwt.me/shiftkey-desktop/gpgkey | gpg --dearmor | sudo tee /usr/share/keyrings/mwt-desktop.gpg > /dev/null
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg] https://mirror.mwt.me/shiftkey-desktop/deb/ any main" > /etc/apt/sources.list.d/mwt-desktop.list'
+
+sudo apt update && sudo apt install github-desktop
 
 echo "fastfetch -------------------------------------------------------------------"
 wget https://github.com/fastfetch-cli/fastfetch/releases/download/2.49.0/fastfetch-linux-amd64.deb
