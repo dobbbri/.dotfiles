@@ -19,4 +19,7 @@ git clone https://github.com/dobbbri/.dotfiles.git
 exit
 # login
 
+https://wiki.debian.org/brcm80211
 
+sudo apt install broadcom-sta-dkms linux-headers-$(uname -r)
+sudo apt update && apt install firmware-brcm80211
