@@ -19,7 +19,14 @@ git clone https://github.com/dobbbri/.dotfiles.git
 exit
 # login
 
-https://wiki.debian.org/brcm80211
+# https://wiki.debian.org/brcm80211
 
 sudo apt install broadcom-sta-dkms linux-headers-$(uname -r)
 sudo apt update && apt install firmware-brcm80211
+
+# With BCM4313-based devices, brcmsmac driver information may be displayed even after system boot.
+# You can ignore/hide this by adding a "dmesg -n 3" line to your /etc/rc.local file. 
+
+sudo vim /etc/rc.local
+# add:
+dmesg -n 3
