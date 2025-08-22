@@ -31,7 +31,7 @@ install_packages() {
 
 install_reqs() {
   echo "Updating package lists and installing required dependencies..."
-  sudo apt install -y build-essential cmake meson ninja-build git wget curl pkg-config || {
+  sudo apt install -y build-essential cmake meson ninja-build wget pkg-config || {
     echo "Package installation failed."
     exit 1
   }
@@ -39,7 +39,7 @@ install_reqs() {
 
 install_laptop_packages() {
   echo "Optimize Linux Laptop Battery Life and thermal changes"
-  sudo apt install -y tlp tlp-rdw smartmontools acpi-support acpi-call-dkms thermald
+# sudo apt install -y tlp tlp-rdw smartmontools acpi-support acpi-call-dkms thermald
   echo "Package installation completed."
 }
 
@@ -50,7 +50,7 @@ fix_and_remove_packages() {
   sudo cp /home/sdobri/.dotfiles/scripts/.config/scripts/config/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf
 
   echo "Remove geoclue-2.0(redshift) services"
-  sudo apt --purge --yes autoremove geoclue-2.0
+#  sudo apt --purge --yes autoremove geoclue-2.0
 
   echo "remove modemmanager"
   sudo apt --purge --yes autoremove modemmanager
@@ -71,9 +71,9 @@ fix_and_remove_packages() {
 # and ACPI (for power management) are enabled on the system for proper operation.
 enable_services() {
   echo "Enabling required services..."
-  sudo systemctl enable acpid || echo "Warning: Failed to enable acpid."
+ # sudo systemctl enable acpid || echo "Warning: Failed to enable acpid."
 
-  sudo tlp start
+ # sudo tlp start
 
   # brightnessctl --list
   sudo brightnessctl --device='smc::kbd_backlight' set 30
@@ -242,13 +242,13 @@ echo "Starting installation process..."
 
 install_packages
 install_reqs
-install_laptop_packages
-enable_services
+#install_laptop_packages
+#enable_services
 setup_user_dirs
 install_fonts
 fix_and_remove_packages
 change_theming
-change_power_off_key
-fix_alsa_restore_std_boot_error
+#change_power_off_key
+#fix_alsa_restore_std_boot_error
 
 echo "All installations completed successfully!"

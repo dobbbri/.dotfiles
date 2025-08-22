@@ -6,8 +6,8 @@ vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", ";", ":", { desc = "Enter command mode" })
 vim.keymap.set("n", "<esc>", "<cmd>noh<CR>", { desc = "Clear Highlights" })
 vim.keymap.set("n", "<c-s>", "<cmd>w<CR>", { desc = "Save file" })
-vim.keymap.set("n", "<c-a>", "<cmd>wa<CR>", { desc = "Save all file" })
-vim.keymap.set("n", "<c-t>", "<cmd>%y+<CR>", { desc = "Copy Whole File" })
+vim.keymap.set("n", "<c-S>", "<cmd>wa<CR>", { desc = "Save all file" })
+vim.keymap.set("n", "<c-a>", "<cmd>ggVG<CR>", { desc = "Copy Whole File" })
 
 -- move buffer
 vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>")

@@ -56,6 +56,10 @@ super + g
 super + o
 	obsidian
 
+# Launch Obsidian Sync (Server)
+super + shift + o 
+  syncthing serve --logfile=default
+
 # Set Window State: Tile Mode
 super + shift + t
 	bspc node -t tiled

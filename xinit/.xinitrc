@@ -7,4 +7,4 @@
 
 # exec i3
 
-exec bspwm
+exec dbus-run-session bspwm 
