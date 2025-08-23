@@ -1,11 +1,36 @@
 vim.pack.add({ "https://github.com/echasnovski/mini.nvim" })
 
+local ignore_files = {
+  ".DS_Store",
+  ".git",
+  ".astro",
+  ".vscode",
+  ".gitignore",
+  -- "dist",
+  "lazy-lock.json",
+  "package-lock.json",
+  "node_modules",
+  "pnpm-lock.yaml",
+}
+
+local win_config = function()
+  local height = math.floor(0.618 * vim.o.lines)
+  local width = math.floor(0.618 * vim.o.columns)
+  return {
+    anchor = "NW",
+    height = height,
+    width = width,
+    row = math.floor(0.5 * (vim.o.lines - height)),
+    col = math.floor(0.5 * (vim.o.columns - width)),
+  }
+end
+
 require("mini.diff").setup({
   config = { view = { style = vim.go.number and 'number' } }
 })
 
 require("mini.files").setup({
-  content = { filter = function(entry) return not vim.tbl_contains(ignore_files(), entry.name) end },
+  content = { filter = function(entry) return not vim.tbl_contains(ignore_files, entry.name) end },
   mappings = { close = "q", go_in_plus = "<CR>", go_out_plus = "<left>" },
 })
 vim.keymap.set("n", "-", function() require("mini.files").open() end, { desc = "Show File Manager" })
