@@ -88,9 +88,9 @@ alias gsync="git pull && git push"
 alias ggg="gaac 'update...' && gps"
 
 gg() {
-	git add .  
-  git commit -m "$1" 
-  git push 
+  git add .
+  git commit -m "$1"
+  git push
   git status --short
 }
 
@@ -126,7 +126,7 @@ alias jctl="journalctl -p 3 -xb"
 #alias os="onedrive --synchronize"
 
 mkcd() {
-	mkdir -p "$1" && cd "$1"
+  mkdir -p "$1" && cd "$1"
 }
 
 updateNeovim() {
@@ -137,21 +137,21 @@ updateNeovim() {
   chmod u+x nvim-linux-x86_64.appimage
   sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 }
-  
+
 installNeovim() {
   echo "- Install Neovim nighly ---------------------------------------------"
-	rm -rf /home/sdobri/.cache/nvim
-	rm -rf /home/sdobri/.local/share/nvim
-	rm -rf /home/sdobri/.local/state/nvim
-	sudo rm /usr/local/bin/nvim
+  rm -rf /home/sdobri/.cache/nvim
+  rm -rf /home/sdobri/.local/share/nvim
+  rm -rf /home/sdobri/.local/state/nvim
+  sudo rm /usr/local/bin/nvim
   wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage
-	# wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.appimage
-	chmod u+x nvim-linux-x86_64.appimage
-	sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
+  # wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.appimage
+  chmod u+x nvim-linux-x86_64.appimage
+  sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 }
 
 installAppImage() {
-	sudo rm /usr/local/bin/$2
-	chmod u+x $1
-	sudo mv $1 /usr/local/bin/$2
+  sudo rm /usr/local/bin/$2
+  chmod u+x $1
+  sudo mv $1 /usr/local/bin/$2
 }

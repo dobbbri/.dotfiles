@@ -76,4 +76,5 @@ opt.splitright = true
 -- statusline
 opt.laststatus = 3
 opt.cmdheight = 0
-opt.statusline = " %<%t %m%r%=%l:%c "
+opt.statusline = "  %<%t %h%m%r %w%=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
+
