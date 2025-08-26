@@ -12,11 +12,22 @@ return {
     '.git',
   },
   settings = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-      completion = { callSnippet = "Replace" },
-      diagnostics = { globals = { "vim" } },
-    },
-  },
+		Lua = {
+			runtime = {
+				version = 'LuaJIT',
+			},
+			diagnostics = {
+				globals = {
+					'vim',
+					'require'
+				},
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
 }
