@@ -78,3 +78,6 @@ opt.laststatus = 3
 opt.cmdheight = 0
 opt.statusline = "  %<%t %h%m%r %w%=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
 
+-- title
+opt.title = true
+opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
