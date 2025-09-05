@@ -7,7 +7,7 @@ cd $HOME
 ssh-keygen -t ed25519 -C "sergiodobri@gmail.com"
 
 # Add your SSH private key to the ssh-agent.
-ssh-add ~/.ssh/id_ed25519
+ssh-add $HOME/.ssh/id_ed25519
 
 # Adding a new SSH key to your github account
 cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
