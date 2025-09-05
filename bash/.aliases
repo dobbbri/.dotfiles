@@ -20,7 +20,7 @@ alias sv='cd ~/Sites/videira-blog-2025/'
 
 alias poweroff="sudo systemctl poweroff"
 alias reboot="sudo systemctl reboot"
-alias fixx="sudo brightnessctl --device='smc::kbd_backlight' set 30 &&sudo brightnessctl --device='acpi_video0' set 2"
+alias fixx="sudo apt install brightnessctl && sudo brightnessctl --device='smc::kbd_backlight' set 30 && sudo brightnessctl --device='acpi_video0' set 2"
 
 # get all errors for running services using journalctl
 alias journalErrors="journalctl -p 3 -xb"

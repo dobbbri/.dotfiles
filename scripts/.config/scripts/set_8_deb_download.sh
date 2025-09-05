@@ -39,7 +39,7 @@ sudo mv lazygit /usr/local/bin/
 
 echo "bitwarden -----------------------------------------------------------"
 xdg-open https://bitwarden.com/download/
-#https://github.com/bitwarden/clients/releases
+# https://github.com/bitwarden/clients/releases
 
 wget https://github.com/bitwarden/clients/releases/download/desktop-v2025.7.0/Bitwarden-2025.7.0-amd64.deb
 

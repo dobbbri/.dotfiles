@@ -12,6 +12,10 @@ pip install neovim vim-vint --break-system-packages
 # create a new symlink
 sudo ln -s /usr/bin/python3 /usr/bin/python
 
+echo "- Install NPM packages --------------------------------------------------"
+npm i -g neovim tree-sitter 
+npm i -g typescript typescript-language-server
+
 echo "- fix neovim clipboard -------------------------------------------------"
 sudo apt install --yes xsel xclip
 

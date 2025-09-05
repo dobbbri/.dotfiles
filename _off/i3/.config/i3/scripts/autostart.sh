@@ -1,9 +1,9 @@
 # polkit
 # /usr/lib/lxpolkit &
-/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+# /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
  
 dunst -config ~/.config/i3/dunst/dunstrc &
-picom --config ~/.config/i3/picom/picom.conf --animations -b &
+# picom --config ~/.config/i3/picom/picom.conf --animations -b &
 
 xwallpaper --zoom ~/.dotfiles/pictures/mar.png &
 

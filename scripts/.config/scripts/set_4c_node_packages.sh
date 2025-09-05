@@ -3,10 +3,8 @@
 # to make execurable
 # chmod +x install_nodejs.sh 
 
-echo "- Install PNPM packages --------------------------------------------------"
-npm i -g neovim tree-sitter npm-check-updates
-npm i -g typescript typescript-language-server
-npm i -g @ast-grep/cli
+echo "- Install NPM packages --------------------------------------------------"
+npm i -g @ast-grep/cli npm-check-updates
 
 # echo "- Fix NPM access --------------------------------------------------------"
 # mkdir ~/.npm-global

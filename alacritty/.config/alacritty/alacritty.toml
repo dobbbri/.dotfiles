@@ -10,7 +10,7 @@
 ## Import additional configuration files.
 import = [
   "~/.config/alacritty/fonts/JetBrainsMono.toml",
-  "~/.config/alacritty/themes/catppuccin_mocha.toml",
+  "~/.config/alacritty/themes/rose_pine.toml",
 ]
 
 ## You can set shell.program to the path of your favorite shell, e.g. /bin/zsh.

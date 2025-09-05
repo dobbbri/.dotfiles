@@ -19,7 +19,7 @@ install_packages() {
   echo "Installing required packages..."
   sudo apt install -y xorg xorg-dev alacritty \
     xbacklight xbindkeys xvkbd xinput hsetroot brightnessctl \
-    bspwm sxhkd polybar network-manager pcmanfm lxappearance dialog acpi acpid \
+    bspwm sxhkd polybar network-manager thunar thunar-archive-plugin thunar-volmanlxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
     eza flameshot qimgv rofi dunst libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
     gparted htop alsa-utils color-picker mintstick atril \
@@ -60,6 +60,9 @@ fix_and_remove_packages() {
 
   echo "Remove bluetooth services"
   sudo apt --purge --yes autoremove blueman bluez-utils bluez bluetooth
+
+  echo "Remove xdg-desktop-portal for flatpack and snap"
+  sudo apt --purge --yes xdg-desktop-portal
 }
 
 # ========================================

@@ -1,4 +1,5 @@
 vim.pack.add({"https://github.com/navarasu/onedark.nvim"})
+
 require("onedark").setup({
   -- Main options --
   style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'

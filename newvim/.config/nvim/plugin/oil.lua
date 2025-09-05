@@ -28,7 +28,7 @@ require("oil").setup {
   },
   float = {
     max_width = 0.4,
-    max_height = 0,
+    max_height = 0.8,
     border = "single"
   },
   view_options = {
