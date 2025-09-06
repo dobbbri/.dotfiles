@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/echasnovski/mini.nvim" })
+-- vim.pack.add({ "https://github.com/echasnovski/mini.nvim" })
 
 local win_config = function()
   local height = math.floor(0.618 * vim.o.lines)

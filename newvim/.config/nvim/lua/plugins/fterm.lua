@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/numToStr/FTerm.nvim" })
+-- vim.pack.add({ "https://github.com/numToStr/FTerm.nvim" })
 
 require("FTerm").setup({
   hl = "FloatBorder",

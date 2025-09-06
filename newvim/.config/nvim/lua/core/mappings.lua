@@ -1,6 +1,6 @@
 -- general mappings
-vim.keymap.set("n", "1", "<cmd> w <CR>")
-vim.keymap.set("n", "2", "<cmd> q <CR>")
+vim.keymap.set("n", "1", "<cmd>w<CR>")
+vim.keymap.set("n", "2", "<cmd>q<CR>")
 vim.keymap.set("i", "jk", "<ESC>")
 
 vim.keymap.set("n", ";", ":", { desc = "Enter command mode" })

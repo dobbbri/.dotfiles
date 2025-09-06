@@ -1,7 +1,7 @@
-vim.pack.add({
-  { src = "https://github.com/stevearc/oil.nvim" },
-  { src = "https://github.com/benomahony/oil-git.nvim" }
-})
+-- vim.pack.add({
+--   { src = "https://github.com/stevearc/oil.nvim" },
+--   { src = "https://github.com/benomahony/oil-git.nvim" }
+-- })
 
 local ignore_files = {
   ".DS_Store",
@@ -40,3 +40,4 @@ require("oil").setup {
 }
 
 vim.keymap.set("n", "-", require("oil").toggle_float, { desc = "Show File Manager" })
+vim.keymap.set("n", "=", ":w<CR>", { desc = "Save Oil changes" })
