@@ -8,9 +8,8 @@
 . /etc/X11/Xsession &
 
 export DESKTOP_SESSION=dwm     # values: dwm dk i3 bspwm
-/usr/local/bin/slstatus &
-exec /usr/local/bin/dwm
-
+slstatus &
+exec dwm
 # exec dk
 # exec i3
 # exec bspwm 

@@ -49,13 +49,13 @@ decorations_theme_variant = "None"
 
 ## Number of lines/columns (not pixels) in the terminal.
 [window.dimensions]
-columns = 95
-lines = 24
+columns = 105
+lines = 23
 
 ## Blank space added around the window in pixels.
 [window.padding]
-x = 0
-y = 0
+x = 3
+y = 3
 
 ## SCROLLING ------------------------------------------------------
 [scrolling]

@@ -34,7 +34,7 @@ require("dracula").setup({
     white = "#ABB2BF",
     black = "#191A21",
   },
-  transparent_bg = true, -- default false
+  -- transparent_bg = true, -- default false
 })
 
 vim.cmd("colorscheme dracula")
