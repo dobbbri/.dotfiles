@@ -17,7 +17,7 @@ static const int sidepad            = 0; /* horizontal padding of bar */
 /* font -------------------------------------------------------------- */
 static const char *fonts[]          = { 
   "Ubuntu:style=bold::size=12:antialias=true:autohint=true", 
-  // "jetBrainsMono Nerd Font Mono:style=regular:size=18:antialias=true:autohint=true" 
+  "jetBrainsMono Nerd Font Mono:style=regular:size=18:antialias=true:autohint=true" 
 };
 static const char dmenufont[] = "jetBrainsMono Nerd Font Mono:style=bold:size=12:antialias=true:autohint=true";
 
