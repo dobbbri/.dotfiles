@@ -1,5 +1,6 @@
 # Make sure this stuff is in the path.
 export PATH="/usr/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 export PATH="$HOME/.local/share/nvim/site/pack/core/opt:$PATH"

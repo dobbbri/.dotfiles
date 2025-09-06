@@ -5,14 +5,11 @@
 /* appearance -------------------------------------------------------------- */
 static const unsigned int borderpx  = 2;  /* border pixel of windows */
 static const unsigned int snap      = 32;  /* snap pixel */
-
 /* gap */
 static const Gap default_gap        = {.isgap = 1, .realgap = 8, .gappx = 8};
-
-/* bar -------------------------------------------------------------- */
+/* bar */
 static const int showbar            = 1; /* 0 means no bar */
 static const int topbar             = 1; /* 0 means bottom bar */
-
 /* bar padding */
 static const int vertpad            = 0; /* vertical padding of bar */
 static const int sidepad            = 0; /* horizontal padding of bar */
@@ -20,14 +17,13 @@ static const int sidepad            = 0; /* horizontal padding of bar */
 /* font -------------------------------------------------------------- */
 static const char *fonts[]          = { 
   "Ubuntu:style=bold::size=12:antialias=true:autohint=true", 
-  "jetBrainsMono Nerd Font Mono:style=regular:size=18:antialias=true:autohint=true" 
+  // "jetBrainsMono Nerd Font Mono:style=regular:size=18:antialias=true:autohint=true" 
 };
-static const char dmenufont[] = "jetBrainsMono Nerd Font Mono:style=regular:size=12:antialias=true:autohint=true";
+static const char dmenufont[] = "jetBrainsMono Nerd Font Mono:style=bold:size=12:antialias=true:autohint=true";
 
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#7AA2F7";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -37,7 +33,8 @@ static const char *colors[][3]      = {
 
 /* autostart -------------------------------------------------------------- */
 static const char *const autostart[] = {
-	"sh", "-c", "~/.config/suckless/scripts/autostart.sh", NULL,
+  "sh", "-c", "dunst -config ~/.config/suckless/dunst/dunstrc", NULL,
+  "sh", "-c", "hsetroot -cover ~/.dotfiles/pictures/plasma1366x768.png", NULL,
 	NULL /* terminate */
 };
 
@@ -61,7 +58,6 @@ static const Rule rules[] = {
 	{ "Transmission-gtk", NULL,       NULL,       0,       		  1,           -1 },
 	{ "Lxappearance",   	NULL,       NULL,       0,       		  1,           -1 },
 	{ "Pavucontrol",  		NULL,       NULL,       0,       		  1,           -1 },
-  { "obsidian",         NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) -------------------------------------------------------------- */
@@ -92,23 +88,15 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static char dmenumon[2]             = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenucmd[]       = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray3, NULL };
 
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]        = { "alacritty", NULL };
 static const char *alacrittycmd[]   = { "alacritty", NULL };
 static const char *webbrowsercmd[]  = { "firefox", NULL };
-static const char *thunarcmd[]     = { "thunar", NULL };
+static const char *thunarcmd[]      = { "thunar", NULL };
 static const char *geanycmd[]       = { "geany", NULL };
 static const char *gimpcmd[]        = { "gimp", NULL };
-static const char *flameshotcmd[]   = { "flameshot", "full", "--path", "/home/sdobri/Screenshots/", NULL };
-static const char *flameshotgcmd[]  = { "flameshot", "gui", "--path", "/home/sdobri/Screenshots/", NULL };
-
-static const char *audiomutecmd[]         = { "amixer", "set", "Master", "toggle", NULL };
-static const char *audioraisevolumecmd[]  = { "amixer", "set", "Master", "5%+", NULL };
-static const char *audiolowervolumecmd[]  = { "amixer", "set", "Master", "5%-", NULL };
-static const char *monbrightnessupcmd[]   = { "brightnessctl", "-c", "backlight", "set", "5%+", NULL };
-static const char *monbrightnessdowncmd[] = { "brightnessctl", "-c", "backlight", "set", "5%-", NULL };
 
 /* action keys -------------------------------------------------------------- */
 #include "movestack.c"
@@ -121,8 +109,9 @@ static const Key keys[] = {
 	{ MODKEY,             XK_f,       spawn,    {.v = thunarcmd } },
 	{ MODKEY,             XK_e,       spawn,    {.v = geanycmd } },
 	{ MODKEY,             XK_g,       spawn,    {.v = gimpcmd } },
-	{ MODKEY,             XK_s,       spawn,    {.v = flameshotcmd } },
-	{ MODKEY|ShiftMask,   XK_s,       spawn,    {.v = flameshotgcmd } },
+
+	{ MODKEY,             XK_s,       spawn,    SHCMD( "flameshot full --path /home/sdobri/Screenshots/" ) },
+	{ MODKEY|ShiftMask,   XK_s,       spawn,    SHCMD( "flameshot gui --path /home/sdobri/Screenshots/" ) },
 
 	{ MODKEY,             XK_space,   spawn,    SHCMD( "~/.config/suckless/rofi/launchers/launcher.sh" ) },
 	{ MODKEY,             XK_x,       spawn,    SHCMD( "~/.config/suckless/rofi/powermenu/powermenu.sh" ) },
@@ -132,12 +121,12 @@ static const Key keys[] = {
 	{ MODKEY,             XK_r,       spawn,    SHCMD( "~/.config/suckless/scripts/redshift-off" ) },
 
   /* audio */
-	{ 0,  XF86XK_AudioMute,           spawn,    {.v = audiomutecmd } },
-	{ 0,  XF86XK_AudioRaiseVolume,    spawn,    {.v = audioraisevolumecmd } },
-	{ 0,  XF86XK_AudioLowerVolume,    spawn,    {.v = audiolowervolumecmd } },
+	{ 0,  XF86XK_AudioMute,           spawn,    SHCMD( "amixer sset Master toggle" ) },
+	{ 0,  XF86XK_AudioRaiseVolume,    spawn,    SHCMD( "amixer sset Master 5%+" ) },
+	{ 0,  XF86XK_AudioLowerVolume,    spawn,    SHCMD( "amixer sset Master 5%-" ) },
   /* brightness */
-	{ 0,  XF86XK_MonBrightnessUp,     spawn,    {.v = monbrightnessupcmd } },
-	{ 0,  XF86XK_MonBrightnessDown,   spawn,    {.v = monbrightnessdowncmd } },
+	{ 0,  XF86XK_MonBrightnessUp,     spawn,    SHCMD( "brightnessctl -c backlight set 5%+" ) },
+	{ 0,  XF86XK_MonBrightnessDown,   spawn,    SHCMD( "brightnessctl -c backlight set 5%-" ) },
 
   /* togglebar */
   { MODKEY,                       XK_b,      togglebar,      {0} },
