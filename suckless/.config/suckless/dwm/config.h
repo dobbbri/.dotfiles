@@ -28,7 +28,7 @@ static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#cc91cf";
+static const char col_cyan[]        = "#7AA2F7";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -81,6 +81,7 @@ static const Layout layouts[] = {
 
 /* key definitions -------------------------------------------------------------- */
 #define MODKEY Mod4Mask
+#define ALTKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,  view,         {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,  toggleview,   {.ui = 1 << TAG} }, \
@@ -130,25 +131,36 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,   XK_r,       spawn,    SHCMD( "~/.config/suckless/scripts/redshift-on" ) },
 	{ MODKEY,             XK_r,       spawn,    SHCMD( "~/.config/suckless/scripts/redshift-off" ) },
 
-
+  /* audio */
 	{ 0,  XF86XK_AudioMute,           spawn,    {.v = audiomutecmd } },
 	{ 0,  XF86XK_AudioRaiseVolume,    spawn,    {.v = audioraisevolumecmd } },
 	{ 0,  XF86XK_AudioLowerVolume,    spawn,    {.v = audiolowervolumecmd } },
+  /* brightness */
 	{ 0,  XF86XK_MonBrightnessUp,     spawn,    {.v = monbrightnessupcmd } },
 	{ 0,  XF86XK_MonBrightnessDown,   spawn,    {.v = monbrightnessdowncmd } },
 
   /* togglebar */
   { MODKEY,                       XK_b,      togglebar,      {0} },
 	
-  /* fullscreen */
-	{ MODKEY|Mod1Mask,              XK_f,      fullscreen,     {0} },
-  
-  /* stacks */
-  { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-  { MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
-  { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
+  /* stacks focus */
+	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
+  /* stacks move */
+	{ MODKEY|ALTKEY,                XK_Right,  movestack,      {.i = +1 } },
+	{ MODKEY|ALTKEY,                XK_Left,   movestack,      {.i = -1 } },
+  /* stacks resize */
+  { ALTKEY|ControlMask,           XK_Left,   setmfact,       {.f = -0.05} },
+  { ALTKEY|ControlMask,           XK_Right,  setmfact,       {.f = +0.05} },
 	
+  /* layouts tiles */
+  { MODKEY|ALTKEY,                  XK_t,      setlayout,      {.v = &layouts[0]} },
+  /* layouts null */
+  { MODKEY|ALTKEY,                  XK_n,      setlayout,      {.v = &layouts[1]} },
+  /* layouts monocle */
+  { MODKEY|ALTKEY,                  XK_m,      setlayout,      {.v = &layouts[2]} },
+  /* layouts fullscreen */
+  { MODKEY|ALTKEY,                  XK_f,      fullscreen,     {0} },
+
   /* window */
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
@@ -158,12 +170,7 @@ static const Key keys[] = {
   { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 
-  /* layouts */
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
+  { MODKEY|ControlMask,           XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	
   /* monitor */
@@ -172,11 +179,15 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	
-  /* gaps */
+  /* gaps resize */
   { MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
+  /* gaps reset */
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
+  /* gaps toggle */
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
+  
+  /* ???? */
   { MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
 	
@@ -188,8 +199,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_5,                      4)
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
   
   /* close */
 	{ MODKEY,                       XK_q,      killclient,     {0} },
