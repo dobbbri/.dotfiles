@@ -5,13 +5,17 @@
 # global xinitrc file, used by all X sessions started by xinit (startx)
 
 # invoke global X session script
-. /etc/X11/Xsession &
+# . /etc/X11/Xsession &
 
 export DESKTOP_SESSION=dwm     # values: dwm dk i3 bspwm
+
 slstatus &
-exec dwm
+exec dbus-run-session dwm
+
 # exec dk
+
 # exec i3
+
 # exec bspwm 
 
 

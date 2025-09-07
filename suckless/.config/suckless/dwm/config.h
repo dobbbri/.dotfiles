@@ -22,9 +22,9 @@ static const char *fonts[]          = {
 static const char dmenufont[] = "jetBrainsMono Nerd Font Mono:style=bold:size=12:antialias=true:autohint=true";
 
 static const char col_gray1[]       = "#000000";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_cyan[]        = "#7AA2F7";
+static const char col_gray2[]       = "#272727";
+static const char col_gray3[]       = "#aaaaaa";
+static const char col_cyan[]        = "#2893a9";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -33,14 +33,14 @@ static const char *colors[][3]      = {
 
 /* autostart -------------------------------------------------------------- */
 static const char *const autostart[] = {
-  "sh", "-c", "dunst -config ~/.config/suckless/dunst/dunstrc", NULL,
-  "sh", "-c", "hsetroot -cover ~/.dotfiles/pictures/plasma1366x768.png", NULL,
+  "dunst", NULL,
+  "sh", "-c", "hsetroot -cover ~/.dotfiles/pictures/tron.jpeg", NULL,
 	NULL /* terminate */
 };
 
 /* tag -------------------------------------------------------------- */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7" };
-static const unsigned int ulinepad	    = 5;	/* horizontal padding between the underline and tag */
+static const unsigned int ulinepad	    = 4;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	  = 2;	/* thickness / height of the underline */
 static const int ulineall               = 0;	/* 1 to show underline on all tags, 0 for the active ones */
 static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */

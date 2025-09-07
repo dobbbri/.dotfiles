@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Current Theme
-dir="$HOME/.config/bspwm/rofi/powermenu"
+dir="$HOME/.dotfiles/suckless/.config/suckless/rofi/powermenu"
 theme='style'
 
 # CMDs

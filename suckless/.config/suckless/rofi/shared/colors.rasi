@@ -15,4 +15,4 @@
 
 /* Import color-scheme from `colors` directory */
 
-@import "~/.config/bspwm/rofi/colors/catppuccin.rasi"
+@import "~/.config/suckless/rofi/colors/catppuccin.rasi"
