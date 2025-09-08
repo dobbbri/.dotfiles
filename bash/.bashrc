@@ -92,9 +92,13 @@ if [ -f ~/.aliases ]; then
 	. ~/.aliases
 fi
 
-if [ -f /usr/bin/fastfetch ]; then
-	fastfetch
+if [ -f /usr/local/bin/pokemon-colorscripts ]; then
+	pokemon-colorscripts -r 
 fi
+
+# if [ -f /usr/bin/fastfetch ]; then
+# 	fastfetch
+# fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

@@ -6,6 +6,14 @@
 
 cd $HOME/Downloads/
 
+# A script to print out images of pokemon to the terminal
+git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git
+cd pokemon-colorscripts
+sudo ./install.sh
+
+
+cd $HOME/Downloads/
+
 # echo "librewolf browser --------------------------------------------------------"
 # sudo apt install fonts-liberation -yy
 # sudo apt update && sudo apt install extrepo -y
