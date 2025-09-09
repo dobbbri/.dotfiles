@@ -10,10 +10,3 @@ vim.diagnostic.config({ virtual_text = true, severity_sort = true })
 vim.keymap.set({ "n", "v" }, "f", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 3000 })<cr>", { desc = "Format File" })
 vim.keymap.set("n", "<leader>D", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to diagnostics" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "show diagnostic Info" })
-
-vim.api.nvim_create_user_command("MasonInstallAllServers", function()
-  vim.cmd(
-    "MasonInstall " ..
-    "astro-language-server bash-language-server json-lsp lua-language-server prettier shfmt tailwindcss-language-server typescript-language-server"
-  )
-end, {})

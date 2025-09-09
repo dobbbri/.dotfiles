@@ -42,7 +42,7 @@ opt.tabstop = 2
 opt.softtabstop = 2
 
 -- folding - ufo
-opt.foldcolumn = '1' 
+opt.foldcolumn = '1'
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
@@ -83,8 +83,8 @@ opt.splitright = true
 -- statusline
 opt.laststatus = 3
 opt.cmdheight = 0
-opt.statusline = "  %<%t %h%m%r %w%=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
+opt.statusline = "  %t %h%m%r%w %{v:lua.vim.diagnostic.status()}  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
 
 -- title
 opt.title = true
-opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
+opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a [nvim]'

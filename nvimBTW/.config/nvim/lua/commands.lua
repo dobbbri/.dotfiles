@@ -8,6 +8,13 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end,
 })
 
+vim.api.nvim_create_user_command("InstallMyServers", function()
+  vim.cmd(
+    "MasonInstall " ..
+    "astro-language-server bash-language-server json-lsp lua-language-server prettier shfmt tailwindcss-language-server typescript-language-server"
+  )
+end, {})
+
 --  jump to the last place you’ve visited in a file before exiting
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()

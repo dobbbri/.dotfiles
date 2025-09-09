@@ -1,4 +1,4 @@
-vim.pack.add({"https://github.com/maxmx03/fluoromachine.nvim"})
+vim.pack.add({"https://github.com/maxmx03/fluoromachine.nvim"}, {confirm = false})
 
 require("fluoromachine").setup({
   theme = "fluoromachine", -- fluoromachine, retrowave, delta

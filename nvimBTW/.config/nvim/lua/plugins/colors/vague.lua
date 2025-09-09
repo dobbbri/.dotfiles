@@ -1,4 +1,4 @@
-vim.pack.add({"https://github.com/vague2k/vague.nvim"})
+vim.pack.add({"https://github.com/vague2k/vague.nvim"}, {confirm = false})
 
 require("vague").setup({
   transparent = false, -- don't set background

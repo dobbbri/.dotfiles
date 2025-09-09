@@ -1,4 +1,4 @@
-vim.pack.add({ "https://gitlab.com/motaz-shokry/gruvbox.nvim" })
+vim.pack.add({ "https://gitlab.com/motaz-shokry/gruvbox.nvim" }, {confirm = false})
 
 require("gruvbox").setup({
   styles = {

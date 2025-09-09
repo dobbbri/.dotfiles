@@ -15,5 +15,5 @@ require("plugins.ufo")
 require("plugins.visualmulti")
 require("plugins.whichkey")
 
-require("plugins.colors.dracula")
+require("plugins.colors.fluoromachine")
 
