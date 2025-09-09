@@ -4,7 +4,7 @@
 alias bsp='cd ~/.dotfiles/bspwm/.config/bspwm/'
 alias suc='cd ~/.dotfiles/suckless/.config/suckless/'
 # alias vv='cd ~/.dotfiles/tinyvim/.config/nvim/'
-alias vv='cd ~/.dotfiles/nvimbtw/.config/nvim/'
+alias vv='cd ~/.dotfiles/nvimBTW/.config/nvim/'
 alias dd='cd ~/.dotfiles/ '
 
 # burn iso

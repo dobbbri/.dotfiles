@@ -92,9 +92,9 @@ if [ -f ~/.aliases ]; then
 	. ~/.aliases
 fi
 
-if [ -f /usr/local/bin/pokemon-colorscripts ]; then
-	pokemon-colorscripts -r 
-fi
+# if [ -f /usr/local/bin/pokemon-colorscripts ]; then
+# 	pokemon-colorscripts -r 
+# fi
 
 # if [ -f /usr/bin/fastfetch ]; then
 # 	fastfetch

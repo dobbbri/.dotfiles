@@ -1,7 +1,7 @@
--- vim.pack.add({
---   { src = "https://github.com/stevearc/oil.nvim" },
---   { src = "https://github.com/benomahony/oil-git.nvim" }
--- })
+vim.pack.add({
+  { src = "https://github.com/stevearc/oil.nvim" },
+  { src = "https://github.com/benomahony/oil-git.nvim" }
+}, { confirm = false })
 
 local ignore_files = {
   ".DS_Store",
@@ -16,7 +16,8 @@ local ignore_files = {
   "pnpm-lock.yaml",
 }
 
-require("oil").setup {
+local oil = require("oil")
+oil.setup({
   columns = { "icon" },
   keymaps = {
     ["<C-h>"] = false,
@@ -37,7 +38,7 @@ require("oil").setup {
       return vim.tbl_contains(ignore_files, name)
     end,
   },
-}
+})
 
-vim.keymap.set("n", "-", require("oil").toggle_float, { desc = "Show File Manager" })
+vim.keymap.set("n", "-", oil.toggle_float, { desc = "Show File Manager" })
 vim.keymap.set("n", "=", ":w<CR>", { desc = "Save Oil changes" })

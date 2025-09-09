@@ -1,4 +1,4 @@
--- vim.pack.add({ "https://github.com/echasnovski/mini.nvim" })
+vim.pack.add({ "https://github.com/echasnovski/mini.nvim" }, { confirm = false })
 
 local win_config = function()
   local height = math.floor(0.618 * vim.o.lines)
@@ -51,4 +51,3 @@ vim.keymap.set("n", "<leader><space>", "<cmd>Pick buffers<CR>", { desc = "List o
 -- })
 -- vim.keymap.set("n", "-", function() require("mini.files").open() end, { desc = "Show File Manager" })
 -- vim.keymap.set("n", "<leader>e", function() require("mini.files").open() end, { desc = "Show File Manager" })
-

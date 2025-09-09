@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
+vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" }, { confirm = false })
 
 local parser_names = {
   "vim",
@@ -30,7 +30,7 @@ local parser_names = {
   "query",
 }
 
-require("nvim-treesitter").setup({
+require("nvim-treesitter.configs").setup({
   ensure_installed = parser_names,
   highlight = {
     enable = true,

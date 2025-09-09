@@ -41,6 +41,13 @@ opt.smartindent = true
 opt.tabstop = 2
 opt.softtabstop = 2
 
+-- folding - ufo
+opt.foldcolumn = '1' 
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
+
+--
 opt.fillchars = {
   foldopen = "",
   foldclose = "",

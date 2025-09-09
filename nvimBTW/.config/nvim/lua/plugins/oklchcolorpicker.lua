@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/eero-lehtinen/oklch-color-picker.nvim" })
+vim.pack.add({ "https://github.com/eero-lehtinen/oklch-color-picker.nvim" }, { confirm = false })
 
 require("oklch-color-picker").setup()
 
