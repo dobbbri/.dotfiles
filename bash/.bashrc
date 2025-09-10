@@ -42,7 +42,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
 export FZF_DEFAULT_OPTS_FILE=~/.fzfrc
-
+#
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples

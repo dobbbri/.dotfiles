@@ -80,6 +80,8 @@ opt.shortmess = 'aoOTIcF'
 opt.splitbelow = true
 opt.splitright = true
 
+opt.conceallevel = 2
+
 -- statusline
 opt.laststatus = 3
 opt.cmdheight = 0

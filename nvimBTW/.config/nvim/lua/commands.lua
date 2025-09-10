@@ -1,8 +1,8 @@
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
-    -- vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
-    -- vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
+    vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
+    vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
     vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
     vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
   end,
@@ -30,5 +30,13 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+  end,
+})
+
+-- Fix conceallevel for json files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "json", "jsonc", "json5" },
+  callback = function()
+    vim.opt_local.conceallevel = 0
   end,
 })
