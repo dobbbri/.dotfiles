@@ -18,10 +18,10 @@ echo "
 install_packages() {
   echo "Installing required packages..."
   sudo apt install -y xorg xorg-dev alacritty \
-    xbacklight xbindkeys xvkbd xinput hsetroot brightnessctl \
-    bspwm sxhkd polybar network-manager thunar thunar-archive-plugin thunar-volmanlxappearance dialog acpi acpid \
+    xbacklight xbindkeys xinput hsetroot brightnessctl \
+    network-manager thunar thunar-archive-plugin thunar-volman lxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
-    eza flameshot qimgv rofi dunst libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
+    eza flameshot qimgv libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
     gparted htop alsa-utils color-picker mintstick atril \
     transmission feh xarchiver curl unzip ssh-askpass wget stow \
     lxtask fzf papirus-icon-theme yaru-theme-gtk yaru-theme-icon heif-gdk-pixbuf webp-pixbuf-loader \
@@ -39,7 +39,7 @@ install_reqs() {
 
 install_laptop_packages() {
   echo "Optimize Linux Laptop Battery Life and thermal changes"
-# sudo apt install -y tlp tlp-rdw smartmontools acpi-support acpi-call-dkms thermald
+  # sudo apt install -y tlp tlp-rdw smartmontools acpi-support acpi-call-dkms thermald
   echo "Package installation completed."
 }
 
@@ -50,7 +50,7 @@ fix_and_remove_packages() {
   sudo cp /home/sdobri/.dotfiles/scripts/.config/scripts/config/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf
 
   echo "Remove geoclue-2.0(redshift) services"
-#  sudo apt --purge --yes autoremove geoclue-2.0
+  #  sudo apt --purge --yes autoremove geoclue-2.0
 
   echo "remove modemmanager"
   sudo apt --purge --yes autoremove modemmanager
@@ -74,9 +74,9 @@ fix_and_remove_packages() {
 # and ACPI (for power management) are enabled on the system for proper operation.
 enable_services() {
   echo "Enabling required services..."
- # sudo systemctl enable acpid || echo "Warning: Failed to enable acpid."
+  # sudo systemctl enable acpid || echo "Warning: Failed to enable acpid."
 
- # sudo tlp start
+  # sudo tlp start
 
   # brightnessctl --list
   sudo brightnessctl --device='smc::kbd_backlight' set 30
@@ -164,22 +164,22 @@ EOF
   mkdir -p ~/.config/gtk-2.0
 
   # Write to ~/.gtkrc-2.0
-  cat <<EOF >~/.config/gtk-2.0/.gtkrc-2.0
-gtk-theme-name=Yaru-Dark
-gtk-icon-theme-name=Yaru-Dark
-gtk-font-name="Sans 10"
-gtk-cursor-theme-name="Yaru"
-gtk-cursor-theme-size=0
-gtk-toolbar-style=GTK_TOOLBAR_BOTH
-gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=1
-gtk-menu-images=1
-gtk-enable-event-sounds=1
-gtk-enable-input-feedback-sounds=1
-gtk-xft-antialias=1
-gtk-xft-hinting=1
-gtk-xft-hintstyle="hintfull"
-EOF
+  ~/.config/gtk-2.0/.gtkrc-2.0
+  gtk-theme-name=Yaru-Dark
+  gtk-icon-theme-name=Yaru-Dark
+  gtk-font-name="Sans 10"
+  gtk-cursor-theme-name="Yaru"
+  gtk-cursor-theme-size=0
+  gtk-toolbar-style=GTK_TOOLBAR_BOTH
+  gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+  gtk-button-images=1
+  gtk-menu-images=1
+  gtk-enable-event-sounds=1
+  gtk-enable-input-feedback-sounds=1
+  gtk-xft-antialias=1
+  gtk-xft-hinting=1
+  gtk-xft-hintstyle="hintfull"
+  EOF
   echo "GTK settings updated."
 }
 
@@ -228,16 +228,6 @@ EOF
   echo "Power Off Key set. Needs Reboot"
 }
 
-
-fix_alsa_restore_std_boot_error() {
-echo '
-to fix in 90-alsa-restore.rules.in not found LABEL="alsa_restore_std":
-sudo vim /usr/lib/udev/rules.d/90-alsa-restore.rules
-in line 26: 
-replace a label alsa_restore_go to alsa_restore_std 
-save and reboot'
-}
-
 # ========================================
 # Main Script Execution
 # ========================================
@@ -252,6 +242,5 @@ install_fonts
 fix_and_remove_packages
 change_theming
 #change_power_off_key
-#fix_alsa_restore_std_boot_error
 
 echo "All installations completed successfully!"
