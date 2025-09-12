@@ -2,7 +2,7 @@
 
 echo "- Install Neovim from image ---------------------------------------------"
 sudo rm /usr/local/bin/nvim
- wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage
+wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage
 chmod u+x nvim-linux-x86_64.appimage
 sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 
@@ -13,11 +13,11 @@ pip install neovim vim-vint --break-system-packages
 sudo ln -s /usr/bin/python3 /usr/bin/python
 
 echo "- Install NPM packages --------------------------------------------------"
-npm i -g neovim tree-sitter 
+npm i -g neovim tree-sitter
 npm i -g typescript typescript-language-server
 
 echo "- fix neovim clipboard -------------------------------------------------"
 sudo apt install --yes xsel xclip
 
-echo "- remove vim-tin and install vim ----------------------------------------"
+echo "- remove vim-tin and ---------------------------------------------------"
 sudo apt --purge --yes autoremove vim-tiny

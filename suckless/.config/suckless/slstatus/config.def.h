@@ -1,18 +1,18 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1500;
+const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = " ";
 
 /* maximum output string length */
 #define MAXLEN 2048
 
 /* battery levels to notify - add any levels you want to receive notification for (in percent) */
 const int notifiable_levels[] = {
-    20,
-    10,
+    25,
+    15,
     5,
 };
 const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifiable_levels[0]);
@@ -76,9 +76,8 @@ const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifi
  */
 static const struct arg args[] = {
 	/* function format          argument */
-  {battery_perc,   "^c#2893a9^  ^c#aaaaaa^%s%%  ", "BAT0"},
-  {ram_perc,       "^c#2893a9^  ^c#aaaaaa^%s%%  ", NULL},
-	{datetime,       "^c#2893a9^ 󰥔 ^c#aaaaaa^%s ", "%H:%M"},
-  { battery_notify, "",       "BAT0" }, /* There is nothing to print its just a notifications*/
+  {battery_perc,   "^c#2893a9^  ^c#aaaaaa^%s%%  ", "BAT0"},
+  {ram_perc,       "^c#2893a9^  ^c#aaaaaa^%s%%  ", NULL},
+	{datetime,       "^c#2893a9^  ^c#aaaaaa^%s ", "%H:%M"},
+	{ battery_notify, "",       "BAT0" }, /* There is nothing to print its just a notifications*/
 };
-                               

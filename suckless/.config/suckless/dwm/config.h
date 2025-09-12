@@ -33,8 +33,9 @@ static const char *colors[][3]      = {
 
 /* autostart -------------------------------------------------------------- */
 static const char *const autostart[] = {
-  "dunst", NULL,
+	"dunst", "-config", "/home/$USER/.config/suckless/dunst/dunstrc", NULL,
   "sh", "-c", "hsetroot -cover ~/.dotfiles/pictures/tron.jpeg", NULL,
+  // "syncthing", "serve", "--no-browser", "--no-restart", "--logflags=0", NULL,
 	NULL /* terminate */
 };
 
@@ -117,8 +118,8 @@ static const Key keys[] = {
 	{ MODKEY,             XK_x,       spawn,    SHCMD( "~/.config/suckless/rofi/powermenu/powermenu.sh" ) },
   { MODKEY,             XK_h,       spawn,    SHCMD( "~/.config/suckless/rofi/shortcutshelp/shortcutshelp.sh" ) },
 
-	{ MODKEY|ShiftMask,   XK_r,       spawn,    SHCMD( "~/.config/suckless/scripts/redshift-on" ) },
-	{ MODKEY,             XK_r,       spawn,    SHCMD( "~/.config/suckless/scripts/redshift-off" ) },
+	// { MODKEY|ShiftMask,   XK_r,       spawn,    SHCMD( "~/.config/suckless/scripts/redshift-on" ) },
+	// { MODKEY,             XK_r,       spawn,    SHCMD( "~/.config/suckless/scripts/redshift-off" ) },
 
   /* audio */
 	{ 0,  XF86XK_AudioMute,           spawn,    SHCMD( "amixer sset Master toggle" ) },
@@ -130,7 +131,7 @@ static const Key keys[] = {
 
   /* togglebar */
   { MODKEY,                       XK_b,      togglebar,      {0} },
-	
+
   /* stacks focus */
 	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
@@ -140,7 +141,7 @@ static const Key keys[] = {
   /* stacks resize */
   { ALTKEY|ControlMask,           XK_Left,   setmfact,       {.f = -0.05} },
   { ALTKEY|ControlMask,           XK_Right,  setmfact,       {.f = +0.05} },
-	
+
   /* layouts tiles */
   { MODKEY|ALTKEY,                  XK_t,      setlayout,      {.v = &layouts[0]} },
   /* layouts null */

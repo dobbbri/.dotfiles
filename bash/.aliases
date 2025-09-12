@@ -1,11 +1,10 @@
 #!/bin/bash
 
 # dotfiles
+alias dd='cd ~/.dotfiles/'
 alias bsp='cd ~/.dotfiles/bspwm/.config/bspwm/'
 alias suc='cd ~/.dotfiles/suckless/.config/suckless/'
-# alias vv='cd ~/.dotfiles/tinyvim/.config/nvim/'
-alias vv='cd ~/.dotfiles/nvimBTW/.config/nvim/'
-alias dd='cd ~/.dotfiles/ '
+alias vv='cd ~/.dotfiles/vimbtw/.config/nvim/'
 
 # burn iso
 alias burniso="sudo mintstick -m iso"

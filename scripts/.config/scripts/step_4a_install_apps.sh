@@ -5,11 +5,11 @@
 # ========================================
 clear
 echo "
- +-+-+-+-+-+-+-+-+-+-+-+-+-+ 
- |s|e|r|g|i|o| | |d|o|b|r|i| 
- +-+-+-+-+-+-+-+-+-+-+-+-+-+ 
- |b|s|p|w|m| | |s|c|r|i|p|t|  
- +-+-+-+-+-+-+-+-+-+-+-+-+-+                                                                            
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |s|e|r|g|i|o| | |d|o|b|r|i|
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |i|n|s|t|a|l| |s|c|r|i|p|t|
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+
 "
 
 # ========================================
@@ -78,10 +78,6 @@ enable_services() {
 
   # sudo tlp start
 
-  # brightnessctl --list
-  sudo brightnessctl --device='smc::kbd_backlight' set 30
-  sudo brightnessctl --device='acpi_video0' set 2
-  echo "Services enabled."
 }
 
 # ========================================
@@ -164,7 +160,7 @@ EOF
   mkdir -p ~/.config/gtk-2.0
 
   # Write to ~/.gtkrc-2.0
-  ~/.config/gtk-2.0/.gtkrc-2.0
+  cat <<EOF >~/.config/gtk-2.0/.gtkrc-2.0
   gtk-theme-name=Yaru-Dark
   gtk-icon-theme-name=Yaru-Dark
   gtk-font-name="Sans 10"

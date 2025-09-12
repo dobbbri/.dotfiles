@@ -2,6 +2,8 @@
 
 echo "Stow ---------------------------------------------------------------"
 
+sudo apt install -y stow
+
 rm ~/.bashrc
 
 cd ~/.dotfiles
@@ -11,13 +13,14 @@ echo "-------"
 stow alacritty
 stow astro
 stow bash
+stow bspwm
 stow suckless
 stow fastfetch
 stow gammastep
 stow geany
 stow git
 stow lazygit
-stow nvimBTW
+stow vimbtw
 stow xarchiver
 stow xinit
 
