@@ -20,6 +20,7 @@ stow gammastep
 stow geany
 stow git
 stow lazygit
+stow Thunar
 stow vimbtw
 stow xarchiver
 stow xinit
