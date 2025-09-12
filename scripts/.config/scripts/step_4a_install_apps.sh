@@ -24,7 +24,7 @@ install_packages() {
     eza flameshot qimgv libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
     gparted htop alsa-utils color-picker mintstick atril \
     transmission feh xarchiver curl unzip ssh-askpass wget stow \
-    lxtask fzf papirus-icon-theme yaru-theme-gtk yaru-theme-icon heif-gdk-pixbuf webp-pixbuf-loader \
+    lxtask fzf papirus-icon-theme heif-gdk-pixbuf webp-pixbuf-loader \
     xdg-user-dirs-gtk || echo "Warning: Package installation failed."
   echo "Package installation completed."
 }
