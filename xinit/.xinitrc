@@ -7,7 +7,8 @@
 
 export DESKTOP_SESSION=dwm
 slstatus &
-exec dbus-run-session dwm
+# exec dbus-run-session dwm
+exec dbus-launch --exit-with-session dwm
 
 # export DESKTOP_SESSION=dk
 # exec dbus-run-session dk

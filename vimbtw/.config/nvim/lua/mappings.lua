@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>s", ":%s///gcI<Left><Left><Left><Left><Left>",
 -- reload
 -- vim.keymap.set("n", "<leader>o", ":update<CR> :source<CR>", { desc = "Reload buffer" })
 
--- Open small terminal
+-- Open terminal
 vim.keymap.set("n", "<leader>t", function()
 	vim.cmd.term()
 	vim.cmd("startinsert")

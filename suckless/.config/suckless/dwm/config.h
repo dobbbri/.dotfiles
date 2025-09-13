@@ -16,8 +16,8 @@ static const int sidepad            = 0; /* horizontal padding of bar */
 
 /* font -------------------------------------------------------------- */
 static const char *fonts[]          = { 
-  "Ubuntu:style=bold::size=12:antialias=true:autohint=true", 
-  "jetBrainsMono Nerd Font Mono:style=regular:size=18:antialias=true:autohint=true" 
+  // "Ubuntu:style=regular::size=11:antialias=true:autohint=true", 
+  "jetBrainsMono Nerd Font Mono:style=Bold:size=12:antialias=true:autohint=true" 
 };
 static const char dmenufont[] = "jetBrainsMono Nerd Font Mono:style=bold:size=12:antialias=true:autohint=true";
 
@@ -33,7 +33,7 @@ static const char *colors[][3]      = {
 
 /* autostart -------------------------------------------------------------- */
 static const char *const autostart[] = {
-	"dunst", "-config", "/home/$USER/.config/suckless/dunst/dunstrc", NULL,
+	"dunst", "-config", "/home/sdobri/.config/suckless/dunst/dunstrc", NULL,
   "sh", "-c", "hsetroot -cover ~/.dotfiles/pictures/tron.jpeg", NULL,
   // "syncthing", "serve", "--no-browser", "--no-restart", "--logflags=0", NULL,
 	NULL /* terminate */
