@@ -17,7 +17,7 @@ echo "
 # ========================================
 install_packages() {
   echo "Installing required packages..."
-  sudo apt install -y xorg xorg-dev alacritty \
+  sudo apt install -y xorg xorg-dev dbus-x11 alacritty \
     xbacklight xbindkeys xinput hsetroot brightnessctl \
     network-manager thunar thunar-archive-plugin thunar-volman lxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
