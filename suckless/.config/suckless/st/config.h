@@ -134,10 +134,10 @@ float alpha = 0.95; /* For st 0.9.2, use decimal alpha value */
 
 /* Font configuration */
 /* Note: newer st versions may handle font differently. Adjust as needed. */
-char *font = "SauceCodePro Nerd Font Mono:size=16:antialias=true:autohint=true";
+char *font = "jetBrainsMono Nerd Font Mono:style=Bold:size=12:antialias=true:autohint=true"; 
 
 static char *font2[] = {
-    "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+    "jetBrainsMono Nerd Font Mono:style=Bold:size=12:antialias=true:autohint=true",
     "Symbols Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
 };
 
