@@ -6,7 +6,7 @@
 # . /etc/X11/Xsession &
 
 export DESKTOP_SESSION=dwm
-slstatus &
+# slstatus &
 # exec dbus-run-session dwm
 exec dbus-launch --exit-with-session dwm
 
@@ -17,4 +17,4 @@ exec dbus-launch --exit-with-session dwm
 # exec dbus-run-session i3
 
 # export DESKTOP_SESSION=bspwm
-# exec dbus-run-session bspwm
+# exec dbus-launch --exit-with-session bspwm

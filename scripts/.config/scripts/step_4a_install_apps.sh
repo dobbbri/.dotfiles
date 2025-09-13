@@ -236,7 +236,7 @@ install_reqs
 setup_user_dirs
 install_fonts
 fix_and_remove_packages
-change_theming
+# change_theming
 #change_power_off_key
 
 echo "All installations completed successfully!"

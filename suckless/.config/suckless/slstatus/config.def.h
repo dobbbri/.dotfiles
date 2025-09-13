@@ -11,8 +11,8 @@ static const char unknown_str[] = " ";
 
 /* battery levels to notify - add any levels you want to receive notification for (in percent) */
 const int notifiable_levels[] = {
-    30,
-    10,
+    25,
+    15,
     5,
 };
 const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifiable_levels[0]);
@@ -76,12 +76,9 @@ const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifi
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	//  {battery_perc,   "^c#2893a9^  ^c#aaaaaa^%s%%  ", "BAT0"},
-	//  {ram_perc,       "^c#2893a9^  ^c#aaaaaa^%s%%  ", NULL},
-	// {datetime,       "^c#2893a9^  ^c#aaaaaa^%s ", "%H:%M"},
-  {battery_perc,   "   ^c#aaaaaa^BAT ^c#2893a9^%s%%   ", "BAT0"},
-  {ram_perc,       "^c#aaaaaa^RAM ^c#2893a9^%s%%   ", NULL},
-	{datetime,       "^c#aaaaaa^%s ", "%d/%m"},
-	{datetime,       "^c#2893a9^%s ", "%H:%M"},
+	{ battery_perc, "^c#6CF982^ 󰁹 ^c#FFFFFF^%s%% ", "BAT0" },
+	{ ram_perc,     "^c#4fc3f7^ 󰍛 ^c#FFFFFF^%s%% ", NULL },
+	{ datetime,     "^c#ffc107^ 󰸗 ^c#FFFFFF^%s ", "%d/%m" },
+	{ datetime,     "^c#9c27b0^ 󰥔 ^c#FFFFFF^%s  ", "%H:%M" },
 	{ battery_notify, "",       "BAT0" }, /* There is nothing to print its just a notifications*/
 };
