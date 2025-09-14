@@ -1,7 +1,7 @@
 * {
-    bg: #00141d;
+    bg: #161616;
     background-color: @bg;
-    font: "JetBrainsMono Nerd Font 12";  /* Monospace font for alignment */
+    font: "JetBrainsMono Nerd Font 12";  
 }
 
 configuration {
@@ -28,14 +28,14 @@ mainbox {
 
 element {
     padding: 4 8;
-    text-color: #FFFFFF;
-    background-color: #00141d;
+    text-color: #F2F4F8;
+    background-color: #161616;
     border-radius: 5px;
 }
 
 element.selected {
-    text-color: #1a1a1a;
-    background-color: #b3e5fc;
+    text-color: #ffffff;
+    background-color: #ff8f40;
 }
 
 element-text {
@@ -51,43 +51,43 @@ element-icon {
 }
 
 element.selected.active {
-    background-color: #00141d;
-    text-color: #FFFFFF;
+    background-color: #161616;
+    text-color: #F2F4F8;
 }
 
 element.alternate.normal {
-    background-color: #00141d;
-    text-color: #FFFFFF;
+    background-color: #161616;
+    text-color: #F2F4F8;
 }
 
 element.alternate.active {
-    background-color: #b3e5fc;
-    text-color: #1a1a1a;
+    background-color: #ff8f40;
+    text-color: #F2F4F8;
 }
 
 element.selected.normal {
-    background-color: #b3e5fc;
-    text-color: #1a1a1a;
+    background-color: #ff8f40;
+    text-color: #161616;
 }
 
 element.normal.active {
-    background-color: #00141d;
-    text-color: #FFFFFF;
+    background-color: #161616;
+    text-color: #F2F4F8;
 }
 
 element.normal.normal {
-    background-color: #00141d;
-    text-color: #FFFFFF;
+    background-color: #161616;
+    text-color: #F2F4F8;
 }
 
 element.normal.urgent {
     background-color: #f25d78;
-    text-color: #1a1a1a;
+    text-color: #161616;
 }
 
 listview {
     columns: 1;  /* Show in a single column for better alignment */
-    lines: 24;
+    lines: 12;
     padding: 8 0;
     fixed-height: true;
     fixed-columns: true;

@@ -29,14 +29,6 @@ msg() { echo -e "${CYAN}$*${NC}"; }
 
 # Banner
 clear
-echo -e "${CYAN}"
-echo " +-+-+-+-+-+-+-+-+-+-+-+-+-+ "
-echo " |j|u|s|t|a|g|u|y|l|i|n|u|x| "
-echo " +-+-+-+-+-+-+-+-+-+-+-+-+-+ "
-echo " |d|w|m| |s|e|t|u|p|        | "
-echo " +-+-+-+-+-+-+-+-+-+-+-+-+-+ "
-echo -e "${NC}\n"
-
 read -p "Install DWM? (y/n) " -n 1 -r
 echo
 [[ ! $REPLY =~ ^[Yy]$ ]] && exit 1
@@ -55,7 +47,7 @@ PACKAGES_CORE=(
 PACKAGES_UI=(
   rofi dunst feh lxappearance network-manager alacritty
   dialog firefox-esr qimgv geany lxtask gparted
-  color-picker mintstick atril transmission papirus-icon-theme adwaita-icon-theme-legacy
+  color-picker mintstick atril transmission papirus-icon-theme adwaita-icon-theme-legacy galculator mpv gimp
 )
 
 PACKAGES_FILE_MANAGER=(
@@ -68,9 +60,8 @@ PACKAGES_AUDIO=(
 )
 
 PACKAGES_UTILITIES=(
-  acpi acpid xfce4-power-manager
-  flameshot qimgv xdg-user-dirs-gtk fd-find eza
-  fzf heif-gdk-pixbuf webp-pixbuf-loader
+  acpi acpid flameshot qimgv xdg-user-dirs-gtk fd-find 
+  eza fzf heif-gdk-pixbuf webp-pixbuf-loader
 )
 
 PACKAGES_TERMINAL=(
@@ -168,75 +159,6 @@ TEMP_DIR="/tmp/nerdfonts_install_$$" # Using PID to avoid conflicts
 # Create necessary directories
 mkdir -p "$FONTS_DIR"
 mkdir -p "$TEMP_DIR"
-
-install_nerd_fonts() {
-  local installed=0
-  local skipped=0
-  local failed=0
-
-  echo -e "\n${BLUE}===== Nerd Fonts Installer =====${NC}"
-  echo -e "${BLUE}Installing fonts to:${NC} $FONTS_DIR"
-
-  # Start timer
-  local start_time=$(date +%s)
-
-  # Process each font in the array
-  for font in "${fonts[@]}"; do
-    echo -e "\n${BLUE}Processing:${NC} $font"
-
-    # Check if font is already installed
-    if [ -d "$FONTS_DIR/$font" ] && [ "$(ls -A "$FONTS_DIR/$font" 2>/dev/null)" ]; then
-      echo -e "  ${YELLOW}➤ $font is already installed. Skipping.${NC}"
-      ((skipped++))
-    else
-      echo -e "  ${BLUE}⚙ Downloading $font...${NC}"
-
-      # Download the font zip file with a timeout
-      if wget --timeout=30 -q --show-progress "https://github.com/ryanoasis/nerd-fonts/releases/download/${FONT_VERSION}/${font}.zip" -P "$TEMP_DIR"; then
-        echo -e "  ${BLUE}⚙ Extracting $font...${NC}"
-
-        # Create font directory
-        mkdir -p "$FONTS_DIR/$font"
-
-        # Extract the font with error handling
-        if unzip -q "$TEMP_DIR/${font}.zip" -d "$FONTS_DIR/$font/" 2>/dev/null; then
-          echo -e "  ${GREEN}✓ Successfully installed $font${NC}"
-          ((installed++))
-        else
-          echo -e "  ${RED}✗ Failed to extract $font${NC}"
-          rm -rf "$FONTS_DIR/$font" # Clean up the incomplete font directory
-          ((failed++))
-        fi
-
-        # Clean up the zip file
-        rm -f "$TEMP_DIR/${font}.zip"
-      else
-        echo -e "  ${RED}✗ Failed to download $font${NC}"
-        ((failed++))
-      fi
-    fi
-  done
-
-  # Update font cache
-  echo -e "\n${BLUE}Updating font cache...${NC}"
-  fc-cache -f
-
-  # End timer and calculate duration
-  local end_time=$(date +%s)
-  local duration=$((end_time - start_time))
-
-  # Print summary
-  echo -e "\n${BLUE}====== Installation Summary ======${NC}"
-  echo -e "  ${GREEN}✓ Successfully installed:${NC} $installed fonts"
-  echo -e "  ${YELLOW}➤ Already installed (skipped):${NC} $skipped fonts"
-  echo -e "  ${RED}✗ Failed to install:${NC} $failed fonts"
-  echo -e "  ${BLUE}⏱ Total time:${NC} $duration seconds"
-  echo -e "${BLUE}==============================${NC}"
-  echo -e "Fonts installed in: $FONTS_DIR"
-}
-
-# Run the installation
-install_nerd_fonts
 
 # Clean up the temporary directory
 rm -rf "$TEMP_DIR"

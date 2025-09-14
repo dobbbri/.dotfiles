@@ -79,6 +79,6 @@ static const struct arg args[] = {
 	{ battery_perc, "^c#6CF982^ 󰁹 ^c#FFFFFF^%s%% ", "BAT0" },
 	{ ram_perc,     "^c#4fc3f7^  ^c#FFFFFF^%s%% ", NULL },
 	{ datetime,     "^c#ffc107^ 󰸗 ^c#FFFFFF^%s", "%d/%m" },
-	{ datetime,     "^c#9c27b0^ 󰥔 ^c#FFFFFF^%s ", "%H:%M" },
+	{ datetime,     "^c#FF5555^ 󰥔 ^c#FFFFFF^%s ", "%H:%M" },
 	{ battery_notify, "",       "BAT0" }, /* There is nothing to print its just a notifications*/
 };
