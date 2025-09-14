@@ -24,7 +24,7 @@ require("monokai-v2").setup({
   },
 
   -- Filter selection (default: classic for dark, light for light background)
-  filter = "pro", -- classic | light | machine | octagon | pro | ristretto | spectrum
+  filter = "octagon", -- classic | light | machine | octagon | pro | ristretto | spectrum
 
   -- Day/night mode
   day_night = {
@@ -35,14 +35,6 @@ require("monokai-v2").setup({
 
   -- Incremental search style
   inc_search = "background", -- underline | background
-
-  -- Background clearing for floating windows
-  background_clear = {
-    "toggleterm",
-    "telescope",
-    "renamer",
-    "notify",
-  },
 })
 
 vim.cmd("colorscheme monokai-v2")

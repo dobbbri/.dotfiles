@@ -25,7 +25,7 @@ static const char dmenufont[] = "jetBrainsMono Nerd Font:style=bold:size=13:anti
 
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#272727";
-static const char col_gray3[]       = "#aaaaaa";
+static const char col_gray3[]       = "#ffffff";
 static const char col_cyan[]        = "#4fc3f7";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
