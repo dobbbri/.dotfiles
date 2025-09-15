@@ -2,30 +2,28 @@
 
 #include <X11/XF86keysym.h>
 
-/* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
-static int smartgaps                 = 0;        /* 1 means no outer gap when there is only one window */
-static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayonleft  = 0;   /* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 6;   /* systray spacing */
-static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 1;        /* 0 means no systray */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const int focusedontoptiled  = 1;        /* 1 means focused tile client is shown on top of floating windows */
-static const char *fonts[]          = { 
-  "jetBrainsMono Nerd Font:style=bold:size=13:antialias=true:autohint=true", 
+/* appearance -------------------------------------------------------------- */
+static const unsigned int borderpx  = 2;  /* border pixel of windows */
+static const unsigned int snap      = 32;  /* snap pixel */
+/* gap */
+static const Gap default_gap        = {.isgap = 1, .realgap = 11, .gappx = 11};
+/* bar */
+static const int showbar            = 1; /* 0 means no bar */
+static const int topbar             = 1; /* 0 means bottom bar */
+/* bar padding */
+static const int vertpad            = 0; /* vertical padding of bar */
+static const int sidepad            = 0; /* horizontal padding of bar */
+
+/* font -------------------------------------------------------------- */
+static const char *fonts[]          = {
+  "jetBrainsMono Nerd Font:style=Bold:size=12",
+  "SymbolsNerdFontMono:size=13"
 };
-static const char dmenufont[] = "jetBrainsMono Nerd Font:style=bold:size=13:antialias=true:autohint=true";
+static const char dmenufont[] = "jetBrainsMono Nerd Font:style=bold:size=12:antialias=true:autohint=true";
 
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#272727";
-static const char col_gray3[]       = "#ffffff";
+static const char col_gray3[]       = "#cccccc";
 static const char col_cyan[]        = "#4fc3f7";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -33,165 +31,96 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_cyan, col_gray1,  col_cyan  },
 };
 
+/* autostart -------------------------------------------------------------- */
 static const char *const autostart[] = {
 	"sh", "-c", "~/.config/suckless/scripts/autostart.sh", NULL,
+  // "slstatus", NULL,
+  // "sh", "-c", "feh --bg-scale ~/.dotfiles/pictures/tron.jpeg", NULL,
+  // "syncthing", "serve", "--no-browser", "--no-restart", "--logflags=0", NULL,
 	NULL /* terminate */
 };
 
-/* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-
-static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
-static const unsigned int ulinestroke	= 3;	/* thickness / height of the underline */
+/* tag -------------------------------------------------------------- */
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7" };
+static const unsigned int ulinepad	    = 4;	/* horizontal padding between the underline and tag */
+static const unsigned int ulinestroke	  = 2;	/* thickness / height of the underline */
+static const int ulineall               = 0;	/* 1 to show underline on all tags, 0 for the active ones */
 static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
-static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
+/* tag rules */
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                instance    title       tags mask     isfloating   iscentered   monitor */
-	{ "Gimp",               NULL,       NULL,       0,            0,           0,           -1 },
-	{ "mpv",                NULL,       NULL,       0,            1,           1,           -1 },
-	{ "qimgv",              NULL,       NULL,       0,            1,           1,           -1 },
-	{ "Galculator",         NULL,       NULL,       0,            1,           1,           -1 },
-	{ "Transmission-gtk",   NULL,       NULL,       0,            1,           1,           -1 },
-	{ "st",                 NULL,       NULL,       0,            1,           1,           -1 },
-	{ "ColorPicker",        NULL,       NULL,       0,            1,           1,           -1 },
-  { "Thunar",             NULL,       NULL,       0,            0,           1,           -1 },
+	/* class              instance    title       tags mask     isfloating   monitor */
+  { "Gimp",             NULL,       NULL,       0,            1,           -1 },
+	{ "mpv",  				    NULL,       NULL,       0,       		  1,           -1 },
+	{ "qimgv",    			  NULL,       NULL,       0,       		  1,           -1 },
+	{ "Transmission-gtk", NULL,       NULL,       0,       		  1,           -1 },
+	{ "Lxappearance",   	NULL,       NULL,       0,       		  1,           -1 },
+	{ "Colorpicker",  		NULL,       NULL,       0,       		  1,           -1 },
 };
 
-/* window following */
-#define WFACTIVE '>'
-#define WFINACTIVE 'v'
-#define WFDEFAULT WFACTIVE
+/* layout(s) -------------------------------------------------------------- */
+static const float mfact          = 0.55; /* factor of master area size [0.05..0.95] */
+static const int nmaster          = 1;    /* number of clients in master area */
+static const int resizehints      = 1;    /* 1 means respect size hints in tiled resizals */
+static const int lockfullscreen   = 1;    /* 1 will force focus on the fullscreen window */
+static const int refreshrate      = 120;  /* refresh rate (per second) for client move/resize */
 
-/* layout(s) */
-static const float mfact        = 0.50; /* factor of master area size [0.05..0.95] */
-static const int nmaster        = 1;    /* number of clients in master area */
-static const int resizehints    = 1;    /* 1 means respect size hints in tiled resizals */
-static const int lockfullscreen = 1;    /* 1 will force focus on the fullscreen window */
-static const int refreshrate    = 120;  /* refresh rate (per second) for client move/resize */
-
-#define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
-#include "vanitygaps.c"
-
+/* layouts */
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "󰕴",      dwindle },                 /* first entry is default */
-	{ "󰙀",      tile },
-	{ "󰕬",      columnlayout },
-	{ "󰕯",      centeredmaster },
-	{ "󰕰",      NULL },                    /* no layout function means floating behavior */
-	{ "󱒈",      bstack },
-	{ "󰕭",      nrowgrid },
-	{ "󱇙",      deck },
-	{ "󰕫",      gaplessgrid },
-	{ "󰪷",      spiral },
-	{ "󰕮",      monocle },
-	{ "󰝘",      grid },
-	{ "󱒉",      bstackhoriz },            /* no keybinding */
-	{ "󰕱",      centeredfloatingmaster },  /* no keybinding */
-	{ "󱇚",      horizgrid },              /* no keybinding */
-	{ NULL,      NULL },
+	{ "[]=",      tile },    /* first entry is default */
+	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[M]",      monocle },
 };
 
-/* key definitions */
+/* key definitions -------------------------------------------------------------- */
 #define MODKEY Mod4Mask
+#define ALTKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	{ MODKEY,                       KEY,  view,         {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask,           KEY,  toggleview,   {.ui = 1 << TAG} }, \
+	{ MODKEY|ShiftMask,             KEY,  tag,          {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask|ShiftMask, KEY,  toggletag,    {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray1, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static char dmenumon[2]             = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenucmd[]       = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray3, NULL };
 
-/* scratchpads */
-static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *termcmd[]        = { "alacritty", NULL };
+static const char *alacrittycmd[]   = { "alacritty", NULL };
+static const char *webbrowsercmd[]  = { "firefox", NULL };
+static const char *thunarcmd[]      = { "thunar", NULL };
+static const char *geanycmd[]       = { "geany", NULL };
+static const char *gimpcmd[]        = { "gimp", NULL };
 
+/* action keys -------------------------------------------------------------- */
 #include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,             XK_p,       spawn,    {.v = dmenucmd } },
+	{ MODKEY,             XK_Return,  spawn,    {.v = alacrittycmd } },
+	{ MODKEY,             XK_t,       spawn,    {.v = termcmd  } },
+	{ MODKEY,             XK_w,       spawn,    {.v = webbrowsercmd } },
+	{ MODKEY,             XK_f,       spawn,    {.v = thunarcmd } },
+	{ MODKEY,             XK_e,       spawn,    {.v = geanycmd } },
+	{ MODKEY,             XK_g,       spawn,    {.v = gimpcmd } },
 
-	{ MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
-	{ MODKEY|ShiftMask,             XK_t,      togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_s,      togglesticky,   {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY,             XK_s,       spawn,    SHCMD( "flameshot full --path /home/sdobri/Screenshots/" ) },
+	{ MODKEY|ShiftMask,   XK_s,       spawn,    SHCMD( "flameshot gui --path /home/sdobri/Screenshots/" ) },
 
-	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
-	{ MODKEY|ControlMask,           XK_Left,   setmfact,       {.f = -0.05} },
-	{ MODKEY|ControlMask,           XK_Right,  setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Right,  movestack,      {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_Left,   movestack,      {.i = -1 } },
+	{ MODKEY,             XK_space,   spawn,    SHCMD( "~/.config/suckless/rofi/launchers/launcher.sh" ) },
+	{ MODKEY,             XK_x,       spawn,    SHCMD( "~/.config/suckless/rofi/powermenu/powermenu.sh" ) },
+  { MODKEY,             XK_h,       spawn,    SHCMD( "~/.config/suckless/rofi/shortcutshelp/shortcutshelp.sh" ) },
 
-	{ ControlMask|ShiftMask,        XK_Left,   viewtoleft,     {0} },
-	{ ControlMask|ShiftMask,        XK_Right,  viewtoright,    {0} },
-	{ Mod1Mask|ControlMask,         XK_Left,   tagtoleft,      {0} },
-	{ Mod1Mask|ControlMask,         XK_Right,  tagtoright,     {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	
-  { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-  { MODKEY|Mod1Mask|ShiftMask,    XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_period, tagmon,         {.i = +1 } },
-	
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
-  { MODKEY|Mod1Mask,              XK_u,      incrgaps,       {.i = 1 } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
-
-	{ MODKEY|Mod1Mask,              XK_i,      incrigaps,      {.i = 1 } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
-	{ MODKEY|Mod1Mask,              XK_o,      incrogaps,      {.i = 1 } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
-	{ MODKEY|Mod1Mask,              XK_6,      incrihgaps,     {.i = 1 } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } },
-	{ MODKEY|Mod1Mask,              XK_7,      incrivgaps,     {.i = 1 } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_7,      incrivgaps,     {.i = -1 } },
-	{ MODKEY|Mod1Mask,              XK_8,      incrohgaps,     {.i = 1 } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
-	{ MODKEY|Mod1Mask,              XK_9,      incrovgaps,     {.i = 1 } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
-
-	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
-
-	{ ShiftMask|ControlMask,        XK_1,      setlayout,     {.v = &layouts[0] } },
-	{ ShiftMask|ControlMask,        XK_2,      setlayout,     {.v = &layouts[1] } },
-	{ ShiftMask|ControlMask,        XK_3,      setlayout,     {.v = &layouts[2] } },
-	{ ShiftMask|ControlMask,        XK_4,      setlayout,     {.v = &layouts[3] } },
-	{ ShiftMask|ControlMask,        XK_5,      setlayout,     {.v = &layouts[4] } },
-	{ ShiftMask|ControlMask,        XK_6,      setlayout,     {.v = &layouts[5] } },
-	{ ShiftMask|ControlMask,        XK_7,      setlayout,     {.v = &layouts[6] } },
-	{ ShiftMask|ControlMask,        XK_8,      setlayout,     {.v = &layouts[7] } },
-	{ ShiftMask|ControlMask,        XK_9,      setlayout,     {.v = &layouts[8] } },
-	{ ShiftMask|ControlMask,        XK_0,      setlayout,     {.v = &layouts[9] } },
-	{ ShiftMask|ControlMask,        XK_minus,  setlayout,     {.v = &layouts[10] } },
-	{ ShiftMask|ControlMask,        XK_equal,  setlayout,     {.v = &layouts[11] } },
-
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
-	TAGKEYS(                        XK_0,                      9)
+	// { MODKEY|ShiftMask,   XK_r,       spawn,    SHCMD( "~/.config/suckless/scripts/redshift-on" ) },
+	// { MODKEY,             XK_r,       spawn,    SHCMD( "~/.config/suckless/scripts/redshift-off" ) },
 
   /* audio */
 	{ 0,  XF86XK_AudioMute,           spawn,    SHCMD( "amixer sset Master toggle" ) },
@@ -201,11 +130,70 @@ static const Key keys[] = {
 	{ 0,  XF86XK_MonBrightnessUp,     spawn,    SHCMD( "brightnessctl -c backlight set 5%+" ) },
 	{ 0,  XF86XK_MonBrightnessDown,   spawn,    SHCMD( "brightnessctl -c backlight set 5%-" ) },
 
-	{ MODKEY|Mod1Mask|ShiftMask,      XK_Tab,    incnmaster,     {.i = +1 } },
-	{ MODKEY|Mod1Mask,                XK_Tab,    incnmaster,     {.i = -1 } },
+  /* togglebar */
+  { MODKEY,                       XK_b,      togglebar,      {0} },
 
-	{ MODKEY,                         XK_q,      killclient,     {0} },
-	{ MODKEY|ShiftMask,               XK_q,      quit,           {0} },
+  /* stacks focus */
+	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
+  /* stacks move */
+	{ MODKEY|ALTKEY,                XK_Right,  movestack,      {.i = +1 } },
+	{ MODKEY|ALTKEY,                XK_Left,   movestack,      {.i = -1 } },
+  /* stacks resize */
+  { ALTKEY|ControlMask,           XK_Left,   setmfact,       {.f = -0.05} },
+  { ALTKEY|ControlMask,           XK_Right,  setmfact,       {.f = +0.05} },
+
+  /* layouts tiles */
+  { MODKEY|ALTKEY,                  XK_t,      setlayout,      {.v = &layouts[0]} },
+  /* layouts null */
+  { MODKEY|ALTKEY,                  XK_n,      setlayout,      {.v = &layouts[1]} },
+  /* layouts monocle */
+  { MODKEY|ALTKEY,                  XK_m,      setlayout,      {.v = &layouts[2]} },
+  /* layouts fullscreen */
+  { MODKEY|ALTKEY,                  XK_f,      fullscreen,     {0} },
+
+  /* window */
+	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+  { MODKEY,                       XK_z,      zoom,           {0} },
+
+	{ MODKEY,                       XK_Tab,    view,           {0} },
+  { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+
+  { MODKEY|ControlMask,           XK_space,  setlayout,      {0} },
+	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	
+  /* monitor */
+  { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	
+  /* gaps resize */
+  { MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
+	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
+  /* gaps reset */
+	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
+  /* gaps toggle */
+	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
+  
+  /* ???? */
+  { MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
+	
+  /* tagkeys */
+	TAGKEYS(                        XK_1,                      0)
+	TAGKEYS(                        XK_2,                      1)
+	TAGKEYS(                        XK_3,                      2)
+	TAGKEYS(                        XK_4,                      3)
+	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(                        XK_6,                      5)
+	TAGKEYS(                        XK_7,                      6)
+  
+  /* close */
+	{ MODKEY,                       XK_q,      killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
 /* button definitions */
@@ -214,7 +202,6 @@ static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
-	{ ClkFollowSymbol,      0,              Button1,        togglefollow,   {0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
@@ -225,3 +212,4 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+

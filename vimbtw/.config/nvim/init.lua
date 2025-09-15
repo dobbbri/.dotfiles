@@ -13,4 +13,4 @@ require("plugins.ufo")
 require("plugins.visualmulti")
 require("plugins.whichkey")
 
-require("plugins.colors.monokayv2")
+require("plugins.colors.rosepine")

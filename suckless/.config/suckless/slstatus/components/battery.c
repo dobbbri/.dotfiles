@@ -105,7 +105,7 @@ const char *battery_notify(const char *bat)
 		} map[] = {
 			{ "Charging",    "+" },
 			{ "Discharging", "-" },
-			{ "Full",        "o" },
+			{ "Full",        "*" },
 			{ "Not charging", "o" },
 		};
 		size_t i;

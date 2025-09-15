@@ -77,7 +77,7 @@ up(const char *interface)
 
 		if (!strcmp(ifa->ifa_name, interface)) {
 			freeifaddrs(ifaddr);
-			return ifa->ifa_flags & IFF_UP ? "up" : "down";
+			return ifa->ifa_flags & IFF_UP ? "up" : "dowm";
 		}
 	}
 

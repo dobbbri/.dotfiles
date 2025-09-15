@@ -75,10 +75,12 @@ const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifi
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument */
-	{ battery_perc, "^c#6CF982^ 󰁹 ^c#FFFFFF^%s%% ", "BAT0" },
-	{ ram_perc,     "^c#4fc3f7^  ^c#FFFFFF^%s%% ", NULL },
-	{ datetime,     "^c#ffc107^ 󰸗 ^c#FFFFFF^%s", "%d/%m" },
-	{ datetime,     "^c#FF5555^ 󰥔 ^c#FFFFFF^%s ", "%H:%M" },
-	{ battery_notify, "",       "BAT0" }, /* There is nothing to print its just a notifications*/
+	/* function format                                argument */
+	{ up,             "  ^c#cccccc^%s ",              "wlp2s0b1" },
+	{ battery_state,  " ^c#6CF982^%s",                "BAT0"  },
+	{ battery_perc,   "^c#6CF982^ ^c#cccccc^%s%% ",  "BAT0"  },
+	{ ram_perc,       "^c#4fc3f7^  ^c#cccccc^%s%% ", NULL    },
+	{ datetime,       "^c#ffc107^ 󰸗 ^c#cccccc^%s",    "%d/%m" },
+	{ datetime,       "^c#FF5555^ 󰥔 ^c#cccccc^%s ",   "%H:%M" },
+	{ battery_notify, "",                             "BAT0"  }, /* There is nothing to print its just a notifications*/
 };

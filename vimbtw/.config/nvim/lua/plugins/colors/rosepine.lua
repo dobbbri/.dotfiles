@@ -1,4 +1,4 @@
-vim.pack.add({{ src = "https://github.com/rose-pine/neovim", name = "rose-pine" }}, { confirm = false })
+vim.pack.add({ { src = "https://github.com/rose-pine/neovim", name = "rose-pine" } }, { confirm = false })
 
 require("rose-pine").setup({
   variant = "main",      -- auto, main, moon, or dawn
@@ -10,21 +10,31 @@ require("rose-pine").setup({
   -- extend_background_behind_borders = false,
   styles = {
     bold = true,
-    italic = false,
-    transparency = true,
+    italic = true,
+    transparency = false,
   },
-  highlight_groups = {
-    ColorColumn = { bg = "#1C1C21" },
-    -- Normal = { bg = "none" },                      -- Main background remains transparent
-    Pmenu = { bg = "#191724", fg = "#e0def4" },    -- Completion menu background
-    PmenuSel = { bg = "#4a465d", fg = "#f8f5f2" }, -- Highlighted completion item
-    PmenuSbar = { bg = "#191724" },                -- Scrollbar background
-    PmenuThumb = { bg = "#9ccfd8" },               -- Scrollbar thumb
-  },
-  enable = {
-    terminal = false,
-    legacy_highlights = false, -- Improve compatibility for previous versions of Neovim
-    migrations = true,         -- Handle deprecated options automatically
+
+  palette = {
+    main = {
+      _nc = "#16141f",
+      base = "#191724",
+      surface = "#1f1d2e",
+      overlay = "#26233a",
+      muted = "#6e6a86",
+      subtle = "#908caa",
+      text = "#e0def4",
+      love = "#eb6f92",
+      gold = "#f6c177",
+      rose = "#ffcfcd",
+      pine = "#31748f",
+      foam = "#8ed1d4",
+      iris = "#a38bc0",
+      leaf = "#7c938f",
+      highlight_low = "#21202e",
+      highlight_med = "#403d52",
+      highlight_high = "#524f67",
+      none = "NONE",
+    },
   },
 })
 
