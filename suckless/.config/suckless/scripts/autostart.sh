@@ -1,7 +1,8 @@
 #!/bin/sh
 
 slstatus &
-feh --bg-scale ~/.dotfiles/pictures/binary.jpg &
+feh --bg-scale ~/.dotfiles/pictures/shakti-rajpurohit-ggs-47SjYy0-unsplash.jpg &
+
 # syncthing serve --no-browser --no-restart --logflags=0 &
 
 # /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
