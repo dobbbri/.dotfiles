@@ -1,20 +1,16 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 2000;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = " ";
 
 /* maximum output string length */
-#define MAXLEN 2048
+#define MAXLEN 1024
 
 /* battery levels to notify - add any levels you want to receive notification for (in percent) */
-const int notifiable_levels[] = {
-    25,
-    15,
-    5,
-};
+const int notifiable_levels[] = { 25, 15, 5};
 const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifiable_levels[0]);
 
 /*
@@ -76,10 +72,10 @@ const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifi
  */
 static const struct arg args[] = {
 	/* function format                                argument */
+  { ram_perc,       "  ^c#4fc3f7^ ^c#cccccc^%s%%", NULL    },
 	{ battery_state,  "  ^c#6CF982^%s",                "BAT0"  },
-	{ battery_perc,   "^c#6CF982^ ^c#cccccc^%s%% ",  "BAT0"  },
-	{ ram_perc,       "^c#4fc3f7^  ^c#cccccc^%s%% ", NULL    },
-	{ datetime,       "^c#ffc107^ 󰥔 ^c#cccccc^%s ",   "%H:%M" },
+	{ battery_perc,   "^c#6CF982^ ^c#cccccc^%s%%",  "BAT0"  },
+	{ datetime,       "  ^c#ffc107^󰥔 ^c#cccccc^%s ",   "%H:%M" },
 	{ battery_notify, "",                             "BAT0"  }, 
   // { wifi_perc,      "^c#aa00ff^ 󰖩 ^c#cccccc^%s%% ", "wlp2s0b1" },
   // { datetime,       "^c#FF5555^ 󰸗 ^c#cccccc^%s",    "%d/%m" },
