@@ -1,6 +1,8 @@
 local g = vim.g
 local opt = vim.opt
 
+vim.filetype.add({ extension = { mdx = "markdown" } })
+
 -- mapleader
 g.mapleader = " "
 g.maplocalleader = ","

@@ -25,10 +25,10 @@ vim.keymap.set("n", "<leader>s", ":%s///gcI<Left><Left><Left><Left><Left>",
 -- vim.keymap.set("n", "<leader>o", ":update<CR> :source<CR>", { desc = "Reload buffer" })
 
 -- Open terminal
-vim.keymap.set("n", "<leader>t", function()
-	vim.cmd.term()
-	vim.cmd("startinsert")
-end, { desc = "Open terminal" })
-
--- Exit terminal with Esc
-vim.keymap.set("t", "<esc>", "<c-\\><c-n>")
+-- vim.keymap.set("n", "<leader>t", function()
+-- 	vim.cmd.term()
+-- 	vim.cmd("startinsert")
+-- end, { desc = "Open terminal" })
+--
+-- -- Exit terminal with Esc
+-- vim.keymap.set("t", "<esc>", "<c-\\><c-n>")

@@ -1,6 +1,8 @@
 vim.pack.add({ "https://github.com/MagicDuck/grug-far.nvim" }, { confirm = false })
 
-require("grug-far").setup({
+local grug = require("grug-far")
+
+grug.setup({
   headerMaxWidth = 80,
   showCompactInputs = true,
   showInputsTopPadding = false,
@@ -8,7 +10,6 @@ require("grug-far").setup({
 })
 
 vim.keymap.set({ "n", "v" }, "<leader>S", function()
-  local grug = require("grug-far")
   local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
   grug.open({
     transient = true,

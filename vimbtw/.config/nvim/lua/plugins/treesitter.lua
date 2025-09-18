@@ -1,37 +1,13 @@
 vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" }, { confirm = false })
 
-local parser_names = {
-  "vim",
-  "lua",
-  "vimdoc",
-  "astro",
-  "bash",
-  "c",
-  "diff",
-  "html",
-  "luadoc",
-  "css",
-  "scss",
-  "html",
-  -- "vue",
-  "javascript",
-  "typescript",
-  "json",
-  "tsx",
-  "yaml",
-  "bash",
-  "markdown",
-  "markdown_inline",
-  "gitignore",
-  "gitcommit",
-  "git_rebase",
-  "gitignore",
-  "regex",
-  "query",
-}
+local utils = require("utils")
 
 require("nvim-treesitter.configs").setup({
-  ensure_installed = parser_names,
+  modules = {}, -- You can specify modules here if needed
+  sync_install = false, -- Set to true to install parsers synchronously
+  ignore_install = {}, -- List of parsers to ignore during installation
+  auto_install = true, -- Set to true to automatically install missing parsers
+  ensure_installed = utils.parser_names(),
   highlight = {
     enable = true,
     use_languagetree = true,

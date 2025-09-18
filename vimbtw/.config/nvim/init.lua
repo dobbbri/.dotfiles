@@ -1,8 +1,10 @@
 require("options")
 require("commands")
 require("mappings")
+require("filetypes")
 
 require("plugins.blink")
+require("plugins.fterm")
 require("plugins.logsitter")
 require("plugins.lsp")
 require("plugins.mini")
