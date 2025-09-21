@@ -11,3 +11,6 @@ sudo curl -fsSLo /etc/apt/sources.list.d/brave-browser-release.sources https://b
 sudo apt update
 
 sudo apt install brave-browser
+
+sudo apt remove gnome-keyring
+sudo apt autoremove
