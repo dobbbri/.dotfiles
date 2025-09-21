@@ -17,33 +17,45 @@ local M = {
 
   parser_names = function()
     return {
-      "vim",
-      "lua",
-      "vimdoc",
+      -- Web development
       "astro",
-      "bash",
-      "c",
-      "diff",
-      "html",
-      "luadoc",
-      "css",
-      "scss",
-      "html",
-      -- "vue",
       "javascript",
       "typescript",
-      "json",
       "tsx",
-      "yaml",
+      "html",
+      "css",
+      "scss",
+      "json",
+      "vue",
+      "c",
+
+      -- Languages
+      "lua",
+      "go",
+      "php",
+      "python",
+      "rust",
       "bash",
-      "markdown",
+
+      -- Markup and config
       "markdown_inline",
-      "gitignore",
-      "gitcommit",
+      "markdown",
+      "yaml",
+      "toml",
+
+      -- Git related
+      "git_config",
       "git_rebase",
+      "gitcommit",
       "gitignore",
+
+      -- Other utilities
       "regex",
+      "vim",
+      "vimdoc",
       "query",
+      "diff",
+      "luadoc",
     }
   end,
 

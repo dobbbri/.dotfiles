@@ -25,7 +25,7 @@ require("rose-pine").setup({
       text = "#e0def4",
       love = "#eb6f92",
       gold = "#f6c177",
-      rose = "#ffcfcd",
+      rose = "#ffcccc",
       pine = "#31748f",
       foam = "#8ed1d4",
       iris = "#a38bc0",

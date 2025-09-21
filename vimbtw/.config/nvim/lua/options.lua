@@ -34,7 +34,7 @@ opt.timeoutlen = 700
 opt.updatetime = 250
 
 opt.cursorline = true
-opt.cursorlineopt = "number"
+opt.cursorlineopt = "both"
 
 -- Indenting
 opt.expandtab = true
