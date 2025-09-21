@@ -87,7 +87,7 @@ opt.conceallevel = 2
 -- statusline
 opt.laststatus = 3
 opt.cmdheight = 0
-opt.statusline = "  %t %h%m%r%w %{v:lua.vim.diagnostic.status()}  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
+opt.statusline = "  %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %t %h%m%r%w %{v:lua.vim.diagnostic.status()}  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
 
 -- title
 opt.title = true

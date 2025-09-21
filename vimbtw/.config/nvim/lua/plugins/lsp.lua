@@ -10,3 +10,12 @@ vim.diagnostic.config({ virtual_text = true, severity_sort = true })
 vim.keymap.set({ "n", "v" }, "f", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 3000 })<cr>", { desc = "Format File" })
 vim.keymap.set("n", "<leader>D", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to diagnostics" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "show diagnostic Info" })
+
+-- • Mappings:
+--   • |grn| in Normal mode maps to |vim.lsp.buf.rename()|
+--   • |grr| in Normal mode maps to |vim.lsp.buf.references()|
+--   • |gri| in Normal mode maps to |vim.lsp.buf.implementation()|
+--   • |gO| in Normal mode maps to |vim.lsp.buf.document_symbol()|
+--   • |gra| in Normal and Visual mode maps to |vim.lsp.buf.code_action()|
+--   • |grt| in Normal mode maps to |vim.lsp.buf.type_definition()|
+--   • CTRL-S in Insert and Select mode maps to |vim.lsp.buf.signature_help()|
