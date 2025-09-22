@@ -156,7 +156,7 @@ installAppImage() {
   sudo mv $1 /usr/local/bin/$2
 }
 
-startNet() {
+upNet() {
   #sudo cat /etc/network/interfaces
   sudo ifdown wlp2s0b1
   sudo ifup wlp2s0b1
