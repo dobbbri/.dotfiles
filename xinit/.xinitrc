@@ -5,9 +5,6 @@
 # invoke global X session script
 # . /etc/X11/Xsession &
 
-export DESKTOP_SESSION=dwm
-exec dbus-launch --exit-with-session dwm
-
 # export DESKTOP_SESSION=dk
 # exec dbus-run-session dk
 
@@ -16,3 +13,7 @@ exec dbus-launch --exit-with-session dwm
 
 # export DESKTOP_SESSION=bspwm
 # exec dbus-launch --exit-with-session bspwm
+
+export DESKTOP_SESSION=dwm
+exec dbus-launch --exit-with-session dwm
+

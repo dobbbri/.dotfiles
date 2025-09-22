@@ -24,14 +24,15 @@ border-color =  ${colors.background}
 padding-left = 1
 padding-right = 1
 
-module-margin = 9px
+module-margin = 0
 
-separator =
-separator-foreground = ${colors.foreground}
+separator = 
+separator-foreground = ${colors.background}
 
-font-0 = "JetBrainsMono Nerd Font:size=12:style=medium;2.5"
+font-0 = "JetBrainsMono Nerd Font:size=11:style=medium;2.5"
 
-modules-left = logo xworkspaces xwindow 
+modules-left = logo xwindow 
+modules-center = lock xworkspaces
 modules-right = battery memory date battery_notifier 
 
 cursor-click = pointer
@@ -39,18 +40,22 @@ cursor-scroll = ns-resize
 
 enable-ipc = true
 
+; wm-restack = generic
 wm-restack = bspwm
+; wm-restack = i3
+
 ; override-redirect = true
 
 ;;;;;;;;;;;;;;;; LEFT MODULES ;;;;;;;;;;;;;;;;
 [module/xwindow]
 type = internal/xwindow
 format = <label>
-format-foreground = ${colors.foreground}
-;format-padding = 2
 label = %title%
+label-maxlen = 45
 label-empty = "BSPWM"
+label-foreground = ${colors.foreground}
 
+;;;;;;;;;;;;;;;; CENTER MODULES ;;;;;;;;;;;;;;;;
 [module/xworkspaces]
 type = internal/xworkspaces
 
@@ -72,6 +77,18 @@ label-empty-foreground = ${colors.background}
 label-empty-padding = 0
 
 ;;;;;;;;;;;;;;;; RIGHT MODULES ;;;;;;;;;;;;;;;;
+[module/lock]
+type = internal/xkeyboard
+format-margin = 2
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+format = <label-indicator>
+label-indicator-padding = 1
+indicator-icon-0 = caps lock;-CL;+CL
+label-indicator-off =
+label-indicator-on = "  Caps "
+format-foreground = ${colors.background}
+format-background = ${colors.active}
 
 [module/battery]
 type = internal/battery
@@ -80,56 +97,70 @@ battery = BAT0
 adapter = ADP1
 poll-interval = 5
 
-format-charging-prefix = " "
+format-charging-prefix = ""
 format-charging-prefix-foreground = ${colors.selected}
 format-charging = <label-charging>
 format-charging-foreground = ${colors.foreground}
 
-format-full-prefix = "󰁹 "
+format-full-prefix = "󰁹"
 format-full-prefix-foreground = ${colors.selected}
 format-full = <label-full>
 format-full-foreground = ${colors.foreground}
 
-format-discharging-prefix = "󰁹 "
+format-discharging-prefix = "󰁹"
 format-discharging-prefix-foreground = ${colors.selected}
 format-discharging = <label-discharging>
 format-discharging-foreground = ${colors.foreground}
 
-label-charging = "%percentage%%"
-label-discharging ="%percentage%%"
-label-full = "%percentage%%"  
-label-low = "%percentage%%" 
+label-charging = " %percentage%%  "
+label-discharging =" %percentage%%  "
+label-full = " %percentage%%  "  
+label-low = " %percentage%%  " 
 
 [module/memory]
 type = internal/memory
 warn-percentage = 95
 interval = 2
-format-prefix = " "
+format-prefix = ""
 format-prefix-foreground = ${colors.selected}
-label = "%percentage_used%%"
-; label = "%mb_used%"
-; label = "%gb_used%/%gb_free%"
+label = " %percentage_used%%  "
+label-warn = " %gb_used%/%gb_free%  "
 
 [module/date]
 type = internal/date
 interval = 60
-date = "%H:%M"
-date-alt = "%d/%m/%Y %H:%M"
-format-prefix = "󰥔 "
+date = " %H:%M"
+date-alt = " %d/%m/%Y %H:%M"
+format-prefix = "󰻡"
 format-prefix-font = size=8
 format-prefix-foreground = ${colors.selected}
 label = %date%
 label-foreground = ${colors.foreground}
+
+; [module/layout]
+; type = custom/script
+; exec = ~/.config/bspwm/scripts/get-layout
+; interval = 0.5
+; format-foreground = ${colors.selected}
+; format-background = ${colors.background}
+; format-padding = 1
+; label = %output%
+; label-font = 2
+; click-left = ~/.config/dk/scripts/get-layout cycle
+; click-right = ~/.config/dk/scripts/get-layout menu
+; format = <label>
+; format-suffix = " "
+; format-suffix-foreground = ${colors.background}
 
 [module/battery_notifier]
 type = custom/script
 exec = ~/.config/bspwm/scripts/battery-notifier
 interval = 180
 
- [module/logo]
- type = custom/text
- format = " "
- format-foreground = ${colors.selected} 
+[module/logo]
+type = custom/text
+format = "  "
+format-foreground = ${colors.selected} 
 
 [settings]
 screenchange-reload = true
