@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/mason-org/mason.nvim" }, { confirm = false })
+vim.pack.add({ "https://github.com/mason-org/mason.nvim" }, {  onfirm = vim.g.pack_confirm })
 
 require("mason").setup()
 

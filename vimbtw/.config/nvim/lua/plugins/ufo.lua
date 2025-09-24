@@ -2,7 +2,7 @@ vim.pack.add({
   { src = "https://github.com/kevinhwang91/nvim-ufo" },
   { src = 'https://github.com/kevinhwang91/promise-async' },
   { src = 'https://github.com/luukvbaal/statuscol.nvim' }
-}, { confirm = false })
+}, { confirm = vim.g.pack_confirm })
 
 local builtin = require("statuscol.builtin")
 

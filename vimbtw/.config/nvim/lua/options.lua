@@ -1,7 +1,7 @@
 local g = vim.g
 local opt = vim.opt
 
-vim.filetype.add({ extension = { mdx = "markdown" } })
+g.pack_confirm = false
 
 -- mapleader
 g.mapleader = " "

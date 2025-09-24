@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/folke/tokyonight.nvim" }, {confirm = false})
+vim.pack.add({ "https://github.com/folke/tokyonight.nvim" }, { onfirm = vim.g.pack_confirm})
 
 require("tokyonight").setup({
   transparent = false,

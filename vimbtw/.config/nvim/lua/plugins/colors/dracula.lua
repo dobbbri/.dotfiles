@@ -1,4 +1,4 @@
-vim.pack.add({"https://github.com/Mofiqul/dracula.nvim"}, {confirm = false})
+vim.pack.add({"https://github.com/Mofiqul/dracula.nvim"}, { onfirm = vim.g.pack_confirm})
 
 require("dracula").setup({
   colors = {

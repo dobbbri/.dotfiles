@@ -1,7 +1,7 @@
 vim.pack.add({
   { src = "https://github.com/gaelph/logsitter.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" }
-}, { confirm = false })
+}, {  confirm = vim.g.pack_confirm })
 
 local logs = require("logsitter")
 

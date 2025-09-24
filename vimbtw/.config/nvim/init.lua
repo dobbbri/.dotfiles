@@ -5,6 +5,7 @@ require("filetypes")
 
 require("plugins.blink")
 require("plugins.fterm")
+require("plugins.grugfar")
 require("plugins.logsitter")
 require("plugins.lsp")
 require("plugins.mini")

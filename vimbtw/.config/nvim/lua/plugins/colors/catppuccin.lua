@@ -1,4 +1,4 @@
-vim.pack.add({ { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } }, {confirm = false})
+vim.pack.add({ { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } }, { onfirm = vim.g.pack_confirm})
 
 require("catppuccin").setup({
   flavour = "auto", -- latte, frappe, macchiato, mocha

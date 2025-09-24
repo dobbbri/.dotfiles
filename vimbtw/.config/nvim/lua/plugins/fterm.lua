@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/numToStr/FTerm.nvim" }, { confirm = false })
+vim.pack.add({ "https://github.com/numToStr/FTerm.nvim" }, {  confirm = vim.g.pack_confirm })
 
 local fterm = require("FTerm")
 fterm.setup({

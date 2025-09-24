@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/echasnovski/mini.nvim" }, { confirm = false })
+vim.pack.add({ "https://github.com/echasnovski/mini.nvim" }, {  confirm = vim.g.pack_confirm })
 
 local utils = require("utils")
 
