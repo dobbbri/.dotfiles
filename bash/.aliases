@@ -82,12 +82,11 @@ alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%
 alias gc="git commit -m"
 alias gp="git push"
 alias gP="git pull"
-alias gaac="git add . && git commit -m"
-alias gsync="git pull && git push"
-alias ggg="gP && gaac 'update...' && gps"
+alias gac="git add . && git commit -m"
+alias gpp="git pull && git push"
+alias ggg="gac 'update...' && gps"
 
 gg() {
-  git pull
   git add .
   git commit -m "$1"
   git push
