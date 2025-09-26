@@ -72,12 +72,18 @@ const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifi
  */
 static const struct arg args[] = {
 	/* function format                                argument */
-  { battery_state,  "  ^c#6CF982^%s",               "BAT0"  },
-  { battery_perc,   "^c#6CF982^ ^c#cccccc^%s%%",   "BAT0"  },
+  { battery_state,  "  ^c#4fc3f7^%s",               "BAT0"  },
+  { battery_perc,   "^c#4fc3f7^ ^c#cccccc^%s%%",   "BAT0"  },
   { ram_perc,       "  ^c#4fc3f7^ ^c#cccccc^%s%%", NULL    },
-  { wifi_perc,      "  ^c#aa00ff^󰖩 ^c#cccccc^%s%%", "wlp2s0b1" },
-	{ datetime,       "  ^c#FF5555^󰥔 ^c#cccccc^%s ",  "%H:%M" },
+	{ datetime,       "  ^c#4fc3f7^󰥔 ^c#cccccc^%s ",  "%H:%M" },
 	{ battery_notify, "",                             "BAT0"  }, 
+  // { wifi_perc,      "  ^c#aa00ff^󰖩 ^c#cccccc^%s%%", "wlp2s0b1" },
   // { wifi_essid,     "  ^c#aa00ff^󰖩 ^c#cccccc^%s",   "wlp2s0b1" },
   // { datetime,       "^c#ffc107^󰸗 ^c#cccccc^%s",    "%d/%m" },
 };
+
+// #ffc107
+// #6CF982
+// #4fc3f7
+// #aa00ff
+// #FF5555

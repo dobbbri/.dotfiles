@@ -7,10 +7,10 @@ alias vv='cd ~/.dotfiles/vimbtw/.config/nvim/'
 
 # suckless
 alias suc='cd ~/.dotfiles/suckless/.config/suckless/'
-alias sud='cd ~/.dotfiles/suckless/.config/suckless/dwm/'
+alias sd='cd ~/.dotfiles/suckless/.config/suckless/dwm/'
 alias sus='cd ~/.dotfiles/suckless/.config/suckless/slstatus/'
 alias sur='sudo rm config.h'
-alias sui='sudo make clean install'
+alias smci='sudo make clean install'
 
 # burn iso
 alias burniso="sudo mintstick -m iso"
