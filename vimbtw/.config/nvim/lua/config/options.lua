@@ -87,8 +87,11 @@ opt.conceallevel = 2
 -- statusline
 opt.laststatus = 3
 opt.cmdheight = 0
-opt.statusline = "  %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %t %h%m%r%w %{v:lua.vim.diagnostic.status()}  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
+opt.statusline = "%#StatusLineBold#  %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %t %h%m%r%w %{v:lua.vim.diagnostic.status()}  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
 
 -- title
 opt.title = true
 opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a [nvim]'
+
+  vim.api.nvim_set_hl(0, "StatusLineBold", { bold = true })
+  -- vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })

@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 vim.api.nvim_create_user_command("InstallMyServers", function()
   vim.cmd(
     "MasonInstall " ..
-    "astro-language-server bash-language-server json-lsp lua-language-server prettier shfmt tailwindcss-language-server typescript-language-server"
+    "astro-language-server bash-language-server json-lsp lua-language-server prettier shfmt stylua tailwindcss-language-server typescript-language-server"
   )
 end, {})
 
@@ -29,7 +29,7 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = { "grug-far", "help", "lspinfo", "man", "notify", "qf", "query", "checkhealth" },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
-    vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+    vim.keymap.set("n", 'q', "<cmd>close<cr>", { buffer = event.buf, silent = true })
   end,
 })
 

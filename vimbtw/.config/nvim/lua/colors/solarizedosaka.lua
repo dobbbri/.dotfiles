@@ -1,4 +1,4 @@
-vim.pack.add({"https://github.com/craftzdog/solarized-osaka.nvim"}, { onfirm = vim.g.pack_confirm})
+vim.pack.add({"https://github.com/craftzdog/solarized-osaka.nvim"}, {load = true})
 
 require("solarized-osaka").setup({
   transparent = false,

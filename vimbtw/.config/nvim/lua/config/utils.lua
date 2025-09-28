@@ -26,6 +26,7 @@ local M = {
       "css",
       "scss",
       "json",
+      -- "jsonc",
       "vue",
       "c",
 

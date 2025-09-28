@@ -118,6 +118,7 @@ static const Key keys[] = {
 	{ MODKEY,             XK_x,       spawn,    SHCMD( "~/.config/suckless/rofi/powermenu/powermenu.sh" ) },
   { MODKEY,             XK_h,       spawn,    SHCMD( "~/.config/suckless/rofi/shortcutshelp/shortcutshelp.sh" ) },
 
+  { ALTKEY|ControlMask, XK_i,       spawn,    SHCMD( "~/.config/suckless/scripts/check-my-net" ) },
 	// { MODKEY|ShiftMask,   XK_r,       spawn,    SHCMD( "~/.config/suckless/scripts/redshift-on" ) },
 	// { MODKEY,             XK_r,       spawn,    SHCMD( "~/.config/suckless/scripts/redshift-off" ) },
 

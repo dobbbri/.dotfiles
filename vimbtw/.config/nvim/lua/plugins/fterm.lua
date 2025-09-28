@@ -1,6 +1,9 @@
-vim.pack.add({ "https://github.com/numToStr/FTerm.nvim" }, {  confirm = vim.g.pack_confirm })
+vim.pack.add({
+  { src = "https://github.com/numToStr/FTerm.nvim" }
+})
 
 local fterm = require("FTerm")
+
 fterm.setup({
   hl = "FloatBorder",
   dimensions = { height = 0.9, width = 0.9 },

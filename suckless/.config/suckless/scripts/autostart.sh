@@ -3,7 +3,6 @@
 slstatus &
 
 hsetroot -cover ~/.dotfiles/pictures/fabrizio-conti-c3wsMnxQZDw-unsplash.jpg &
-# feh --bg-scale ~/.dotfiles/pictures/fabrizio-conti-c3wsMnxQZDw-unsplash.jpg &
 
 # syncthing serve --no-browser --no-restart --logflags=0 &
 

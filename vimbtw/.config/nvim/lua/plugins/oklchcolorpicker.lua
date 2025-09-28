@@ -1,4 +1,6 @@
-vim.pack.add({ "https://github.com/eero-lehtinen/oklch-color-picker.nvim" }, { confirm = vim.g.pack_confirm })
+vim.pack.add({
+  { src = "https://github.com/eero-lehtinen/oklch-color-picker.nvim" }
+})
 
 local picker = require("oklch-color-picker")
 

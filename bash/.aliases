@@ -1,21 +1,24 @@
 #!/bin/bash
 
 # dotfiles
-alias dd='cd ~/.dotfiles/'
-alias bsp='cd ~/.dotfiles/bspwm/.config/bspwm/'
+alias ff='cd ~/.dotfiles/'
 alias vv='cd ~/.dotfiles/vimbtw/.config/nvim/'
+
+# bspwm
+alias bsp='cd ~/.dotfiles/bspwm/.config/bspwm/'
 
 # suckless
 alias suc='cd ~/.dotfiles/suckless/.config/suckless/'
-alias sd='cd ~/.dotfiles/suckless/.config/suckless/dwm/'
-alias sus='cd ~/.dotfiles/suckless/.config/suckless/slstatus/'
-alias sur='sudo rm config.h'
+alias sudw='cd ~/.dotfiles/suckless/.config/suckless/dwm/'
+alias susl='cd ~/.dotfiles/suckless/.config/suckless/slstatus/'
+alias surc='sudo rm config.h'
 alias smci='sudo make clean install'
 
 # burn iso
 alias burniso="sudo mintstick -m iso"
 
 # site
+alias dd='cd ~/Dev/'
 alias ss='cd ~/Sites/'
 alias sepc='cd ~/Sites/epc_in_dev/'
 alias se='cd ~/Sites/elisa_pet_care_2025/'
@@ -60,13 +63,6 @@ alias sas='sudo apt search'
 alias sar='sudo apt remove && sudo apt autoremove -yy'
 alias saa='sudo apt autoclean && sudo apt autoremove -yy'
 alias sauu='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoclean && sudo apt autoremove -y'
-
-# nala
-alias sni='sudo nala install'
-alias sns='sudo nala search'
-alias snr='sudo nala remove'
-alias sna='sudo nala autoremove -y'
-alias snuu='sudo nala update && sudo nala upgrade -y && sudo nala autoremove -y'
 
 # update node packages
 alias uppkg="ncu --interactive --format group"
@@ -147,6 +143,13 @@ installNeovim() {
   # wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.appimage
   chmod u+x nvim-linux-x86_64.appimage
   sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
+}
+
+cleanNeovim() {
+  echo "- clean Neovim plugins, caches ... ---------------------------------------------"
+  rm -rf /home/sdobri/.cache/nvim
+  rm -rf /home/sdobri/.local/share/nvim
+  rm -rf /home/sdobri/.local/state/nvim
 }
 
 installAppImage() {
