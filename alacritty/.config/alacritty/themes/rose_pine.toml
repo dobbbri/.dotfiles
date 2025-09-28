@@ -8,7 +8,7 @@ cursor = '#524f67'
 
 [colors.vi_mode_cursor]
 text = '#e0def4'
-cursor = '#524f67'
+cursor = '#ffffff'
 
 [colors.selection]
 text = '#e0def4'
