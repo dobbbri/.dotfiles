@@ -71,7 +71,6 @@ local M = {
       col = math.floor(0.5 * (vim.o.columns - width)),
     }
   end,
-
 }
 
 return M

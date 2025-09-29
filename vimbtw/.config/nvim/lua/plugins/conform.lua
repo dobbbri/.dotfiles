@@ -1,11 +1,14 @@
 vim.pack.add({
-  { src = 'https://github.com/stevearc/conform.nvim' }
+  { src = "https://github.com/stevearc/conform.nvim" },
 })
 
-require("conform").setup({
+local conform = require("conform")
+
+conform.setup({
   formatters_by_ft = {
     sh = { "shfmt" },
     lua = { "stylua" },
+    toml = { "taplo" },
     astro = { "prettier" },
     javascript = { "prettier" },
     typescript = { "prettier" },
@@ -23,25 +26,10 @@ require("conform").setup({
     -- vue = { "prettier" },
   },
   default_format_opts = {
+    lsp_fallback = true,
+    async = true,
     timeout_ms = 3000,
-    lsp_format = "fallback",
-    -- stop_after_first = false,
   },
 })
 
--- vim.api.nvim_create_autocmd("BufWritePre", {
---   pattern = "*",
---   callback = function(args) require("conform").format({ async = true, bufnr = args.buf }) end,
--- })
---
--- vim.api.nvim_create_user_command("Format", function(args)
---   local range = nil
---   if args.count ~= -1 then
---     local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
---     range = {
---       start = { args.line1, 0 },
---       ["end"] = { args.line2, end_line:len() },
---     }
---   end
---   require("conform").format({ async = false, timeout_ms = 3000, lsp_format = "fallback", range = range })
--- end, { range = true })
+vim.keymap.set({ "n", "v" }, "f", function() conform.format() end, { desc = "Format file" })

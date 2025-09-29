@@ -2,7 +2,7 @@
 
 slstatus &
 
-hsetroot -cover ~/.dotfiles/pictures/fabrizio-conti-c3wsMnxQZDw-unsplash.jpg &
+hsetroot -cover ~/.dotfiles/pictures/kristaps-ungurs-x8Oro9-tG64-unsplash.jpg &
 
 # syncthing serve --no-browser --no-restart --logflags=0 &
 

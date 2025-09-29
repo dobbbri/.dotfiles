@@ -1,4 +1,4 @@
-vim.pack.add({"https://github.com/Mofiqul/dracula.nvim"}, {load = true})
+vim.pack.add({ "https://github.com/Mofiqul/dracula.nvim" }, { load = true })
 
 require("dracula").setup({
   colors = {

@@ -2,12 +2,12 @@ vim.pack.add({
   { src = "https://github.com/gaelph/logsitter.nvim" },
 })
 
-local logs = require("logsitter")
+local logss = require("logsitter")
 
-logs.setup({
+logss.setup({
   path_format = "fileonly",
   prefix = "[Log]->",
   separator = "->",
 })
 
-vim.keymap.set("n", "<leader>l", function() logs.log() end, { desc = "Logsitter: log current" })
+vim.keymap.set("n", "<leader>l", function() logss.log() end, { desc = "Logsitter: log current" })

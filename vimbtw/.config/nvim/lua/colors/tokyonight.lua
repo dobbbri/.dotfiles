@@ -4,6 +4,6 @@ require("tokyonight").setup({
   transparent = false,
 })
 
-vim.cmd.colorscheme('tokyonight-night')
+vim.cmd.colorscheme("tokyonight-night")
 
-vim.cmd.hi('Comment gui=none')
+vim.cmd.hi("Comment gui=none")

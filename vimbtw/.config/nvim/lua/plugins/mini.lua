@@ -1,15 +1,15 @@
 vim.pack.add({
-  { src = "https://github.com/echasnovski/mini.nvim" }
+  { src = "https://github.com/echasnovski/mini.nvim" },
 })
 
 local utils = require("config.utils")
 
 require("mini.diff").setup({
-  config = { view = { style = vim.go.number and 'number' } }
+  config = { view = { style = vim.go.number and "number" } },
 })
 
 require("mini.move").setup({
-  mappings = { left = "H", right = "L", down = "J", up = "K" }
+  mappings = { left = "H", right = "L", down = "J", up = "K" },
 })
 
 require("mini.pairs").setup()
@@ -26,7 +26,7 @@ vim.keymap.set("n", "-", function() files.open() end, { desc = "Show File Manage
 vim.keymap.set("n", "<leader>e", function() files.open() end, { desc = "Show File Manager" })
 
 require("mini.pick").setup({
-  window = { config = utils.window_config() }
+  window = { config = utils.window_config() },
 })
 vim.keymap.set("n", "<leader>f", "<cmd>Pick files<CR>", { desc = "List files" })
 vim.keymap.set("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick resume" })

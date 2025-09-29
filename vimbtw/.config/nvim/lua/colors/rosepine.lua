@@ -1,9 +1,9 @@
 vim.pack.add({
-  { src = "https://github.com/rose-pine/neovim", name = "rose-pine" }
+  { src = "https://github.com/rose-pine/neovim", name = "rose-pine" },
 })
 
 require("rose-pine").setup({
-  variant = "main",      -- auto, main, moon, or dawn
+  variant = "main", -- auto, main, moon, or dawn
   dark_variant = "main", -- main, moon, or dawn
   dim_inactive_windows = false,
   disable_background = false,
@@ -35,9 +35,10 @@ require("rose-pine").setup({
       none = "NONE",
     },
   },
-  highlight_groups = {
-    Cursor = { fg = "#ffffff" },
-  },
+  -- highlight_groups = {
+  --   Cursor = { bg = "#ffffff" },
+  --   CursorIM = { bg = "#ffffff" },
+  -- },
 })
 
 vim.cmd("colorscheme rose-pine")

@@ -18,7 +18,7 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 -- use rounded borders on all floating windows
-opt.winborder = 'single'
+opt.winborder = "single"
 
 -- nice confirmation dialog
 opt.confirm = true
@@ -44,7 +44,7 @@ opt.tabstop = 2
 opt.softtabstop = 2
 
 -- folding - ufo
-opt.foldcolumn = '1'
+opt.foldcolumn = "1"
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
@@ -60,11 +60,11 @@ opt.fillchars = {
 }
 
 opt.list = false
-opt.listchars = 'nbsp:⍽,trail:·,extends:→,precedes:←'
+opt.listchars = "nbsp:⍽,trail:·,extends:→,precedes:←"
 opt.breakindent = true
 opt.linebreak = true
-opt.whichwrap = 'h,l,<,>,[,],~'
-opt.showbreak = '󱞪 '
+opt.whichwrap = "h,l,<,>,[,],~"
+opt.showbreak = "󱞪 "
 
 opt.ignorecase = true
 opt.smartcase = true
@@ -77,7 +77,7 @@ opt.number = true
 opt.numberwidth = 2
 
 -- disable nvim intro
-opt.shortmess = 'aoOTIcF'
+opt.shortmess = "aoOTIcF"
 
 opt.splitbelow = true
 opt.splitright = true
@@ -87,11 +87,12 @@ opt.conceallevel = 2
 -- statusline
 opt.laststatus = 3
 opt.cmdheight = 0
-opt.statusline = "%#StatusLineBold#  %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %t %h%m%r%w %{v:lua.vim.diagnostic.status()}  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
+opt.statusline =
+  "%#StatusLineBold#  %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %t %h%m%r%w %{v:lua.vim.diagnostic.status()}  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
 
 -- title
 opt.title = true
 opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a [nvim]'
 
-  vim.api.nvim_set_hl(0, "StatusLineBold", { bold = true })
-  -- vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "StatusLineBold", { bold = true })
+-- vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })

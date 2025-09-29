@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = "https://github.com/mvllow/modes.nvim" }
+  { src = "https://github.com/mvllow/modes.nvim" },
 })
 
 require("modes").setup({
