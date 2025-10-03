@@ -1,11 +1,10 @@
 local g = vim.g
 local opt = vim.opt
 
-g.pack_confirm = false
-
 -- mapleader
 g.mapleader = " "
 g.maplocalleader = ","
+--------------------------------------------------------------------------------------------------------------------
 
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 2
@@ -50,19 +49,18 @@ opt.foldlevelstart = 99
 opt.foldenable = true
 
 --
-opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
-}
-
 opt.list = false
 opt.listchars = "nbsp:⍽,trail:·,extends:→,precedes:←"
+
+opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  foldsep = "│",
+}
+
+-- linebreak
+opt.wrap = false
 opt.breakindent = true
-opt.linebreak = true
 opt.whichwrap = "h,l,<,>,[,],~"
 opt.showbreak = "󱞪 "
 
@@ -88,11 +86,11 @@ opt.conceallevel = 2
 opt.laststatus = 3
 opt.cmdheight = 0
 opt.statusline =
-  "%#StatusLineBold#  %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %t %h%m%r%w %{v:lua.vim.diagnostic.status()}  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
+  "%#SttBold#  %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %{v:lua.vim.diagnostic.status()} %t %h%m%r%w  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
 
 -- title
 opt.title = true
 opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a [nvim]'
 
-vim.api.nvim_set_hl(0, "StatusLineBold", { bold = true })
--- vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "SttBold", { bold = true })
+-- vim.api.nvim_set_hl(0, "SttDiag", { fg = "#ffffff" })

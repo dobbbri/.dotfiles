@@ -2,9 +2,9 @@
 
 slstatus &
 
-hsetroot -cover ~/.dotfiles/pictures/kristaps-ungurs-x8Oro9-tG64-unsplash.jpg &
+hsetroot -cover ~/.dotfiles/pictures/cat_smallboxes.png &
 
-# syncthing serve --no-browser --no-restart --logflags=0 &
+# /usr/bin/syncthing serve --no-browser --no-restart --logflags=0 &
 
 # /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 

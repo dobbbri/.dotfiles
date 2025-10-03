@@ -9,6 +9,8 @@ require("mason-tool-installer").setup({
     "astro-language-server",
     "bash-language-server",
     "json-lsp",
+    "taplo",
+    "clang-format",
     "lua-language-server",
     "prettier",
     "shfmt",

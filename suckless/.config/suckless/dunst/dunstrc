@@ -41,7 +41,7 @@
     # Offset from the origin
     # NOTE: Dunst from version 1.11 and older use this alternative notation
     # offset = 10x50
-    offset = (10, 50)
+    offset = (10, 70)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -222,7 +222,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = Adwaita
+    icon_theme = Papirus-Dark
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
@@ -238,7 +238,7 @@
     max_icon_size = 128
 
     # Paths to default icons (only necessary when not using recursive icon lookup)
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/
 
     ### History ###
 
@@ -341,30 +341,30 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#888888"
+    background = "#3e4452"
     foreground = "#ffffff"
-    frame_color = "#888888"
+    frame_color = "#ABB2BF"
     timeout = 10
     # Icon for notifications with low urgency
-    # default_icon = dialog-information
+    default_icon = dialog-information
 
 [urgency_normal]
-    background = "#285577"
+    background = "#6272A4"
     foreground = "#ffffff"
     frame_color = "#4fc3f7"
     timeout = 10
     override_pause_level = 30
     # Icon for notifications with normal urgency
-    # default_icon = dialog-information
+    default_icon = dialog-information
 
 [urgency_critical]
-    background = "#ff0000"
-    foreground = "#ffffff"
-    frame_color = "#ff0000"
+    background = "#f6c177"
+    foreground = "#000000"
+    frame_color = "#ffc107"
     timeout = 0
     override_pause_level = 60
     # Icon for notifications with critical urgency
-    # default_icon = dialog-warning
+    default_icon = dialog-warning
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
