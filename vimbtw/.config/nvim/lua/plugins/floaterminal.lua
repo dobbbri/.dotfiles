@@ -2,7 +2,7 @@ local state = {
   floating = {
     buf = -1,
     win = -1,
-  }
+  },
 }
 
 local function create_floating_window(opts)
@@ -30,7 +30,6 @@ local function create_floating_window(opts)
     col = col,
     row = row,
     style = "minimal", -- No borders or extra UI elements
-    -- border = vim.g.thin_border,
   }
 
   -- Create the floating window
@@ -41,7 +40,7 @@ end
 
 local toggle_terminal = function()
   if not vim.api.nvim_win_is_valid(state.floating.win) then
-    state.floating = create_floating_window { buf = state.floating.buf }
+    state.floating = create_floating_window({ buf = state.floating.buf })
     if vim.bo[state.floating.buf].buftype ~= "terminal" then
       vim.cmd.terminal()
     end
@@ -50,12 +49,9 @@ local toggle_terminal = function()
   end
 end
 
--- Example usage:
 -- Create a floating window with default dimensions
 vim.api.nvim_create_user_command("Floaterminal", toggle_terminal, {})
-
 -- Open terminal
 vim.keymap.set("n", "<leader>t", "<cmd>Floaterminal<cr>", { desc = "Toggle terminal" })
-
 -- Exit terminal with Esc
 vim.keymap.set("t", "<esc>", "<c-\\><c-n>")

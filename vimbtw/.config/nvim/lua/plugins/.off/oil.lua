@@ -1,7 +1,7 @@
 vim.pack.add({
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/benomahony/oil-git.nvim" },
-}, { confirm = false })
+})
 
 local ignore_files = {
   ".DS_Store",
@@ -37,7 +37,13 @@ oil.setup({
     show_hidden = true,
     is_always_hidden = function(name, _) return vim.tbl_contains(ignore_files, name) end,
   },
+  skip_confirm_for_simple_edits = true,
 })
 
 vim.keymap.set("n", "-", oil.toggle_float, { desc = "Show File Manager" })
 vim.keymap.set("n", "=", ":w<CR>", { desc = "Save Oil changes" })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "oil", -- Adjust if Oil uses a specific file type identifier
+  callback = function() vim.opt_local.cursorline = true end,
+})

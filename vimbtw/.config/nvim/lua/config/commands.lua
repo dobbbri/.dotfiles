@@ -9,10 +9,12 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 vim.api.nvim_create_user_command(
-  "InstallMyServers",
+  "InstallThirdPartyTools",
   function()
     vim.cmd(
-      "MasonInstall " .. "astro-language-server bash-language-server json-lsp prettier shfmt stylua taplo tailwindcss-language-server typescript-language-server"
+      "MasonInstall "
+        .. "astro-language-server bash-language-server json-lsp prettier shfmt stylua taplo "
+        .. "tailwindcss-language-server lua-language-server typescript-language-server yamlfmt"
     )
   end,
   {}

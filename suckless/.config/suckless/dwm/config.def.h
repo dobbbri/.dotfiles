@@ -94,7 +94,7 @@ static char dmenumon[2]             = "0"; /* component of dmenucmd, manipulated
 static const char *dmenucmd[]       = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray3, NULL };
 
 static const char *termcmd[]        = { "alacritty", NULL };
-static const char *webbrowsercmd[]  = { "firefox", NULL };
+static const char *webbrowsercmd[]  = { "helium", NULL };
 static const char *thunarcmd[]      = { "thunar", NULL };
 static const char *geanycmd[]       = { "geany", NULL };
 static const char *gimpcmd[]        = { "gimp", NULL };

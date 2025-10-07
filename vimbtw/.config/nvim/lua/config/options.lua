@@ -32,7 +32,7 @@ opt.undofile = false
 opt.timeoutlen = 700
 opt.updatetime = 250
 
-opt.cursorline = true
+opt.cursorline = false
 opt.cursorlineopt = "both"
 
 -- Indenting
