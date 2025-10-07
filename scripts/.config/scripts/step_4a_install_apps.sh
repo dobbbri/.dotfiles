@@ -25,7 +25,7 @@ install_packages() {
     gparted htop alsa-utils color-picker mintstick atril \
     transmission feh xarchiver curl unzip ssh-askpass wget stow \
     lxtask fzf papirus-icon-theme heif-gdk-pixbuf webp-pixbuf-loader \
-    xdg-user-dirs-gtk || echo "Warning: Package installation failed."
+    xdg-user-dirs-gtk inkscape viewnior|| echo "Warning: Package installation failed."
   echo "Package installation completed."
 }
 
