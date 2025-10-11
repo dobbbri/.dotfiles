@@ -18,4 +18,4 @@ require("plugins.ufo")
 require("plugins.visualmulti")
 require("plugins.whichkey")
 
-require("colors.tokyonight")
+require("colors.gruvbox")

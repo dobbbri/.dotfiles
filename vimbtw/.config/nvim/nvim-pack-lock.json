@@ -17,6 +17,10 @@
       "rev": "48f9afb",
       "src": "https://github.com/MagicDuck/grug-far.nvim"
     },
+    "gruvbox.nvim": {
+      "rev": "bee5e03",
+      "src": "https://gitlab.com/motaz-shokry/gruvbox.nvim"
+    },
     "logsitter.nvim": {
       "rev": "95e2b43",
       "src": "https://github.com/gaelph/logsitter.nvim"
@@ -33,7 +37,10 @@
       "rev": "42fc28ba",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
-    "nvim-ts-autotag": [],
+    "nvim-ts-autotag": {
+      "rev": "c4ca798",
+      "src": "https://github.com/windwp/nvim-ts-autotag"
+    },
     "nvim-ufo": {
       "rev": "72d54c3",
       "src": "https://github.com/kevinhwang91/nvim-ufo"
@@ -41,6 +48,10 @@
     "oklch-color-picker.nvim": {
       "rev": "da95840",
       "src": "https://github.com/eero-lehtinen/oklch-color-picker.nvim"
+    },
+    "pack.nvim": {
+      "rev": "78f481a",
+      "src": "https://github.com/fmpisantos/pack.nvim"
     },
     "promise-async": {
       "rev": "119e896",

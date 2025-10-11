@@ -145,18 +145,18 @@ installNeovim() {
   sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 }
 
-cleanNeovim() {
+clearNeovim() {
   echo "- clean Neovim plugins, caches ... ---------------------------------------------"
   rm -rf /home/sdobri/.cache/nvim
   rm -rf /home/sdobri/.local/share/nvim
   rm -rf /home/sdobri/.local/state/nvim
 }
 
-installAppImage() {
-  sudo rm /usr/local/bin/$2
-  chmod u+x $1
-  sudo mv $1 /usr/local/bin/$2
-}
+# installAppImage() {
+#   sudo rm /usr/local/bin/$2
+#   chmod u+x $1
+#   sudo mv $1 /usr/local/bin/$2
+# }
 
 upNet() {
   #sudo cat /etc/network/interfaces
