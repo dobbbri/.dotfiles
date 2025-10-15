@@ -72,25 +72,27 @@ const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifi
 
 static const struct arg args[] = {
   /* function format                                argument      turn  signal */
-  { battery_state, "  ^c#31748f^%s", "BAT0", 5, 1 },
-  { battery_perc, "^c#31748f^ ^c#cccccc^%s%%", "BAT0", 15, 2 },
-  { ram_perc, "  ^c#31748f^ ^c#cccccc^%s%%", NULL, 10, 5 },
-  { datetime, "  ^c#31748f^󰥔 ^c#cccccc^%s ", "%-d %b %R", 60, 3 },
+  { battery_perc, "  ^c#ff6b01^ ^c#cccccc^%s%%", "BAT0", 15, 2 },
+  { ram_perc, "  ^c#ff6b01^ ^c#cccccc^%s%%", NULL, 10, 5 },
+  { datetime, "  ^c#ff6b01^󰥔 ^c#cccccc^%s ", "%-d %b %R", 60, 3 },
   { battery_notify, "", "BAT0", 30, 4 },
 };
 
 /* maximum output string length */
 #define MAXLEN CMDLEN *LEN(args)
 
+// { battery_state, "  ^c#006cac^%s", "BAT0", 5, 1 },
 // { wifi_perc,      "  ^c#4fc3f7^󰖩 ^c#cccccc^%s%%", "wlp2s0b1" },
 // { wifi_essid,     "  ^c#aa00ff^󰖩 ^c#cccccc^%s",   "wlp2s0b1" },
 // { datetime,       "^c#ffc107^󰸗 ^c#cccccc^%s",    "%d/%m" },
 
 // #ffc107
 // #6CF982
+// #006cac
 // #4fc3f7
 // #aa00ff
 // #FF5555
+// #ff6b01
 
 // Python strftime cheatsheet
 // 🐍🐍🐍

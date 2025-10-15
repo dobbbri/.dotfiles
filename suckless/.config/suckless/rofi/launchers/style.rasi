@@ -2,7 +2,6 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
  * Rofi Theme File
  * Rofi Version: 1.7.3
  **/
@@ -26,7 +25,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       1000px;
+    width:                       1100px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -91,7 +90,7 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     9;
+    columns:                     10;
     lines:                       4;
     cycle:                       true;
     dynamic:                     true;

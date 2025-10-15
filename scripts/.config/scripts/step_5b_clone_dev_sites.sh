@@ -26,4 +26,6 @@ git clone git@github.com:WhitePaper233/yukina.git
 git clone git@github.com:mearashadowfax/ScrewFast.git
 git clone git@github.com:area44/astro-audionaut.git
 
+git clone https://github.com/dobbbri/astro-blog-feather-template
+
 cd /home/sdobri
