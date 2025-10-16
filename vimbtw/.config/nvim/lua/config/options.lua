@@ -43,7 +43,7 @@ opt.tabstop = 2
 opt.softtabstop = 2
 
 -- folding - ufo
-opt.foldcolumn = "1"
+opt.foldcolumn = "3"
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true

@@ -26,8 +26,12 @@ vim.keymap.set("n", "-", function() files.open() end, { desc = "Show File Manage
 vim.keymap.set("n", "<leader>e", function() files.open() end, { desc = "Show File Manager" })
 
 require("mini.pick").setup({
+  options = {use_cache = true	},
   window = { config = utils.window_config() },
 })
+
+vim.ui.select = require("mini.pick").ui_select
+
 vim.keymap.set("n", "<leader>f", "<cmd>Pick files<CR>", { desc = "List files" })
 vim.keymap.set("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick resume" })
 vim.keymap.set("n", "<leader>w", "<cmd>Pick grep_live<CR>", { desc = "Search by word" })

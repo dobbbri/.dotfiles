@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "master", build = ":TSUpdate" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master", build = ":TSUpdate" },
 })
 
 local utils = require("config.utils")
