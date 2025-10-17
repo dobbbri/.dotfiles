@@ -1,25 +1,3 @@
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
-    vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
-    vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
-    vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
-  end,
-})
-
-vim.api.nvim_create_user_command(
-  "InstallThirdPartyTools",
-  function()
-    vim.cmd(
-      "MasonInstall "
-        .. "astro-language-server bash-language-server json-lsp prettier shfmt stylua taplo "
-        .. "tailwindcss-language-server lua-language-server typescript-language-server yamlfmt"
-    )
-  end,
-  {}
-)
-
 --  jump to the last place you’ve visited in a file before exiting
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()

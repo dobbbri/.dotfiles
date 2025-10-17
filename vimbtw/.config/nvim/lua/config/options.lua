@@ -53,9 +53,9 @@ opt.list = false
 opt.listchars = "nbsp:⍽,trail:·,extends:→,precedes:←"
 
 opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  foldsep = "│",
+  foldopen ="", -- "",
+  foldclose ="",	--"",-- "",
+  foldsep ="│",
 }
 
 -- linebreak

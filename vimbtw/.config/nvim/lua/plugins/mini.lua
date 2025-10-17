@@ -15,6 +15,7 @@ require("mini.move").setup({
 require("mini.pairs").setup()
 require("mini.icons").setup()
 require("mini.trailspace").setup()
+require("mini.git").setup()
 
 local files = require("mini.files")
 
@@ -36,3 +37,15 @@ vim.keymap.set("n", "<leader>f", "<cmd>Pick files<CR>", { desc = "List files" })
 vim.keymap.set("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick resume" })
 vim.keymap.set("n", "<leader>w", "<cmd>Pick grep_live<CR>", { desc = "Search by word" })
 vim.keymap.set("n", "<leader><space>", "<cmd>Pick buffers<CR>", { desc = "List opened buffers" })
+
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
+    vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
+    vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
+    vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
+  end,
+})
+

@@ -4,7 +4,7 @@ vim.lsp.config("*", { capabilities = require("blink.cmp").get_lsp_capabilities()
 
 vim.diagnostic.config({ virtual_text = true, severity_sort = true })
 
-vim.keymap.set("n", "<leader>D", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to diagnostics" })
+vim.keymap.set("n", "<leader>D", "<cmd>lua vim.diagnostic.jump()<CR>", { desc = "Go to diagnostics" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "show diagnostic Info" })
 -- vim.keymap.set({ "n", "v" }, "f",         "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Format File" })
 
