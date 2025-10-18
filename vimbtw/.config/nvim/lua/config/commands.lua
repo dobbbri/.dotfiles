@@ -23,3 +23,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "json", "jsonc", "json5" },
   callback = function() vim.opt_local.conceallevel = 0 end,
 })
+
+-- get git branch name
+vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorHold', 'FocusGained' }, {
+  desc = 'git branch',
+  callback = function()
+    if vim.fn.isdirectory '.git' ~= 0 then
+      vim.b.branch_name = '󰊢 ' .. vim.fn.system "git branch --show-current | tr -d '\n'"
+    end
+  end,
+  group = vim.api.nvim_create_augroup('init_statusline', {}),
+})

@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "FTerm.nvim": {
+      "rev": "d132089",
+      "src": "https://github.com/numToStr/FTerm.nvim"
+    },
     "blink.cmp": {
       "rev": "327fff9",
       "src": "https://github.com/saghen/blink.cmp",
@@ -33,6 +37,10 @@
       "rev": "9a2798a",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
+    "netrw.nvim": {
+      "rev": "90501c6",
+      "src": "https://github.com/prichrd/netrw.nvim"
+    },
     "nvim-treesitter": {
       "rev": "42fc28ba",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
@@ -45,6 +53,14 @@
     "nvim-ufo": {
       "rev": "72d54c3",
       "src": "https://github.com/kevinhwang91/nvim-ufo"
+    },
+    "oil-git.nvim": {
+      "rev": "d1f27a5",
+      "src": "https://github.com/benomahony/oil-git.nvim"
+    },
+    "oil.nvim": {
+      "rev": "7194872",
+      "src": "https://github.com/stevearc/oil.nvim"
     },
     "oklch-color-picker.nvim": {
       "rev": "da95840",

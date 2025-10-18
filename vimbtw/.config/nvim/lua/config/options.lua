@@ -53,9 +53,9 @@ opt.list = false
 opt.listchars = "nbsp:⍽,trail:·,extends:→,precedes:←"
 
 opt.fillchars = {
-  foldopen ="", -- "",
-  foldclose ="",	--"",-- "",
-  foldsep ="│",
+  foldopen = "", -- "",
+  foldclose = "", --"",-- "",
+  foldsep = "│",
 }
 
 -- linebreak
@@ -82,15 +82,17 @@ opt.splitright = true
 
 opt.conceallevel = 2
 
--- statusline
-opt.laststatus = 3
-opt.cmdheight = 0
-opt.statusline =
-  "%#SttBold#  %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %{v:lua.vim.diagnostic.status()} %t %h%m%r%w  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
-
 -- title
 opt.title = true
 opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a [nvim]'
 
 vim.api.nvim_set_hl(0, "SttBold", { bold = true })
 -- vim.api.nvim_set_hl(0, "SttDiag", { fg = "#ffffff" })
+
+-- statusline
+opt.laststatus = 3
+opt.cmdheight = 0
+opt.statusline =
+  "%#SttBold# %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %{get(b:, 'branch_name', '')}  %t %h%m%r%w  %{v:lua.vim.diagnostic.status()}  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
+
+

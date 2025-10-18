@@ -21,12 +21,15 @@ local oil = require("oil")
 oil.setup({
   columns = { "icon" },
   keymaps = {
-    ["<C-h>"] = false,
     ["<C-l>"] = false,
     ["<C-k>"] = false,
     ["<C-j>"] = false,
     ["<M-h>"] = "actions.select_split",
-    ["q"] = { "actions.close", mode = "n" },
+    -- ["q"] = { "actions.close", mode = "n" },
+    ["<C-v>"] = "actions.select_vsplit",
+    ["<C-h>"] = "actions.select_split",
+    ["<C-t>"] = "actions.select_tab",
+    ["<Esc>"] = "actions.close",
   },
   float = {
     max_width = 0.4,

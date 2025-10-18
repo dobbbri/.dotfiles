@@ -15,7 +15,12 @@ require("mini.move").setup({
 require("mini.pairs").setup()
 require("mini.icons").setup()
 require("mini.trailspace").setup()
-require("mini.git").setup()
+-- require("mini.git").setup()
+
+require("mini.notify").setup({
+  lsp_progress = { enable = false },
+  window = { config = utils.window_notify_config() },
+})
 
 local files = require("mini.files")
 
@@ -27,17 +32,17 @@ vim.keymap.set("n", "-", function() files.open() end, { desc = "Show File Manage
 vim.keymap.set("n", "<leader>e", function() files.open() end, { desc = "Show File Manager" })
 
 require("mini.pick").setup({
-  options = {use_cache = true	},
+  options = { use_cache = true },
   window = { config = utils.window_config() },
 })
 
 vim.ui.select = require("mini.pick").ui_select
 
+-- vim.keymap.set("n", "-", "<cmd>Pick files<CR>", { desc = "List files" })
 vim.keymap.set("n", "<leader>f", "<cmd>Pick files<CR>", { desc = "List files" })
 vim.keymap.set("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick resume" })
 vim.keymap.set("n", "<leader>w", "<cmd>Pick grep_live<CR>", { desc = "Search by word" })
 vim.keymap.set("n", "<leader><space>", "<cmd>Pick buffers<CR>", { desc = "List opened buffers" })
-
 
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
@@ -48,4 +53,3 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
   end,
 })
-
