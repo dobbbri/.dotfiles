@@ -15,8 +15,10 @@ alias surc='sudo rm config.h'
 alias smci='sudo make clean install'
 
 # burn iso
-alias burniso="sudo mintstick -m iso"
+alias burn-iso="sudo mintstick -m iso"
 
+# run http-server
+alias run-server"npx http-server "
 # site
 alias dd='cd ~/Dev/'
 alias ss='cd ~/Sites/'
@@ -27,12 +29,12 @@ alias sp='cd ~/Sites/pousada_do_tucunare_2020'
 alias sb='cd ~/Sites/blog'
 alias sv='cd ~/Sites/videira-blog-2025/'
 
-alias poweroff="sudo systemctl poweroff"
+alias power-off="sudo systemctl poweroff"
 alias reboot="sudo systemctl reboot"
 alias fixx="sudo apt install brightnessctl && sudo brightnessctl --device='smc::kbd_backlight' set 30 && sudo brightnessctl --device='acpi_video0' set 2"
 
 # get all errors for running services using journalctl
-alias journalErrors="journalctl -p 3 -xb"
+alias journal-errors="journalctl -p 3 -xb"
 
 alias x="exit"
 alias sx="startx"
@@ -65,8 +67,7 @@ alias saa='sudo apt autoclean && sudo apt autoremove -yy'
 alias sauu='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoclean && sudo apt autoremove -y'
 
 # update node packages
-alias uppkg="ncu --interactive --format group"
-alias uppkgg="ncu -g --interactive --format group"
+alias update-pkg="ncu --interactive --format group"
 
 # Git
 alias gps="git push && git status --short"
@@ -109,14 +110,11 @@ alias nrdup="npm dedupe"          # Remove duplicate packages from node_modules
 alias nclean="npm cache clean -f" # Clean npm cache
 
 #Clean cache
-alias clearCache='rm -rf ~/.cache/*'
-alias clearNeovimLog="rm /home/sdobri/.local/state/nvim/lsp.log"
+alias clear-cache='rm -rf ~/.cache/*'
+alias clear-neovim-log="rm /home/sdobri/.local/state/nvim/lsp.log"
 
 #grub update
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-
-#get the error messages from journalctl
-alias jctl="journalctl -p 3 -xb"
 
 #alias os="onedrive --synchronize"
 
@@ -124,7 +122,7 @@ mkcd() {
   mkdir -p "$1" && cd "$1"
 }
 
-updateNeovim() {
+update-neovim() {
   echo "- Update Neovim nighly ---------------------------------------------"
   sudo rm /usr/local/bin/nvim
   wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage
@@ -133,7 +131,7 @@ updateNeovim() {
   sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 }
 
-installNeovim() {
+install-neovim() {
   echo "- Install Neovim nighly ---------------------------------------------"
   rm -rf /home/sdobri/.cache/nvim
   rm -rf /home/sdobri/.local/share/nvim
@@ -145,7 +143,7 @@ installNeovim() {
   sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 }
 
-clearNeovim() {
+clear-neovim() {
   echo "- clean Neovim plugins, caches ... ---------------------------------------------"
   rm -rf /home/sdobri/.cache/nvim
   rm -rf /home/sdobri/.local/share/nvim

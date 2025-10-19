@@ -43,7 +43,7 @@ opt.tabstop = 2
 opt.softtabstop = 2
 
 -- folding - ufo
-opt.foldcolumn = "3"
+opt.foldcolumn = "1"
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
@@ -86,13 +86,15 @@ opt.conceallevel = 2
 opt.title = true
 opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a [nvim]'
 
-vim.api.nvim_set_hl(0, "SttBold", { bold = true })
+vim.api.nvim_set_hl(0, "sttBold", { bold = true })
+vim.api.nvim_set_hl(0, "sttNormal", { bold = false })
 -- vim.api.nvim_set_hl(0, "SttDiag", { fg = "#ffffff" })
 
 -- statusline
 opt.laststatus = 3
 opt.cmdheight = 0
 opt.statusline =
-  "%#SttBold# %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %{get(b:, 'branch_name', '')}  %t %h%m%r%w  %{v:lua.vim.diagnostic.status()}  %=%{&fenc==''?&enc:&fenc} %y  %p%%  %l:%c  "
+  "%#SttBold# %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %{get(b:, 'branch_name', '')}  %t%#sttNormal# %h%m%r%w  ln:%l, col:%c  %#SttBold# %{v:lua.vim.diagnostic.status()} %#sttNormal# %=%{&fenc==''?&enc:&fenc} %y  %p%% "
+
 
 
