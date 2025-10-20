@@ -14,7 +14,7 @@ require("plugins.oklchcolorpicker")
 require("plugins.logsitter")
 require("plugins.tsautotag")
 require("plugins.ufo")
-require("plugins.visualmulti")
+-- require("plugins.visualmulti")
 require("plugins.whichkey")
 
 require("colors.gruvbox")

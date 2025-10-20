@@ -2,7 +2,7 @@
 
 slstatus &
 
-hsetroot -cover ~/.dotfiles/pictures/cat_smallboxes.png &
+hsetroot -cover ~/.dotfiles/pictures/RDT_20250224_0719068851409013250036674.jpg &
 
 # /usr/bin/syncthing serve --no-browser --no-restart --logflags=0 &
 

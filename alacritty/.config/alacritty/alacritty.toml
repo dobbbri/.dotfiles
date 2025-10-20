@@ -5,11 +5,11 @@
 ##
 ## https://alacritty.org/config-alacritty.html
 
-## GENERAL --------------------------------------------------------
+## GENERAL -------------------------------------------------------------------------------------------------------
 [general]
 ## Import additional configuration files.
 import = [
-  "~/.config/alacritty/fonts/ZedMono.toml",
+  "~/.config/alacritty/fonts/AtkynsonMono.toml",
   "~/.config/alacritty/themes/gruvbox_dark.toml.toml",
 ]
 

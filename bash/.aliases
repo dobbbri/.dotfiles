@@ -18,7 +18,7 @@ alias smci='sudo make clean install'
 alias burn-iso="sudo mintstick -m iso"
 
 # run http-server
-alias run-server"npx http-server "
+alias run-server="npx http-server "
 # site
 alias dd='cd ~/Dev/'
 alias ss='cd ~/Sites/'
