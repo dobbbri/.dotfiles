@@ -5,12 +5,12 @@
 ##
 ## https://alacritty.org/config-alacritty.html
 
-## GENERAL -------------------------------------------------------------------------------------------------------
+## GENERAL -------------------------------------------------------------------------------------------------------------
 [general]
 ## Import additional configuration files.
 import = [
-  "~/.config/alacritty/fonts/AtkynsonMono.toml",
-  "~/.config/alacritty/themes/gruvbox_dark.toml.toml",
+  "~/.config/alacritty/fonts/CaskaydiaCoveNerdFont.toml",
+  "~/.config/alacritty/themes/gruvbox_dark.toml",
 ]
 
 ## You can set shell.program to the path of your favorite shell, e.g. /bin/zsh.
@@ -40,7 +40,7 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 position = "None"
 dynamic_padding = true
 decorations = "None"
-opacity = 1.0
+opacity = 0.90
 blur = false
 startup_mode = "Windowed"
 dynamic_title = true
@@ -49,8 +49,8 @@ decorations_theme_variant = "None"
 
 ## Number of lines/columns (not pixels) in the terminal.
 [window.dimensions]
-columns = 105
-lines = 23
+columns = 80
+lines = 20
 
 ## Blank space added around the window in pixels.
 [window.padding]

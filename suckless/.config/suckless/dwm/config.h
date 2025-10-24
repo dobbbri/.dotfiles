@@ -3,16 +3,16 @@
 #include <X11/XF86keysym.h>
 
 /* appearance -------------------------------------------------------------- */
-static const unsigned int borderpx  = 2;  /* border pixel of windows */
+static const unsigned int borderpx  = 0;  /* border pixel of windows */
 static const unsigned int snap      = 32;  /* snap pixel */
 /* gap */
-static const Gap default_gap        = {.isgap = 1, .realgap = 11, .gappx = 11};
+static const Gap default_gap        = {.isgap = 1, .realgap = 8, .gappx = 8};
 /* bar */
 static const int showbar            = 1; /* 0 means no bar */
 static const int topbar             = 1; /* 0 means bottom bar */
 /* bar padding */
-static const int vertpad            = 0; /* vertical padding of bar */
-static const int sidepad            = 0; /* horizontal padding of bar */
+static const int vertpad            = 2; /* vertical padding of bar */
+static const int sidepad            = 8; /* horizontal padding of bar */
 
 /* font -------------------------------------------------------------- */
 static const char *fonts[]          = {
