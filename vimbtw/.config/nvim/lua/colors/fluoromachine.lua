@@ -3,14 +3,15 @@ vim.pack.add({ "https://github.com/maxmx03/fluoromachine.nvim" }, { load = true 
 require("fluoromachine").setup({
   theme = "fluoromachine", -- fluoromachine, retrowave, delta
   glow = false,
-  colors = function(_, color)
-    return {
-      -- bg = "#0e1013",
-      -- bgdark = color.darken("#0e1013", 20),
-      bg = "#160724",
-      bgdark = color.darken("#160724", 20),
-    }
-  end,
+  transparent = true,
+  -- colors = function(_, color)
+  --   return {
+  --     -- bg = "#0e1013",
+  --     -- bgdark = color.darken("#0e1013", 20),
+  --     bg = "#160724",
+  --     bgdark = color.darken("#160724", 20),
+  --   }
+  -- end,
   overrides = { -- fake glow without bg
     ["Type"] = { fg = "#ffcc00" },
     ["Structure"] = { fg = "#ffcc00" },

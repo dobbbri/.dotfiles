@@ -17,4 +17,4 @@ require("plugins.ufo")
 -- require("plugins.visualmulti")
 require("plugins.whichkey")
 
-require("colors.gruvbox")
+require("colors.onedark")
