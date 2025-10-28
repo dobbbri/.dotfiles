@@ -9,8 +9,8 @@ vim.api.nvim_create_user_command(
   function()
     vim.cmd(
       "MasonInstall "
-        .. "astro-language-server bash-language-server json-lsp prettier shfmt stylua taplo "
-        .. "tailwindcss-language-server lua-language-server typescript-language-server yamlfmt"
+        .. "astro-language-server bash-language-server json-lsp biome prettier shfmt stylua taplo"
+        .. " tailwindcss-language-server lua-language-server typescript-language-server yamlfmt"
     )
   end,
   {}

@@ -10,7 +10,7 @@
 ## Import additional configuration files.
 import = [
   "~/.config/alacritty/fonts/CaskaydiaCoveNerdFont.toml",
-  "~/.config/alacritty/themes/gruvbox_dark.toml",
+  "~/.config/alacritty/themes/spacegray.toml",
 ]
 
 ## You can set shell.program to the path of your favorite shell, e.g. /bin/zsh.
@@ -40,7 +40,7 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 position = "None"
 dynamic_padding = true
 decorations = "None"
-opacity = 0.90
+opacity = 0.75
 blur = false
 startup_mode = "Windowed"
 dynamic_title = true

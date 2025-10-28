@@ -2,7 +2,7 @@
 
 slstatus &
 
-hsetroot -cover ~/.dotfiles/pictures/RDT_20250224_0719068851409013250036674.jpg &
+hsetroot -cover ~/.dotfiles/pictures/WallpaperWizard-2626754526.jpg &
 
 # /usr/bin/syncthing serve --no-browser --no-restart --logflags=0 &
 
@@ -19,9 +19,9 @@ if [[ $(pidof dunst) ]]; then
 fi
 dunst -config ~/.config/suckless/dunst/dunstrc &
 
-if [[ $(pidof picom) ]]; then
-  pkill picom
-fi
+# if [[ $(pidof picom) ]]; then
+#   pkill picom
+# fi
 picom --config ~/.config/suckless/picom/picom.conf &
 
 # Fix cursor

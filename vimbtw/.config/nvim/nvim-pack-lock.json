@@ -45,6 +45,10 @@
       "rev": "90501c6",
       "src": "https://github.com/prichrd/netrw.nvim"
     },
+    "nvim-lint": {
+      "rev": "9da1fb9",
+      "src": "https://github.com/mfussenegger/nvim-lint"
+    },
     "nvim-treesitter": {
       "rev": "42fc28ba",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
