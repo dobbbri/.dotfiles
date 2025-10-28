@@ -13,7 +13,7 @@ conform.setup({
     toml = { "taplo" },
     yaml = { "yamlfmt" },
     yml = { "yamlfmt" },
-    astro = { "biome" },
+    astro = { "biome", "biome-organize-imports"  },
     javascript = { "biome", "biome-organize-imports" },
     javascriptreact = { "biome", "biome-organize-imports" },
     typescript = { "biome", "biome-organize-imports" },

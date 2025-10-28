@@ -33,8 +33,9 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      2px solid;
-    border-radius:               0px;
-    border-color:                @selected;
+    border-radius:               16px;
+    // border-color:                @selected;
+    border-color:                @background;
     background-color:            @background;
     cursor:                      "default";
 }

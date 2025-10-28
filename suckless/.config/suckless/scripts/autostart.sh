@@ -2,7 +2,7 @@
 
 slstatus &
 
-hsetroot -cover ~/.dotfiles/pictures/WallpaperWizard-2626754526.jpg &
+hsetroot -cover ~/.dotfiles/pictures/mar.png &
 
 # /usr/bin/syncthing serve --no-browser --no-restart --logflags=0 &
 
