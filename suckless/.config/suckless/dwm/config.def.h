@@ -21,10 +21,10 @@ static const char *fonts[]          = {
 };
 static const char dmenufont[] = "jetBrainsMono Nerd Font:style=bold:size=12:antialias=true:autohint=true";
 
-static const char col_gray1[]       = "#000000";
+static const char col_gray1[]       = "#2d2d2d";
 static const char col_gray2[]       = "#272727";
 static const char col_gray3[]       = "#cccccc";
-static const char col_cyan[]        = "#ff6b01";
+static const char col_cyan[]        = "#006cac";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },

@@ -1,7 +1,7 @@
 
 /*****----- Global Properties -----*****/
-@import                          "../shared/colors.rasi"
-@import                          "../shared/fonts.rasi"
+@import                          "../colors.rasi"
+@import                          "../fonts.rasi"
 
 /*****----- Main Window -----*****/
 

@@ -19,9 +19,6 @@ if [[ $(pidof dunst) ]]; then
 fi
 dunst -config ~/.config/suckless/dunst/dunstrc &
 
-# if [[ $(pidof picom) ]]; then
-#   pkill picom
-# fi
 picom --config ~/.config/suckless/picom/picom.conf &
 
 # Fix cursor
