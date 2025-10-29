@@ -17,7 +17,10 @@ configuration {
 
 /*****----- Global Properties -----*****/
 @import                          "../colors.rasi"
-@import                          "../fonts.rasi"
+
+* {
+    font: "JetBrainsMono Nerd Font 10";
+}
 
 /*****----- Main Window -----*****/
 window {
@@ -45,7 +48,7 @@ mainbox {
     enabled:                     true;
     spacing:                     20px;
     margin:                      0px;
-    padding:                     40px;
+    padding:                     10px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @selected;
@@ -57,10 +60,9 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    margin:                      0px 400px 0px 0px;
     padding:                     12px;
-    border:                      0px 0px 0px 4px;
-    border-radius:               0px 100% 100% 0px;
+    border:                      2px;
+    border-radius:               16px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -123,7 +125,7 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     15px 10px;
+    padding:                     10px 10px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
@@ -137,16 +139,14 @@ element normal.normal {
     text-color:                  @foreground;
 }
 element selected.normal {
-    border:                      0px 0px 0px 4px;
-    border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background-alt;
+    border-radius:               16px;
+    background-color:            @selected;
     text-color:                  @foreground;
 }
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        54px;
+    size:                        64px;
     cursor:                      inherit;
 }
 element-text {
