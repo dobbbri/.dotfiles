@@ -1,6 +1,4 @@
-vim.pack.add({
-  { src = "https://github.com/numToStr/FTerm.nvim" },
-})
+vim.pack.add({ "https://github.com/numToStr/FTerm.nvim" })
 
 local fterm = require("FTerm")
 
@@ -11,6 +9,7 @@ fterm.setup({
 
 vim.keymap.set("n", "<leader>t", "<cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
 vim.keymap.set("t", "<leader>t", "<C-\\><C-n><cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
+vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode" })
 
 local lg = fterm:new({
   ft = "fterm_lg",

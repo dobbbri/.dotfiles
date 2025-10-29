@@ -17,10 +17,10 @@ require("mini.icons").setup()
 require("mini.trailspace").setup()
 -- require("mini.git").setup()
 
-require("mini.notify").setup({
-  lsp_progress = { enable = false },
-  window = { config = utils.window_notify_config() },
-})
+-- require("mini.notify").setup({
+--   lsp_progress = { enable = false },
+--   window = { config = utils.window_notify_config() },
+-- })
 
 local files = require("mini.files")
 

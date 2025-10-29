@@ -3,6 +3,8 @@ require("config.commands")
 require("config.mappings")
 require("config.filetypes")
 
+require("vim._extui").enable({}) -- https://github.com/neovim/neovim/pull/27855
+
 require("plugins.treesitter")
 require("plugins.blink")
 require("plugins.lsp")
