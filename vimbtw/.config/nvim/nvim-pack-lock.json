@@ -51,8 +51,7 @@
     },
     "nvim-treesitter": {
       "rev": "42fc28ba",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
-      "version": "'master'"
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-ts-autotag": {
       "rev": "c4ca798",

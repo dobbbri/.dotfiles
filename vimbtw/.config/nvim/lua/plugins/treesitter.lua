@@ -1,8 +1,10 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master", build = ":TSUpdate" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main" },
 })
 
 local utils = require("config.utils")
+
+-- require("nvim-treesitter").install(utils.parser_names())
 
 require("nvim-treesitter.configs").setup({
   modules = {}, -- You can specify modules here if needed
