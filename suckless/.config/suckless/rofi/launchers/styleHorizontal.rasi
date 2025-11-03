@@ -9,7 +9,7 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun";
-    icon-theme:               "Papirus-dark";
+    icon-theme:               "Breeze-dark";
     show-icons:               true;
     display-drun:             "";
 	drun-display-format:        "{name}";
@@ -19,7 +19,7 @@ configuration {
 @import                          "../colors.rasi"
 
 * {
-    font: "JetBrainsMono Nerd Font 8";
+    font: "JetBrainsMono Nerd Font 10";
 }
 
 /*****----- Main Window -----*****/
@@ -93,7 +93,7 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     8;
+    columns:                     6;
     lines:                       5;
     cycle:                       true;
     dynamic:                     true;
@@ -146,7 +146,7 @@ element selected.normal {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        44px;
+    size:                        54px;
     cursor:                      inherit;
     margin:                      0px 20px;
 }
