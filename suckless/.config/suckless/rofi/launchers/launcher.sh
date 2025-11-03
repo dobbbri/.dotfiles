@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 dir="$HOME/.dotfiles/suckless/.config/suckless/rofi/launchers"
-theme='style'
+theme='styleHorizontal'
 
 ## Run
 rofi \

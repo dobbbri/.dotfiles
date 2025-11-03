@@ -21,11 +21,11 @@ install_packages() {
     xbacklight xbindkeys xinput hsetroot brightnessctl \
     network-manager thunar thunar-archive-plugin thunar-volman lxappearance dialog acpi acpid \
     gvfs-backends feh fonts-recommended fonts-font-awesome fonts-terminus \
-    eza flameshot qimgv libnotify-bin xdotool unzip libnotify-dev firefox-esr geany \
+    eza flameshot qimgv libnotify-bin xdotool unzip libnotify-dev firefox-esr mousepad \
     gparted htop alsa-utils color-picker mintstick atril \
     transmission feh xarchiver curl unzip ssh-askpass wget stow \
     lxtask fzf papirus-icon-theme heif-gdk-pixbuf webp-pixbuf-loader \
-    xdg-user-dirs-gtk inkscape viewnior|| echo "Warning: Package installation failed."
+    xdg-user-dirs-gtk inkscape viewnior gimp || echo "Warning: Package installation failed."
   echo "Package installation completed."
 }
 

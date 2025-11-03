@@ -13,11 +13,11 @@ echo "-------"
 stow alacritty
 stow astro
 stow bash
-stow bspwm
+# stow bspwm
 stow suckless
-stow fastfetch
-stow gammastep
-stow geany
+# stow fastfetch
+# stow gammastep
+# stow geany
 stow git
 stow lazygit
 stow Thunar
