@@ -96,5 +96,26 @@ opt.laststatus = 3
 opt.statusline =
   "%#SttBold# %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %{get(b:, 'branch_name', '')}  %t%#sttNormal# %h%m%r%w ln:%l, col:%c  %#SttBold# %{v:lua.vim.diagnostic.status()} %#sttNormal# %=%{&fenc==''?&enc:&fenc} %y  %p%% "
 
+function MyTabline()
+    local s = ''
+    local tab_count = vim.fn.tabpagenr('$')
 
+    for i = 1, tab_count do
+        if i == vim.fn.tabpagenr() then
+            s = s .. '%#TabLineSel#'
+        else
+            s = s .. '%#TabLine#'
+        end
+
+        s = s .. '%' .. i .. 'T' .. i .. ' ' .. vim.fn.fnamemodify(vim.fn.bufname(vim.fn.tabpagebuflist(i)[vim.fn.tabpagewinnr(i)]), ':t')
+
+        if i ~= tab_count then
+            s = s .. '%#TabLineFill# | '
+        end
+    end
+
+    return s
+end
+
+vim.o.tabline = '%!v:lua.MyTabline()'
 

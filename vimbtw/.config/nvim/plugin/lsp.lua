@@ -5,7 +5,12 @@ require("mason").setup()
 vim.lsp.enable({ "astro", "bashls", "jsonls", "lua_ls", "tailwindcss", "ts_ls" })
 vim.lsp.config("*", { capabilities = require("blink.cmp").get_lsp_capabilities() })
 
-vim.diagnostic.config({ virtual_text = true, severity_sort = true })
+vim.diagnostic.config({
+    float = { border = 'rounded' },
+    signs = { text = { ERROR = ' ', WARN = ' ', INFO = ' ', HINT = '󰌵'} },
+    virtual_text = true, 
+    severity_sort = true 
+})
 
 vim.keymap.set("n", "<leader>D", "<cmd>lua vim.diagnostic.jump()<CR>", { desc = "Go to diagnostics" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "show diagnostic Info" })

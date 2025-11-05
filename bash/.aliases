@@ -112,18 +112,19 @@ alias nclean="npm cache clean -f" # Clean npm cache
 
 #Clean cache
 alias clear-cache='rm -rf ~/.cache/*'
-alias clear-neovim-log="rm /home/sdobri/.local/state/nvim/lsp.log"
 
 #grub update
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 #alias os="onedrive --synchronize"
 
+alias neovim-clear-log="rm /home/sdobri/.local/state/nvim/lsp.log"
+
 mkcd() {
   mkdir -p "$1" && cd "$1"
 }
 
-update-neovim() {
+neovim-update() {
   echo "- Update Neovim nighly ---------------------------------------------"
   sudo rm /usr/local/bin/nvim
   wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage
@@ -132,7 +133,7 @@ update-neovim() {
   sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 }
 
-install-neovim() {
+neovim-install() {
   echo "- Install Neovim nighly ---------------------------------------------"
   rm -rf /home/sdobri/.cache/nvim
   rm -rf /home/sdobri/.local/share/nvim
@@ -144,7 +145,7 @@ install-neovim() {
   sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 }
 
-clear-neovim() {
+neovim-clear() {
   echo "- clean Neovim plugins, caches ... ---------------------------------------------"
   rm -rf /home/sdobri/.cache/nvim
   rm -rf /home/sdobri/.local/share/nvim

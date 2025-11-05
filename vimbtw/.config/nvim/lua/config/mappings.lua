@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close current buffer" 
 vim.keymap.set("n", "<leader>X", "<cmd>%bd<cr>", { desc = "Close all buffers" })
 
 -- search / replace
-vim.keymap.set("n", "<leader>s", ":%s///gcI<Left><Left><Left><Left><Left>", { desc = "Search and replace in current buffer" })
+vim.keymap.set("n", "<leader>r", ":%s///gcI<Left><Left><Left><Left><Left>", { desc = "replace in current buffer" })
 
 -- reload
 -- vim.keymap.set("n", "<leader>o", ":update<CR> :source<CR>", { desc = "Reload buffer" })

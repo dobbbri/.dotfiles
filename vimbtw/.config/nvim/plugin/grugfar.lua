@@ -9,7 +9,7 @@ grug.setup({
   showInputsBottomPadding = false,
 })
 
-vim.keymap.set({ "n", "v" }, "<leader>S", function()
+vim.keymap.set({ "n", "v" }, "<leader>s", function()
   local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
   grug.open({
     transient = true,

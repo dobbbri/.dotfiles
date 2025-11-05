@@ -4,18 +4,3 @@ require("config.mappings")
 require("config.filetypes")
 
 require("colors.onedark")
-
-require("plugins.mini")
-require("plugins.treesitter")
-require("plugins.blink")
-require("plugins.lsp")
-require("plugins.conform")
-require("plugins.fterm")
-require("plugins.grugfar")
-require("plugins.oklchcolorpicker")
-require("plugins.logsitter")
-require("plugins.tsautotag")
-require("plugins.ufo")
-require("plugins.visualmulti")
-require("plugins.whichkey")
-

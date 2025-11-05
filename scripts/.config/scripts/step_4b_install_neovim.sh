@@ -13,7 +13,7 @@ pip install neovim vim-vint --break-system-packages
 sudo ln -s /usr/bin/python3 /usr/bin/python
 
 echo "- Install NPM packages --------------------------------------------------"
-npm i -g neovim tree-sitter
+npm i -g neovim tree-sitter-cli
 npm i -g typescript typescript-language-server
 
 echo "- fix neovim clipboard -------------------------------------------------"
