@@ -1,10 +1,8 @@
-vim.pack.add({
-  { src = "https://github.com/mason-org/mason.nvim" },
-})
+vim.pack.add({ "https://github.com/mason-org/mason.nvim" }, { confirm = false })
 
 require("mason").setup()
 
-vim.lsp.enable({ "astro", "bashls", "jsonls", "lua_ls", "tailwindcss", "ts_ls"})
+vim.lsp.enable({ "astro", "bashls", "jsonls", "lua_ls", "tailwindcss", "ts_ls" })
 vim.lsp.config("*", { capabilities = require("blink.cmp").get_lsp_capabilities() })
 
 vim.diagnostic.config({ virtual_text = true, severity_sort = true })

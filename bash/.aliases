@@ -2,6 +2,7 @@
 
 # dotfiles
 alias ff='cd ~/.dotfiles/'
+alias sc='cd ~/.dotfiles/scripts/.config/scripts/'
 alias vv='cd ~/.dotfiles/vimbtw/.config/nvim/'
 
 # bspwm

@@ -1,6 +1,4 @@
-vim.pack.add({
-  { src = "https://github.com/stevearc/conform.nvim" },
-})
+vim.pack.add({ "https://github.com/stevearc/conform.nvim" }, { confirm = false })
 
 local conform = require("conform")
 
@@ -13,7 +11,7 @@ conform.setup({
     toml = { "taplo" },
     yaml = { "yamlfmt" },
     yml = { "yamlfmt" },
-    astro = { "biome", "biome-organize-imports"  },
+    astro = { "biome", "biome-organize-imports" },
     javascript = { "biome", "biome-organize-imports" },
     javascriptreact = { "biome", "biome-organize-imports" },
     typescript = { "biome", "biome-organize-imports" },

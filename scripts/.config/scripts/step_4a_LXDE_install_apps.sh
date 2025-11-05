@@ -8,7 +8,7 @@ install_packages() {
   sudo apt install -y alacritty \
     xbacklight brightnessctl thunar thunar-archive-plugin thunar-volman lxappearance dialog acpi acpid \
     feh eza flameshot qimgv xdotool unzip mintstick gparted htop color-picker mintstick atril heif-gdk-pixbuf webp-pixbuf-loader \
-    transmission curl unzip ssh-askpass \
+    transmission curl unzip ssh-askpass xfce4-power-manager \
     fzf inkscape viewnior gimp || echo "Warning: Package installation failed."
   echo "Package installation completed."
 }

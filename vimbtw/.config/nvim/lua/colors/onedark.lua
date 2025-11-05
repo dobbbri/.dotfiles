@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/navarasu/onedark.nvim" }, { load = true })
+vim.pack.add({ "https://github.com/navarasu/onedark.nvim" }, { confirm = false })
 
 require("onedark").setup({
   -- Main options --

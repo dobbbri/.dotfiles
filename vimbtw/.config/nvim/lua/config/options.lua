@@ -92,7 +92,7 @@ vim.api.nvim_set_hl(0, "sttNormal", { bold = false })
 
 -- statusline
 opt.laststatus = 3
-opt.cmdheight = 0
+-- opt.cmdheight = 0
 opt.statusline =
   "%#SttBold# %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %{get(b:, 'branch_name', '')}  %t%#sttNormal# %h%m%r%w ln:%l, col:%c  %#SttBold# %{v:lua.vim.diagnostic.status()} %#sttNormal# %=%{&fenc==''?&enc:&fenc} %y  %p%% "
 

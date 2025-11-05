@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/rebelot/kanagawa.nvim" }, { load = true })
+vim.pack.add({ "https://github.com/rebelot/kanagawa.nvim" }, { confirm = false })
 
 require("kanagawa").setup({
   compile = false, -- enable compiling the colorscheme

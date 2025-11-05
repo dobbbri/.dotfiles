@@ -12,7 +12,7 @@ hsetroot -cover ~/.dotfiles/pictures/kristaps-ungurs-x8Oro9-tG64-unsplash.jpg &
 # fi
 
 # Enable power management
-xfce4-power-manager &
+# xfce4-power-manager &
 
 if [[ $(pidof dunst) ]]; then
   pkill dunst

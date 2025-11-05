@@ -10,7 +10,7 @@
       "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
-      "rev": "9d859cb",
+      "rev": "26c02e1",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fluoromachine.nvim": {
