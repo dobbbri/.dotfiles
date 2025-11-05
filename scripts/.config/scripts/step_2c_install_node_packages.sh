@@ -4,7 +4,7 @@
 # chmod +x install_nodejs.sh 
 
 echo "- Install NPM packages --------------------------------------------------"
-npm i -g @ast-grep/cli npm-check-updates
+npm i -g @ast-grep/cli npm-check-updates 
 
 # echo "- Fix NPM access --------------------------------------------------------"
 # mkdir ~/.npm-global

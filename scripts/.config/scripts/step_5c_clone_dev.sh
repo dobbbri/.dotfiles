@@ -15,7 +15,7 @@ git clone git@github.com:dobbbri/astro-blog-fuwari.git
 git clone git@github.com:dobbbri/astro-blog-yukina-template.git
 
 git clone git@github.com:dobbbri/tina_cms_blog.git
-git clone git@github.com:dobbbri/pagescms_astro.git
-git clone git@github.com:dobbbri/decapcms_astro.git
+git clone git@github.com:dobbbri/astro-paper-blog-with-pagescms.git
+git clone git@github.com:dobbbri/decapcms_astro_paper.git
 
 cd /home/sdobri
