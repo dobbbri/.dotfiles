@@ -119,6 +119,10 @@
       "rev": "c46172d",
       "src": "https://github.com/luukvbaal/statuscol.nvim"
     },
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "63dd87d",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
     "tokyonight.nvim": {
       "rev": "4d15961",
       "src": "https://github.com/folke/tokyonight.nvim"
