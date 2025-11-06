@@ -86,11 +86,6 @@ opt.conceallevel = 2
 opt.title = true
 opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a [nvim]'
 
--- vim.api.nvim_set_hl(0, "sttBold", { bold = true, fg = "#ffffff" })
--- vim.api.nvim_set_hl(0, "sttNormal", { bold = false, fg = "#000000"  })
-
 -- statusline
 opt.laststatus = 3
--- opt.cmdheight = 0
--- opt.statusline =
-  -- "%#SttBold# %{v:lua.string.upper(v:lua.vim.api.nvim_get_mode().mode)}  %{get(b:, 'branch_name', '')}  %t%#sttNormal# %h%m%r%w ln:%l, col:%c  %#SttBold# %{v:lua.vim.diagnostic.status()} %#sttNormal# %=%{&fenc==''?&enc:&fenc} %y  %p%% "
+opt.cmdheight = 1
