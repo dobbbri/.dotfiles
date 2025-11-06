@@ -16,21 +16,21 @@ vim.lsp.config("lua_ls", {
 })
 
 require("tiny-inline-diagnostic").setup({
-  preset = "powerline", -- "modern", "classic", "minimal", "powerline", "ghost", "simple", "nonerdfont", "amongus"
+  -- preset = "powerline", -- "modern", "classic", "minimal", "powerline", "ghost", "simple", "nonerdfont", "amongus"
   options = {
     show_source = true,
     show_all_diags_on_cursorline = true,
     multilines = { enabled = true, always_show = false },
   },
-  hi = { background = "Normal" },
+  -- hi = { background = "Normal" },
 })
 
--- vim.diagnostic.config({
---     float = { border = 'rounded' },
---     signs = { text = { ERROR = ' ', WARN = ' ', INFO = ' ', HINT = '󰌵'} },
---     virtual_text = true,
---     severity_sort = true
--- })
+vim.diagnostic.config({
+    -- float = { border = 'rounded' },
+    signs = { text = { ERROR = ' ', WARN = ' ', INFO = ' ', HINT = '󰌵'} },
+    virtual_text = false,
+    severity_sort = true
+})
 
 -- vim.keymap.set("n", "<leader>D", "<cmd>lua vim.diagnostic.jump()<CR>", { desc = "Go to diagnostics" })
 -- vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "show diagnostic Info" })

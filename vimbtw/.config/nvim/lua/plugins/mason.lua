@@ -21,14 +21,14 @@ require('mason-tool-installer').setup({
   },
 })
 
-vim.api.nvim_create_user_command(
-  "InstallThirdPartyTools",
-  function()
-    vim.cmd(
-      "MasonInstall "
-        .. "astro-language-server bash-language-server json-lsp prettier shfmt stylua taplo"
-        .. " tailwindcss-language-server lua-language-server typescript-language-server yamlfmt"
-    )
-  end,
-  {}
-)
+-- vim.api.nvim_create_user_command(
+--   "InstallThirdPartyTools",
+--   function()
+--     vim.cmd(
+--       "MasonInstall "
+--         .. "astro-language-server bash-language-server json-lsp prettier shfmt stylua taplo"
+--         .. " tailwindcss-language-server lua-language-server typescript-language-server yamlfmt"
+--     )
+--   end,
+--   {}
+-- )

@@ -50,10 +50,10 @@ local parsers = {
 }
 
 require("nvim-treesitter.configs").setup({
-  modules = {}, -- You can specify modules here if needed
-  sync_install = false, -- Set to true to install parsers synchronously
-  ignore_install = { "jsonc" }, -- List of parsers to ignore during installation
-  auto_install = true, -- Set to true to automatically install missing parsers
+  modules = {},
+  sync_install = true,
+  ignore_install = { "jsonc" },
+  auto_install = true,
   ensure_installed = parsers,
   highlight = { enable = true },
   indent = { enable = true },

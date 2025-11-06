@@ -9,6 +9,10 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
+    "catppuccin": {
+      "rev": "234fc04",
+      "src": "https://github.com/catppuccin/nvim"
+    },
     "conform.nvim": {
       "rev": "26c02e1",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -28,6 +32,10 @@
     "gruvbox.nvim": {
       "rev": "bee5e03",
       "src": "https://gitlab.com/motaz-shokry/gruvbox.nvim"
+    },
+    "kanagawa.nvim": {
+      "rev": "aef7f5c",
+      "src": "https://github.com/rebelot/kanagawa.nvim"
     },
     "logsitter.nvim": {
       "rev": "95e2b43",
