@@ -1,0 +1,2 @@
+# In $HOME/.fzf_options
+export FZF_DEFAULT_OPTS="--ansi --layout=reverse --height=40% --preview 'bat --color=always {}'"

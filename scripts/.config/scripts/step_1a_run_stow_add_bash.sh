@@ -24,5 +24,6 @@ stow Thunar
 stow vimbtw
 stow xarchiver
 stow xinit
+stow fzfrc
 
 cd /home/sdobri
