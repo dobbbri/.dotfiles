@@ -5,19 +5,16 @@ require("slimline").setup({
   bold = true,
   configs = {
     path = {
-      hl = {
-        primary = "Label",
-      },
+      hl = { primary = "Label" },
     },
     git = {
-      hl = {
-        primary = "Function",
-      },
+      hl = { primary = "Function" },
+    },
+    diagnostics = {
+      icons = { HINT = '󰛨 ' },
     },
     filetype_lsp = {
-      hl = {
-        primary = "String",
-      },
+      hl = { primary = "String" },
     },
   },
 })

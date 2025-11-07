@@ -27,7 +27,7 @@ require("tiny-inline-diagnostic").setup({
 
 vim.diagnostic.config({
     -- float = { border = 'rounded' },
-    signs = { text = { ERROR = ' ', WARN = ' ', INFO = ' ', HINT = '󰌵'} },
+    signs = { text = { ERROR = ' ', WARN = ' ', INFO = ' ', HINT = '󰛨 '} },
     virtual_text = false,
     severity_sort = true
 })
