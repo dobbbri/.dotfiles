@@ -13,7 +13,6 @@ require('mason-tool-installer').setup({
     "shfmt",
     "stylua",
     "taplo",
-    "biome",
     "tailwindcss-language-server",
     "lua-language-server",
     "typescript-language-server",
