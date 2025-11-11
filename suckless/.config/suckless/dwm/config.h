@@ -16,15 +16,15 @@ static const int sidepad            = 8; /* horizontal padding of bar */
 
 /* font -------------------------------------------------------------- */
 static const char *fonts[]          = {
-  "jetBrainsMono Nerd Font:style=Bold:size=12",
+  "UbuntuSansMono Nerd Font:style=Bold:size=12",
   "SymbolsNerdFontMono:size=13"
 };
-static const char dmenufont[] = "jetBrainsMono Nerd Font:style=bold:size=12:antialias=true:autohint=true";
+static const char dmenufont[] = "UbuntuSansMono Nerd Font:style=bold:size=12:antialias=true:autohint=true";
 
 static const char col_gray1[]       = "#2d2d2d";
 static const char col_gray2[]       = "#272727";
 static const char col_gray3[]       = "#cccccc";
-static const char col_cyan[]        = "#006cac";
+static const char col_cyan[]        = "#f39660";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },

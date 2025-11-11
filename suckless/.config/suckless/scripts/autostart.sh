@@ -2,7 +2,7 @@
 
 slstatus &
 
-hsetroot -cover ~/.dotfiles/pictures/unnamed.jpg &
+hsetroot -cover ~/.dotfiles/pictures/plasma1366x768.png &
 # hsetroot -cover ~/.dotfiles/pictures/kristaps-ungurs-x8Oro9-tG64-unsplash.jpg &
 
 # /usr/bin/syncthing serve --no-browser --no-restart --logflags=0 &

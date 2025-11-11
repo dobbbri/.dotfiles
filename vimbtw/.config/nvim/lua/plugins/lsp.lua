@@ -16,13 +16,13 @@ vim.lsp.config("lua_ls", {
 })
 
 require("tiny-inline-diagnostic").setup({
-  -- preset = "powerline", -- "modern", "classic", "minimal", "powerline", "ghost", "simple", "nonerdfont", "amongus"
+  preset = "powerline", -- "modern", "classic", "minimal", "powerline", "ghost", "simple", "nonerdfont", "amongus"
   options = {
     show_source = true,
     show_all_diags_on_cursorline = true,
     multilines = { enabled = true, always_show = false },
   },
-  -- hi = { background = "Normal" },
+  hi = { background = "Normal" },
 })
 
 vim.diagnostic.config({

@@ -142,6 +142,10 @@
       "rev": "37d1973",
       "src": "https://github.com/sschleemilch/slimline.nvim"
     },
+    "sonokai": {
+      "rev": "ec07018",
+      "src": "https://github.com/sainnhe/sonokai"
+    },
     "statuscol.nvim": {
       "rev": "c46172d",
       "src": "https://github.com/luukvbaal/statuscol.nvim"
