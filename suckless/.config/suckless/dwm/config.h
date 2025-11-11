@@ -93,10 +93,10 @@ static const Layout layouts[] = {
 static char dmenumon[2]             = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]       = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray3, NULL };
 
-static const char *termcmd[]        = { "alacritty", NULL };
-static const char *webbrowsercmd[]  = { "helium", NULL };
-static const char *thunarcmd[]      = { "thunar", NULL };
-static const char *geanycmd[]       = { "geany", NULL };
+static const char *terminalcmd[]        = { "alacritty", NULL };
+static const char *webbrowsercmd[]  = { "firefox", NULL };
+static const char *filemanagercmd[] = { "thunar", NULL };
+static const char *editorcmd[]      = { "mousepad", NULL };
 static const char *gimpcmd[]        = { "gimp", NULL };
 
 /* action keys -------------------------------------------------------------- */
@@ -104,11 +104,11 @@ static const char *gimpcmd[]        = { "gimp", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,             XK_p,       spawn,    {.v = dmenucmd } },
-	{ MODKEY,             XK_Return,  spawn,    {.v = termcmd } },
-	{ MODKEY,             XK_t,       spawn,    {.v = termcmd  } },
+	{ MODKEY,             XK_Return,  spawn,    {.v = terminalcmd } },
+	{ MODKEY,             XK_t,       spawn,    {.v = terminalcmd  } },
 	{ MODKEY,             XK_w,       spawn,    {.v = webbrowsercmd } },
-	{ MODKEY,             XK_f,       spawn,    {.v = thunarcmd } },
-	{ MODKEY,             XK_e,       spawn,    {.v = geanycmd } },
+	{ MODKEY,             XK_f,       spawn,    {.v = filemanagercmd } },
+	{ MODKEY,             XK_e,       spawn,    {.v = editorcmd } },
 	{ MODKEY,             XK_g,       spawn,    {.v = gimpcmd } },
 
 	{ MODKEY,             XK_s,       spawn,    SHCMD( "flameshot full --path /home/sdobri/Screenshots/" ) },
@@ -203,7 +203,7 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = terminalcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
