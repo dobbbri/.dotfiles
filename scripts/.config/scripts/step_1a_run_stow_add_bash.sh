@@ -15,15 +15,15 @@ stow astro
 stow bash
 # stow bspwm
 stow suckless
-# stow fastfetch
-# stow gammastep
-# stow geany
 stow git
 stow lazygit
 stow Thunar
 stow vimbtw
 stow xarchiver
 stow xinit
-stow fzfrc
+# stow fastfetch
+# stow gammastep
+# stow geany
+# stow fzfrc
 
 cd /home/sdobri
