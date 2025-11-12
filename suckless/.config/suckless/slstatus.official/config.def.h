@@ -72,9 +72,9 @@ const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifi
 
 static const struct arg args[] = {
   /* function format                                argument      turn  signal */
-  { battery_perc, "   %s%%", "BAT0", 15, 2 },
-  { ram_perc, "   %s%%", NULL, 10, 5 },
-  { datetime, "  󰥔 %s ", "%-d %b %R", 60, 3 },
+  { battery_perc, "  ^c#9ed072^ ^c#cccccc^%s%%", "BAT0", 15, 2 },
+  { ram_perc, "  ^c#e7c664^ ^c#cccccc^%s%%", NULL, 10, 5 },
+  { datetime, "  ^c#fc5d7c^󰥔 ^c#cccccc^%s ", "%-d %b %R", 60, 3 },
   { battery_notify, "", "BAT0", 30, 4 },
 };
 
