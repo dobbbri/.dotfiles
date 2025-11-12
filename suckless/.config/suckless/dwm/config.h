@@ -25,6 +25,16 @@ static const unsigned int alphas[][3]      = {
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
+/* autostart -------------------------------------------------------------- */
+static const char *const autostart[] = {
+	"sh", "-c", "~/.config/suckless/scripts/autostart.sh", NULL,
+  // "slstatus", NULL,
+  // "sh", "-c", "feh --bg-scale ~/.dotfiles/pictures/tron.jpeg", NULL,
+  // "syncthing", "serve", "--no-browser", "--no-restart", "--logflags=0", NULL,
+	NULL /* terminate */
+};
+
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
