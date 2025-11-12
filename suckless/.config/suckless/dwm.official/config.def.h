@@ -94,7 +94,7 @@ static char dmenumon[2]             = "0"; /* component of dmenucmd, manipulated
 static const char *dmenucmd[]       = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray3, NULL };
 static const char *layoutmenu_cmd   = "~/.config/suckless/scripts/layoutmenu.sh";
 
-static const char *terminalcmd[]        = { "alacritty", NULL };
+static const char *terminalcmd[]    = { "alacritty", NULL };
 static const char *webbrowsercmd[]  = { "firefox", NULL };
 static const char *filemanagercmd[] = { "thunar", NULL };
 static const char *editorcmd[]      = { "mousepad", NULL };
