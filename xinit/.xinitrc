@@ -15,6 +15,4 @@
 # exec dbus-launch --exit-with-session bspwm
 
 export DESKTOP_SESSION=dwm
-# exec dbus-launch --exit-with-session dwm
 exec dbus-run-session dwm
-# exec dwm
