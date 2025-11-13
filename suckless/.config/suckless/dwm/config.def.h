@@ -12,6 +12,8 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int vertpad            = 1;        /* vertical padding of bar */
+static const int sidepad            = 10;       /* horizontal padding of bar */
 
 static const char *fonts[]          = { "monospace:size=12:antialias=true" };
 static const char dmenufont[]       = "monospace:size=12";
@@ -127,7 +129,7 @@ static const Key keys[] = {
 
 	{ MODKEY,             XK_space,   spawn,    SHCMD( "~/.config/suckless/rofi/launchers/launcher.sh" ) },
 	{ MODKEY,             XK_x,       spawn,    SHCMD( "~/.config/suckless/rofi/powermenu/powermenu.sh" ) },
-  // { MODKEY,             XK_h,       spawn,    SHCMD( "~/.config/suckless/rofi/shortcutshelp/shortcutshelp.sh" ) },
+  /* { MODKEY,             XK_h,       spawn,    SHCMD( "~/.config/suckless/rofi/shortcutshelp/shortcutshelp.sh" ) }, */
 
   /* audio */
 	{ 0,  XF86XK_AudioMute,           spawn,    SHCMD( "amixer sset Master toggle" ) },
@@ -205,7 +207,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
-	// TAGKEYS(                        XK_9,                      8)
+	/* TAGKEYS(                        XK_9,                      8)*/
 
   /* close */
 	{ MODKEY,                       XK_q,      killclient,     {0} },

@@ -111,6 +111,7 @@ static const char *filemanagercmd[] = { "thunar", NULL };
 static const char *editorcmd[]      = { "mousepad", NULL };
 static const char *gimpcmd[]        = { "gimp", NULL };
 
+#include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,             XK_p,       spawn,    {.v = dmenucmd } },
@@ -145,8 +146,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
   
   /* stacks move */
-	// { MODKEY|ALTKEY,                XK_Right,  movestack,      {.i = +1 } },
-	// { MODKEY|ALTKEY,                XK_Left,   movestack,      {.i = -1 } },
+	{ MODKEY|ALTKEY,                XK_Right,  movestack,      {.i = +1 } },
+	{ MODKEY|ALTKEY,                XK_Left,   movestack,      {.i = -1 } },
   
   /* stacks resize */
   { ALTKEY|ControlMask,           XK_Left,   setmfact,       {.f = -0.05} },
