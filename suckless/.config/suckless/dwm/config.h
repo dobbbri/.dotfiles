@@ -15,8 +15,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 1;        /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 
-static const char *fonts[]          = { "monospace:size=12:antialias=true" };
-static const char dmenufont[]       = "monospace:size=12";
+static const char *fonts[]          = { "UbuntuSansMono Nerd Font:size=12:antialias=true" };
+static const char dmenufont[]       = "UbuntuSansMono Nerd Font:size=12";
 
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
@@ -109,6 +109,7 @@ static const char *layoutmenu_cmd   = "~/.config/suckless/dwm/layoutmenu.sh";
 
 static const char *terminalcmd[]    = { "alacritty", NULL };
 static const char *webbrowsercmd[]  = { "firefox", NULL };
+static const char *webbrowser2cmd[]  = { "helium", NULL };
 static const char *filemanagercmd[] = { "thunar", NULL };
 static const char *editorcmd[]      = { "mousepad", NULL };
 static const char *gimpcmd[]        = { "gimp", NULL };
@@ -119,7 +120,8 @@ static const Key keys[] = {
 	{ MODKEY,             XK_p,       spawn,    {.v = dmenucmd } },
 	{ MODKEY,             XK_Return,  spawn,    {.v = terminalcmd } },
 	{ MODKEY,             XK_t,       spawn,    {.v = terminalcmd  } },
-	{ MODKEY,             XK_w,       spawn,    {.v = webbrowsercmd } },
+	{ MODKEY,             XK_w,       spawn,    {.v = webbrowser2cmd } },
+  { MODKEY|ShiftMask,   XK_w,       spawn,    {.v = webbrowsercmd } },
 	{ MODKEY,             XK_f,       spawn,    {.v = filemanagercmd } },
 	{ MODKEY,             XK_e,       spawn,    {.v = editorcmd } },
 	{ MODKEY,             XK_g,       spawn,    {.v = gimpcmd } },

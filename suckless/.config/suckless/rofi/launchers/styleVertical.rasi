@@ -19,7 +19,7 @@ configuration {
 @import                          "../colors.rasi"
 
 * {
-    font: "JetBrainsMono Nerd Font 14";
+   font: "UbuntuSansMono Nerd Font 12";
 }
 
 /*****----- Main Window -----*****/
@@ -141,7 +141,7 @@ element normal.normal {
 element selected.normal {
     border-radius:               16px;
     background-color:            @selected;
-    text-color:                  @foreground;
+    text-color:                  @background;
 }
 element-icon {
     background-color:            transparent;

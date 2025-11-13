@@ -2,6 +2,7 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
+ * 
  * Rofi Theme File
  * Rofi Version: 1.7.3
  **/
@@ -9,18 +10,15 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun";
-    icon-theme:               "Breeze-dark";
-    show-icons:               true;
-    display-drun:             "";
+    icon-theme: "Yaru";
+    show-icons:                 true;
+    display-drun:               "";
 	drun-display-format:        "{name}";
 }
 
 /*****----- Global Properties -----*****/
-@import                          "../colors.rasi"
-
-* {
-    font: "JetBrainsMono Nerd Font 10";
-}
+@import                          "../shared/colors.rasi"
+@import                          "../shared/fonts.rasi"
 
 /*****----- Main Window -----*****/
 window {
@@ -28,7 +26,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       1100px;
+    width:                       1000px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -36,9 +34,8 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      2px solid;
-    border-radius:               16px;
-    // border-color:                @selected;
-    border-color:                @background;
+    border-radius:               0px;
+    border-color:                @selected;
     background-color:            @background;
     cursor:                      "default";
 }
@@ -48,7 +45,7 @@ mainbox {
     enabled:                     true;
     spacing:                     20px;
     margin:                      0px;
-    padding:                     10px;
+    padding:                     40px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @selected;
@@ -60,9 +57,10 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     10px;
+    margin:                      0px 500px 0px 0px;
     padding:                     12px;
-    border:                      2px;
-    border-radius:               16px;
+    border:                      0px 0px 0px 4px;
+    border-radius:               0px 100% 100% 0px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -93,8 +91,8 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     6;
-    lines:                       5;
+    columns:                     7;
+    lines:                       3;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -103,7 +101,7 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
     
-    spacing:                     5px;
+    spacing:                     10px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -125,7 +123,7 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     10px 10px;
+    padding:                     15px 10px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
@@ -139,16 +137,17 @@ element normal.normal {
     text-color:                  @foreground;
 }
 element selected.normal {
-    border-radius:               16px;
-    background-color:            @selected;
-    text-color:                  @background;
+    border:                      0px 0px 0px 4px;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
 }
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        54px;
+    size:                        64px;
     cursor:                      inherit;
-    margin:                      0px 20px;
 }
 element-text {
     background-color:            transparent;
