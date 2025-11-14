@@ -1,11 +1,13 @@
 vim.pack.add({
-  { src = "https://github.com/mason-org/mason.nvim" },
-  { src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
+  { src = "https://github.com/mason-org/mason.nvim", build = ":TSUpdate" },
 }, { confirm = false })
 
 require("mason").setup()
-require('mason-tool-installer').setup({
-  ensure_installed = {
+
+local mr = require("mason-registry")
+mr.refresh(function()
+
+  local ensure_installed = {
     "astro-language-server",
     "bash-language-server",
     "json-lsp",
@@ -17,17 +19,13 @@ require('mason-tool-installer').setup({
     "lua-language-server",
     "typescript-language-server",
     "yamlfmt",
-  },
-})
+  }
 
--- vim.api.nvim_create_user_command(
---   "InstallThirdPartyTools",
---   function()
---     vim.cmd(
---       "MasonInstall "
---         .. "astro-language-server bash-language-server json-lsp prettier shfmt stylua taplo"
---         .. " tailwindcss-language-server lua-language-server typescript-language-server yamlfmt"
---     )
---   end,
---   {}
--- )
+  for _, tool in ipairs(ensure_installed) do
+    local p = mr.get_package(tool)
+    if not p:is_installed() then
+      p:install()
+    end
+  end
+end)
+

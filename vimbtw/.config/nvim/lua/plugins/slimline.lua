@@ -11,7 +11,7 @@ require("slimline").setup({
       hl = { primary = "Function" },
     },
     diagnostics = {
-      icons = { HINT = '󰛨 ' },
+      icons = { ERROR = " ", WARN = "󰀨 ", INFO = " ", HINT = "󰠠 " },
     },
     filetype_lsp = {
       hl = { primary = "String" },
