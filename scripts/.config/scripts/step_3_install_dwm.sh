@@ -4,12 +4,11 @@ echo "install xmenu"
 
 cd $HOME/Downloads/
 
-echo "install xmenu"
-sudo apt install -y libimlib2-dev
-
-git clone https://github.com/phillbush/xmenu
-cd xmenu/
-sudo make clean install
+# echo "install xmenu"
+# sudo apt install -y libimlib2-dev
+# git clone https://github.com/phillbush/xmenu
+# cd xmenu/
+# sudo make clean install
 
 cd $HOME
 

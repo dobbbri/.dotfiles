@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dir="$HOME/.config/bspwm/rofi/launchers"
+dir="$HOME/.dotfiles/suckless/.config/suckless/rofi/launchers"
 theme='style'
 
 ## Run

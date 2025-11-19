@@ -6,17 +6,9 @@ hsetroot -cover ~/.dotfiles/pictures/plasma1366x768.png &
 
 # /usr/bin/syncthing serve --no-browser --no-restart --logflags=0 &
 
-# polkit agent
-# if [[ ! `pidof xfce-polkit` ]]; then
-# 	/usr/lib/xfce-polkit/xfce-polkit &
-# fi
+# polkit
+lxpolkit &
 
-# Enable power management
-# xfce4-power-manager &
-
-if [[ $(pidof dunst) ]]; then
-  pkill dunst
-fi
 dunst -config ~/.config/suckless/dunst/dunstrc &
 
 picom --config ~/.config/suckless/picom/picom.conf &

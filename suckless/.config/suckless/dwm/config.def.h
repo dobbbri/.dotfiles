@@ -15,7 +15,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 1;        /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 
-static const char *fonts[]          = { "UbuntuSansMono Nerd Font:size=12:antialias=true" };
+static const char *fonts[]          = { "UbuntuSansMono Nerd Font:size=12:antialias=true", "monospaced:size=12:antialias=true" };
 static const char dmenufont[]       = "UbuntuSansMono Nerd Font:size=12";
 
 static const char col_gray1[]       = "#000000";
@@ -105,7 +105,6 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *layoutmenu_cmd   = "~/.config/suckless/dwm/layoutmenu.sh";
 
 static const char *terminalcmd[]    = { "alacritty", NULL };
 static const char *webbrowsercmd[]  = { "firefox", NULL };
@@ -131,6 +130,7 @@ static const Key keys[] = {
 
 	{ MODKEY,             XK_space,   spawn,    SHCMD( "~/.config/suckless/rofi/launchers/launcher.sh" ) },
 	{ MODKEY,             XK_x,       spawn,    SHCMD( "~/.config/suckless/rofi/powermenu/powermenu.sh" ) },
+  { MODKEY,             XK_h,       spawn,    SHCMD( "~/.config/suckless/rofi/helper/help.sh" ) },
 
   /* audio */
 	{ 0,  XF86XK_AudioMute,           spawn,    SHCMD( "amixer sset Master toggle" ) },
@@ -219,8 +219,7 @@ static const Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
-  { ClkLtSymbol,          0,              Button1,        layoutmenu,     {0} },
-	// { ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
+	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = terminalcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },

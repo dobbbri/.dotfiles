@@ -13,7 +13,7 @@ echo "-------"
 stow alacritty
 stow astro
 stow bash
-# stow bspwm
+stow htop
 stow suckless
 stow git
 stow lazygit
@@ -21,9 +21,10 @@ stow Thunar
 stow vimbtw
 stow xarchiver
 stow xinit
+stow fzf
+# stow bspwm
 # stow fastfetch
 # stow gammastep
 # stow geany
-# stow fzfrc
 
 cd /home/sdobri

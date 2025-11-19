@@ -16,5 +16,9 @@ require("slimline").setup({
     filetype_lsp = {
       hl = { primary = "String" },
     },
+   progress = {
+      follow = 'label',
+      column = true, -- Enables a secondary section with the cursor column
+    },
   },
 })
