@@ -74,7 +74,7 @@ static const struct arg args[] = {
   /* function       argument                  turn  signal */
   { battery_perc,   "   %s%%", "BAT0",       15,   2 },
   { ram_perc,       "   %s%%", NULL,         10,   5 },
-  { datetime,       "  󰥔 %s ",  "%-d %b %R",  60,   3 },
+  { datetime,       "  󰥔 %s",  "%-d %b %R",  60,   3 },
   { battery_notify, "",         "BAT0",       30,   4 },
 };
 
