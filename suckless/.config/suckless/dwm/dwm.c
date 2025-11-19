@@ -146,6 +146,10 @@ typedef struct {
 	int monitor;
 } Rule;
 
+typedef struct {
+	int x, y, w, h;
+} DwmLogo;
+
 /* function declarations */
 static void applyrules(Client *c);
 static int applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact);
@@ -249,6 +253,7 @@ static int screen;
 static int sw, sh;           /* X display screen geometry width, height */
 static int bh;               /* bar height */
 static int lrpad;            /* sum of left and right padding for text */
+static int dwmlogowdth = 54; /* dwm logo width */
 static int (*xerrorxlib)(Display *, XErrorEvent *);
 static unsigned int numlockmask = 0;
 static void (*handler[LASTEvent]) (XEvent *) = {
@@ -485,6 +490,7 @@ buttonpress(XEvent *e)
 	}
 	if (ev->window == selmon->barwin) {
 		i = x = 0;
+		x = dwmlogowdth; /* dwm logo width */
 		do
 			x += TEXTW(tags[i]);
 		while (ev->x >= x && ++i < LENGTH(tags));
@@ -755,6 +761,7 @@ void
 drawbar(Monitor *m)
 {
 	int x, w, tw = 0;
+	int stroke = 4, letterHeight = bh - 4;
 	int boxs = drw->fonts->h / 9;
 	int boxw = drw->fonts->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0;
@@ -775,7 +782,32 @@ drawbar(Monitor *m)
 		if (c->isurgent)
 			urg |= c->tags;
 	}
-	x = 0;
+
+	/* use colored scheme for visibility */
+	drw_setscheme(drw, scheme[SchemeNorm]);
+
+	/* draw dark background for logo */
+	drw_rect(drw, 0, 0, dwmlogowdth, bh, 1, 1);
+
+	/* draw dwm logo */
+	const DwmLogo dwmLogo[] = {
+		{  0,  9, stroke, letterHeight / 2 }, /* d: left vertical */
+		{  0, 15,     35, stroke           }, /* d: bottom horizontal */
+		{ 13,  1, stroke, letterHeight     }, /* d: right vertical */
+		{  0,  7,     15, stroke           }, /* d: top horizontal */
+		{ 22,  7, stroke, letterHeight / 2 }, /* w: center vertical */
+		{ 31,  7, stroke, letterHeight / 2 }, /* w: right vertical */
+		{ 31,  7,     22, stroke           }, /* m: top horizontal */
+		{ 40, 11, stroke, letterHeight / 2 }, /* m: center vertical */
+		{ 49, 11, stroke, letterHeight / 2 }  /* m: right vertical */
+	};
+
+	for (int i = 0; i < LENGTH(dwmLogo); i++) {
+		drw_rect(drw, dwmLogo[i].x, dwmLogo[i].y, dwmLogo[i].w, dwmLogo[i].h, 1, 0);
+	}
+
+	/* start drawing tags after logo */
+	x = dwmlogowdth;
 	for (i = 0; i < LENGTH(tags); i++) {
 		w = TEXTW(tags[i]);
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
