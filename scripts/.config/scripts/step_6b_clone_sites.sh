@@ -6,9 +6,9 @@
 # git clone git@github.com:dobbbri/Projects.git
 
 echo "Add Sites Folder -----------------------------------------------------------"
-mkdir -p /home/sdobri/Sites
+mkdir -p ~/Sites
 
-cd /home/sdobri/Sites
+cd ~/Sites
 
 git clone git@github.com:dobbbri/videira-blog-2025.git
 git clone git@github.com:dobbbri/espaco_videira_2025.git
@@ -23,4 +23,4 @@ git clone git@github.com:dobbbri/elisa_pet_care_v2.git
 git clone git@github.com:dobbbri/epc_in_dev_v2_audios_colors.git
 git clone git@github.com:elisapetcare/elisa_pet_care_lp_2025.git
 
-cd /home/sdobri
+cd ~

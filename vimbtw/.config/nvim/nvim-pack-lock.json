@@ -17,6 +17,10 @@
       "rev": "26c02e1",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "darcula-dark.nvim": {
+      "rev": "7ef85f9053b08b9e2f066c3ce64b597c174650d3",
+      "src": "https://github.com/xiantang/darcula-dark.nvim"
+    },
     "fluoromachine.nvim": {
       "rev": "a279f66",
       "src": "https://github.com/maxmx03/fluoromachine.nvim"
@@ -72,6 +76,10 @@
     "netrw.nvim": {
       "rev": "90501c6",
       "src": "https://github.com/prichrd/netrw.nvim"
+    },
+    "night-owl.nvim": {
+      "rev": "86ed124c2f7e118670649701288e024444bf91e5",
+      "src": "https://github.com/oxfist/night-owl.nvim"
     },
     "nvim-lint": {
       "rev": "9da1fb9",
