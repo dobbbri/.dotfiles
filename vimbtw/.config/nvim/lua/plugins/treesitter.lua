@@ -3,7 +3,6 @@ vim.pack.add({
   "https://github.com/gaelph/logsitter.nvim",
   "https://github.com/windwp/nvim-ts-autotag",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
-  "https://github.com/nvim-treesitter/nvim-treesitter-context",
 }, { confirm = false })
 
 require("nvim-treesitter.configs").setup({
@@ -16,7 +15,6 @@ require("nvim-treesitter.configs").setup({
   indent = { enable = true },
 })
 
-require("treesitter-context").setup({ enable = true })
 require("nvim-ts-autotag").setup({})
 require("render-markdown").setup({})
 

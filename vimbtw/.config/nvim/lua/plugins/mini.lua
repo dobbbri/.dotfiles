@@ -1,4 +1,6 @@
-vim.pack.add({ "https://github.com/echasnovski/mini.nvim" }, { confirm = false })
+vim.pack.add({
+  "https://github.com/echasnovski/mini.nvim",
+}, { confirm = false })
 
 require("mini.diff").setup({
   config = { view = { style = vim.go.number and "number" } },

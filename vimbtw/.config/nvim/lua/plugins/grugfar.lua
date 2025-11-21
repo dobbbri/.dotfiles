@@ -1,4 +1,6 @@
-vim.pack.add({ "https://github.com/MagicDuck/grug-far.nvim" }, { confirm = false })
+vim.pack.add({
+  "https://github.com/MagicDuck/grug-far.nvim",
+}, { confirm = false })
 
 local grug = require("grug-far")
 

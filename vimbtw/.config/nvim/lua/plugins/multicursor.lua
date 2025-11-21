@@ -1,4 +1,6 @@
-vim.pack.add({ "https://github.com/jake-stewart/multicursor.nvim" }, { confirm = false })
+vim.pack.add({
+  "https://github.com/jake-stewart/multicursor.nvim",
+}, { confirm = false })
 
 local mc = require("multicursor-nvim")
 

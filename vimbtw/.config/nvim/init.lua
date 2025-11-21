@@ -3,7 +3,7 @@ require("config.commands")
 require("config.mappings")
 require("config.filetypes")
 
-require("colors.nightowl")
+require("colors.sonokai")
 
 require("plugins.mini")
 require("plugins.treesitter")

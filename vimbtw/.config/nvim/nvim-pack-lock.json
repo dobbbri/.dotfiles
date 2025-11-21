@@ -9,6 +9,10 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
+    "blink.indent": {
+      "rev": "2f4ac0d1bc642049d97da909cae02a5a5bd0beab",
+      "src": "https://github.com/saghen/blink.indent"
+    },
     "catppuccin": {
       "rev": "234fc04",
       "src": "https://github.com/catppuccin/nvim"
@@ -173,6 +177,10 @@
     "which-key.nvim": {
       "rev": "904308e",
       "src": "https://github.com/folke/which-key.nvim"
+    },
+    "yukinord.nvim": {
+      "rev": "5be6c8153deed433b3033e6a33d6e4d7d2db7f17",
+      "src": "https://github.com/adibhanna/yukinord.nvim"
     }
   }
 }

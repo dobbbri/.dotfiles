@@ -16,6 +16,9 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
+-- opt.colorcolumn = "101"
+opt.termguicolors = true
+
 -- use rounded borders on all floating windows
 opt.winborder = "rounded"
 

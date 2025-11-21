@@ -1,14 +1,16 @@
-vim.pack.add({ "https://github.com/sschleemilch/slimline.nvim" }, { confirm = false })
+vim.pack.add({
+  "https://github.com/sschleemilch/slimline.nvim",
+}, { confirm = false })
 
 require("slimline").setup({
   style = "fg",
   bold = true,
   configs = {
-    path = {
-      hl = { primary = "Label" },
-    },
     git = {
       hl = { primary = "Function" },
+    },
+    path = {
+      hl = { primary = "Label" },
     },
     diagnostics = {
       icons = { ERROR = " ", WARN = "󰀨 ", INFO = " ", HINT = "󰠠 " },
@@ -16,9 +18,17 @@ require("slimline").setup({
     filetype_lsp = {
       hl = { primary = "String" },
     },
-   progress = {
-      follow = 'label',
-      column = true, -- Enables a secondary section with the cursor column
+  },
+  components = {
+    right = {
+      "diagnostics",
+      "filetype_lsp",
+      function(active)
+        local s = require("slimline")
+        return s.highlights.hl_component({ primary = "  %l / %c" }, s.highlights.hls.components["path"], s.get_sep("path"), "right", active, "fg")
+      end,
     },
   },
 })
+
+-- vim.cmd("highlight Slimline guibg=#000000")
