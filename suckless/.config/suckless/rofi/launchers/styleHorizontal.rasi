@@ -19,7 +19,7 @@ configuration {
 @import                          "../colors.rasi"
 
 * {
-    font: "JetBrainsMono Nerd Font 10";
+    font: "UbuntuMono Nerd Font 14";
 }
 
 /*****----- Main Window -----*****/

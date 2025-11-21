@@ -13,7 +13,7 @@ install_fonts() {
   echo "Installing fonts..."
   mkdir -p ~/.local/share/fonts
   # fonts=("JetBrainsMono" "UbuntuSans" "AtkinsonHyperlegibleMono" "IntelOneMono" "NerdFontsSymbolsOnly" "CascadiaMono")
-  fonts=("JetBrainsMono" "UbuntuSans" "NerdFontsSymbolsOnly")
+  fonts=("Monoid" "0xProto" "JetBrainsMono" "UbuntuMono" "UbuntuSans" "NerdFontsSymbolsOnly")
 
   for font in "${fonts[@]}"; do
     if [ -d ~/.local/share/fonts/$font ]; then

@@ -13,12 +13,12 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const char *fonts[]          = { "UbuntuSansMono Nerd Font:style=medium:size=12:antialias=true", "monospace:size=12:antialias=true" };
-static const char dmenufont[]       = "UbuntuSansMono Nerd Font:size=12";
+static const char *fonts[]          = { "UbuntuMono Nerd Font:style=bold:size=14:antialias=true"};
+static const char dmenufont[]       = "UbuntuMono Nerd Font:size=14";
 
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#aaaaaa";
+static const char col_gray3[]       = "#999999";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#ffffff";
 static const char *colors[][3]      = {
