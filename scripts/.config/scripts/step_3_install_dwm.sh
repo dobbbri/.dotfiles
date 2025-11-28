@@ -1,16 +1,16 @@
 sudo apt install -y dwm suckless-tools build-essential libxinerama-dev libx11-dev libxft-dev git hsetroot rofi dunst picom
 
-echo "install xmenu"
-
-cd $HOME/Downloads/
-
+# echo "install xmenu"
+#
+# cd ~/Downloads/
+#
 # echo "install xmenu"
 # sudo apt install -y libimlib2-dev
 # git clone https://github.com/phillbush/xmenu
 # cd xmenu/
 # sudo make clean install
 
-cd $HOME
+cd ~
 
 
 echo "lembretes"

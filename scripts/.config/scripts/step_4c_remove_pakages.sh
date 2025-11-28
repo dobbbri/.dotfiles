@@ -17,9 +17,9 @@ sudo apt autoremove blueman bluez-utils bluez bluetooth -y
 echo "Remove xdg-desktop-portal-gtk"
 sudo apt autoremove xdg-desktop-portal-gtk -y
 
-echo "Remove pulseaudio"
-systemctl --user stop pulseaudio.service pulseaudio.socket
-systemctl --user disable pulseaudio.service pulseaudio.socket
-systemctl --user mask pulseaudio.service
-sudo apt autoremove pulseaudio pulseaudio-utils gstreamer1.0-pulseaudio libpulse0 libpulse-mainloop-glib0 libpulsedsp -y
-rm -rf ~/.config/pulse ~/.pulse ~/.pulse-cookie
+# echo "Remove pulseaudio"
+# systemctl --user stop pulseaudio.service pulseaudio.socket
+# systemctl --user disable pulseaudio.service pulseaudio.socket
+# systemctl --user mask pulseaudio.service
+# sudo apt autoremove pulseaudio pulseaudio-utils gstreamer1.0-pulseaudio libpulse0 libpulse-mainloop-glib0 libpulsedsp -y
+# rm -rf ~/.config/pulse ~/.pulse ~/.pulse-cookie

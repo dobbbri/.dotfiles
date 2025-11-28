@@ -22,10 +22,6 @@ stow vimbtw
 stow xarchiver
 stow xinit
 stow fzf
-stow i3
-# stow bspwm
-# stow fastfetch
-# stow gammastep
-# stow geany
 
-cd /home/sdobri
+cd ~
+
