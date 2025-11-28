@@ -22,6 +22,9 @@ stow vimbtw
 stow xarchiver
 stow xinit
 stow fzf
+# stow i3
+# stow dk
+# stow bspwm
 
 cd ~
 
