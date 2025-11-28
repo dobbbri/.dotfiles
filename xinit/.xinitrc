@@ -16,3 +16,5 @@
 
 export DESKTOP_SESSION=dwm
 exec dbus-launch --exit-with-session dwm
+
+# exec startlxqt
