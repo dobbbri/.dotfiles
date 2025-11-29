@@ -1,5 +1,6 @@
 #!/bin/sh
 
+export DESKTOP_SESSION=dwm
 # Set keyboard repeat rate
 xset r rate 250 60
 
@@ -15,7 +16,7 @@ hsetroot -cover ~/.dotfiles/pictures/plasma1366x768.png &
 
 # /usr/bin/syncthing serve --no-browser --no-restart --logflags=0 &
 
-# polkit
+# xfce4-session &
 # lxpolkit &
 
 dunst -config ~/.config/suckless/dunst/dunstrc &

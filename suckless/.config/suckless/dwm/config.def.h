@@ -13,8 +13,8 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const char *fonts[]          = { "UbuntuMono Nerd Font:style=bold:size=14:antialias=true"};
-static const char dmenufont[]       = "UbuntuMono Nerd Font:size=14";
+static const char *fonts[]          = { "UbuntuMono Nerd Font:size=15:antialias=true"};
+static const char dmenufont[]       = "UbuntuMono Nerd Font:size=14:style=bold";
 
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
@@ -132,15 +132,11 @@ static const Key keys[] = {
 	// { 0,  XF86XK_AudioMute,           spawn,    SHCMD( "amixer sset Master toggle" ) },
 	// { 0,  XF86XK_AudioRaiseVolume,    spawn,    SHCMD( "amixer sset Master 5%+" ) },
 	// { 0,  XF86XK_AudioLowerVolume,    spawn,    SHCMD( "amixer sset Master 5%-" ) },
-  
   /* audio for pulseaudio */
-    // static const char *upvol[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
-    // static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
-    // static const char *mutevol[] = { "pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
 	{ 0,  XF86XK_AudioRaiseVolume,    spawn,    SHCMD( "pactl set-sink-volume @DEFAULT_SINK@ +5%" ) },
 	{ 0,  XF86XK_AudioLowerVolume,    spawn,    SHCMD( "pactl set-sink-volume @DEFAULT_SINK@ -5%" ) },
   { 0,  XF86XK_AudioMute,           spawn,    SHCMD( "pactl set-sink-mute @DEFAULT_SINK@ toggle" ) },
-  
+
   /* brightness */
 	{ 0,  XF86XK_MonBrightnessUp,     spawn,    SHCMD( "brightnessctl -c backlight set 5%+" ) },
 	{ 0,  XF86XK_MonBrightnessDown,   spawn,    SHCMD( "brightnessctl -c backlight set 5%-" ) },
@@ -151,7 +147,7 @@ static const Key keys[] = {
   /* stacks focus */
 	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
-  
+
   /* stacks move */
 	{ MODKEY|ALTKEY,                XK_Right,  movestack,      {.i = +1 } },
 	{ MODKEY|ALTKEY,                XK_Left,   movestack,      {.i = -1 } },
