@@ -128,10 +128,18 @@ static const Key keys[] = {
 	{ MODKEY,             XK_x,       spawn,    SHCMD( "~/.config/suckless/rofi/powermenu/powermenu.sh" ) },
   { MODKEY,             XK_h,       spawn,    SHCMD( "~/.config/suckless/rofi/helper/help.sh" ) },
 
-  /* audio */
-	{ 0,  XF86XK_AudioMute,           spawn,    SHCMD( "amixer sset Master toggle" ) },
-	{ 0,  XF86XK_AudioRaiseVolume,    spawn,    SHCMD( "amixer sset Master 5%+" ) },
-	{ 0,  XF86XK_AudioLowerVolume,    spawn,    SHCMD( "amixer sset Master 5%-" ) },
+  /* audio for alsa */
+	// { 0,  XF86XK_AudioMute,           spawn,    SHCMD( "amixer sset Master toggle" ) },
+	// { 0,  XF86XK_AudioRaiseVolume,    spawn,    SHCMD( "amixer sset Master 5%+" ) },
+	// { 0,  XF86XK_AudioLowerVolume,    spawn,    SHCMD( "amixer sset Master 5%-" ) },
+  
+  /* audio for pulseaudio */
+    // static const char *upvol[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+    // static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+    // static const char *mutevol[] = { "pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
+	{ 0,  XF86XK_AudioRaiseVolume,    spawn,    SHCMD( "pactl set-sink-volume @DEFAULT_SINK@ +5%" ) },
+	{ 0,  XF86XK_AudioLowerVolume,    spawn,    SHCMD( "pactl set-sink-volume @DEFAULT_SINK@ -5%" ) },
+  { 0,  XF86XK_AudioMute,           spawn,    SHCMD( "pactl set-sink-mute @DEFAULT_SINK@ toggle" ) },
   
   /* brightness */
 	{ 0,  XF86XK_MonBrightnessUp,     spawn,    SHCMD( "brightnessctl -c backlight set 5%+" ) },

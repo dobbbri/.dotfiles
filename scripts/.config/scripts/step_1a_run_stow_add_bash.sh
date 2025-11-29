@@ -21,7 +21,7 @@ stow Thunar
 stow vimbtw
 stow xarchiver
 stow xinit
-stow fzf
+stow fzfrc
 # stow i3
 # stow dk
 # stow bspwm
