@@ -19,14 +19,25 @@
 # exec dwm
 
 # Here dwm is kept as default
+export DESKTOP_SESSION=dwm
 session=${1:-dwm}
 
 case $session in
-    i3|i3wm           ) exec i3;;
-    bsp               ) exec bspwm;;
-    dk                ) exec dk;;
-    dwm               ) exec dwm;;
-    xfce|xfce4        ) exec startxfce4;;
-    # No known session, try to run it as command
-    *                 ) exec $1;;
+i3 ) export DESKTOP_SESSION=i3 ;;
+bsp) export DESKTOP_SESSION=bspwm ;;
+dk ) export DESKTOP_SESSION=dk ;;
+dwm) export DESKTOP_SESSION=dwm ;;
 esac
+
+case $session in
+i3   ) exec i3 ;;
+bsp  ) exec bspwm ;;
+dk   ) exec dk ;;
+dwm  ) exec dwm ;;
+xfce4) exec startxfce4 ;;
+# No known session, try to run it as command
+*    ) exec $1 ;;
+esac
+
+# startx ~/.xinitrc xfce4
+# startx xfce4

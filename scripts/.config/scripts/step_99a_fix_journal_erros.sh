@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "run script manually one by one ------------------------------"
-exit 
+exit
 
 fix_b43_wireless_driver_error() {
   # add next 2 lines to file /etc/modprobe.d/local-b43.conf and save

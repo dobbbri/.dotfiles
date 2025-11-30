@@ -17,6 +17,15 @@ sudo apt autoremove blueman bluez-utils bluez bluetooth -y
 echo "Remove xdg-desktop-portal-gtk"
 sudo apt autoremove xdg-desktop-portal-gtk -y
 
+echo "remove lightdm"
+sudo apt purge lightdm -y
+sudo systemctl disable lightdm.service
+sudo systemctl set-default multi-user.target
+sudo apt autoremove -y
+echo "reboot now"
+echo "reboot now"
+echo "reboot now"
+
 # echo "Remove pulseaudio"
 # systemctl --user stop pulseaudio.service pulseaudio.socket
 # systemctl --user disable pulseaudio.service pulseaudio.socket
