@@ -5,33 +5,20 @@
 # invoke global X session script
 # . /etc/X11/Xsession &
 
-# export DESKTOP_SESSION=dk
-# exec dbus-run-session dk
-
-# export DESKTOP_SESSION=i3
-# exec dbus-run-session i3
-
-# export DESKTOP_SESSION=bspwm
-# exec dbus-launch --exit-with-session bspwm
-
-# export DESKTOP_SESSION=dwm
-# exec dbus-launch --exit-with-session dwm
-# exec dwm
-
 # Here dwm is kept as default
 export DESKTOP_SESSION=dwm
 session=${1:-dwm}
 
 case $session in
-i3 ) export DESKTOP_SESSION=i3 ;;
-bsp) export DESKTOP_SESSION=bspwm ;;
-dk ) export DESKTOP_SESSION=dk ;;
-dwm) export DESKTOP_SESSION=dwm ;;
+i3   ) export DESKTOP_SESSION=i3 ;;
+bspwm) export DESKTOP_SESSION=bspwm ;;
+dk   ) export DESKTOP_SESSION=dk ;;
+dwm  ) export DESKTOP_SESSION=dwm ;;
 esac
 
 case $session in
 i3   ) exec i3 ;;
-bsp  ) exec bspwm ;;
+bspwm) exec bspwm ;;
 dk   ) exec dk ;;
 dwm  ) exec dwm ;;
 xfce4) exec startxfce4 ;;
@@ -39,5 +26,5 @@ xfce4) exec startxfce4 ;;
 *    ) exec $1 ;;
 esac
 
+# execute
 # startx ~/.xinitrc xfce4
-# startx xfce4
