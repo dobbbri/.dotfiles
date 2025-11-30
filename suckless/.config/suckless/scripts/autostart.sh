@@ -16,6 +16,7 @@ hsetroot -cover ~/.dotfiles/pictures/plasma1366x768.png &
 
 # /usr/bin/syncthing serve --no-browser --no-restart --logflags=0 &
 
+xfce4-power-manager &
 # xfce4-session &
 # lxpolkit &
 
