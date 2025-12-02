@@ -12,7 +12,7 @@ xsetroot -cursor_name left_ptr
 
 slstatus &
 
-hsetroot -cover ~/.dotfiles/pictures/plasma1366x768.png &
+hsetroot -cover ~/.dotfiles/pictures/1-etheral.jpg &
 
 # /usr/bin/syncthing serve --no-browser --no-restart --logflags=0 &
 

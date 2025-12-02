@@ -24,6 +24,7 @@ alias run-server="npx http-server "
 # site
 alias dd='cd ~/Dev/'
 alias ss='cd ~/Sites/'
+alias dl='cd ~/Downloads/'
 alias sepc='cd ~/Sites/epc_in_dev/'
 alias se='cd ~/Sites/elisa_pet_care_2025/'
 alias slepc='cd ~/Sites/elisa_pet_care_lp_2025/'
