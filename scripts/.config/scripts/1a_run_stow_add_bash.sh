@@ -2,7 +2,7 @@
 
 echo "Stow ---------------------------------------------------------------"
 
-sudo apt install -y stow
+sudo apt install -y stow starship
 
 rm ~/.bashrc
 
@@ -22,6 +22,7 @@ stow vimbtw
 stow xarchiver
 stow xinit
 stow fzfrc
+stow starship
 # stow i3
 # stow dk
 # stow bspwm

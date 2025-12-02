@@ -42,6 +42,7 @@ alias x="exit"
 alias sx="startx"
 alias l='exa -ll --color=always --group-directories-first'
 alias ls='exa -al --header --icons --group-directories-first'
+alias lt='eza --tree --level=2 --long --icons --git --color=always --group-directories-first'
 alias grep='grep --color=auto'
 alias myip="ip -f inet address | grep inet | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
 alias free='free -h'
@@ -55,10 +56,15 @@ alias lg='lazygit'
 # home
 alias hh='cd ~'
 
+
+open() {
+  xdg-open "$@" >/dev/null 2>&1 &
+}
+
+# Directories
 alias ..='cd ..'
-alias ..2='cd ../../'
-alias ..3='cd ../../../'
-alias ..4='cd ../../../../'
+alias ...='cd ../..'
+alias ....='cd ../../../'
 
 
 # apt

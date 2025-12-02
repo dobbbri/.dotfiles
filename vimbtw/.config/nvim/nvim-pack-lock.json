@@ -21,6 +21,10 @@
       "rev": "b58b2d65863f4ebad88b10a1ddd519e5380466e0",
       "src": "https://github.com/MagicDuck/grug-far.nvim"
     },
+    "jellybeans.nvim": {
+      "rev": "28b80886b54396b13a2a85edf608926333e842b9",
+      "src": "https://github.com/WTFox/jellybeans.nvim"
+    },
     "logsitter.nvim": {
       "rev": "95e2b43b52936c48bb1b52f101847c574d06c6b0",
       "src": "https://github.com/gaelph/logsitter.nvim"
@@ -36,6 +40,10 @@
     "multicursor.nvim": {
       "rev": "a6cf4e7daaf10a6b14bb7838caf779f0de5070cd",
       "src": "https://github.com/jake-stewart/multicursor.nvim"
+    },
+    "neogotham": {
+      "rev": "02168156b3c14cb966195ed47b3566b1cd4facbf",
+      "src": "https://gitlab.com/shmerl/neogotham.git"
     },
     "nvim-lspconfig": {
       "rev": "07f4e93de92e8d4ea7ab99602e3a8c9ac0fb778a",

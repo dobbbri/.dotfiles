@@ -119,15 +119,19 @@ fi
 #PS1="\[\e[32m\]\h\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[34m\]\u\[\e[m\] \W \$ "
 
 # Colour codes
-RED="\\[\\e[1;31m\\]"
-GREEN="\\[\\e[1;32m\\]"
-YELLOW="\\[\\e[1;33m\\]"
-BLUE="\\[\\e[1;34m\\]"
-MAGENTA="\\[\\e[1;35m\\]"
-CYAN="\\[\\e[1;36m\\]"
-WHITE="\\[\\e[1;37m\\]"
-ENDC="\\[\\e[0m\\]"
+# RED="\\[\\e[1;31m\\]"
+# GREEN="\\[\\e[1;32m\\]"
+# YELLOW="\\[\\e[1;33m\\]"
+# BLUE="\\[\\e[1;34m\\]"
+# MAGENTA="\\[\\e[1;35m\\]"
+# CYAN="\\[\\e[1;36m\\]"
+# WHITE="\\[\\e[1;37m\\]"
+# ENDC="\\[\\e[0m\\]"
+#
+# # Set a two-line prompt. If accessing via ssh include 'ssh-session' message.
+# if [[ -n "$SSH_CLIENT" ]]; then ssh_message="-ssh_session"; fi
+# PS1="${GREEN}\u${WHITE}@${YELLOW}\h${RED}${ssh_message} ${WHITE}in ${BLUE}\w \n${CYAN}->${ENDC} "
 
-# Set a two-line prompt. If accessing via ssh include 'ssh-session' message.
-if [[ -n "$SSH_CLIENT" ]]; then ssh_message="-ssh_session"; fi
-PS1="${GREEN}\u${WHITE}@${YELLOW}\h${RED}${ssh_message} ${WHITE}in ${BLUE}\w \n${CYAN}->${ENDC} "
+if command -v starship &> /dev/null; then
+  eval "$(starship init bash)"
+fi

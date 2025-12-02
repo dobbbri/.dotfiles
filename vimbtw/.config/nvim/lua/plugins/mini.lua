@@ -65,12 +65,3 @@ vim.keymap.set("n", "<leader>m", "<cmd>Pick resume<CR>", { desc = "List Pick res
 vim.keymap.set("n", "<leader>w", "<cmd>Pick grep_live<CR>", { desc = "Search by word" })
 vim.keymap.set("n", "<leader><space>", "<cmd>Pick buffers<CR>", { desc = "List opened buffers" })
 
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
-    vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
-    vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
-    vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
-  end,
-})

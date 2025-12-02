@@ -20,7 +20,7 @@ opt.colorcolumn = "101"
 opt.termguicolors = true
 
 -- use rounded borders on all floating windows
-opt.winborder = "rounded"
+opt.winborder = "single" --"solid"  --"rounded"
 
 -- nice confirmation dialog
 opt.confirm = true
@@ -56,8 +56,8 @@ opt.list = false
 opt.listchars = "nbsp:⍽,trail:·,extends:→,precedes:←"
 
 opt.fillchars = {
-  foldopen = "", -- "",
-  foldclose = "", --"",-- "",
+  foldopen = "󰅀", -- "",
+  foldclose = "󰅂", --"󰅂",-- "",--"", 
   foldsep = "│",
 }
 

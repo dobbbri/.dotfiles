@@ -1,3 +1,14 @@
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
+    vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
+    vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
+    vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
+  end,
+})
+
 --  jump to the last place you’ve visited in a file before exiting
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()
