@@ -166,7 +166,7 @@ neovim-install() {
 #   sudo mv $1 /usr/local/bin/$2
 # }
 
-upNet() {
+up-net() {
   #sudo cat /etc/network/interfaces
   sudo ifdown wlp2s0b1
   sudo ifup wlp2s0b1

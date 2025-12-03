@@ -121,6 +121,7 @@ static const Key keys[] = {
 	{ MODKEY,             XK_e,       spawn,    {.v = editorcmd } },
 	{ MODKEY,             XK_g,       spawn,    {.v = gimpcmd } },
 
+	{ MODKEY|ALTKEY,      XK_e,       spawn,    SHCMD( "echo 'sergiodobri@gmail.com' | xclip -selection c" ) },
 	{ MODKEY,             XK_s,       spawn,    SHCMD( "flameshot full --path /home/sdobri/Screenshots/" ) },
 	{ MODKEY|ShiftMask,   XK_s,       spawn,    SHCMD( "flameshot gui --path /home/sdobri/Screenshots/" ) },
 
