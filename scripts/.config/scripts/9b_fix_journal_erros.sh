@@ -17,6 +17,24 @@ fix_b43_wireless_driver_error() {
   sudo apt install firmware-b43-installer
 }
 
+# https://askubuntu.com/questions/1250040/how-do-i-fix-mds-cpu-bug-present-and-smt-on-data-leak-possible-errors-from-lo
+fix_mds_cpu_bug_present_and_smt_on_data_leak() {
+
+  # Disables MDS mitigations completely.
+  sudo -H nvim /etc/default/grub
+
+  # Change:
+  GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+
+  # To:
+  GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mds=full,nosmt"
+
+  # Save the file and quit gedit.
+  sudo update-grub
+
+  # reboot
+}
+
 fix_xdg_desktop_portal_gtk_error() {
   # run
   sudo apt remove xdg-desktop-portal-gtk
