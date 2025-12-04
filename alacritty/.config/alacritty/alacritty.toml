@@ -9,8 +9,8 @@
 [general]
 ## Import additional configuration files.
 import = [
-  # "~/.config/alacritty/fonts/UbuntuMono.toml",
-  "~/.config/alacritty/fonts/Lilex.toml",
+  "~/.config/alacritty/fonts/UbuntuMono.toml",
+  # "~/.config/alacritty/fonts/Lilex.toml",
   "~/.config/alacritty/themes/spacegray.toml",
 ]
 
