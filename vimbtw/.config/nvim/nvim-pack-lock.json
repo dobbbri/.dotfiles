@@ -65,6 +65,10 @@
       "rev": "0c3c07a08c0f9c9272298d55a21e7a8829afe62d",
       "src": "https://github.com/eero-lehtinen/oklch-color-picker.nvim"
     },
+    "onedark.nvim": {
+      "rev": "213c23ae45a04797572242568d5d51937181792d",
+      "src": "https://github.com/navarasu/onedark.nvim"
+    },
     "promise-async": {
       "rev": "119e8961014c9bfaf1487bf3c2a393d254f337e2",
       "src": "https://github.com/kevinhwang91/promise-async"

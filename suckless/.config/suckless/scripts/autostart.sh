@@ -12,11 +12,11 @@ xsetroot -cursor_name left_ptr
 
 slstatus &
 
-hsetroot -cover ~/.dotfiles/pictures/1-etheral.jpg &
+hsetroot -cover ~/.dotfiles/pictures/big-city.jpg &
 
 # /usr/bin/syncthing serve --no-browser --no-restart --logflags=0 &
 
-xfce4-power-manager &
+# xfce4-power-manager &
 # xfce4-session &
 # lxpolkit &
 

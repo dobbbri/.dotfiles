@@ -3,7 +3,7 @@ require("config.commands")
 require("config.mappings")
 require("config.filetypes")
 
-require("colors.jellybeans")
+require("colors.onedark")
 
 require("plugins.mini")
 require("plugins.treesitter")

@@ -13,8 +13,8 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const char *fonts[]          = { "UbuntuMono Nerd Font:size=15:antialias=true"};
-static const char dmenufont[]       = "UbuntuMono Nerd Font:size=14:style=bold";
+static const char *fonts[]          = { "UbuntuMono Nerd Font:size=14:antialias=true"};
+static const char dmenufont[]       = "UbuntuMono Nerd Font:size=14:";
 
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
@@ -127,12 +127,7 @@ static const Key keys[] = {
 
 	{ MODKEY,             XK_space,   spawn,    SHCMD( "~/.config/suckless/rofi/launchers/launcher.sh" ) },
 	{ MODKEY,             XK_x,       spawn,    SHCMD( "~/.config/suckless/rofi/powermenu/powermenu.sh" ) },
-  { MODKEY,             XK_h,       spawn,    SHCMD( "~/.config/suckless/rofi/helper/help.sh" ) },
 
-  /* audio for alsa */
-	// { 0,  XF86XK_AudioMute,           spawn,    SHCMD( "amixer sset Master toggle" ) },
-	// { 0,  XF86XK_AudioRaiseVolume,    spawn,    SHCMD( "amixer sset Master 5%+" ) },
-	// { 0,  XF86XK_AudioLowerVolume,    spawn,    SHCMD( "amixer sset Master 5%-" ) },
   /* audio for pulseaudio */
 	{ 0,  XF86XK_AudioRaiseVolume,    spawn,    SHCMD( "pactl set-sink-volume @DEFAULT_SINK@ +5%" ) },
 	{ 0,  XF86XK_AudioLowerVolume,    spawn,    SHCMD( "pactl set-sink-volume @DEFAULT_SINK@ -5%" ) },
