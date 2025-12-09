@@ -1,6 +1,5 @@
 #!/bin/sh
 
-export DESKTOP_SESSION=dwm
 # Set keyboard repeat rate
 xset r rate 250 60
 
@@ -12,7 +11,7 @@ xsetroot -cursor_name left_ptr
 
 slstatus &
 
-hsetroot -cover ~/.dotfiles/pictures/big-city.jpg &
+hsetroot -cover ~/.dotfiles/pictures/1-etheral.jpg &
 
 # /usr/bin/syncthing serve --no-browser --no-restart --logflags=0 &
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias cal="ncal -b"
+
 # dotfiles
 alias ff='cd ~/.dotfiles/'
 alias sc='cd ~/.dotfiles/scripts/.config/scripts/'

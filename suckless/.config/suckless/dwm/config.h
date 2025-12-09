@@ -19,12 +19,12 @@ static const char dmenufont[]       = "UbuntuMono Nerd Font:size=14:";
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#999999";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#ffffff";
+static const char col_gray4[]       = "#FFFFFF";
+static const char col_cyan[]        = "#769ff0";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_cyan,  col_gray1,  col_gray1 },
+	[SchemeSel]  = { col_gray4, col_gray1, col_cyan },
 };
 
 static const unsigned int baralpha = 150;         /* 0 t0 255 (0xd0 = OPAQUE) */
@@ -55,7 +55,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "lxtask",   NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -121,6 +121,7 @@ static const Key keys[] = {
 	{ MODKEY,             XK_e,       spawn,    {.v = editorcmd } },
 	{ MODKEY,             XK_g,       spawn,    {.v = gimpcmd } },
 
+	{ MODKEY|ALTKEY,      XK_w,       spawn,    SHCMD( "wifi-up" ) },
 	{ MODKEY|ALTKEY,      XK_e,       spawn,    SHCMD( "echo 'sergiodobri@gmail.com' | xclip -selection c" ) },
 	{ MODKEY,             XK_s,       spawn,    SHCMD( "flameshot full --path /home/sdobri/Screenshots/" ) },
 	{ MODKEY|ShiftMask,   XK_s,       spawn,    SHCMD( "flameshot gui --path /home/sdobri/Screenshots/" ) },
