@@ -9,7 +9,7 @@
   <property name="misc-date-style" type="string" value="THUNAR_DATE_STYLE_SHORT"/>
   <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_32"/>
   <property name="last-window-width" type="int" value="602"/>
-  <property name="last-window-height" type="int" value="726"/>
+  <property name="last-window-height" type="int" value="711"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
   <property name="last-details-view-column-widths" type="string" value="50,50,170,50,50,50,50,50,578,50,50,70,50,357"/>
@@ -19,5 +19,7 @@
     <value type="string" value="computer:///"/>
     <value type="string" value="file:///home/sd/Desktop"/>
     <value type="string" value="recent:///"/>
+    <value type="string" value="network:///"/>
+    <value type="string" value="file:///"/>
   </property>
 </channel>
