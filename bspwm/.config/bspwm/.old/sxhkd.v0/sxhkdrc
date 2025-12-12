@@ -1,18 +1,14 @@
 # Launch Browser (Firefox)
-super + w
+super + b
 	firefox 
 
 # Launch Private Browser (Firefox Incognito Mode)
-super + shift + w
+super + shift + b
 	firefox -private-window
 
 # Launch Terminal (Wezterm)
 super + Return
-	alacritty
-
-# Launch Terminal (Wezterm)
-super + t
-	alacritty
+	wezterm
 
 # Launch Rofi Application Menu
 super + space
@@ -32,7 +28,7 @@ super + f
 
 # Launch Geany (Text Editor)
 super + e
-	mousepad
+	geany
 
 # Launch GIMP (Image Editor)
 super + g
@@ -41,6 +37,14 @@ super + g
 # Launch Pulsemixer (Audio Mixer in st)
 super + v
    ~/.config/bspwm/scripts/scratchpad pulsemixer pulsemixer
+
+# Launch Discord
+super + d
+	Discord
+
+# Launch OBS (Screen Recording/Streaming)
+super + o
+	obs
 
 # Set Window State: Floating Mode
 super + shift + space
@@ -52,7 +56,15 @@ super + shift + f
     
 # Toggle monocle/tiled layout
 super + t
-  bspc desktop -l next
+      bspc desktop -l next
+
+# Create tab container or attach window to tabs (bspwm-tabs)
+super + w
+      ~/.config/bspwm/scripts/bspwm-tabs attach
+
+# Detach window from tab container
+super + shift + w
+      ~/.config/bspwm/scripts/bspwm-tabs detach 
 
 # Reload sxhkd (Hotkey Daemon)
 super + Escape

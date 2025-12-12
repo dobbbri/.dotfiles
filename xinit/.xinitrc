@@ -8,8 +8,7 @@ i3)
   exec dbus-launch --exit-with-session i3
   ;;
 bspwm)
-  export DESKTOP_SESSION=bspwm
-  exec dbus-launch --exit-with-session bspwm
+  exec bspwm
   ;;
 dk)
   export DESKTOP_SESSION=dk
@@ -17,7 +16,7 @@ dk)
   ;;
 dwm)
   export DESKTOP_SESSION=dwm
-  exec dbus-launch --exit-with-session dwm
+  exec dbus-run-session dwm
   ;;
 xfce4)
   exec startxfce4

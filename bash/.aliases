@@ -81,6 +81,7 @@ alias sauu='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y &
 alias update-pkg="ncu --interactive --format group"
 
 # Git
+alias gsync="git pull && git push && git status --short"
 alias gps="git push && git status --short"
 alias gnah="git reset --hard && git clean -df"
 
