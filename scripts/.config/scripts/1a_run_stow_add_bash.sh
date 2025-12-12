@@ -2,7 +2,7 @@
 
 echo "Stow ---------------------------------------------------------------"
 
-sudo apt install -y stow starship
+sudo apt install -y eza stow starship
 
 rm ~/.bashrc
 
@@ -26,6 +26,7 @@ stow starship
 # stow i3
 # stow dk
 # stow bspwm
+# stow sway
 
 cd ~
 

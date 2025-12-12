@@ -20,4 +20,4 @@ echo "- fix neovim clipboard -------------------------------------------------"
 sudo apt install --yes xsel xclip
 
 echo "- remove vim-tin and ---------------------------------------------------"
-sudo apt --purge --yes autoremove vim-tiny
+sudo apt --purge --yes autoremove vim-tiny vim
