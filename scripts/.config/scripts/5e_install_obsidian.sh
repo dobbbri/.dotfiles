@@ -7,5 +7,5 @@ wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.10.6/o
 
 sudo dpkg -i obsidian_1.10.6_amd64.deb
 
-cd $HOME/Downloads/
+cd $HOME
 
