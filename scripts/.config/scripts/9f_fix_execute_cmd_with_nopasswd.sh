@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Using sudoers with NOPASSWD (Recommended) 
 # You can allow your specific user to run this exact command without a password prompt by modifying the sudoers file. 
