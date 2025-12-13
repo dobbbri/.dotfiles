@@ -8,6 +8,7 @@ sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 
 echo "- Install Neovim - languages --------------------------------------------"
 sudo apt install --yes python3 python3-pip python3.13-venv golang rustc cargo ripgrep lua5.1 luarocks
+#pip
 pip install neovim vim-vint --break-system-packages
 # create a new symlink
 sudo ln -s /usr/bin/python3 /usr/bin/python

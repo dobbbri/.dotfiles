@@ -7,7 +7,7 @@
 	    show-icons: true;
 	    icon-theme: "Breeze Dark";
 	    location: 0;
-	    font: "JetBrainsMono Nerd Font 12";	
+	    font: "JetBrainsMono Nerd Font 14";	
 	    display-drun: "Launch:";
     }
 
@@ -68,7 +68,7 @@
 	}
 
 	element.selected.normal {
-		background-color: #b3e5fc;
+		background-color: #769ff0;
 		text-color: #1a1a1a;
 	}
  

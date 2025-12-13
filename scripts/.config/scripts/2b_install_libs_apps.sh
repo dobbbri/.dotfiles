@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "install libs"
+sudo apt install -y xorg xorg-dev dbus-x11 xinput hsetroot\
+  dialog gvfs psmisc fuse3 libnotify-bin xdotool unzip xinit xdotool\
+  curl unzip ssh-askpass wget stow heif-gdk-pixbuf webp-pixbuf-loader \
+  xdg-user-dirs-gtk build-essential cmake meson ninja-build wget \
+  pkg-config || echo "Warning: Package installation failed."
+
+echo "Installing apps..."
+sudo apt install alacritty thunar thunar-archive-plugin thunar-volman lxappearance feh \
+  fonts-recommended fonts-font-awesome fonts-terminus eza flameshot qimgv firefox-esr \
+  mousepad gparted htop color-picker mintstick atril transmission xarchiver ssh-askpass \
+  breeze-gtk-theme breeze-icon-theme breeze-cursor-theme galternatives\
+  lxtask fzf inkscape viewnior gimp papirus-icon-theme\
+  pavucontrol seahorse || echo "Warning: Package installation failed."
+
+echo "Apps installation completed."

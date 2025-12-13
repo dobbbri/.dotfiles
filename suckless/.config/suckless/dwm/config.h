@@ -121,7 +121,6 @@ static const Key keys[] = {
 	{ MODKEY,             XK_e,       spawn,    {.v = editorcmd } },
 	{ MODKEY,             XK_g,       spawn,    {.v = gimpcmd } },
 
-	{ MODKEY|ALTKEY,      XK_w,       spawn,    SHCMD( "wifi-up" ) },
 	{ ALTKEY|ControlMask, XK_e,       spawn,    SHCMD( "echo 'sergiodobri@gmail.com' | xclip -selection c" ) },
 	{ MODKEY,             XK_s,       spawn,    SHCMD( "flameshot full --path /home/sdobri/Screenshots/" ) },
 	{ MODKEY|ShiftMask,   XK_s,       spawn,    SHCMD( "flameshot gui --path /home/sdobri/Screenshots/" ) },
@@ -129,8 +128,9 @@ static const Key keys[] = {
 	{ MODKEY,             XK_space,   spawn,    SHCMD( "rofi -show drun -modi drun -line-padding 4 -hide-scrollbar -show-icons -theme ~/.config/suckless/rofi/config.rasi" ) },
 	{ MODKEY,             XK_x,       spawn,    SHCMD( "~/.config/suckless/scripts/powermenu.sh" ) },
 	{ MODKEY,             XK_slash,   spawn,    SHCMD( "~/.config/suckless/scripts/showhelp.sh" ) },
+  { ALTKEY|ControlMask, XK_w,       spawn,    SHCMD( "~/.config/suckless/scripts/restartwifi.sh" ) },
 
-  /* audio for pulseaudio */
+  /* audio */
 	{ 0,  XF86XK_AudioRaiseVolume,    spawn,    SHCMD( "~/.config/suckless/scripts/changevolume.sh up" ) },
 	{ 0,  XF86XK_AudioLowerVolume,    spawn,    SHCMD( "~/.config/suckless/scripts/changevolume.sh down" ) },
   { 0,  XF86XK_AudioMute,           spawn,    SHCMD( "~/.config/suckless/scripts/changevolume.sh mute" ) },

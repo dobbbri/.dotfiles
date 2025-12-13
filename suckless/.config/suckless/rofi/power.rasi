@@ -1,7 +1,7 @@
 * {
     bg: #00141d;
     background-color: @bg;
-    font: "JetBrainsMono Nerd Font 12";  /* Monospace font for alignment */
+    font: "JetBrainsMono Nerd Font 14";  /* Monospace font for alignment */
 }
 
 configuration {
@@ -11,11 +11,11 @@ configuration {
     display-drun: "Launch:";
 }
 
-window { 
-    width: 20%;
+window {
+    width: 16%;
     transparency: "real";
     orientation: vertical;
-    border-color: #4fc3f7;
+    border-color: #769ff0;
     border-radius: 10px;
 }
 
@@ -35,7 +35,7 @@ element {
 
 element.selected {
     text-color: #1a1a1a;
-    background-color: #b3e5fc;
+    background-color: #769ff0;
 }
 
 element-text {
@@ -66,7 +66,7 @@ element.alternate.active {
 }
 
 element.selected.normal {
-    background-color: #b3e5fc;
+    background-color: #769ff0;
     text-color: #1a1a1a;
 }
 

@@ -13,13 +13,17 @@
 
 ROFI_THEME="$HOME/.config/suckless/rofi/power.rasi"
 
-chosen=$(echo -e "[Cancel]\nLogout\nShutdown\nReboot" | \
-    rofi -dmenu -i -p "Power Menu" -line-padding 4 -hide-scrollbar -theme "$ROFI_THEME")
+cancel='  Cancel'
+logout='󰍃  Logout'
+shutdown='  Shutdown'
+reboot='󰑐  Reboot'
+
+chosen=$(echo -e "$cancel\n$logout\n$shutdown\n$reboot" |
+  rofi -dmenu -i -p "Power Menu" -line-padding 4 -hide-scrollbar -theme "$ROFI_THEME")
 
 case "$chosen" in
-    "Logout") pkill dwm ;;
-    "Shutdown") systemctl poweroff ;;
-    "Reboot") systemctl reboot ;;
-    *) exit 0 ;; # Exit on cancel or invalid input
+  "$logout")    pkill dwm ;;
+  "$shutdown")  systemctl poweroff ;;
+  "$reboot")    systemctl reboot ;;
+  *)            exit 0 ;; # Exit on cancel or invalid input
 esac
-

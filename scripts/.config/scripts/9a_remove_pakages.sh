@@ -14,17 +14,20 @@ sudo apt autoremove cups system-config-printer simple-scan -y
 echo "Remove bluetooth services"
 sudo apt autoremove blueman bluez-utils bluez bluetooth -y
 
-echo "Remove xdg-desktop-portal-gtk"
-sudo apt autoremove xdg-desktop-portal-gtk -y
+# echo "Remove geoclue"
+# sudo apt autoremove geoclue-2.0 -y 
 
-echo "remove lightdm"
-sudo apt purge lightdm -y
-sudo systemctl disable lightdm.service
-sudo systemctl set-default multi-user.target
-sudo apt autoremove -y
-echo "reboot now"
-echo "reboot now"
-echo "reboot now"
+# echo "Remove xdg-desktop-portal-gtk"
+# sudo apt autoremove xdg-desktop-portal-gtk -y
+
+# echo "remove lightdm"
+# sudo apt purge lightdm -y
+# sudo systemctl disable lightdm.service
+# sudo systemctl set-default multi-user.target
+# sudo apt autoremove -y
+# echo "reboot now"
+# echo "reboot now"
+# echo "reboot now"
 
 # echo "Remove pulseaudio"
 # systemctl --user stop pulseaudio.service pulseaudio.socket
