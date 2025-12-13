@@ -59,7 +59,6 @@ alias lg='lazygit'
 # home
 alias hh='cd ~'
 
-
 open() {
   xdg-open "$@" >/dev/null 2>&1 &
 }
@@ -68,7 +67,6 @@ open() {
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../../'
-
 
 # apt
 alias sai='sudo apt install'
