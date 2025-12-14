@@ -149,7 +149,7 @@ static const Key keys[] = {
   /* stacks move */
 	{ MODKEY|ALTKEY,                XK_Right,  movestack,      {.i = +1 } },
 	{ MODKEY|ALTKEY,                XK_Left,   movestack,      {.i = -1 } },
-  
+
   /* stacks resize */
   { ALTKEY|ControlMask,           XK_Left,   setmfact,       {.f = -0.05} },
   { ALTKEY|ControlMask,           XK_Right,  setmfact,       {.f = +0.05} },
@@ -157,12 +157,11 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
   { MODKEY,                       XK_z,      zoom,           {0} },
-	
+
   { MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
 	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
 
-	
   { MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
@@ -187,17 +186,17 @@ static const Key keys[] = {
   { MODKEY|ALTKEY,                XK_n,      setlayout,      {.v = &layouts[13]} },
   /* layouts monocle */
   { MODKEY|ALTKEY,                XK_m,      setlayout,      {.v = &layouts[2]} },
-	
+
   { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	
+
   { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	
+
   { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	
+
   TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
