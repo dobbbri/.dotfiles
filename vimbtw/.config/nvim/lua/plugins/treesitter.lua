@@ -1,67 +1,81 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main", build = ":TSUpdate" },
-  "https://github.com/gaelph/logsitter.nvim",
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" },
   "https://github.com/windwp/nvim-ts-autotag",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+  -- "https://github.com/gaelph/logsitter.nvim",
 }, { confirm = false })
 
-require("nvim-treesitter.configs").setup({
-  modules = {},
-  sync_install = true,
-  ignore_install = { "jsonc" },
-  auto_install = true,
-  ensure_installed = { "astro", "javascript", "typescript", "tsx", "json", "yaml" },
-  highlight = { enable = true },
-  indent = { enable = true },
-})
+local parsers = {
+  -- Web development
+  "astro",
+  "javascript",
+  "typescript",
+  "tsx",
+  "html",
+  "css",
+  "scss",
+  "json",
+  "jsonc",
+  "vue",
+  "c",
+
+  -- Languages
+  "lua",
+  "go",
+  "php",
+  "python",
+  "rust",
+  "bash",
+
+  -- Markup and config
+  "markdown_inline",
+  "markdown",
+  "yaml",
+  "toml",
+
+  -- Git related
+  "git_config",
+  "git_rebase",
+  "gitcommit",
+  "gitignore",
+
+  -- Other utilities
+  "regex",
+  "vim",
+  "vimdoc",
+  "query",
+  "diff",
+  "luadoc",
+}
+
+require("nvim-treesitter").install({ parsers })
 
 require("nvim-ts-autotag").setup({})
 require("render-markdown").setup({})
 
-local logss = require("logsitter")
-logss.setup({ path_format = "fileonly", prefix = "[Log]->", separator = "->" })
+vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
-vim.keymap.set("n", "<leader>l", function() logss.log() end, { desc = "Logsitter: log current" })
+vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.wo[0][0].foldmethod = 'expr'
 
--- local parsers = {
--- Web development
--- "astro",
--- "javascript",
--- "typescript",
--- "tsx",
--- "html",
--- "css",
--- "scss",
--- "json",
--- "jsonc",
--- "vue",
--- "c",
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '<filetype>' },
+  callback = function() vim.treesitter.start() end,
+})
 
--- Languages
--- "lua",
--- "go",
--- "php",
--- "python",
--- "rust",
--- "bash",
+-- require'nvim-treesitter'.install { "astro", "javascript", "typescript", "tsx", "json", "yaml" }
 
--- Markup and config
--- "markdown_inline",
--- "markdown",
--- "yaml",
--- "toml",
+-- require("nvim-treesitter").setup({
+--   modules = {},
+--   sync_install = true,
+--   ignore_install = { "jsonc" },
+--   auto_install = true,
+--   highlight = { enable = true },
+--   indent = { enable = true },
+-- })
 
--- Git related
--- "git_config",
--- "git_rebase",
--- "gitcommit",
--- "gitignore",
 
--- Other utilities
--- "regex",
--- "vim",
--- "vimdoc",
--- "query",
--- "diff",
--- "luadoc",
--- }
+-- local logss = require("logsitter")
+-- logss.setup({ path_format = "fileonly", prefix = "[Log]->", separator = "->" })
+--
+-- vim.keymap.set("n", "<leader>l", function() logss.log() end, { desc = "Logsitter: log current" })

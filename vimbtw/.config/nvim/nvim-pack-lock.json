@@ -10,7 +10,7 @@
       "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
-      "rev": "ffe26e8df8115c9665d24231f8a49fadb2d611ce",
+      "rev": "9b8fa5e0b78168f68bee9bf886dc20f287c61e02",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "friendly-snippets": {
@@ -21,28 +21,24 @@
       "rev": "b58b2d65863f4ebad88b10a1ddd519e5380466e0",
       "src": "https://github.com/MagicDuck/grug-far.nvim"
     },
-    "logsitter.nvim": {
-      "rev": "95e2b43b52936c48bb1b52f101847c574d06c6b0",
-      "src": "https://github.com/gaelph/logsitter.nvim"
-    },
     "mason.nvim": {
       "rev": "57e5a8addb8c71fb063ee4acda466c7cf6ad2800",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "6f11e41a137590e4a5f13624a2a9a845686e719f",
+      "rev": "6bd3a01aaf7d248aea1b78aacdd5d44bffa002c1",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "multicursor.nvim": {
-      "rev": "a6cf4e7daaf10a6b14bb7838caf779f0de5070cd",
+      "rev": "a0ea3303a6c4b233cf3272fb1e358d4c842e5260",
       "src": "https://github.com/jake-stewart/multicursor.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "a2bd1cf7b0446a7414aaf373cea5e4ca804c9c69",
+      "rev": "ad95655ec5d13ff7c728d731eb9fd39f34395a03",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "42fc28ba918343ebfd5565147a42a26580579482",
+      "rev": "d3218d988f72ed34414959c9ccd802d393432d6e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-ts-autotag": {
@@ -57,16 +53,12 @@
       "rev": "0c3c07a08c0f9c9272298d55a21e7a8829afe62d",
       "src": "https://github.com/eero-lehtinen/oklch-color-picker.nvim"
     },
-    "onedark.nvim": {
-      "rev": "213c23ae45a04797572242568d5d51937181792d",
-      "src": "https://github.com/navarasu/onedark.nvim"
-    },
     "promise-async": {
       "rev": "119e8961014c9bfaf1487bf3c2a393d254f337e2",
       "src": "https://github.com/kevinhwang91/promise-async"
     },
     "render-markdown.nvim": {
-      "rev": "b2b135347e299ffbf7f4123fb7811899b0c9f4b8",
+      "rev": "686af1e08c47a72e1f969ba2b40a424446d882cf",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "slimline.nvim": {

@@ -1,7 +1,6 @@
 Super + p	Launch dmenu
-Super + Return	Launch terminal (wezterm)
-Super + Shift + t	Toggle terminal scratchpad
-Super + Shift + a	Toggle audio mixer (pulsemixer)
+Super + Return	Launch terminal (Alacritty)
+Super + t	Launch terminal (Alacritty)
 Super + Control + b	Toggle status bar
 Super + Right	Focus next window in stack
 Super + Left	Focus previous window in stack

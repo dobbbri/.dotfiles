@@ -66,8 +66,8 @@ element.alternate.active {
 }
 
 element.selected.normal {
-    background-color: #769ff0;
-    text-color: #1a1a1a;
+		background-color: #005577;
+		text-color: #ffffff;
 }
 
 element.normal.active {
