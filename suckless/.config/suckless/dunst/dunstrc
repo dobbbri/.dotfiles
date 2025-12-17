@@ -350,9 +350,9 @@
     default_icon = dialog-information
 
 [urgency_normal]
-    background = "#6272A4"
+    background = "#005577"
     foreground = "#ffffff"
-    frame_color = "#6272A4"
+    frame_color = "#005577"
     # frame_color = "#4fc3f7"
     timeout = 10
     override_pause_level = 30

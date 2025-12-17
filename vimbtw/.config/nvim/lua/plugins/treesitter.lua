@@ -1,11 +1,11 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main", data = { build = ":TSUpdate" } },
   "https://github.com/windwp/nvim-ts-autotag",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
   -- "https://github.com/gaelph/logsitter.nvim",
 }, { confirm = false })
 
-local parsers = {
+local filetypes = {
   -- Web development
   "astro",
   "javascript",
@@ -48,20 +48,24 @@ local parsers = {
   "luadoc",
 }
 
-require("nvim-treesitter").install({ parsers })
+require("nvim-treesitter").install(filetypes)
 
 require("nvim-ts-autotag").setup({})
 require("render-markdown").setup({})
 
 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
-vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.wo[0][0].foldmethod = 'expr'
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.wo.foldmethod = "expr"
 
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '<filetype>' },
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = filetypes,
   callback = function() vim.treesitter.start() end,
 })
+
+-- local logss = require("logsitter")
+-- logss.setup({ path_format = "fileonly", prefix = "[Log]->", separator = "->" })
+-- vim.keymap.set("n", "<leader>l", function() logss.log() end, { desc = "Logsitter: log current" })
 
 -- require'nvim-treesitter'.install { "astro", "javascript", "typescript", "tsx", "json", "yaml" }
 
@@ -73,9 +77,3 @@ vim.api.nvim_create_autocmd('FileType', {
 --   highlight = { enable = true },
 --   indent = { enable = true },
 -- })
-
-
--- local logss = require("logsitter")
--- logss.setup({ path_format = "fileonly", prefix = "[Log]->", separator = "->" })
---
--- vim.keymap.set("n", "<leader>l", function() logss.log() end, { desc = "Logsitter: log current" })

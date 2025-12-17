@@ -2,21 +2,23 @@
 
 /* interval between updates (in ms) */
 const unsigned int interval = 2500;
-
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "";
-
 /* maximum output string length */
 #define MAXLEN 2048
-
 /* battery levels to notify - add any levels you want to receive notification for (in percent) */
-const int notifiable_levels[] = {
-    25,
-    20,
-    10,
-    5,
-};
+const int notifiable_levels[] = { 25, 20, 10, 5 };
+
 const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifiable_levels[0]);
+
+static const struct arg args[] = {
+	/* function format              argument */
+  { battery_state,  "  %s",       "BAT0" },
+  { battery_perc,   "󱊣 %s%% ",    "BAT0" },
+  { ram_perc,       "  󰍛 %s%% ",  NULL },
+  { datetime,       "  󰃰 %s",     "%-d %b %R" },
+	{ battery_notify, "",           "BAT0" },
+};
 
 /*
  * function            description                     argument (example)
@@ -75,11 +77,3 @@ const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifi
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
-static const struct arg args[] = {
-	/* function format              argument */
-  { battery_state,  "  %s",       "BAT0" },
-  { battery_perc,   "󱊣 %s%% ",    "BAT0" },
-  { ram_perc,       "  󰍛 %s%% ",  NULL },
-  { datetime,       "  󰃰 %s",     "%-d %b %R" },
-	{ battery_notify, "",           "BAT0" },
-};
