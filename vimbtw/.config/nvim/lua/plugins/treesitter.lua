@@ -59,7 +59,8 @@ vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.wo.foldmethod = "expr"
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = filetypes,
+  -- pattern = filetypes,
+  pattern = { "<filetype>" },
   callback = function() vim.treesitter.start() end,
 })
 
@@ -68,7 +69,6 @@ vim.api.nvim_create_autocmd("FileType", {
 -- vim.keymap.set("n", "<leader>l", function() logss.log() end, { desc = "Logsitter: log current" })
 
 -- require'nvim-treesitter'.install { "astro", "javascript", "typescript", "tsx", "json", "yaml" }
-
 -- require("nvim-treesitter").setup({
 --   modules = {},
 --   sync_install = true,
