@@ -20,7 +20,7 @@ opt.colorcolumn = "101"
 opt.termguicolors = true
 
 -- use rounded borders on all floating windows
-opt.winborder = "single" --"solid"  --"rounded"
+opt.winborder = "rounded" --"solid"  --"single"
 
 -- nice confirmation dialog
 opt.confirm = true
@@ -35,8 +35,9 @@ opt.undofile = false
 opt.timeoutlen = 700
 opt.updatetime = 250
 
-opt.cursorline = false
-opt.cursorlineopt = "both"
+opt.cursorline = true
+-- opt.cursorlineopt = "both"
+opt.cursorlineopt  = 'screenline,number' -- Show cursor line per screen line
 
 -- Indenting
 opt.expandtab = true
@@ -57,7 +58,7 @@ opt.listchars = "nbsp:⍽,trail:·,extends:→,precedes:←"
 
 opt.fillchars = {
   foldopen = "󰅀", -- "",
-  foldclose = "󰅂", --"󰅂",-- "",--"", 
+  foldclose = "󰅂", --"󰅂",-- "",--"",
   foldsep = "│",
 }
 
@@ -71,6 +72,8 @@ opt.ignorecase = true
 opt.smartcase = true
 
 opt.mouse = "a"
+opt.mousescroll = "ver:25,hor:6" -- Customize mouse scroll
+opt.switchbuf = "usetab" -- Use already opened buffers when switching
 opt.clipboard = "unnamedplus"
 
 -- Numbers
@@ -78,7 +81,7 @@ opt.number = true
 opt.numberwidth = 2
 
 -- disable nvim intro
-opt.shortmess = "aoOTIcF"
+opt.shortmess = "CFOSWaco" -- Disable some built-in completion messages
 
 opt.splitbelow = true
 opt.splitright = true
