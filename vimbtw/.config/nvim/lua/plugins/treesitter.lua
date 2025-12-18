@@ -1,5 +1,7 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main", data = { build = ":TSUpdate" } },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main", data = {
+    run = function() vim.cmd("TSUpdate") end,
+  } },
   "https://github.com/windwp/nvim-ts-autotag",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
   -- "https://github.com/gaelph/logsitter.nvim",
@@ -18,7 +20,6 @@ local filetypes = {
   "jsonc",
   "vue",
   "c",
-
   -- Languages
   "lua",
   "go",
@@ -26,19 +27,16 @@ local filetypes = {
   "python",
   "rust",
   "bash",
-
   -- Markup and config
   "markdown_inline",
   "markdown",
   "yaml",
   "toml",
-
   -- Git related
   "git_config",
   "git_rebase",
   "gitcommit",
   "gitignore",
-
   -- Other utilities
   "regex",
   "vim",
@@ -50,19 +48,19 @@ local filetypes = {
 
 require("nvim-treesitter").install(filetypes)
 
-require("nvim-ts-autotag").setup({})
-require("render-markdown").setup({})
-
+-- Indentation
 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-
+-- Folds
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.wo.foldmethod = "expr"
-
+-- Highlighting
 vim.api.nvim_create_autocmd("FileType", {
-  -- pattern = filetypes,
   pattern = { "<filetype>" },
   callback = function() vim.treesitter.start() end,
 })
+
+require("nvim-ts-autotag").setup({})
+require("render-markdown").setup({})
 
 -- local logss = require("logsitter")
 -- logss.setup({ path_format = "fileonly", prefix = "[Log]->", separator = "->" })

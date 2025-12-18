@@ -17,7 +17,6 @@ mr.refresh(function()
     "tailwindcss-language-server",
     "lua-language-server",
     "typescript-language-server",
-    "clang-format",
     "yamlfmt",
   }
 

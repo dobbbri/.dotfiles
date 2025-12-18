@@ -9,7 +9,6 @@ conform.setup({
     sh = { "shfmt" },
     lua = { "stylua" },
     cpp = { "clang-format" },
-    c = { "clang-format" },
     toml = { "taplo" },
     yaml = { "yamlfmt" },
     yml = { "yamlfmt" },
