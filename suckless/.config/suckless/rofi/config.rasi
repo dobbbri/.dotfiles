@@ -1,5 +1,5 @@
   * {
-        bg: #00141d;
+        bg: #1d2230;
         background-color: @bg;
     }
 
@@ -30,7 +30,7 @@
     element {
 	    padding: 4 12;
 	    text-color: #FFFFFF;
-        background-color: #00141d;
+        background-color: #1d2230;
         border-radius: 5px;
     }
 
@@ -57,7 +57,7 @@
 	}
  
 	element.alternate.normal {
-		background-color: #00141d;
+		background-color: #1d2230;
 		text-color: #FFFFFF;
 	}
 
@@ -74,13 +74,13 @@
  
 
 	element.normal.active {
-		background-color: #00141d;
+		background-color: #1d2230;
 		text-color: #FFFFFF;
 	}
  
 
 	element.normal.normal {
-		background-color: #00141d;
+		background-color: #1d2230;
 		text-color: #FFFFFF;
 	}
  

@@ -1,5 +1,5 @@
 * {
-    bg: #00141d;
+    bg: #1d2230;
     background-color: @bg;
     font: "JetBrainsMono Nerd Font 14";  /* Monospace font for alignment */
 }
