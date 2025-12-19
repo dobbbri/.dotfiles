@@ -8,7 +8,7 @@ conform.setup({
   formatters_by_ft = {
     sh = { "shfmt" },
     lua = { "stylua" },
-    cpp = { "clang-format" },
+    -- cpp = { "clang-format" },
     toml = { "taplo" },
     yaml = { "yamlfmt" },
     yml = { "yamlfmt" },

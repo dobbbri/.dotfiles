@@ -59,8 +59,8 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function() vim.treesitter.start() end,
 })
 
-require("nvim-ts-autotag").setup({})
-require("render-markdown").setup({})
+require("nvim-ts-autotag").setup()
+require("render-markdown").setup()
 
 -- local logss = require("logsitter")
 -- logss.setup({ path_format = "fileonly", prefix = "[Log]->", separator = "->" })

@@ -1,7 +1,7 @@
-
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
+    vim.api.nvim_set_hl(0, "MiniFilesCursorLine", { bold = true, bg = '#475569' })
     vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
     vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
     vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
@@ -36,12 +36,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- get git branch name
-vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorHold', 'FocusGained' }, {
-  desc = 'git branch',
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "FocusGained" }, {
+  desc = "git branch",
   callback = function()
-    if vim.fn.isdirectory '.git' ~= 0 then
-      vim.b.branch_name = '󰊢 ' .. vim.fn.system "git branch --show-current | tr -d '\n'"
+    if vim.fn.isdirectory(".git") ~= 0 then
+      vim.b.branch_name = "󰊢 " .. vim.fn.system("git branch --show-current | tr -d '\n'")
     end
   end,
-  group = vim.api.nvim_create_augroup('init_statusline', {}),
+  group = vim.api.nvim_create_augroup("init_statusline", {}),
 })
