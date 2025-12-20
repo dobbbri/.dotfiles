@@ -50,10 +50,10 @@ Shift + Control + 0	Set spiral layout
 Shift + Control + -	Set monocle layout
 Shift + Control + =	Set grid layout
 Super + 1-9,0,-,=	Switch to tag
-Super + Control + 1-9,0,-,=	Toggle tag view
-Super + Shift + 1-9,0,-,=	Move window to tag
-Super + Control + Shift + 1-9,0,-,=	Tag window with additional tag
-Super + Alt + Shift + Tab	Increase number of windows in master area
+Super + Control + 1-9	Toggle tag view
+Super + Shift + 1-9	Move window to tag
+Control + Shift + 1-9	Tag window with additional tag
+Alt + Shift + Tab	Increase number of windows in master area
 Super + Alt + Tab	Decrease number of windows in master area
 Super + s	Toggle sticky window
 Super + Shift + f	Toggle fullscreen
