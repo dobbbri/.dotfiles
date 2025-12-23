@@ -3,8 +3,8 @@ vim.pack.add({
 }, { confirm = false })
 
 require("slimline").setup({
-  style = "fg",
-  bold = true,
+  style = "bg",
+  bold = false,
   configs = {
     git = {
       hl = { primary = "Function" },

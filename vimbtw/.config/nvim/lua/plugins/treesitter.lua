@@ -3,7 +3,7 @@ vim.pack.add({
     run = function() vim.cmd("TSUpdate") end,
   } },
   "https://github.com/windwp/nvim-ts-autotag",
-  "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+  -- "https://github.com/MeanderingProgrammer/render-markdown.nvim",
   -- "https://github.com/gaelph/logsitter.nvim",
 }, { confirm = false })
 
@@ -30,6 +30,8 @@ local filetypes = {
   -- Markup and config
   "markdown_inline",
   "markdown",
+  "latex",
+  "typst",
   "yaml",
   "toml",
   -- Git related
@@ -50,9 +52,11 @@ require("nvim-treesitter").install(filetypes)
 
 -- Indentation
 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
 -- Folds
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.wo.foldmethod = "expr"
+
 -- Highlighting
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "<filetype>" },
@@ -60,18 +64,10 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("nvim-ts-autotag").setup()
-require("render-markdown").setup()
+
+-- require("render-markdown").setup({ latex = { enabled = false } })
 
 -- local logss = require("logsitter")
 -- logss.setup({ path_format = "fileonly", prefix = "[Log]->", separator = "->" })
 -- vim.keymap.set("n", "<leader>l", function() logss.log() end, { desc = "Logsitter: log current" })
 
--- require'nvim-treesitter'.install { "astro", "javascript", "typescript", "tsx", "json", "yaml" }
--- require("nvim-treesitter").setup({
---   modules = {},
---   sync_install = true,
---   ignore_install = { "jsonc" },
---   auto_install = true,
---   highlight = { enable = true },
---   indent = { enable = true },
--- })

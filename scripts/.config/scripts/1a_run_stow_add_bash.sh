@@ -23,6 +23,7 @@ stow xarchiver
 stow xinit
 stow fzfrc
 stow starship
+stow gtk-3.0
 # stow i3
 # stow dk
 # stow bspwm

@@ -1,10 +1,11 @@
 vim.pack.add({
   { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
   "https://github.com/rafamadriz/friendly-snippets",
+  -- "https://github.com/OXY2DEV/markview.nvim",
 }, { confirm = false })
 
 require("blink.cmp").setup({
-  keymap = { preset = "super-tab" },
+  keymap = { preset = "enter" },
   completion = {
     trigger = { show_in_snippet = false },
     list = { selection = { preselect = function() return not require("blink.cmp").snippet_active({ direction = 1 }) end } },
@@ -19,3 +20,12 @@ require("blink.cmp").setup({
     prebuilt_binaries = { ignore_version_mismatch = true },
   },
 })
+
+-- require("markview").setup({
+--   preview = {
+--     icon_provider = "internal",
+--     enable = false,
+--   },
+-- })
+--
+-- vim.api.nvim_set_keymap("n", "<leader>m", "<CMD>Markview<CR>", { desc = "Toggles `markview` previews globally." })
