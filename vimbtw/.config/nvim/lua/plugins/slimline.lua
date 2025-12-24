@@ -10,8 +10,6 @@ require("slimline").setup({
       first = false, -- hides the first separator of the line
       last = false, -- hides the last separator of the line
     },
-    left = '', -- left separator of components
-    right = '', -- right separator of components
   },
   configs = {
     git = {

@@ -6,15 +6,46 @@ g.mapleader = " "
 g.maplocalleader = ","
 --------------------------------------------------------------------------------------------------------------------
 
+-- Matchparen (Highlight matching brackets)
+g.matchparen_timeout = 20 -- Timeout in ms for highlight calculation
+g.matchparen_insert_timeout = 20 -- Timeout in ms during insert mode
+
+-- Editorconfig
+g.EditorConfig_core_mode = "external_command"
+
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 2
-g.markdown_fenced_languages = { "ts=typescript" }
+g.markdown_fenced_languages = {
+  "html",
+  "javascript",
+  "typescript",
+  "css",
+  "scss",
+  "lua",
+  "vim",
+  "bash",
+  "python",
+  "json",
+}
 
 -- disable some default providers
 g.loaded_node_provider = 0
 g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
+
+
+-- Cursor Styles
+-- Defines the shape and blinking of the cursor in different modes.
+opt.guicursor                                   = {
+    "n-v:block",                                                -- Normal/Visual: Block
+    "i-c-ci-ve:ver25",                                          -- Insert/Command: Vertical bar
+    "r-cr:hor20",                                               -- Replace: Horizontal underline
+    "o:hor50",                                                  -- Operator-pending: Horizontal underline
+    "i:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",     -- Blink settings for Insert
+    "sm:block-blinkwait175-blinkoff150-blinkon175"              -- Showmatch: Fast blink
+}
+
 
 -- opt.colorcolumn = "101"
 opt.termguicolors = true
@@ -35,9 +66,9 @@ opt.undofile = false
 opt.timeoutlen = 700
 opt.updatetime = 250
 
-opt.cursorline = true
+opt.cursorline = false
 -- opt.cursorlineopt = "both"
-opt.cursorlineopt  = 'screenline,number' -- Show cursor line per screen line
+opt.cursorlineopt = "screenline,number" -- Show cursor line per screen line
 
 -- Indenting
 opt.expandtab = true
@@ -95,3 +126,36 @@ opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a [nvim]'
 -- statusline
 opt.laststatus = 3
 opt.cmdheight = 1
+
+-- Disabling unused built-in plugins improves startup time.
+local disabled_built_ins = {
+  "2html_plugin",
+  "getscript",
+  "getscriptPlugin",
+  "gzip",
+  "logipat",
+  "matchit",
+  "tar",
+  "tarPlugin",
+  "rrhelper",
+  "spellfile_plugin",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
+  "tutor",
+  "rplugin",
+  "syntax",
+  "synmenu",
+  "optwin",
+  "compiler",
+  "bugreport",
+  "ftplugin",
+  "netrw", -- Keep netrw disabled if you use NvimTree
+  "netrwPlugin",
+  "netrwSettings",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+  g["loaded_" .. plugin] = 1
+end

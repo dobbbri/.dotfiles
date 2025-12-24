@@ -3,6 +3,9 @@ vim.keymap.set("n", "1", "<cmd>w<CR>")
 vim.keymap.set("n", "2", "<cmd>q<CR>")
 vim.keymap.set("i", "jk", "<ESC>")
 
+vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
+vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
+
 vim.keymap.set("n", ";", ":", { desc = "Enter command mode" })
 vim.keymap.set("n", "<esc>", "<cmd>noh<CR>", { desc = "Clear Highlights" })
 vim.keymap.set("n", "<c-s>", "<cmd>w<CR>", { desc = "Save file" })

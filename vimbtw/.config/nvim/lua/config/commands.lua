@@ -1,12 +1,14 @@
+vim.api.nvim_create_user_command("SaveAsRoot", "w !sudo tee %", { desc = "Save current file as root (requires doas/sudo)" })
+
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
-    vim.api.nvim_set_hl(0, "MiniFilesCursorLine", { bold = true, bg = '#475569' })
+    vim.api.nvim_set_hl(0, "MiniFilesCursorLine", { bold = true, bg = "#475569" })
     vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
     vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
     vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
 
-    vim.api.nvim_set_hl(0, "MiniPickCursorLine", { bold = true, bg = '#475569' })
+    vim.api.nvim_set_hl(0, "MiniPickMatchCurrent", { bold = true, bg = "#475569" })
     vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
     vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
   end,
@@ -38,13 +40,23 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function() vim.opt_local.conceallevel = 0 end,
 })
 
--- get git branch name
-vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "FocusGained" }, {
-  desc = "git branch",
-  callback = function()
-    if vim.fn.isdirectory(".git") ~= 0 then
-      vim.b.branch_name = "󰊢 " .. vim.fn.system("git branch --show-current | tr -d '\n'")
-    end
-  end,
-  group = vim.api.nvim_create_augroup("init_statusline", {}),
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.conf", "config" },
+  command = "set filetype=config",
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.ejs",
+  command = "set filetype=html",
+})
+
+-- get git branch name
+-- vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "FocusGained" }, {
+--   desc = "git branch",
+--   callback = function()
+--     if vim.fn.isdirectory(".git") ~= 0 then
+--       vim.b.branch_name = "󰊢 " .. vim.fn.system("git branch --show-current | tr -d '\n'")
+--     end
+--   end,
+--   group = vim.api.nvim_create_augroup("init_statusline", {}),
+-- })
