@@ -30,7 +30,7 @@ local filetypes = {
   -- Markup and config
   "markdown_inline",
   "markdown",
-  "latex",
+  -- "latex",
   "typst",
   "yaml",
   "toml",
@@ -47,6 +47,10 @@ local filetypes = {
   "diff",
   "luadoc",
 }
+
+require("nvim-treesitter").setup({
+  install_dir = vim.fn.stdpath("data") .. "/site",
+})
 
 require("nvim-treesitter").install(filetypes)
 
@@ -70,4 +74,3 @@ require("nvim-ts-autotag").setup()
 -- local logss = require("logsitter")
 -- logss.setup({ path_format = "fileonly", prefix = "[Log]->", separator = "->" })
 -- vim.keymap.set("n", "<leader>l", function() logss.log() end, { desc = "Logsitter: log current" })
-

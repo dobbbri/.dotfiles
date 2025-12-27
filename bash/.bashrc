@@ -34,7 +34,7 @@ export QT_IM_MODULE=cedilla
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 export ZED_ALLOW_EMULATED_GPU=1
-
+export RUST_BACKTRACE=1
 export NO_AT_BRIDGE=1
 
 export XDG_CACHE_HOME="$HOME/.cache"

@@ -50,6 +50,14 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   command = "set filetype=html",
 })
 
+-- vim.opt.wildmode = "noselect"
+-- vim.api.nvim_create_autocmd("CmdlineChanged", {
+--   pattern = ":",
+--   callback = function ()
+--     vim.fn.wildtrigger()
+--   end
+-- })
+
 -- get git branch name
 -- vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "FocusGained" }, {
 --   desc = "git branch",
