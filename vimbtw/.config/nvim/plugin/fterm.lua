@@ -5,8 +5,8 @@ vim.pack.add({
 local fterm = require("FTerm")
 
 fterm.setup({
-  hl = "FloatBorder",
-  dimensions = { height = 0.9, width = 0.9 },
+  hl = "MiniFilesNormal",
+  dimensions = { height = 0.8, width = 0.8 },
 })
 
 vim.keymap.set("n", "<leader>t", "<cmd>lua require('FTerm').toggle()<CR>", { desc = "Terminal Toggle" })
@@ -16,7 +16,7 @@ vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode" })
 local lg = fterm:new({
   ft = "fterm_lg",
   cmd = "lazygit",
-  dimensions = { height = 0.9, width = 0.9 },
+  dimensions = { height = 0.8, width = 0.8 },
 })
 
 -- Use this to toggle btop in a floating terminal

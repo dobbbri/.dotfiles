@@ -13,12 +13,12 @@ require("mini.move").setup({
 require("mini.pairs").setup()
 require("mini.icons").setup()
 require("mini.trailspace").setup()
--- require('mini.cmdline').setup()
+require('mini.cmdline').setup()
 -- require("mini.git").setup()
 
 -- require("mini.notify").setup({
 --   lsp_progress = { enable = false },
---   window = { config = utils.window_notify_config() },
+-- --   window = { config = utils.window_notify_config() },
 -- })
 
 local files = require("mini.files")

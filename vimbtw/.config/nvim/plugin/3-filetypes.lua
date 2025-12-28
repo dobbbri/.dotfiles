@@ -2,6 +2,8 @@
 vim.filetype.add({
   extension = {
     mdx = "markdown",
+    conf = "config",
+    ejs = "html",
   },
   filename = {
     [".env"] = "config",

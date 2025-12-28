@@ -51,7 +51,7 @@ opt.guicursor                                   = {
 opt.termguicolors = true
 
 -- use rounded borders on all floating windows
-opt.winborder = "rounded" --"solid"  --"single"
+opt.winborder = "rounded" -- "rounded" --"solid"  --"single"
 
 -- nice confirmation dialog
 opt.confirm = true

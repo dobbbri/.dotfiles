@@ -1,19 +1,5 @@
 vim.api.nvim_create_user_command("SaveAsRoot", "w !sudo tee %", { desc = "Save current file as root (requires doas/sudo)" })
 
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    vim.api.nvim_set_hl(0, "MiniFilesCursorLine", { bold = true, bg = "#475569" })
-    vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
-    vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
-    vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
-
-    vim.api.nvim_set_hl(0, "MiniPickMatchCurrent", { bold = true, bg = "#475569" })
-    vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
-    vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
-  end,
-})
-
 --  jump to the last place you’ve visited in a file before exiting
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()
@@ -40,15 +26,20 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function() vim.opt_local.conceallevel = 0 end,
 })
 
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = { "*.conf", "config" },
-  command = "set filetype=config",
-})
-
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.ejs",
-  command = "set filetype=html",
-})
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   pattern = "*",
+--   callback = function()
+--     -- vim.api.nvim_set_hl(0, "MiniFilesTitle", { fg = "#ffffff" })
+--     -- vim.api.nvim_set_hl(0, "MiniFilesCursorLine", { bold = true, bg = "#475569" })
+--     -- vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
+--     -- vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
+--     -- vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
+--     --
+--     -- vim.api.nvim_set_hl(0, "MiniPickMatchCurrent", { bold = true, bg = "#475569" })
+--     -- vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
+--     -- vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
+--   end,
+-- })
 
 -- vim.opt.wildmode = "noselect"
 -- vim.api.nvim_create_autocmd("CmdlineChanged", {

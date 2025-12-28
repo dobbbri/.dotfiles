@@ -31,7 +31,7 @@ require("slimline").setup({
       "filetype_lsp",
       function(active)
         local s = require("slimline")
-        return s.highlights.hl_component({ primary = "  %l:%c  %p%%" }, s.highlights.hls.components["path"], s.get_sep("path"), "right", active, "fg")
+        return s.highlights.hl_component({ primary = "  %l:%c %p%%" }, s.highlights.hls.components["git"], s.get_sep("path"), "right", active, "fg")
       end,
     },
   },
