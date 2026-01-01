@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo apt install unzip
 
 # ========================================
 # Font Installation

@@ -4,6 +4,9 @@ echo "run script manually one by one ------------------------------"
 exit
 
 fix_b43_wireless_driver_error() {
+  # add contrib non-free to /etc/apt/sources.list
+  sudo nvim /etc/apt/sources.list
+
   # add next 2 lines to file /etc/modprobe.d/local-b43.conf and save
 
   # Activate experimental support for some hardware revisions

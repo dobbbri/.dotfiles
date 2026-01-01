@@ -14,6 +14,12 @@ sudo apt autoremove cups system-config-printer simple-scan -y
 echo "Remove bluetooth services"
 sudo apt autoremove blueman bluez-utils bluez bluetooth -y
 
+
+echo "Disable/Remove PulseAudio"
+systemctl --user stop pulseaudio.service pulseaudio.socket
+systemctl --user mask pulseaudio.service
+sudo apt purge pulseaudio pulseaudio-utils
+
 # echo "Remove geoclue"
 # sudo apt autoremove geoclue-2.0 -y 
 
