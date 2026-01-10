@@ -9,8 +9,8 @@
 [general]
 ## Import additional configuration files.
 import = [
-  "~/.config/alacritty/fonts/JetBrainsMono.toml",
-  "~/.config/alacritty/themes/tokyo_night_enhanced.toml",
+  "~/.config/alacritty/fonts/Lilex.toml",
+  "~/.config/alacritty/themes/catppuccin_mocha.toml",
 ]
 
 ## You can set shell.program to the path of your favorite shell, e.g. /bin/zsh.

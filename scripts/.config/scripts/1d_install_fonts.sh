@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt install unzip
+sudo apt install unzip fontconfig
 
 # ========================================
 # Font Installation
@@ -13,7 +13,7 @@ install_fonts() {
   echo "Installing fonts..."
   mkdir -p ~/.local/share/fonts
   # fonts=("JetBrainsMono" "UbuntuSans" "AtkinsonHyperlegibleMono" "IntelOneMono" "NerdFontsSymbolsOnly" "CascadiaMono")
-  fonts=("Lilex" "0xProto" "JetBrainsMono" "UbuntuMono" "UbuntuSans" "NerdFontsSymbolsOnly")
+  fonts=("Lilex" "JetBrainsMono" "UbuntuMono" "NerdFontsSymbolsOnly")
 
   for font in "${fonts[@]}"; do
     if [ -d ~/.local/share/fonts/$font ]; then

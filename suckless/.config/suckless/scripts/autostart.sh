@@ -6,7 +6,7 @@ xsetroot -cursor_name left_ptr
 
 slstatus &
 
-hsetroot -cover ~/.dotfiles/pictures/Cyberpunk_City.jpg &
+hsetroot -cover ~/.dotfiles/pictures/1-etheral.jpg &
 
 dunst -config ~/.config/suckless/dunst/dunstrc &
 

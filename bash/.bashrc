@@ -19,18 +19,18 @@ export LC_ALL="en_US.UTF-8"
 export GTK_IM_MODULE=cedilla
 export QT_IM_MODULE=cedilla
 
-export HISTTIMEFORMAT="%d/%m/%y %T "
-
 export ZED_ALLOW_EMULATED_GPU=1
 export RUST_BACKTRACE=1
 export NO_AT_BRIDGE=1
 
+# set up XDG folders
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_PICTURES_DIR="$HOME/Pictures"
 
+# FZF
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
 export FZF_DEFAULT_OPTS_FILE=~/.fzfrc
@@ -53,8 +53,11 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+export HISTFILESIZE=10000
+export HISTSIZE=500
+export HISTTIMEFORMAT="%F %T" # add timestamp to history
+# Don't put duplicate lines in the history and do not add lines that start with a space
+export HISTCONTROL=erasedups:ignoredups:ignorespace
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -106,23 +109,23 @@ fi
 # PS1 Customization
 #PS1="\[\e[32m\]\h\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[34m\]\u\[\e[m\] \W \$ "
 
-# Colour codes
-# RED="\\[\\e[1;31m\\]"
-# GREEN="\\[\\e[1;32m\\]"
-# YELLOW="\\[\\e[1;33m\\]"
-# BLUE="\\[\\e[1;34m\\]"
-# MAGENTA="\\[\\e[1;35m\\]"
-# CYAN="\\[\\e[1;36m\\]"
-# WHITE="\\[\\e[1;37m\\]"
-# ENDC="\\[\\e[0m\\]"
-#
-# # Set a two-line prompt. If accessing via ssh include 'ssh-session' message.
-# if [[ -n "$SSH_CLIENT" ]]; then ssh_message="-ssh_session"; fi
-# PS1="${GREEN}\u${WHITE}@${YELLOW}\h${RED}${ssh_message} ${WHITE}in ${BLUE}\w \n${CYAN}->${ENDC} "
+Colour codes
+RED="\\[\\e[1;31m\\]"
+GREEN="\\[\\e[1;32m\\]"
+YELLOW="\\[\\e[1;33m\\]"
+BLUE="\\[\\e[1;34m\\]"
+MAGENTA="\\[\\e[1;35m\\]"
+CYAN="\\[\\e[1;36m\\]"
+WHITE="\\[\\e[1;37m\\]"
+ENDC="\\[\\e[0m\\]"
 
-if command -v starship &>/dev/null; then
-  eval "$(starship init bash)"
-fi
+# Set a two-line prompt. If accessing via ssh include 'ssh-session' message.
+if [[ -n "$SSH_CLIENT" ]]; then ssh_message="-ssh_session"; fi
+PS1="${GREEN}\u${WHITE}@${YELLOW}\h${RED}${ssh_message} ${WHITE}in ${BLUE}\w \n${CYAN}->${ENDC} "
+
+# if command -v starship &>/dev/null; then
+#   eval "$(starship init bash)"
+# fi
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -132,10 +135,10 @@ export NVM_DIR="$HOME/.nvm"
 export NODE_OPTIONS="--max-old-space-size=2048"
 
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
+export PNPM_HOME="/home/sd/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
@@ -161,5 +164,3 @@ if [ -f "${SSH_ENV}" ]; then
 else
   start_agent
 fi
-
-startx

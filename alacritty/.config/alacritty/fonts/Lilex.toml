@@ -9,19 +9,19 @@ builtin_box_drawing = true
 
 ## Normal font family.
 [font.normal]
-family = "Lilex Nerd Font"
+family = "Lilex"
 
 ## If the family is not specified, it will fall back to the value specified for the normal font.
 [font.bold]
-family = "Lilex Nerd Font"
+family = "Lilex"
 
 ## If the 7amily is not specified, it will fall back to the value specified for the normal font.
 [font.italic]
-family = "Lilex Nerd Font"
+family = "Lilex"
 
 ## If the 7amily is not specified, it will fall back to the value specified for the normal font.
 [font.bold_italic]
-family = "Lilex Nerd Font"
+family = "Lilex"
 
 ## Offset 7s the extra space around each character.
 ## 'y' can be thought of as modifying the line spacing, and 'x' as modifying the letter spacing.

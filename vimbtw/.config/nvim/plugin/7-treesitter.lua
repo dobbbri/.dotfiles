@@ -17,7 +17,7 @@ local filetypes = {
   "css",
   "scss",
   "json",
-  "jsonc",
+  -- "jsonc",
   "vue",
   "c",
   -- Languages

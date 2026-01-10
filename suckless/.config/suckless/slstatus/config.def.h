@@ -13,10 +13,10 @@ const size_t notifiable_levels_count = sizeof(notifiable_levels) / sizeof(notifi
 
 static const struct arg args[] = {
 	/* function format              argument */
-  { cpu_perc,       " 󰻠 %s%% ",  NULL },
-  { battery_state,  "  %s",       "BAT0" },
+  { battery_state,  " %s",       "BAT0" },
   { battery_perc,   "󰄌 %s%% ",    "BAT0" },
   { ram_perc,       "   %s%% ",  NULL },
+  { cpu_perc,       "  󰻠 %s%% ",  NULL },
   { datetime,       "  󰃰 %s",     "%-d %b %R" },
 	{ battery_notify, "",           "BAT0" },
 };

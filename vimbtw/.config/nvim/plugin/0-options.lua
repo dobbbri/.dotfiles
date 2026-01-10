@@ -34,19 +34,6 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
-
--- Cursor Styles
--- Defines the shape and blinking of the cursor in different modes.
-opt.guicursor                                   = {
-    "n-v:block",                                                -- Normal/Visual: Block
-    "i-c-ci-ve:ver25",                                          -- Insert/Command: Vertical bar
-    "r-cr:hor20",                                               -- Replace: Horizontal underline
-    "o:hor50",                                                  -- Operator-pending: Horizontal underline
-    "i:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",     -- Blink settings for Insert
-    "sm:block-blinkwait175-blinkoff150-blinkon175"              -- Showmatch: Fast blink
-}
-
-
 -- opt.colorcolumn = "101"
 opt.termguicolors = true
 
