@@ -2,8 +2,7 @@
 
 echo "- intall node Version 18 -------------------------------------------------"
 
-echo "nvm install --lts # execute this"
+echo "nvm ls-remote --lts # execute this to list all lts" 
 
-nvm ls-remote --lts 
+echo "nvm install 22 # execute this install"
 
-nvm install 22
