@@ -7,11 +7,10 @@ sudo pacman -Sy stow
 
 
 cd ~/.dotfiles
-
+mv ~/.config/nvim ~/.config/lazyvim
 echo "-------"
 
 stow astro
-stow htop
 stow vimbtw
 
 cd ~

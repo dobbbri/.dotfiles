@@ -6,4 +6,7 @@
 echo "- Install NPM packages --------------------------------------------------"
 npm i -g @ast-grep/cli npm-check-updates 
 
+node -v 
+nvm -v 
+
 
