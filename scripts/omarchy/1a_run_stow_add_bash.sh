@@ -3,7 +3,7 @@
 echo "Stow ---------------------------------------------------------------"
 
 # sudo apt install -y eza stow starship
-sudo pacman -Sy stow
+sudo pacman -Sy stow firefox bitwarden
 
 
 cd ~/.dotfiles

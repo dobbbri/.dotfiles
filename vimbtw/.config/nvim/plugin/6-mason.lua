@@ -10,7 +10,7 @@ mr.refresh(function()
     "astro-language-server",
     "bash-language-server",
     "json-lsp",
-    "prettier",
+    "biome", --"prettier",
     "shfmt",
     "stylua",
     "taplo",
